@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ADS401 group report proposal evaluating XIPU AI Agent for student academic support at XJTLU."
+      content="ADS401 group report proposal evaluating XIPU AI Agent for course-information help at XJTLU."
     />
     <meta name="theme-color" content="#0b1f33" />
     <title>ADS401_GroupXX_Report | Evaluating XIPU AI Agent</title>
@@ -51,9 +51,9 @@
           <span>Group ID: GroupXX</span>
           <span>Week 5 working draft</span>
         </div>
-        <h1>Evaluating XIPU AI Agent for Student Academic Support at XJTLU</h1>
+        <h1>A Usability Evaluation of XIPU AI Agent for Course Information Help at XJTLU</h1>
         <p class="hero-summary">
-          A mixed-methods HCI evaluation of awareness, usability, trust, and continued-use intention.
+          A task-based HCI evaluation of task success, efficiency, usability, trust, and student-reported barriers.
         </p>
         <div class="hero-foot">
           <div class="byline">
@@ -110,18 +110,18 @@
             </div>
             <div class="glance-item">
               <span>Context</span>
-              <strong>Student academic support</strong>
-              <p>Course-related questioning, study planning, knowledge-base consultation, and learning guidance.</p>
+              <strong>Course information help</strong>
+              <p>Finding assessment information, deadlines, learning resources, and module guidance.</p>
             </div>
             <div class="glance-item">
               <span>Participants</span>
               <strong>XJTLU students</strong>
-              <p>Target 100 survey responses and 12 to 15 task-based usability participants.</p>
+              <p>12 to 15 XJTLU students completing three representative course-information tasks.</p>
             </div>
             <div class="glance-item">
               <span>Design</span>
-              <strong>Sequential mixed methods</strong>
-              <p>Survey evidence followed by observed task performance and semi-structured interviews.</p>
+              <strong>Task-based usability study</strong>
+              <p>Observed task performance, think-aloud comments, SUS, and a short exit interview.</p>
             </div>
           </div>
 
@@ -140,7 +140,7 @@
 
           <p>
             This project therefore evaluates one bounded context: student use of XIPU AI Agent for
-            academic-support tasks. The report distinguishes prior evidence, the planned study, observed
+            course-information tasks. The report distinguishes prior evidence, the planned study, observed
             participant data, interpretation, and limitations. No participant data have been invented for this
             draft.
           </p>
@@ -168,16 +168,16 @@
           <h3>Research questions</h3>
           <div class="question-list">
             <div class="question-block">
-              <strong>RQ1 · Awareness and use</strong>
-              <p>What do XJTLU students know about XIPU AI Agent, and how do they currently use it for academic support?</p>
+              <strong>RQ1 · Task success</strong>
+              <p>Can XJTLU students find representative course information with XIPU AI Agent?</p>
             </div>
             <div class="question-block">
               <strong>RQ2 · Usability</strong>
-              <p>How effectively, efficiently, and satisfactorily can students complete representative academic-support tasks?</p>
+              <p>How effectively, efficiently, and satisfactorily can students complete representative course-information tasks?</p>
             </div>
             <div class="question-block">
-              <strong>RQ3 · Trust and adoption</strong>
-              <p>How are perceived usefulness, ease of use, trust, and continued-use intention associated?</p>
+              <strong>RQ3 · Perceptions</strong>
+              <p>How do participants rate usefulness, trust, and continued-use intention?</p>
             </div>
             <div class="question-block">
               <strong>RQ4 · Barriers</strong>
@@ -187,10 +187,10 @@
 
           <h3>Hypotheses</h3>
           <ul>
-            <li><strong>H1:</strong> Perceived usefulness and ease of use will be positively associated with continued-use intention.</li>
-            <li><strong>H2:</strong> Trust will mediate the association between perceived usefulness and continued-use intention.</li>
-            <li><strong>H3:</strong> At least 80% of usability participants will complete each core task without critical failure.</li>
-            <li><strong>H4:</strong> Interview themes will identify uncertainty about answer reliability, academic-integrity boundaries, and task fit.</li>
+            <li><strong>H1:</strong> At least 80% of participants will complete each core task without critical failure.</li>
+            <li><strong>H2:</strong> The median SUS score will be at or above the published benchmark for acceptable usability.</li>
+            <li><strong>H3:</strong> Participants will report higher perceived usefulness than confidence in answer reliability.</li>
+            <li><strong>H4:</strong> Interview themes will identify uncertainty about answer reliability and task fit.</li>
           </ul>
 
           <p>
@@ -232,7 +232,7 @@
             <p>
               <strong>Research gap:</strong> XJTLU has an official AI-agent platform with documented
               capabilities, but public evidence does not yet show how students discover and use it for
-              academic-support tasks, where usability breaks down, or how trust shapes continued use.
+              course-information tasks, where usability breaks down, or what prevents confident use.
             </p>
           </div>
 
@@ -266,27 +266,25 @@
           </p>
 
           <p>
-            The survey target is 100 complete responses. A minimum of approximately 84 participants is needed
-            to detect a moderate correlation of <em>r</em> = .30 with 80% power at α = .05, two-tailed; the
-            additional participants allow for missingness and exclusions. The usability phase will recruit 12
-            to 15 students, meeting the module guidance for a usability study and providing sufficient
-            behavioural evidence for within-session analysis.
+            The study will recruit 12 to 15 XJTLU students for one task-based session each. This follows the
+            module guidance that a usability study should normally include at least 12 participants. The
+            sample is appropriate for descriptive usability evidence, not for estimating population effects.
+            Recruitment will include students with different levels of prior experience with XIPU AI Agent.
           </p>
 
           <h3>Study design and procedure</h3>
           <div class="flow">
             <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, rights, privacy, and withdrawal.</p></div>
-            <div class="design-step"><span>02</span><strong>Survey</strong><p>Awareness, prior use, usefulness, trust, and intention.</p></div>
-            <div class="design-step"><span>03</span><strong>Tasks</strong><p>Three academic-support scenarios with XIPU AI Agent.</p></div>
-            <div class="design-step"><span>04</span><strong>Measures</strong><p>Task success, time, errors, SUS, and trust.</p></div>
-            <div class="design-step"><span>05</span><strong>Interview</strong><p>Barriers, expectations, trust, and improvement ideas.</p></div>
+            <div class="design-step"><span>02</span><strong>Tasks</strong><p>Three course-information scenarios with XIPU AI Agent.</p></div>
+            <div class="design-step"><span>03</span><strong>Think aloud</strong><p>Observed success, time, errors, and assistance.</p></div>
+            <div class="design-step"><span>04</span><strong>Measures</strong><p>SUS, usefulness, trust, and intention.</p></div>
+            <div class="design-step"><span>05</span><strong>Interview</strong><p>Barriers, expectations, and improvement ideas.</p></div>
           </div>
 
           <p>
-            The usability session will be piloted with two to three students before formal data collection. A
-            moderator will use a standardised script, allow assistance only according to a predefined rule,
-            and record failures without identifying participants. Task order will be counterbalanced where
-            order effects are plausible.
+            The usability session will be piloted with two students before formal data collection. A moderator
+            will use a standardised script, allow assistance only according to a predefined rule, and record
+            failures without identifying participants.
           </p>
 
           <div class="table-wrap">
@@ -302,7 +300,7 @@
               <tbody>
                 <tr>
                   <td>Task effectiveness</td>
-                  <td>Completion of the target academic-support goal</td>
+                  <td>Completion of the target course-information goal</td>
                   <td>Success or failure, assistance required</td>
                   <td>Observed</td>
                 </tr>
@@ -326,13 +324,13 @@
                 </tr>
                 <tr>
                   <td>Trust</td>
-                  <td>Willingness to rely on the agent and confidence in its boundaries</td>
-                  <td>Trust in automation items</td>
+                  <td>Confidence in answers and willingness to rely on the agent</td>
+                  <td>Short trust scale</td>
                   <td>Self-report</td>
                 </tr>
                 <tr>
                   <td>Continued-use intention</td>
-                  <td>Planned future use for academic support</td>
+                  <td>Planned future use for course-information help</td>
                   <td>Three-item intention scale</td>
                   <td>Self-report</td>
                 </tr>
@@ -374,35 +372,31 @@
           </div>
 
           <p>
-            Survey and usability data will be exported to Excel for cleaning, harmonisation, and codebook
-            creation, then imported into SPSS for analysis. Each variable will have a defined type, scale,
-            permissible range, and reverse-coding rule. Duplicate and bot-like survey responses will be
-            screened against prespecified criteria rather than removed solely because their values are
-            inconvenient.
+            Task observation, questionnaire, and interview data will be exported to Excel for cleaning,
+            harmonisation, and codebook creation, then imported into SPSS for descriptive analysis. Each
+            variable will have a defined type, permissible range, and coding rule.
           </p>
 
           <p>
-            Quantitative analysis will begin with missing-data inspection, distributions, outliers, and
-            internal consistency. Cronbach's alpha and item-total correlations will be reported for
-            multi-item scales. Descriptive statistics will summarise awareness, adoption, task performance,
-            usability, trust, and intention. Pearson correlations will be used when assumptions are met;
-            Spearman's rho or robust alternatives will be reported otherwise.
+            Quantitative analysis will begin with missing-data inspection, distributions, and internal
+            consistency. Descriptive statistics will summarise task success, assistance, time, errors, SUS,
+            usefulness, trust, and intention. SUS will be interpreted against published benchmark guidance
+            <a href="#ref6">[6]</a>. Spearman's rho will be used for exploratory associations if the small
+            sample and data distribution make it appropriate; results will be described as exploratory.
           </p>
 
           <p>
-            Multiple regression will test whether perceived usefulness, ease of use, and trust are associated
-            with continued-use intention after relevant controls. A bootstrap mediation model will examine
-            perceived trust as a pathway between usefulness and intention <a href="#ref6">[6]</a>. Assumptions
-            will be inspected using residual plots, influence diagnostics, and collinearity statistics.
-            Standardised effect sizes, exact p-values, and 95% confidence intervals will be reported.
+            Inferential tests will be kept limited because the usability sample is small. The study will not
+            use mediation or causal modelling. Any p-values will be treated as exploratory and reported with
+            effect sizes and uncertainty where appropriate.
           </p>
 
           <p>
             Interview recordings will be transcribed de-identified and coded using reflexive thematic
             analysis. The team will create an initial codebook, meet to resolve coding differences, and
             organise codes into candidate themes. Negative and conflicting cases will be reported. Findings
-            will be triangulated with task observations and survey patterns rather than treated as a substitute
-            for quantitative evidence.
+            will be triangulated with task observations and questionnaire responses rather than treated as a
+            substitute for behavioural evidence.
           </p>
         </section>
 
@@ -421,16 +415,16 @@
 
           <div class="finding-grid">
             <div class="finding-card">
-              <strong>RQ1 · Awareness</strong>
-              <p>Report the proportion who had heard of the platform, used an agent, or could identify an appropriate use case.</p>
+              <strong>RQ1 · Task performance</strong>
+              <p>Report task success, assistance needed, completion time, and observed errors for each scenario.</p>
             </div>
             <div class="finding-card">
               <strong>RQ2 · Usability</strong>
-              <p>Report task success, assistance, time, errors, SUS, and the main interaction breakdowns.</p>
+              <p>Report SUS and the main interaction breakdowns.</p>
             </div>
             <div class="finding-card">
-              <strong>RQ3 · Trust and adoption</strong>
-              <p>Report correlations, regression estimates, indirect effects, confidence intervals, and effect sizes.</p>
+              <strong>RQ3 · Perceptions</strong>
+              <p>Report usefulness, trust, intention, and any exploratory association tests.</p>
             </div>
             <div class="finding-card">
               <strong>RQ4 · Barriers</strong>
@@ -440,9 +434,9 @@
 
           <h3>Required figures for final version</h3>
           <ul>
-            <li>Awareness and prior-use distribution with sample size and percentages.</li>
-            <li>Task success and error profile with uncertainty intervals where appropriate.</li>
-            <li>Correlation matrix or forest plot for usefulness, ease of use, trust, and intention.</li>
+            <li>Task success and assistance rate for each scenario, with sample size.</li>
+            <li>Completion time and error profile using readable static charts.</li>
+            <li>SUS, usefulness, trust, and intention ratings with simple uncertainty indicators.</li>
             <li>Thematic map linking observed task barriers to interview accounts.</li>
           </ul>
         </section>
@@ -453,8 +447,8 @@
 
           <p>
             The expected contribution is an evidence chain linking a specific XJTLU AI-agent context to
-            observable usability, trust, and adoption mechanisms. If students cannot discover the system or
-            identify a suitable agent, then improvements in model quality will not translate into use. If
+            observable usability, trust, and task performance. If students cannot find course information or
+            recover from an unsuitable answer, improvements in model quality will not translate into use. If
             task success is high but trust remains low, the problem may lie in transparency, boundaries, or
             support rather than raw capability.
           </p>
@@ -463,7 +457,7 @@
           <p>
             The final discussion will connect each research question to evidence, distinguish statistically
             supported associations from descriptive patterns, and identify findings that conflict with the
-            hypotheses. It will avoid causal language for the cross-sectional survey. Recommendations will
+            hypotheses. It will avoid causal language beyond the tested tasks. Recommendations will
             identify the responsible actor, such as XIPU AI staff, module teams, or students, and state the
             evidence supporting each recommendation.
           </p>
@@ -475,7 +469,7 @@
             <li>Usability sessions create a controlled setting and may show novelty effects.</li>
             <li>No system logs are assumed; self-reported use will not be described as system evidence.</li>
             <li>The study evaluates selected tasks and one university, limiting generalisation.</li>
-            <li>Cross-sectional associations cannot establish the direction of causal effects.</li>
+            <li>The small sample cannot support precise population estimates or causal claims.</li>
           </ul>
 
           <h3>Planned recommendation areas</h3>
@@ -496,7 +490,7 @@
             <div class="transparency-card">
               <strong>Contribution statement</strong>
               <ul>
-                <li>Member 1: literature, survey design, and analysis.</li>
+                <li>Member 1: literature, task design, and quantitative analysis.</li>
                 <li>Member 2: usability protocol, recruitment, and data management.</li>
                 <li>Member 3: qualitative analysis, web report, and poster.</li>
               </ul>
@@ -504,8 +498,8 @@
             <div class="transparency-card">
               <strong>Data and material availability</strong>
               <p>
-                Anonymous aggregate data, SPSS output, the GitHub repository, survey instruments, and
-                usability materials will be submitted in the supplementary ZIP. Raw identifiable data will
+                Anonymous aggregate data, SPSS output, the GitHub repository, task materials, and
+                questionnaires will be submitted in the supplementary ZIP. Raw identifiable data will
                 not be published.
               </p>
             </div>
@@ -550,8 +544,8 @@
               1996, pp. 189–194.
             </li>
             <li id="ref6">
-              A. F. Hayes, <em>Introduction to Mediation, Moderation, and Conditional Process Analysis</em>,
-              3rd ed. New York, NY, USA: Guilford Press, 2022.
+              J. Sauro and J. R. Lewis, <em>Quantifying the User Experience</em>, 2nd ed. Cambridge, MA, USA:
+              Morgan Kaufmann, 2016.
             </li>
           </ol>
         </section>

@@ -26,7 +26,7 @@ completed only after ethics approval and data collection.
 
 ## Word Count and Format
 
-The current main report narrative is approximately 2,133 words, within the required 2,000-2,500 word
+The current main report narrative is approximately 2,054 words, within the required 2,000-2,500 word
 guidance. The website remains a single page with anchor navigation.
 
 ## AI Permission
