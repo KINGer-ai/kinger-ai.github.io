@@ -1,7 +1,7 @@
 # ADS401 Group Project
 
-This repository contains the web report, poster source, poster PDF draft, and QR asset for the ADS401
-Evaluation Methods and Statistics group project.
+This repository contains the web report, poster source, poster PDF draft, and QR asset for an ADS401
+experiment on whether an AI one-sentence summary improves understanding of XJTLU Museum labels.
 
 ## Current Files
 
@@ -26,7 +26,7 @@ completed only after ethics approval and data collection.
 
 ## Word Count and Format
 
-The current main report narrative is approximately 2,054 words, within the required 2,000-2,500 word
+The current main report narrative is approximately 2,015 words, within the required 2,000-2,500 word
 guidance. The website remains a single page with anchor navigation.
 
 ## AI Permission

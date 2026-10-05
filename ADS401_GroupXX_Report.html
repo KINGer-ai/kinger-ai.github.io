@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ADS401 group report proposal evaluating XIPU AI Agent for course-information help at XJTLU."
+      content="ADS401 experiment on whether an AI one-sentence summary improves comprehension of XJTLU Museum labels."
     />
     <meta name="theme-color" content="#0b1f33" />
-    <title>ADS401_GroupXX_Report | Evaluating XIPU AI Agent</title>
+    <title>ADS401_GroupXX_Report | AI Summary and Museum Labels</title>
     <link rel="stylesheet" href="./report.css" />
     <script defer src="./report.js"></script>
   </head>
@@ -20,7 +20,7 @@
         <span class="brand-mark">A4</span>
         <span>
           <strong>ADS401 Group Project</strong>
-          <small>XJTLU AI integration evaluation</small>
+          <small>XJTLU Museum AI summary experiment</small>
         </span>
       </a>
 
@@ -51,20 +51,20 @@
           <span>Group ID: GroupXX</span>
           <span>Week 5 working draft</span>
         </div>
-        <h1>A Usability Evaluation of XIPU AI Agent for Course Information Help at XJTLU</h1>
+        <h1>Does an AI One-Sentence Summary Improve Understanding of XJTLU Museum Labels?</h1>
         <p class="hero-summary">
-          A task-based HCI evaluation of task success, efficiency, usability, trust, and student-reported barriers.
+          A simple within-subjects experiment using comprehension accuracy and perceived ease.
         </p>
         <div class="hero-foot">
           <div class="byline">
             <strong>Group members: Member 1, Member 2, Member 3</strong><br />
             Xi'an Jiaotong-Liverpool University · 2026<br />
-            System evaluated:
-            <a href="https://aiagent.xjtlu.edu.cn/" target="_blank" rel="noreferrer">XIPU AI Agent</a>
+            Museum context:
+            <a href="https://www.xjtlu.edu.cn/en/campus-life/support-and-facilities/museum" target="_blank" rel="noreferrer">XJTLU Museum</a>
           </div>
           <div class="hero-status">
             <strong>Current status</strong>
-            Project design and materials are complete; participant data have not yet been collected.
+            The experiment is ready for ethics review. Participant data have not yet been collected.
           </div>
         </div>
       </div>
@@ -84,8 +84,8 @@
           <a href="#transparency">8. Transparency and references</a>
         </nav>
         <div class="reading-note">
-          Target reading time: approximately 10 minutes. Replace this proposal with the final report after
-          data collection.
+          This is one hosted report. It follows the eight required sections and will be completed with real
+          participant data after ethics approval.
         </div>
       </aside>
 
@@ -97,52 +97,59 @@
           <div class="status-banner">
             <strong>DRAFT</strong>
             <p>
-              This page follows the ADS401 submission structure. Group identifiers and participant evidence
-              still need to be replaced before the Week 12 deadline.
+              Replace GroupXX, member names, and the result placeholders before submission. This page does not
+              contain invented participant evidence.
             </p>
           </div>
 
           <div class="glance-grid">
             <div class="glance-item">
-              <span>System</span>
-              <strong>XIPU AI Agent</strong>
-              <p>An XJTLU low-code platform for creating, training, and deploying educational AI agents.</p>
+              <span>AI-supported activity</span>
+              <strong>One-sentence exhibit summary</strong>
+              <p>AI rewrites a museum label into one clear sentence before the visitor reads the full text.</p>
             </div>
             <div class="glance-item">
               <span>Context</span>
-              <strong>Course information help</strong>
-              <p>Finding assessment information, deadlines, learning resources, and module guidance.</p>
+              <strong>XJTLU Museum labels</strong>
+              <p>The Museum presents university history and cultural exhibitions to a diverse campus audience.</p>
             </div>
             <div class="glance-item">
               <span>Participants</span>
-              <strong>XJTLU students</strong>
-              <p>12 to 15 XJTLU students completing three representative course-information tasks.</p>
+              <strong>20 students or staff</strong>
+              <p>Each participant completes a short online session lasting around 10 minutes.</p>
             </div>
             <div class="glance-item">
               <span>Design</span>
-              <strong>Task-based usability study</strong>
-              <p>Observed task performance, think-aloud comments, SUS, and a short exit interview.</p>
+              <strong>Within-subjects experiment</strong>
+              <p>Every participant reads original and AI-summary labels for three matched exhibit themes.</p>
             </div>
           </div>
 
           <p>
-            XJTLU presents XIPU AI Agent as part of its “Education + AI” strategy. The platform supports
-            knowledge-base construction, plugin integration, workflow automation, and visual evaluation
-            <a href="#ref1">[1]</a>. However, platform availability does not show whether students can discover
-            the system, choose an appropriate agent, complete academic tasks, or calibrate their trust in its
-            outputs.
+            Museum labels can contain names, dates, and cultural context that are difficult to understand
+            quickly. A one-sentence AI summary may help visitors identify the main idea before deciding
+            whether to read the full label. However, the summary may also omit important detail or change the
+            meaning of the original text.
+          </p>
+
+          <p>
+            The experiment is deliberately small. It does not try to measure the complete museum experience,
+            compare several AI systems, or test long-term learning. It tests one practical design option that
+            could be added to a label without changing the physical exhibition. Participants only need to
+            read short texts and answer simple questions, so the study can be completed on a laptop or phone.
           </p>
 
           <div class="quote">
-            The evaluation question is not whether XIPU AI Agent is universally “good.” It is when, for whom,
-            and under what conditions the agent supports student academic work.
+            The experiment asks a small practical question: does one AI sentence help visitors understand the
+            exhibit more accurately and easily?
           </div>
 
           <p>
-            This project therefore evaluates one bounded context: student use of XIPU AI Agent for
-            course-information tasks. The report distinguishes prior evidence, the planned study, observed
-            participant data, interpretation, and limitations. No participant data have been invented for this
-            draft.
+            A useful result should also be actionable. If the AI sentence improves both accuracy and
+            perceived ease, the group can recommend a small Museum pilot. If it improves only perceived ease,
+            the recommendation should be cautious because the label may feel clearer without helping visitors
+            understand the important content. This distinction keeps the project practical and prevents the
+            study from treating a positive satisfaction rating as proof of learning.
           </p>
         </section>
 
@@ -151,52 +158,48 @@
           <h2>Problem, motivation, and research questions</h2>
 
           <p>
-            Universities are integrating conversational AI into learning services at a pace that often exceeds
-            evidence about actual student use. XIPU AI and XIPU AI Agent expand access to generative AI, but
-            students may encounter several uncertainties: whether the service exists, which agent is suitable
-            for a task, whether answers are reliable, whether use is permitted in a module, and whether the
-            system protects their data.
+            Visitors do not read museum labels in the same way. Some move quickly through an exhibition,
+            while others stop for detailed information. A short summary can support the first group without
+            preventing the second group from reading the original label. This makes the one-sentence summary
+            a practical design idea for XJTLU Museum.
           </p>
 
           <p>
-            These uncertainties matter for HCI because adoption is not produced by technical capability alone.
-            Users must interpret system boundaries, form expectations, recover from errors, and decide how much
-            to trust the output. A system can be available but poorly discovered; technically capable but hard
-            to operate; or useful but distrusted because its limitations are unclear.
+            The idea also fits the Museum's mixed audience. Students and staff may have different levels of
+            familiarity with art, history, or the cultural context of an exhibition. A plain-language first
+            line can provide an entry point without removing the detailed curatorial text. If the summary
+            improves understanding, it can be tested in a real exhibition; if it does not, the Museum avoids
+            adding unnecessary text to every label.
+          </p>
+
+          <p>
+            The design question is also easy to test. The study can compare two versions of the same exhibit
+            label: the original text and an AI-generated one-sentence summary placed above it. The experiment
+            measures whether visitors answer comprehension questions more accurately and rate the label as
+            easier to understand.
           </p>
 
           <h3>Research questions</h3>
           <div class="question-list">
             <div class="question-block">
-              <strong>RQ1 · Task success</strong>
-              <p>Can XJTLU students find representative course information with XIPU AI Agent?</p>
+              <strong>RQ1 · Comprehension</strong>
+              <p>Does an AI one-sentence summary improve accuracy on an exhibit comprehension question?</p>
             </div>
             <div class="question-block">
-              <strong>RQ2 · Usability</strong>
-              <p>How effectively, efficiently, and satisfactorily can students complete representative course-information tasks?</p>
-            </div>
-            <div class="question-block">
-              <strong>RQ3 · Perceptions</strong>
-              <p>How do participants rate usefulness, trust, and continued-use intention?</p>
-            </div>
-            <div class="question-block">
-              <strong>RQ4 · Barriers</strong>
-              <p>What barriers, risks, and improvement opportunities emerge from participants' observed and reported experiences?</p>
+              <strong>RQ2 · Perceived ease</strong>
+              <p>Does the summary make the label feel easier to understand?</p>
             </div>
           </div>
 
           <h3>Hypotheses</h3>
           <ul>
-            <li><strong>H1:</strong> At least 80% of participants will complete each core task without critical failure.</li>
-            <li><strong>H2:</strong> The median SUS score will be at or above the published benchmark for acceptable usability.</li>
-            <li><strong>H3:</strong> Participants will report higher perceived usefulness than confidence in answer reliability.</li>
-            <li><strong>H4:</strong> Interview themes will identify uncertainty about answer reliability and task fit.</li>
+            <li><strong>H1:</strong> Comprehension accuracy will be higher when the AI summary is present.</li>
+            <li><strong>H2:</strong> Participants will rate the label as easier to understand when the AI summary is present.</li>
           </ul>
 
           <p>
-            The study can support claims about XJTLU students, the selected tasks, and the evaluated version of
-            XIPU AI Agent. It cannot establish institution-wide adoption, long-term learning gains, or the
-            accuracy of every agent response.
+            These questions keep the study focused. They do not attempt to measure long-term learning,
+            cultural appreciation, trust in AI, or the overall visitor experience.
           </p>
         </section>
 
@@ -205,42 +208,37 @@
           <h2>Background and related work</h2>
 
           <p>
-            Technology acceptance research identifies perceived usefulness and ease of use as central
-            predictors of intention to use a system <a href="#ref2">[2]</a>. UTAUT extends this account with
-            social influence and facilitating conditions <a href="#ref3">[3]</a>. Those constructs remain
-            relevant to AI agents because students need to understand what the system does and how to access
-            support when tasks become difficult.
+            Cognitive load theory explains that readers have limited working memory. A label filled with
+            names and dates can make it harder to identify the main message <a href="#ref1">[1]</a>. A short
+            summary can act as an advance organiser: it gives the visitor a simple idea before the detailed
+            text. This may improve comprehension and reduce effort.
           </p>
 
           <p>
-            Trust adds a further condition. Conversational agents can produce fluent answers that vary in
-            accuracy, making trust calibration a design problem rather than only a user attitude. The CHI
-            guidelines for human-AI interaction emphasise making capabilities clear, supporting efficient
-            invocation, explaining uncertainty, and enabling correction <a href="#ref4">[4]</a>. These
-            principles suggest that evaluating an educational agent should combine perceived measures with
-            observed task success and error recovery.
+            Museum interpretation research treats labels as communication tools. A strong label does more
+            than list facts; it helps visitors notice what matters and connect it to what they already know
+            <a href="#ref2">[2]</a>. This supports the use of a short summary as an interpretation aid.
           </p>
 
           <p>
-            Usability evaluation contributes behavioural evidence. The System Usability Scale provides a
-            compact global measure <a href="#ref5">[5]</a>, while task success, completion time, and observed
-            errors show whether users can act effectively. A mixed-methods design can then explain why
-            favourable or unfavourable ratings occur.
+            Human-AI interaction guidelines also matter. If AI rewrites curatorial text, the system should
+            avoid presenting uncertain interpretations as certain facts <a href="#ref3">[3]</a>. The
+            experiment therefore keeps the original label visible and tests the summary as an additional
+            aid, not as a replacement.
           </p>
 
           <div class="callout">
             <p>
-              <strong>Research gap:</strong> XJTLU has an official AI-agent platform with documented
-              capabilities, but public evidence does not yet show how students discover and use it for
-              course-information tasks, where usability breaks down, or what prevents confident use.
+              <strong>Research gap:</strong> AI summaries are easy to generate, but there is no simple local
+              test showing whether they help campus visitors understand an XJTLU Museum label.
             </p>
           </div>
 
           <p>
-            The planned evaluation combines these literatures. Acceptance measures address intention and
-            perceived value; trust measures address confidence and reliance; usability measures address
-            observable performance; qualitative evidence explains contextual barriers. This triangulation is
-            more informative than asking participants only whether they “like” the system.
+            The study also responds to a practical limitation in museum evaluation. Large visitor surveys
+            are expensive and require long recruitment periods. A controlled reading experiment is faster
+            and more focused. It can show whether the core design idea is promising before the group asks
+            Museum staff or visitors to engage with a more complex evaluation.
           </p>
         </section>
 
@@ -248,115 +246,102 @@
           <div class="section-number">04 · System and evaluation design</div>
           <h2>System and evaluation design</h2>
 
-          <h3>System and collaboration context</h3>
+          <h3>Materials</h3>
           <p>
-            XIPU AI Agent is described by XJTLU as a platform for building and deploying AI agents across
-            teaching, learning, research, and institutional management. Its reported capabilities include
-            agent creation, knowledge bases, plugin integration, workflow automation, and performance
-            evaluation <a href="#ref1">[1]</a>. This study evaluates the student-facing use of existing agents
-            rather than the platform's administrative authoring tools.
+            Three short exhibit texts will be adapted from public XJTLU Museum themes: university history,
+            cultural exchange, and visual art. The texts will be de-identified and will not include
+            copyrighted images. Each theme has an original-style label and a version with an AI-generated
+            one-sentence summary at the top. The critical facts remain the same in both versions.
+          </p>
+
+          <p>
+            A member of the group generates the summaries with XIPU AI using a fixed prompt. The group then
+            checks each summary against the original label to ensure that no important information has been
+            removed. The experiment measures the effect of the summary, not the quality of the AI interface.
           </p>
 
           <h3>Participants and sampling</h3>
           <p>
-            Participants will be XJTLU students aged 18 or above. Recruitment will use approved university
-            channels, course announcements where permission is granted, and snowball recruitment. The sample
-            will include students with and without prior XIPU AI Agent experience so that awareness and non-use
-            can be examined without assuming adoption.
+            The study will recruit 20 XJTLU students or staff aged 18 or above. A within-subjects design is
+            used because each participant can compare both versions of the same exhibit. This reduces the
+            influence of individual reading speed and lowers the number of participants needed compared with
+            separate groups.
           </p>
 
           <p>
-            The study will recruit 12 to 15 XJTLU students for one task-based session each. This follows the
-            module guidance that a usability study should normally include at least 12 participants. The
-            sample is appropriate for descriptive usability evidence, not for estimating population effects.
-            Recruitment will include students with different levels of prior experience with XIPU AI Agent.
+            Recruitment will use approved university channels and a short sign-up form. Participants do not
+            need to visit the Museum or use XIPU AI during the session, so data collection can be completed
+            online. Participation is anonymous and takes approximately 10 minutes.
           </p>
 
-          <h3>Study design and procedure</h3>
+          <p>
+            The sampling method is convenience sampling, which is appropriate for a course experiment but
+            limits generalisation. The group will record how participants were recruited and whether they
+            have previously visited the Museum. This information will be reported as descriptive context,
+            not used to make claims about the wider public.
+          </p>
+
+          <p>
+            All participants will receive the same instructions and the same number of reading items. This
+            keeps the session short and reduces the chance that fatigue or missing data will affect one
+            condition more than the other.
+          </p>
+
+          <h3>Procedure</h3>
           <div class="flow">
-            <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, rights, privacy, and withdrawal.</p></div>
-            <div class="design-step"><span>02</span><strong>Tasks</strong><p>Three course-information scenarios with XIPU AI Agent.</p></div>
-            <div class="design-step"><span>03</span><strong>Think aloud</strong><p>Observed success, time, errors, and assistance.</p></div>
-            <div class="design-step"><span>04</span><strong>Measures</strong><p>SUS, usefulness, trust, and intention.</p></div>
-            <div class="design-step"><span>05</span><strong>Interview</strong><p>Barriers, expectations, and improvement ideas.</p></div>
+            <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, anonymity, and withdrawal.</p></div>
+            <div class="design-step"><span>02</span><strong>Practice</strong><p>One example label and question.</p></div>
+            <div class="design-step"><span>03</span><strong>Read</strong><p>Six labels, counterbalanced.</p></div>
+            <div class="design-step"><span>04</span><strong>Answer</strong><p>One comprehension question each.</p></div>
+            <div class="design-step"><span>05</span><strong>Rate</strong><p>Easy-to-understand score each.</p></div>
           </div>
 
           <p>
-            The usability session will be piloted with two students before formal data collection. A moderator
-            will use a standardised script, allow assistance only according to a predefined rule, and record
-            failures without identifying participants.
+            Each participant reads three original labels and three labels with AI summaries. Across the
+            sample, each exhibit appears equally often in both conditions. The order of themes and conditions
+            will be counterbalanced to reduce order effects. After each label, the participant answers one
+            multiple-choice question and rates perceived ease on a 1-7 scale.
           </p>
 
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Construct</th>
-                  <th>Operational definition</th>
                   <th>Measure</th>
-                  <th>Evidence type</th>
+                  <th>Operational definition</th>
+                  <th>Data type</th>
+                  <th>Role</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Task effectiveness</td>
-                  <td>Completion of the target course-information goal</td>
-                  <td>Success or failure, assistance required</td>
-                  <td>Observed</td>
+                  <td>Comprehension accuracy</td>
+                  <td>Correct answer to one question per label</td>
+                  <td>0 or 1 per item</td>
+                  <td>Primary outcome</td>
                 </tr>
                 <tr>
-                  <td>Efficiency</td>
-                  <td>Time and interaction effort required per task</td>
-                  <td>Time on task, prompt count, errors</td>
-                  <td>Observed</td>
+                  <td>Perceived ease</td>
+                  <td>“This label was easy to understand”</td>
+                  <td>Ordinal 1-7</td>
+                  <td>Primary outcome</td>
                 </tr>
                 <tr>
-                  <td>Usability</td>
-                  <td>Global perceived usability</td>
-                  <td>10-item SUS <a href="#ref5">[5]</a></td>
-                  <td>Self-report</td>
-                </tr>
-                <tr>
-                  <td>Usefulness</td>
-                  <td>Perceived value for academic work</td>
-                  <td>Adapted TAM items <a href="#ref2">[2]</a></td>
-                  <td>Self-report</td>
-                </tr>
-                <tr>
-                  <td>Trust</td>
-                  <td>Confidence in answers and willingness to rely on the agent</td>
-                  <td>Short trust scale</td>
-                  <td>Self-report</td>
-                </tr>
-                <tr>
-                  <td>Continued-use intention</td>
-                  <td>Planned future use for course-information help</td>
-                  <td>Three-item intention scale</td>
-                  <td>Self-report</td>
-                </tr>
-                <tr>
-                  <td>Barriers</td>
-                  <td>Reasons for avoidance, failure, or distrust</td>
-                  <td>Semi-structured interview</td>
-                  <td>Qualitative</td>
+                  <td>Reading time</td>
+                  <td>Seconds from display to answer submission</td>
+                  <td>Continuous</td>
+                  <td>Secondary descriptive measure</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <h3>Ethics, privacy, and bias mitigation</h3>
+          <h3>Ethics and bias control</h3>
           <p>
-            Formal data collection will begin only after the required ethics process is approved. Consent will
-            explain voluntary participation, withdrawal, data storage, anonymisation, and the limits of
-            confidentiality. No passwords, assessment answers, identifiable records, or sensitive university
-            information will be entered into XIPU AI Agent or included in published materials.
-          </p>
-
-          <p>
-            Recruitment will avoid coercive messaging and will not rely only on students who already favour AI.
-            A recruitment log will record channel and eligibility. Interview extracts will be anonymised with
-            participant codes, and small demographic combinations will be suppressed. The research team will
-            document deviations from the protocol rather than silently replacing them.
+            Data collection will begin after ethics approval. Consent will explain anonymity, voluntary
+            participation, and withdrawal. The materials use public exhibition themes and do not contain
+            personal records, museum-confidential documents, or assessment data. The group will run a pilot
+            with two participants and revise ambiguous questions before formal collection.
           </p>
         </section>
 
@@ -364,39 +349,32 @@
           <div class="section-number">05 · Data preparation and analysis</div>
           <h2>Data preparation and analysis</h2>
 
-          <div class="metric-grid">
-            <div class="metric"><strong>Excel</strong><span>Data entry and coding</span></div>
-            <div class="metric"><strong>SPSS</strong><span>Descriptive and inferential tests</span></div>
-            <div class="metric"><strong>NVivo / Excel</strong><span>Qualitative coding</span></div>
-            <div class="metric"><strong>GitHub</strong><span>Web report and materials</span></div>
-          </div>
-
           <p>
-            Task observation, questionnaire, and interview data will be exported to Excel for cleaning,
-            harmonisation, and codebook creation, then imported into SPSS for descriptive analysis. Each
-            variable will have a defined type, permissible range, and coding rule.
+            Data will be exported from the online survey platform as a CSV file and checked for incomplete
+            sessions. Each participant will have paired values for the original and AI-summary conditions.
+            The analysis will calculate means, standard deviations, and differences for comprehension
+            accuracy and perceived ease.
           </p>
 
           <p>
-            Quantitative analysis will begin with missing-data inspection, distributions, and internal
-            consistency. Descriptive statistics will summarise task success, assistance, time, errors, SUS,
-            usefulness, trust, and intention. SUS will be interpreted against published benchmark guidance
-            <a href="#ref6">[6]</a>. Spearman's rho will be used for exploratory associations if the small
-            sample and data distribution make it appropriate; results will be described as exploratory.
+            Because accuracy is binary at the item level, the participant-level accuracy percentage will be
+            used for comparison. Paired-samples t-tests will be used if the difference scores are
+            approximately normal. If not, Wilcoxon signed-rank tests will be used. The report will include
+            exact p-values, effect sizes, and confidence intervals where appropriate.
           </p>
 
           <p>
-            Inferential tests will be kept limited because the usability sample is small. The study will not
-            use mediation or causal modelling. Any p-values will be treated as exploratory and reported with
-            effect sizes and uncertainty where appropriate.
+            Reading time will be reported descriptively and used as supporting evidence. Extreme times will
+            be inspected but not removed unless a documented technical error makes the response invalid. The
+            analysis will remain simple and transparent because the sample is small.
           </p>
 
           <p>
-            Interview recordings will be transcribed de-identified and coded using reflexive thematic
-            analysis. The team will create an initial codebook, meet to resolve coding differences, and
-            organise codes into candidate themes. Negative and conflicting cases will be reported. Findings
-            will be triangulated with task observations and questionnaire responses rather than treated as a
-            substitute for behavioural evidence.
+            The outcome data can be prepared quickly. Each participant will have six short answer rows and
+            paired summary columns for accuracy and ease. The group will create a codebook before analysis,
+            label every variable, and retain the original anonymous export. This makes the analysis
+            reproducible and provides the required supplementary evidence without exposing participant
+            identities.
           </p>
         </section>
 
@@ -407,37 +385,27 @@
           <div class="status-banner">
             <strong>PENDING</strong>
             <p>
-              No participant data have been collected for this working draft. The equivalent of approximately
-              500 to 700 words, figures, tables, test statistics, and anonymised quotations must be inserted
-              after data collection.
+              No participant data are available yet. Replace the placeholders below with real descriptive
+              statistics, test results, confidence intervals, and a clear answer to each research question.
             </p>
           </div>
 
           <div class="finding-grid">
             <div class="finding-card">
-              <strong>RQ1 · Task performance</strong>
-              <p>Report task success, assistance needed, completion time, and observed errors for each scenario.</p>
+              <strong>H1 · Comprehension</strong>
+              <p>Report accuracy for each condition, the paired difference, and the statistical test.</p>
             </div>
             <div class="finding-card">
-              <strong>RQ2 · Usability</strong>
-              <p>Report SUS and the main interaction breakdowns.</p>
-            </div>
-            <div class="finding-card">
-              <strong>RQ3 · Perceptions</strong>
-              <p>Report usefulness, trust, intention, and any exploratory association tests.</p>
-            </div>
-            <div class="finding-card">
-              <strong>RQ4 · Barriers</strong>
-              <p>Present themes with frequency context and short anonymised participant quotations.</p>
+              <strong>H2 · Perceived ease</strong>
+              <p>Report ease ratings, the paired difference, and uncertainty around the estimate.</p>
             </div>
           </div>
 
-          <h3>Required figures for final version</h3>
+          <h3>Required figures</h3>
           <ul>
-            <li>Task success and assistance rate for each scenario, with sample size.</li>
-            <li>Completion time and error profile using readable static charts.</li>
-            <li>SUS, usefulness, trust, and intention ratings with simple uncertainty indicators.</li>
-            <li>Thematic map linking observed task barriers to interview accounts.</li>
+            <li>Paired comparison of comprehension accuracy by condition.</li>
+            <li>Paired comparison of perceived ease by condition.</li>
+            <li>Optional descriptive chart of reading time.</li>
           </ul>
         </section>
 
@@ -446,39 +414,42 @@
           <h2>Discussion, limitations, and recommendations</h2>
 
           <p>
-            The expected contribution is an evidence chain linking a specific XJTLU AI-agent context to
-            observable usability, trust, and task performance. If students cannot find course information or
-            recover from an unsuitable answer, improvements in model quality will not translate into use. If
-            task success is high but trust remains low, the problem may lie in transparency, boundaries, or
-            support rather than raw capability.
+            The study will show whether a simple AI summary adds practical value to a museum label. If
+            comprehension and perceived ease both improve, XJTLU Museum could test AI summaries as an
+            optional first line above the original text. If ease improves but comprehension does not, the
+            summary may create a feeling of clarity without supporting accurate understanding.
           </p>
 
-          <h3>Planned interpretation</h3>
           <p>
-            The final discussion will connect each research question to evidence, distinguish statistically
-            supported associations from descriptive patterns, and identify findings that conflict with the
-            hypotheses. It will avoid causal language beyond the tested tasks. Recommendations will
-            identify the responsible actor, such as XIPU AI staff, module teams, or students, and state the
-            evidence supporting each recommendation.
+            A third possibility is that the summary has little effect. This result would also be useful. It
+            would suggest that the original labels are already clear for this participant group, or that the
+            summary style did not address the real source of difficulty. The discussion will report this
+            outcome rather than treating a non-significant result as a failure.
           </p>
 
-          <h3>Known limitations</h3>
+          <p>
+            The final recommendation will depend on the pattern of evidence. If accuracy improves and ease
+            improves, the group can propose an optional AI summary with curatorial review. If only ease
+            improves, the Museum should revise the summary and test it again. If neither outcome improves,
+            the group should recommend keeping the original label and investigating other visitor barriers,
+            such as font size, placement, language, or exhibition flow.
+          </p>
+
+          <h3>Limitations</h3>
           <ul>
-            <li>Convenience and snowball sampling may overrepresent digitally confident students.</li>
-            <li>Self-report responses may be affected by social desirability and limited introspection.</li>
-            <li>Usability sessions create a controlled setting and may show novelty effects.</li>
-            <li>No system logs are assumed; self-reported use will not be described as system evidence.</li>
-            <li>The study evaluates selected tasks and one university, limiting generalisation.</li>
-            <li>The small sample cannot support precise population estimates or causal claims.</li>
+            <li>The experiment uses three short texts and does not represent the full Museum programme.</li>
+            <li>The sample is small and may not represent all campus visitors.</li>
+            <li>The online session does not reproduce the physical museum environment.</li>
+            <li>The study measures immediate comprehension, not long-term learning.</li>
+            <li>Results depend on the prompt and writing style used for the AI summary.</li>
           </ul>
 
-          <h3>Planned recommendation areas</h3>
+          <h3>Recommendations</h3>
           <ol>
-            <li>Improve first-use discovery by explaining which tasks the platform supports and which it does not.</li>
-            <li>Clarify academic-integrity boundaries and data-handling expectations at the point of use.</li>
-            <li>Support trust calibration with source visibility, uncertainty cues, and clear error recovery.</li>
-            <li>Reduce task breakdowns through agent selection guidance, examples, and reusable prompts.</li>
-            <li>Evaluate future iterations with representative tasks and participants, including non-users.</li>
+            <li>Keep the original museum label available even when an AI summary is added.</li>
+            <li>Ask curatorial staff to check every AI-generated summary before use.</li>
+            <li>Make clear that the short line is AI-assisted rather than the original curatorial voice.</li>
+            <li>Run a follow-up test with multilingual visitors and more exhibits before permanent adoption.</li>
           </ol>
         </section>
 
@@ -490,32 +461,30 @@
             <div class="transparency-card">
               <strong>Contribution statement</strong>
               <ul>
-                <li>Member 1: literature, task design, and quantitative analysis.</li>
-                <li>Member 2: usability protocol, recruitment, and data management.</li>
-                <li>Member 3: qualitative analysis, web report, and poster.</li>
+                <li>Member 1: literature, hypotheses, and quantitative analysis.</li>
+                <li>Member 2: materials, recruitment, and data management.</li>
+                <li>Member 3: web report, poster, and result visualisation.</li>
               </ul>
             </div>
             <div class="transparency-card">
-              <strong>Data and material availability</strong>
+              <strong>Data and materials</strong>
               <p>
-                Anonymous aggregate data, SPSS output, the GitHub repository, task materials, and
-                questionnaires will be submitted in the supplementary ZIP. Raw identifiable data will
-                not be published.
+                Anonymous data, SPSS output, the prompt, label materials, and the questionnaire will be
+                included in the supplementary ZIP. No raw personal data will be published.
               </p>
             </div>
             <div class="transparency-card">
               <strong>AI-use statement</strong>
               <p>
-                [To be completed accurately before submission.] This draft uses AI assistance for structural
-                planning and editing. Verify whether the final use falls within the module's non-substantive
-                AI permission before submitting.
+                [Complete accurately before submission.] AI is part of the experiment materials and was also
+                used to support the draft structure. Confirm compliance with the module's AI policy.
               </p>
             </div>
             <div class="transparency-card">
               <strong>Acknowledgements</strong>
               <p>
-                XIPU AI and XIPU AI Agent are systems provided by Xi'an Jiaotong-Liverpool University and
-                Learning Mall. No ownership or authorship of the original system is claimed.
+                The experiment is inspired by the public communication context of XJTLU Museum. No ownership
+                of Museum collections or original labels is claimed.
               </p>
             </div>
           </div>
@@ -523,29 +492,21 @@
           <h3>IEEE-style references</h3>
           <ol class="reference-list">
             <li id="ref1">
-              Xi'an Jiaotong-Liverpool University, “XIPU AI,” XJTLU Learning Mall.
-              https://www.xjtlu.edu.cn/en/learning-mall/technology-enhanced-learning/xipu-ai (accessed 5
-              October 2026).
+              J. Sweller, P. Ayres, and S. Kalyuga, <em>Cognitive Load Theory</em>. New York, NY, USA:
+              Springer, 2011.
             </li>
             <li id="ref2">
-              F. D. Davis, “Perceived usefulness, perceived ease of use, and user acceptance of information
-              technology,” <em>MIS Quarterly</em>, vol. 13, no. 3, pp. 319–340, 1989.
+              B. Serrell, <em>Exhibit Labels: An Interpretive Approach</em>. Lanham, MD, USA: AltaMira Press,
+              2015.
             </li>
             <li id="ref3">
-              V. Venkatesh, M. G. Morris, G. B. Davis, and F. D. Davis, “User acceptance of information
-              technology: Toward a unified view,” <em>MIS Quarterly</em>, vol. 27, no. 3, pp. 425–478, 2003.
-            </li>
-            <li id="ref4">
               S. Amershi et al., “Guidelines for human-AI interaction,” in <em>Proc. CHI 2019</em>, 2019,
               pp. 1–13.
             </li>
-            <li id="ref5">
-              J. Brooke, “SUS: A quick and dirty usability scale,” in <em>Usability Evaluation in Industry</em>,
-              1996, pp. 189–194.
-            </li>
-            <li id="ref6">
-              J. Sauro and J. R. Lewis, <em>Quantifying the User Experience</em>, 2nd ed. Cambridge, MA, USA:
-              Morgan Kaufmann, 2016.
+            <li id="ref4">
+              Xi'an Jiaotong-Liverpool University, “Museum,” XJTLU.
+              https://www.xjtlu.edu.cn/en/campus-life/support-and-facilities/museum (accessed 5 October
+              2026).
             </li>
           </ol>
         </section>
@@ -554,7 +515,7 @@
 
     <footer class="site-footer">
       <p>ADS401 Evaluation Methods and Statistics · GroupXX working draft</p>
-      <p>Final web report file name: ADS401_GroupXX_Report.html</p>
+      <p>Single-page report · AI summary and XJTLU Museum labels</p>
     </footer>
   </body>
 </html>
