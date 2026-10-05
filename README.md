@@ -1,7 +1,7 @@
 # ADS401 Group Project
 
 This repository contains the single-page web report, poster summary, poster source, poster PDF draft,
-and QR asset for an ADS401 usability evaluation of the XJTLU Museum AI Dog Tour System.
+and QR asset for an ADS401 usability evaluation of the XJTLU Museum AI system.
 
 ## Current Files
 
