@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="小组实验研究设计工作页：问题、假设、实验条件、流程、测量、分析计划和项目时间线。"
+    />
+    <meta name="theme-color" content="#102a43" />
+    <title>小组实验研究设计</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./content.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要内容</a>
+
+    <header class="site-header">
+      <a class="brand" href="#overview" aria-label="返回项目概览">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 3h6M10 3v6l-5.3 8.8A2.2 2.2 0 0 0 6.6 21h10.8a2.2 2.2 0 0 0 1.9-3.2L14 9V3" />
+            <path d="M8.2 15h7.6" />
+          </svg>
+        </span>
+        <span>
+          <strong>Group Research Lab</strong>
+          <small>实验研究设计工作页</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="主要导航">
+        <a href="#overview">概览</a>
+        <a href="#design">设计</a>
+        <a href="#procedure">流程</a>
+        <a href="#analysis">分析</a>
+        <a href="#schedule">计划</a>
+      </nav>
+
+      <div class="header-actions">
+        <span class="save-state" id="save-state" aria-live="polite">初始版本</span>
+        <button class="icon-button" id="edit-button" type="button" title="切换编辑模式" aria-label="切换编辑模式">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z" />
+          </svg>
+        </button>
+        <button class="icon-button" id="save-button" type="button" title="保存到本机" aria-label="保存到本机">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" />
+            <path d="M17 21v-8H7v8M7 3v5h8" />
+          </svg>
+        </button>
+        <button class="icon-button" id="print-button" type="button" title="打印或导出 PDF" aria-label="打印或导出 PDF">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <path d="M6 14h12v8H6z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="project-intro section-shell" id="overview">
+        <div class="intro-copy">
+          <div class="eyebrow-row">
+            <p class="eyebrow" data-content="project.kicker">Group Project / Experimental Research Design</p>
+            <span class="status-pill" data-content="meta.status">10 月 5 日 · 讨论稿</span>
+          </div>
+          <h1 data-content="project.title">【请替换】小组实验研究项目标题</h1>
+          <p class="project-summary" data-content="project.summary">
+            用一项小规模、可复现的实验，检验【干预方式】如何影响【核心结果】，并进一步说明作用机制与适用边界。
+          </p>
+          <div class="project-brief">
+            <span aria-hidden="true">i</span>
+            <p data-content="project.brief">
+              本页把研究构想整理成可讨论、可执行的实验方案。黄色字段代表尚未由小组确认的内容，今天需要逐项定稿。
+            </p>
+          </div>
+        </div>
+
+        <aside class="snapshot-panel" aria-labelledby="snapshot-heading">
+          <div class="panel-heading">
+            <p class="panel-label">Project snapshot</p>
+            <h2 id="snapshot-heading">一眼看方案</h2>
+          </div>
+          <dl class="snapshot-list" id="snapshot-list"></dl>
+          <div class="meta-line">
+            <span data-content="meta.version">v0.1</span>
+            <span>更新于 <time data-content="meta.updated">2026-10-05</time></span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-shell content-section" id="design">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">01 / Research logic</p>
+            <h2>从理论到可检验的假设</h2>
+          </div>
+          <p>
+            先把“想研究什么”转换为变量之间可以检验的关系，再决定需要哪些实验条件。
+          </p>
+        </div>
+
+        <div class="logic-grid">
+          <article class="logic-card">
+            <span class="logic-label">研究问题</span>
+            <p class="lead-text">
+              在【对象与环境】中，【实验操纵】是否会改变【主要结果】？这一过程是否由【机制】
+              解释，并只在【边界条件】下成立？
+            </p>
+            <div class="contribution-tags" aria-label="研究贡献类型">
+              <span>理论检验</span>
+              <span>实验证据</span>
+              <span>实践启示</span>
+            </div>
+          </article>
+
+          <figure class="model-figure" aria-labelledby="model-caption">
+            <div class="model-row">
+              <div class="model-node model-node--iv">
+                <span>IV</span>
+                <strong data-content="model.iv">自变量</strong>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="model-node model-node--mechanism">
+                <span>M</span>
+                <strong data-content="model.mechanism">机制变量</strong>
+              </div>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <div class="model-node model-node--dv">
+                <span>DV</span>
+                <strong data-content="model.dv">因变量</strong>
+              </div>
+            </div>
+            <div class="model-branch">
+              <span aria-hidden="true">↓</span>
+              <div class="model-node model-node--moderator">
+                <span>W</span>
+                <strong data-content="model.moderator">边界条件</strong>
+              </div>
+            </div>
+            <figcaption id="model-caption">
+              图中的每个节点都必须有操作定义和测量方式，否则研究问题仍停留在概念层面。
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="hypothesis-list" id="hypothesis-list"></div>
+      </section>
+
+      <section class="section-shell content-section" id="conditions">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">02 / Conditions</p>
+            <h2>实验条件与操纵</h2>
+          </div>
+          <p>
+            条件之间只改变需要检验的关键维度，其余材料、时间、界面和指导语尽量保持一致。
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">代码</th>
+                <th scope="col">实验条件</th>
+                <th scope="col">操纵方式</th>
+                <th scope="col">设计作用</th>
+                <th scope="col">计划样本</th>
+              </tr>
+            </thead>
+            <tbody id="condition-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section-shell content-section split-section" id="procedure">
+        <div class="section-heading section-heading--vertical">
+          <div>
+            <p class="section-number">03 / Procedure</p>
+            <h2>一次实验的标准流程</h2>
+          </div>
+          <p>总时长约 25 分钟。正式实验前必须完成试点，检查参与者是否准确理解材料。</p>
+        </div>
+        <ol class="procedure-list" id="procedure-list"></ol>
+      </section>
+
+      <section class="section-shell content-section" id="measures">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">04 / Measures</p>
+            <h2>测量什么，如何测量</h2>
+          </div>
+          <p>为每个构念指定具体工具、测量时点和质量指标，避免结果出来后临时决定分析方式。</p>
+        </div>
+        <div class="measure-grid" id="measure-grid"></div>
+      </section>
+
+      <section class="section-shell content-section analysis-section" id="analysis">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">05 / Analysis plan</p>
+            <h2>先写分析计划，再收集数据</h2>
+          </div>
+          <p>主要假设、排除规则、模型与稳健性检验都应在看到结果前锁定。</p>
+        </div>
+
+        <div class="analysis-layout">
+          <div class="analysis-pipeline" id="analysis-pipeline"></div>
+
+          <aside class="power-panel" aria-labelledby="power-heading">
+            <p class="panel-label">Power & sample</p>
+            <h3 id="power-heading">样本量与检验力</h3>
+            <svg class="power-chart" viewBox="0 0 360 190" role="img" aria-label="样本量与统计检验力关系示意图">
+              <defs>
+                <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+                  <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#d9e2ec" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect x="40" y="12" width="288" height="132" fill="url(#grid)" />
+              <line x1="40" y1="144" x2="340" y2="144" stroke="#829ab1" stroke-width="1.5" />
+              <line x1="40" y1="12" x2="40" y2="144" stroke="#829ab1" stroke-width="1.5" />
+              <line x1="40" y1="37" x2="340" y2="37" stroke="#e76f51" stroke-width="1.5" stroke-dasharray="6 5" />
+              <text x="336" y="31" text-anchor="end" class="chart-label">.80 目标</text>
+              <path
+                d="M48 139 C78 135 93 120 112 98 C134 71 154 52 183 42 C216 31 267 27 330 25"
+                fill="none"
+                stroke="#0f766e"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <line x1="198" y1="144" x2="198" y2="35" stroke="#102a43" stroke-width="1.5" />
+              <circle cx="198" cy="39" r="5" fill="#102a43" />
+              <text x="198" y="165" text-anchor="middle" class="chart-label" data-content="power.targetN">N = 180</text>
+              <text x="48" y="168" class="chart-axis">N = 40</text>
+              <text x="326" y="168" text-anchor="end" class="chart-axis">N = 260</text>
+            </svg>
+            <dl class="power-stats">
+              <div>
+                <dt>预期效应</dt>
+                <dd data-content="power.effect">预期效应量：f = 0.20（待更新）</dd>
+              </div>
+              <div>
+                <dt>显著性标准</dt>
+                <dd data-content="power.alpha">α = .05</dd>
+              </div>
+              <div>
+                <dt>目标检验力</dt>
+                <dd data-content="power.desiredPower">Power = .80</dd>
+              </div>
+            </dl>
+            <p class="power-note" data-content="power.note">
+              正式招募前用 G*Power 或模拟重新估算样本量。
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-shell content-section" id="schedule">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">06 / Schedule</p>
+            <h2>从构想走向数据集</h2>
+          </div>
+          <p>每一阶段都设置可验收的成果，避免研究长期停留在“还在讨论”的状态。</p>
+        </div>
+        <ol class="timeline" id="timeline-list"></ol>
+      </section>
+
+      <section class="section-shell content-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">07 / Team & decisions</p>
+            <h2>分工与今天必须拍板的事项</h2>
+          </div>
+          <p>责任到人、决定成文。没有明确负责人的任务，通常在截止日期前不会自动完成。</p>
+        </div>
+
+        <div class="team-decision-grid">
+          <div class="team-panel">
+            <h3>项目角色</h3>
+            <div class="team-list" id="team-list"></div>
+          </div>
+          <div class="decision-panel">
+            <h3>关键决策清单</h3>
+            <ul class="decision-list" id="decision-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Group Research Lab · <span data-content="meta.version">v0.1</span></p>
+      <p>Built for GitHub Pages · <a href="https://docs.github.com/en/pages/quickstart">Pages quickstart</a></p>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
