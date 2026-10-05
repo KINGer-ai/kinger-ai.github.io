@@ -231,3 +231,28 @@ window.PROJECT_DATA = {
     "指定由谁保存原始数据、锁定分析脚本，以及何时触发复核。"
   ]
 };
+
+
+// Add a direct entry point to the HCI research poster.
+window.addEventListener("DOMContentLoaded", () => {
+  const posterLink = document.createElement("a");
+  posterLink.href = "./poster.html";
+  posterLink.textContent = "HCI Poster";
+  posterLink.setAttribute("aria-label", "Open the HCI research poster");
+  Object.assign(posterLink.style, {
+    position: "fixed",
+    right: "18px",
+    bottom: "18px",
+    zIndex: "40",
+    padding: "11px 15px",
+    color: "#ffffff",
+    background: "#d85f45",
+    border: "1px solid rgba(255,255,255,.3)",
+    borderRadius: "6px",
+    boxShadow: "0 12px 28px rgba(16,42,67,.22)",
+    font: "700 13px/1.2 Aptos, sans-serif",
+    letterSpacing: "0.02em",
+    textDecoration: "none"
+  });
+  document.body.append(posterLink);
+});
