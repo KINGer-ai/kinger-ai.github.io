@@ -5,29 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="An HCI experimental design poster on adaptive AI interruption timing, perceived control, and task resumption."
+      content="An interactive HCI poster on adaptive AI interruption timing, perceived control, and task resumption."
     />
-    <meta name="theme-color" content="#102a43" />
-    <title>When Should AI Interrupt? | HCI Research Poster</title>
+    <meta name="theme-color" content="#07131f" />
+    <title>When Should AI Interrupt? | Interactive HCI Poster</title>
     <style>
       :root {
-        --ink: #0f2438;
-        --navy: #102a43;
-        --blue: #334e68;
-        --muted: #627d98;
-        --line: #cbd7e2;
-        --line-soft: #e2e9ef;
-        --paper: #fbfcfa;
-        --canvas: #dfe7eb;
-        --teal: #0f766e;
-        --teal-soft: #d9f0ec;
-        --coral: #d85f45;
-        --coral-soft: #fae4dd;
-        --amber: #edbd4b;
-        --amber-soft: #fff1c7;
-        --white: #ffffff;
-        --serif: "Source Han Serif SC", "Iowan Old Style", Georgia, serif;
-        --sans: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        --bg: #07131f;
+        --bg-2: #0a1928;
+        --surface: #0d2132;
+        --surface-2: #112b40;
+        --surface-3: #16374f;
+        --ink: #f2f7fa;
+        --muted: #96adbf;
+        --line: rgba(226, 239, 247, 0.14);
+        --line-strong: rgba(226, 239, 247, 0.28);
+        --accent: #5eead4;
+        --accent-2: #ff7a59;
+        --accent-3: #f5cc5b;
+        --accent-ink: #05201d;
+        --accent-soft: rgba(94, 234, 212, 0.12);
+        --coral-soft: rgba(255, 122, 89, 0.14);
+        --amber-soft: rgba(245, 204, 91, 0.13);
+        --shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+        --grid-color: rgba(255, 255, 255, 0.035);
+        --radius: 8px;
+        --display: "Bahnschrift", "Aptos Display", "Segoe UI", sans-serif;
+        --body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      }
+
+      body[data-theme="blueprint"] {
+        --bg: #e9eef4;
+        --bg-2: #dde6ef;
+        --surface: #f8fafc;
+        --surface-2: #ffffff;
+        --surface-3: #edf3f8;
+        --ink: #102a43;
+        --muted: #5f7890;
+        --line: rgba(16, 42, 67, 0.15);
+        --line-strong: rgba(16, 42, 67, 0.32);
+        --accent: #0068e0;
+        --accent-2: #d9482c;
+        --accent-3: #008f6b;
+        --accent-ink: #ffffff;
+        --accent-soft: rgba(0, 104, 224, 0.1);
+        --coral-soft: rgba(217, 72, 44, 0.1);
+        --amber-soft: rgba(0, 143, 107, 0.1);
+        --shadow: 0 28px 70px rgba(44, 67, 88, 0.18);
+        --grid-color: rgba(16, 42, 67, 0.055);
+      }
+
+      body[data-theme="mono"] {
+        --bg: #dededb;
+        --bg-2: #d3d3cf;
+        --surface: #f7f7f4;
+        --surface-2: #ffffff;
+        --surface-3: #ecece8;
+        --ink: #111111;
+        --muted: #676763;
+        --line: rgba(17, 17, 17, 0.16);
+        --line-strong: rgba(17, 17, 17, 0.36);
+        --accent: #ff4b1f;
+        --accent-2: #006cff;
+        --accent-3: #00a97f;
+        --accent-ink: #ffffff;
+        --accent-soft: rgba(255, 75, 31, 0.11);
+        --coral-soft: rgba(0, 108, 255, 0.1);
+        --amber-soft: rgba(0, 169, 127, 0.1);
+        --shadow: 0 26px 65px rgba(0, 0, 0, 0.18);
+        --grid-color: rgba(17, 17, 17, 0.045);
       }
 
       * {
@@ -35,20 +81,23 @@
       }
 
       html {
-        background: var(--canvas);
+        min-width: 320px;
+        background: var(--bg);
+        scroll-behavior: smooth;
       }
 
       body {
+        min-height: 100vh;
         margin: 0;
         color: var(--ink);
         background:
-          linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px) 0 0 / 42px 42px,
-          var(--canvas);
-        font-family: var(--sans);
-      }
-
-      a {
-        color: inherit;
+          linear-gradient(var(--grid-color) 1px, transparent 1px) 0 0 / 32px 32px,
+          linear-gradient(90deg, var(--grid-color) 1px, transparent 1px) 0 0 / 32px 32px,
+          var(--bg);
+        font-family: var(--body);
+        transition:
+          color 300ms ease,
+          background-color 300ms ease;
       }
 
       button,
@@ -56,219 +105,462 @@
         font: inherit;
       }
 
-      .poster-toolbar {
+      button {
+        color: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      svg {
+        display: block;
+      }
+
+      .control-deck {
         position: fixed;
-        z-index: 20;
-        top: 18px;
-        right: 18px;
+        z-index: 50;
+        top: 16px;
+        left: 50%;
         display: flex;
+        width: min(1180px, calc(100% - 28px));
+        min-height: 58px;
+        padding: 8px;
         gap: 8px;
         align-items: center;
-        padding: 8px;
-        background: rgba(15, 36, 56, 0.94);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 8px;
-        box-shadow: 0 14px 35px rgba(15, 36, 56, 0.2);
-        backdrop-filter: blur(14px);
+        justify-content: space-between;
+        background: color-mix(in srgb, var(--surface) 92%, transparent);
+        border: 1px solid var(--line-strong);
+        border-radius: 10px;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
+        transform: translateX(-50%);
+        backdrop-filter: blur(18px);
       }
 
-      .poster-toolbar a,
-      .poster-toolbar button {
+      .deck-brand {
+        display: flex;
+        min-width: 0;
+        padding: 0 8px;
+        gap: 10px;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .deck-logo {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        place-items: center;
+        color: var(--accent-ink);
+        background: var(--accent);
+        border-radius: 7px;
+        font-family: var(--display);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+
+      .deck-brand strong,
+      .deck-brand span {
+        display: block;
+      }
+
+      .deck-brand strong {
+        font-family: var(--display);
+        font-size: 0.78rem;
+        letter-spacing: 0.035em;
+      }
+
+      .deck-brand span {
+        color: var(--muted);
+        font-size: 0.62rem;
+      }
+
+      .deck-controls {
+        display: flex;
+        min-width: 0;
+        gap: 7px;
+        align-items: center;
+      }
+
+      .theme-control,
+      .deck-button,
+      .deck-link,
+      .mini-button {
         display: inline-flex;
         min-height: 38px;
-        padding: 9px 13px;
+        padding: 7px 10px;
+        gap: 7px;
         align-items: center;
         justify-content: center;
-        color: white;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--ink);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
         border-radius: 6px;
-        font-size: 12px;
-        font-weight: 750;
-        letter-spacing: 0.02em;
+        font-size: 0.7rem;
+        font-weight: 700;
         text-decoration: none;
         cursor: pointer;
+        transition:
+          color 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          transform 180ms ease;
       }
 
-      .poster-toolbar button {
+      .deck-button:hover,
+      .deck-link:hover,
+      .mini-button:hover,
+      .theme-control:hover,
+      .deck-button:focus-visible,
+      .deck-link:focus-visible,
+      .mini-button:focus-visible,
+      .theme-control:focus-visible {
+        border-color: var(--accent);
+        transform: translateY(-1px);
+      }
+
+      .deck-button svg,
+      .mini-button svg,
+      .deck-link svg {
+        width: 15px;
+        height: 15px;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .theme-switcher {
+        display: flex;
+        padding: 3px;
+        gap: 3px;
+        background: var(--surface-3);
+        border: 1px solid var(--line);
+        border-radius: 7px;
+      }
+
+      .theme-control {
+        position: relative;
+        min-height: 31px;
+        padding: 5px 9px 5px 25px;
+        color: var(--muted);
+        background: transparent;
+        border-color: transparent;
+        font-size: 0.64rem;
+      }
+
+      .theme-control::before {
+        position: absolute;
+        left: 6px;
+        width: 11px;
+        height: 11px;
+        background: var(--swatch);
+        border: 2px solid var(--surface-3);
+        border-radius: 3px;
+        box-shadow: 0 0 0 1px var(--line-strong);
+        content: "";
+      }
+
+      .theme-control.is-active {
         color: var(--ink);
-        background: var(--amber);
-        border-color: var(--amber);
+        background: var(--surface);
+        border-color: var(--line-strong);
       }
 
-      .poster-toolbar a:hover,
-      .poster-toolbar a:focus-visible {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .poster-toolbar button:hover,
-      .poster-toolbar button:focus-visible {
-        background: #ffd66f;
+      .deck-button.is-active {
+        color: var(--accent-ink);
+        background: var(--accent);
+        border-color: var(--accent);
       }
 
       .poster-stage {
         width: 100%;
-        padding: 82px 20px 34px;
+        padding: 100px 18px 34px;
       }
 
       .poster {
         position: relative;
-        display: flex;
-        width: min(1520px, 100%);
-        min-height: calc((100vw - 40px) * 0.7063);
-        max-height: 1074px;
+        width: min(1500px, 100%);
+        min-height: 1040px;
         margin: 0 auto;
-        padding: clamp(25px, 2.45vw, 38px);
-        flex-direction: column;
+        padding: clamp(26px, 2.5vw, 40px);
         overflow: hidden;
         background:
-          linear-gradient(90deg, rgba(15, 118, 110, 0.035) 1px, transparent 1px) 0 0 / 34px 34px,
-          var(--paper);
-        border: 1px solid rgba(16, 42, 67, 0.18);
-        border-top: 8px solid var(--navy);
-        border-radius: 8px;
-        box-shadow: 0 25px 70px rgba(16, 42, 67, 0.17);
+          linear-gradient(120deg, var(--surface-2), transparent 48%),
+          var(--surface);
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        animation: posterIn 700ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+      }
+
+      .poster::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 7px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+        content: "";
       }
 
       .poster::after {
         position: absolute;
-        right: -42px;
-        bottom: -72px;
-        width: 210px;
-        height: 210px;
-        border: 22px solid rgba(15, 118, 110, 0.08);
-        border-radius: 50%;
+        top: 26px;
+        right: 26px;
+        width: 110px;
+        height: 110px;
+        border-top: 1px solid var(--line-strong);
+        border-right: 1px solid var(--line-strong);
         content: "";
+        pointer-events: none;
       }
 
-      .poster-header {
+      .hero {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.38fr);
+        grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
         gap: clamp(22px, 3vw, 48px);
-        align-items: end;
+        align-items: stretch;
         padding-bottom: 20px;
-        border-bottom: 3px solid var(--navy);
+        border-bottom: 2px solid var(--ink);
       }
 
-      .poster-kicker {
+      .hero-copy {
+        align-self: center;
+      }
+
+      .eyebrow {
         display: flex;
         gap: 10px;
         align-items: center;
-        margin-bottom: 12px;
-        color: var(--teal);
-        font-size: clamp(0.63rem, 0.72vw, 0.76rem);
-        font-weight: 850;
-        letter-spacing: 0.13em;
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: clamp(0.62rem, 0.72vw, 0.75rem);
+        font-weight: 800;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
       }
 
-      .poster-kicker::before {
-        width: 42px;
-        height: 4px;
-        background: var(--coral);
+      .eyebrow::before {
+        width: 34px;
+        height: 3px;
+        background: var(--accent-2);
         content: "";
       }
 
-      .poster h1 {
-        max-width: 1000px;
-        margin: 0;
-        font-family: var(--serif);
-        font-size: clamp(2.6rem, 4.1vw, 4.65rem);
-        font-weight: 700;
-        letter-spacing: -0.035em;
-        line-height: 0.95;
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: anywhere;
       }
 
-      .poster-subtitle {
+      .hero h1 {
         max-width: 880px;
-        margin: 14px 0 0;
-        color: var(--blue);
-        font-size: clamp(0.87rem, 1.15vw, 1.18rem);
-        line-height: 1.4;
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(3.2rem, 5.8vw, 6.4rem);
+        font-weight: 700;
+        letter-spacing: -0.055em;
+        line-height: 0.88;
       }
 
-      .author-block {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 14px;
-        background: var(--navy);
-        border-radius: 8px;
+      .hero h1 em {
+        color: var(--accent);
+        font-style: normal;
       }
 
-      .author-mark {
-        display: grid;
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-        place-items: center;
-        color: var(--navy);
-        background: var(--amber);
-        border-radius: 7px;
-        font-family: var(--serif);
-        font-size: 1.4rem;
-        font-weight: 800;
-      }
-
-      .author-block strong {
-        display: block;
-        color: white;
-        font-size: clamp(0.78rem, 0.92vw, 0.96rem);
-      }
-
-      .author-block span,
-      .author-block time {
-        display: block;
-        color: #aec1d2;
-        font-size: clamp(0.63rem, 0.7vw, 0.74rem);
+      .hero-subtitle {
+        max-width: 720px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: clamp(0.86rem, 1.05vw, 1.05rem);
         line-height: 1.45;
       }
 
-      .takeaway-bar {
+      .byline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        margin-top: 19px;
+        color: var(--muted);
+        font-size: clamp(0.62rem, 0.7vw, 0.72rem);
+      }
+
+      .byline strong {
+        color: var(--ink);
+      }
+
+      .hero-visual {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .signal-panel {
+        position: relative;
+        min-height: 260px;
+        padding: 18px;
+        overflow: hidden;
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+
+      .signal-panel::before {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 26px 26px,
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) 0 0 / 26px 26px;
+        content: "";
+        pointer-events: none;
+      }
+
+      .signal-label {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.57rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .signal-chart {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 190px;
+        margin-top: 8px;
+      }
+
+      .signal-line {
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 520;
+        stroke-dashoffset: 520;
+        animation: drawSignal 1.5s 350ms ease forwards;
+      }
+
+      .signal-zone {
+        fill: var(--coral-soft);
+        opacity: 0;
+        animation: fadeZone 500ms 1.5s ease forwards;
+      }
+
+      .signal-marker {
+        fill: var(--accent-2);
+        transform-origin: center;
+        animation: markerPulse 1.7s 2s ease-in-out infinite;
+      }
+
+      .signal-note {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 4px;
+      }
+
+      .signal-note span {
+        padding: 8px 9px;
+        color: var(--muted);
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        font-size: 0.57rem;
+      }
+
+      .signal-note b {
+        display: block;
+        color: var(--ink);
+        font-size: 0.68rem;
+      }
+
+      .metric-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .metric {
+        padding: 12px;
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--accent);
+        font-family: var(--display);
+        font-size: clamp(1.18rem, 1.55vw, 1.6rem);
+        letter-spacing: -0.04em;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: clamp(0.52rem, 0.58vw, 0.62rem);
+      }
+
+      .insight {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
         gap: 14px;
         align-items: center;
-        margin-top: 16px;
-        padding: 13px 16px;
+        margin-top: 14px;
+        padding: 12px 14px;
         background: var(--amber-soft);
-        border-left: 6px solid var(--amber);
+        border-left: 5px solid var(--accent-3);
         border-radius: 5px;
       }
 
-      .takeaway-bar strong {
+      .insight b {
         padding: 4px 7px;
-        color: white;
-        background: var(--coral);
+        color: var(--accent-ink);
+        background: var(--accent-3);
         border-radius: 3px;
-        font-size: clamp(0.58rem, 0.64vw, 0.68rem);
+        font-size: 0.58rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         white-space: nowrap;
       }
 
-      .takeaway-bar p {
+      .insight p {
         margin: 0;
-        color: #64480c;
-        font-family: var(--serif);
-        font-size: clamp(0.78rem, 0.94vw, 0.98rem);
-        font-weight: 700;
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: clamp(0.78rem, 0.95vw, 1rem);
+        font-weight: 650;
         line-height: 1.35;
       }
 
-      .poster-grid {
+      .insight code {
+        color: var(--muted);
+        font-family: var(--body);
+        font-size: 0.59rem;
+        white-space: nowrap;
+      }
+
+      .poster-board {
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: 0.94fr 1.16fr 1.02fr;
-        gap: clamp(15px, 1.4vw, 22px);
+        grid-template-columns: 0.94fr 1.14fr 1fr;
+        gap: clamp(15px, 1.5vw, 23px);
         margin-top: 16px;
-        flex: 1;
       }
 
       .poster-column {
@@ -278,415 +570,544 @@
         gap: 14px;
       }
 
-      .section {
-        padding-bottom: 13px;
-        border-bottom: 1px solid var(--line);
+      .module {
+        position: relative;
+        padding: 14px;
+        background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        animation: moduleIn 620ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+        animation-delay: var(--delay, 0ms);
       }
 
-      .section:last-child {
-        border-bottom: 0;
+      .module::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border-top: 1px solid var(--line-strong);
+        border-right: 1px solid var(--line-strong);
+        content: "";
+        pointer-events: none;
       }
 
-      .section h2 {
+      .module-heading {
         display: flex;
         gap: 8px;
         align-items: center;
-        margin: 0 0 10px;
-        color: var(--teal);
-        font-size: clamp(0.63rem, 0.72vw, 0.75rem);
-        font-weight: 850;
-        letter-spacing: 0.105em;
+        justify-content: space-between;
+        margin-bottom: 11px;
+      }
+
+      .module-heading h2 {
+        display: flex;
+        margin: 0;
+        gap: 8px;
+        align-items: center;
+        color: var(--accent);
+        font-family: var(--display);
+        font-size: clamp(0.68rem, 0.78vw, 0.82rem);
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
 
-      .section h2 span {
-        color: var(--coral);
-        font-family: var(--serif);
-        font-size: 1em;
+      .module-heading h2 span {
+        color: var(--accent-2);
+        font-size: 0.65rem;
       }
 
-      .section p {
+      .module-tag {
+        padding: 3px 7px;
+        color: var(--muted);
+        background: var(--surface-3);
+        border-radius: 999px;
+        font-size: 0.52rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .module p {
         margin: 0;
-        color: var(--blue);
-        font-size: clamp(0.67rem, 0.77vw, 0.81rem);
+        color: var(--muted);
+        font-size: clamp(0.64rem, 0.72vw, 0.76rem);
         line-height: 1.42;
       }
 
-      .section p + p {
-        margin-top: 7px;
+      .problem-line {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 10px;
+        background: var(--surface-3);
+        border-radius: 5px;
       }
 
-      .bullet-list,
-      .hypothesis-list,
-      .reference-list {
+      .problem-line b {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        color: var(--accent-ink);
+        background: var(--accent);
+        border-radius: 5px;
+        font-size: 0.67rem;
+      }
+
+      .question-tabs,
+      .segment,
+      .procedure-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .question-tabs {
+        margin-top: 11px;
+      }
+
+      .tab-button,
+      .segment-button,
+      .step-button {
+        min-height: 32px;
+        padding: 6px 9px;
+        color: var(--muted);
+        background: transparent;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        font-size: clamp(0.55rem, 0.6vw, 0.64rem);
+        font-weight: 800;
+        cursor: pointer;
+        transition:
+          color 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          transform 180ms ease;
+      }
+
+      .tab-button:hover,
+      .tab-button:focus-visible,
+      .segment-button:hover,
+      .segment-button:focus-visible,
+      .step-button:hover,
+      .step-button:focus-visible {
+        color: var(--ink);
+        border-color: var(--accent);
+        transform: translateY(-1px);
+      }
+
+      .tab-button.is-active,
+      .segment-button.is-active,
+      .step-button.is-active {
+        color: var(--accent-ink);
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      .question-panel,
+      .step-detail,
+      .condition-detail {
+        min-height: 52px;
+        margin-top: 9px;
+        padding: 10px;
+        color: var(--ink);
+        background: var(--surface-3);
+        border-left: 3px solid var(--accent);
+        border-radius: 4px;
+        font-size: clamp(0.61rem, 0.68vw, 0.72rem);
+        line-height: 1.36;
+      }
+
+      .question-panel.is-changing,
+      .step-detail.is-changing,
+      .condition-detail.is-changing {
+        animation: detailPop 260ms ease both;
+      }
+
+      .hypothesis-list {
+        display: grid;
+        gap: 7px;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
-      .bullet-list li,
-      .hypothesis-list li,
-      .reference-list li {
-        position: relative;
-        padding-left: 15px;
-        color: var(--blue);
-        font-size: clamp(0.66rem, 0.75vw, 0.79rem);
-        line-height: 1.4;
-      }
-
-      .bullet-list li + li,
-      .hypothesis-list li + li,
-      .reference-list li + li {
-        margin-top: 7px;
-      }
-
-      .bullet-list li::before,
-      .hypothesis-list li::before,
-      .reference-list li::before {
-        position: absolute;
-        top: 0.48em;
-        left: 0;
-        width: 5px;
-        height: 5px;
-        background: var(--teal);
-        border-radius: 50%;
-        content: "";
-      }
-
-      .gap-callout {
-        margin-top: 10px;
-        padding: 10px 11px;
-        color: var(--ink);
-        background: var(--coral-soft);
-        border-left: 4px solid var(--coral);
-        font-size: clamp(0.66rem, 0.74vw, 0.78rem);
-        font-weight: 700;
-        line-height: 1.4;
-      }
-
-      .research-question {
-        padding: 11px;
-        background: var(--white);
-        border: 1px solid var(--line-soft);
-        border-left: 4px solid var(--navy);
+      .hypothesis-list li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 8px;
+        align-items: start;
+        padding: 8px;
+        background: var(--surface-3);
         border-radius: 4px;
+        color: var(--muted);
+        font-size: clamp(0.58rem, 0.64vw, 0.68rem);
+        line-height: 1.32;
       }
 
-      .research-question strong {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--coral);
-        font-size: clamp(0.58rem, 0.65vw, 0.67rem);
-        letter-spacing: 0.08em;
-      }
-
-      .research-question p {
-        font-weight: 650;
-      }
-
-      .research-question + .research-question {
-        margin-top: 8px;
+      .hypothesis-list b {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        color: var(--accent-ink);
+        background: var(--accent-2);
+        border-radius: 4px;
+        font-size: 0.59rem;
       }
 
       .hypothesis-list strong {
-        color: var(--navy);
+        color: var(--ink);
       }
 
       .design-matrix {
         display: grid;
-        grid-template-columns: 74px 1fr 1fr;
+        grid-template-columns: 76px 1fr 1fr;
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 6px;
       }
 
-      .matrix-cell {
-        min-height: 74px;
-        padding: 10px;
-        background: var(--white);
+      .matrix-label,
+      .condition-cell {
+        min-height: 72px;
+        padding: 9px;
         border-right: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
-      }
-
-      .matrix-cell:nth-child(3n) {
-        border-right: 0;
-      }
-
-      .matrix-cell:nth-last-child(-n + 3) {
-        border-bottom: 0;
       }
 
       .matrix-label {
         display: grid;
         place-items: center;
         color: var(--muted);
-        background: #edf2f5;
-        font-size: clamp(0.56rem, 0.62vw, 0.65rem);
+        background: var(--surface-3);
+        font-size: clamp(0.49rem, 0.54vw, 0.57rem);
         font-weight: 800;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.06em;
         text-align: center;
         text-transform: uppercase;
       }
 
-      .matrix-cell strong {
-        display: block;
-        margin-bottom: 5px;
-        color: var(--navy);
-        font-family: var(--serif);
-        font-size: clamp(0.67rem, 0.75vw, 0.79rem);
-      }
-
-      .matrix-cell span {
+      .condition-cell {
+        position: relative;
         color: var(--muted);
-        font-size: clamp(0.57rem, 0.63vw, 0.66rem);
-        line-height: 1.32;
+        background: var(--surface-2);
+        border-top: 0;
+        border-left: 0;
+        text-align: left;
+        cursor: pointer;
+        transition:
+          color 180ms ease,
+          background-color 180ms ease,
+          transform 180ms ease;
       }
 
-      .matrix-cell.is-focus {
-        background: var(--teal-soft);
+      .condition-cell:nth-child(3n) {
+        border-right: 0;
       }
 
-      .design-facts {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 7px;
-        margin-top: 10px;
+      .condition-cell:nth-last-child(-n + 3) {
+        border-bottom: 0;
       }
 
-      .fact {
-        padding: 9px 8px;
-        text-align: center;
-        background: var(--navy);
-        border-radius: 4px;
+      .condition-cell:hover,
+      .condition-cell:focus-visible {
+        color: var(--ink);
+        background: var(--surface-3);
+        transform: translateY(-2px);
       }
 
-      .fact strong {
+      .condition-cell.is-active {
+        color: var(--ink);
+        background: var(--accent-soft);
+        box-shadow: inset 0 0 0 2px var(--accent);
+      }
+
+      .condition-cell strong {
         display: block;
-        color: var(--amber);
-        font-family: var(--serif);
-        font-size: clamp(0.76rem, 0.9vw, 0.98rem);
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: clamp(0.62rem, 0.68vw, 0.72rem);
       }
 
-      .fact span {
+      .condition-cell span {
         display: block;
-        margin-top: 2px;
-        color: #b8c8d6;
-        font-size: clamp(0.51rem, 0.57vw, 0.6rem);
-        line-height: 1.25;
+        margin-top: 4px;
+        font-size: clamp(0.51rem, 0.56vw, 0.59rem);
+        line-height: 1.28;
       }
 
-      .model-figure {
-        margin: 0;
-        padding: 11px;
-        background: var(--white);
-        border: 1px solid var(--line);
-        border-radius: 6px;
+      .condition-cell small {
+        display: inline-block;
+        margin-top: 7px;
+        padding: 2px 6px;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-radius: 3px;
+        font-size: 0.49rem;
+        font-weight: 800;
       }
 
-      .model-row {
+      .mechanism {
         display: grid;
         grid-template-columns: 1fr 22px 1fr 22px 1fr;
         gap: 4px;
         align-items: center;
+        margin-top: 11px;
       }
 
-      .model-node {
+      .mechanism-node {
         display: grid;
-        min-height: 68px;
-        padding: 7px;
+        min-height: 78px;
+        padding: 8px;
         place-items: center;
-        border: 2px solid var(--line);
+        background: var(--surface-3);
+        border: 1px solid var(--line);
         border-radius: 5px;
         text-align: center;
       }
 
-      .model-node strong {
-        font-size: clamp(0.58rem, 0.66vw, 0.69rem);
-        line-height: 1.3;
+      .mechanism-node b {
+        display: block;
+        color: var(--ink);
+        font-size: clamp(0.58rem, 0.64vw, 0.68rem);
       }
 
-      .model-node span {
+      .mechanism-node span {
         display: block;
         margin-top: 4px;
         color: var(--muted);
-        font-size: clamp(0.49rem, 0.54vw, 0.56rem);
-        line-height: 1.2;
+        font-size: clamp(0.48rem, 0.52vw, 0.55rem);
       }
 
-      .model-node--iv {
-        border-color: var(--coral);
+      .mechanism-node:nth-child(1) {
+        border-top: 3px solid var(--accent-2);
       }
 
-      .model-node--mechanism {
-        border-color: var(--amber);
+      .mechanism-node:nth-child(3) {
+        border-top: 3px solid var(--accent-3);
       }
 
-      .model-node--dv {
-        border-color: var(--teal);
+      .mechanism-node:nth-child(5) {
+        border-top: 3px solid var(--accent);
       }
 
-      .model-arrow {
+      .mechanism-arrow {
         color: var(--muted);
-        font-size: 1rem;
         text-align: center;
+        animation: arrowShift 1.6s ease-in-out infinite;
       }
 
-      .model-figure figcaption {
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: clamp(0.52rem, 0.57vw, 0.6rem);
-        line-height: 1.3;
-      }
-
-      .procedure {
+      .procedure-tabs {
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 6px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        justify-content: space-between;
       }
 
-      .procedure::before {
+      .procedure-tabs::before {
         position: absolute;
-        top: 16px;
-        right: 8%;
-        left: 8%;
-        height: 2px;
-        background: var(--line);
+        z-index: 0;
+        top: 50%;
+        right: 9%;
+        left: 9%;
+        height: 1px;
+        background: var(--line-strong);
         content: "";
       }
 
-      .procedure-step {
+      .step-button {
         position: relative;
         z-index: 1;
-        text-align: center;
-      }
-
-      .procedure-step b {
-        display: grid;
-        width: 32px;
-        height: 32px;
-        margin: 0 auto 6px;
-        place-items: center;
-        color: white;
-        background: var(--navy);
-        border: 4px solid var(--paper);
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+        padding: 0;
         border-radius: 50%;
-        font-size: 0.55rem;
+        background: var(--surface-2);
       }
 
-      .procedure-step strong {
+      .simulator-head {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .simulator-track {
+        position: relative;
+        height: 78px;
+        margin: 16px 4px 10px;
+        overflow: hidden;
+        background: var(--surface-3);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+
+      .task-block {
+        position: absolute;
+        top: 15px;
+        height: 19px;
+        background: var(--surface);
+        border: 1px solid var(--line-strong);
+        border-radius: 3px;
+      }
+
+      .task-block:nth-child(1) {
+        left: 6%;
+        width: 27%;
+      }
+
+      .task-block:nth-child(2) {
+        left: 35%;
+        width: 31%;
+      }
+
+      .task-block:nth-child(3) {
+        left: 68%;
+        width: 25%;
+      }
+
+      .track-line {
+        position: absolute;
+        right: 7%;
+        bottom: 16px;
+        left: 7%;
+        height: 2px;
+        background: var(--line-strong);
+      }
+
+      .sim-cursor {
+        position: absolute;
+        bottom: 9px;
+        left: var(--cursor, 82%);
+        width: 18px;
+        height: 18px;
+        background: var(--accent-2);
+        border: 4px solid var(--surface-3);
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px var(--coral-soft);
+        transform: translateX(-50%);
+        transition: left 520ms cubic-bezier(0.2, 0.75, 0.25, 1);
+      }
+
+      .sim-cursor::before {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        width: 1px;
+        height: 20px;
+        background: var(--accent-2);
+        content: "";
+      }
+
+      .sim-result {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .result-card {
+        padding: 9px;
+        background: var(--surface-3);
+        border-radius: 5px;
+      }
+
+      .result-card span {
         display: block;
-        color: var(--ink);
-        font-size: clamp(0.53rem, 0.58vw, 0.61rem);
-        line-height: 1.2;
-      }
-
-      .procedure-step span {
-        display: block;
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: clamp(0.47rem, 0.52vw, 0.55rem);
-        line-height: 1.2;
-      }
-
-      .measure-table,
-      .analysis-table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .measure-table th,
-      .measure-table td,
-      .analysis-table th,
-      .analysis-table td {
-        padding: 7px 6px;
-        text-align: left;
-        vertical-align: top;
-        border-bottom: 1px solid var(--line-soft);
-        font-size: clamp(0.55rem, 0.61vw, 0.65rem);
-        line-height: 1.28;
-      }
-
-      .measure-table th,
-      .analysis-table th {
         color: var(--muted);
         font-size: clamp(0.49rem, 0.54vw, 0.57rem);
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
       }
 
-      .measure-table td:first-child {
-        color: var(--navy);
-        font-weight: 750;
+      .result-card strong {
+        display: block;
+        margin: 3px 0 7px;
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: clamp(0.72rem, 0.85vw, 0.92rem);
       }
 
-      .measure-table tr:last-child td,
-      .analysis-table tr:last-child td {
-        border-bottom: 0;
+      .result-bar {
+        height: 6px;
+        overflow: hidden;
+        background: var(--surface);
+        border-radius: 999px;
       }
 
-      .analysis-table td:first-child {
-        width: 37%;
-        color: var(--teal);
-        font-weight: 800;
+      .result-bar i {
+        display: block;
+        width: var(--bar, 50%);
+        height: 100%;
+        background: var(--accent);
+        border-radius: inherit;
+        transition: width 520ms cubic-bezier(0.2, 0.75, 0.25, 1);
       }
 
-      .contribution {
+      .result-card:nth-child(2) .result-bar i {
+        background: var(--accent-2);
+      }
+
+      .chip-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .chip {
+        padding: 7px 8px;
+        color: var(--muted);
+        background: var(--surface-3);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        font-size: clamp(0.54rem, 0.59vw, 0.63rem);
+      }
+
+      .chip b {
+        color: var(--ink);
+      }
+
+      .contribution-list {
         display: grid;
-        grid-template-columns: 24px 1fr;
-        gap: 8px;
-        align-items: start;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px;
       }
 
-      .contribution + .contribution {
-        margin-top: 9px;
-      }
-
-      .contribution b {
-        display: grid;
-        width: 24px;
-        height: 24px;
-        place-items: center;
-        color: white;
-        background: var(--teal);
+      .contribution-card {
+        padding: 10px 8px;
+        background: var(--surface-3);
+        border-top: 3px solid var(--accent);
         border-radius: 4px;
-        font-size: 0.6rem;
       }
 
-      .contribution:nth-child(2) b {
-        background: var(--coral);
+      .contribution-card:nth-child(2) {
+        border-top-color: var(--accent-2);
       }
 
-      .contribution:nth-child(3) b {
-        color: var(--navy);
-        background: var(--amber);
+      .contribution-card:nth-child(3) {
+        border-top-color: var(--accent-3);
       }
 
-      .contribution strong {
+      .contribution-card b {
         display: block;
         color: var(--ink);
-        font-size: clamp(0.6rem, 0.67vw, 0.7rem);
+        font-size: clamp(0.58rem, 0.64vw, 0.68rem);
       }
 
-      .contribution span {
+      .contribution-card span {
         display: block;
-        margin-top: 2px;
+        margin-top: 4px;
         color: var(--muted);
-        font-size: clamp(0.53rem, 0.59vw, 0.62rem);
+        font-size: clamp(0.49rem, 0.54vw, 0.57rem);
         line-height: 1.28;
       }
 
-      .reference-list li {
-        font-size: clamp(0.5rem, 0.55vw, 0.58rem);
-        line-height: 1.32;
-      }
-
-      .reference-list li + li {
-        margin-top: 5px;
+      .source-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px 12px;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: clamp(0.47rem, 0.51vw, 0.54rem);
+        line-height: 1.35;
       }
 
       .poster-footer {
@@ -696,144 +1117,242 @@
         gap: 18px;
         align-items: center;
         justify-content: space-between;
-        margin-top: 13px;
+        margin-top: 15px;
         padding-top: 10px;
         color: var(--muted);
-        border-top: 2px solid var(--navy);
-        font-size: clamp(0.5rem, 0.55vw, 0.58rem);
+        border-top: 2px solid var(--ink);
+        font-size: clamp(0.5rem, 0.56vw, 0.6rem);
       }
 
       .poster-footer p {
         margin: 0;
       }
 
-      .status-note {
-        color: var(--coral);
-        font-weight: 800;
+      .poster-footer strong {
+        color: var(--accent-2);
       }
 
-      @media (max-width: 1050px) {
+      body[data-motion="off"] .poster,
+      body[data-motion="off"] .module,
+      body[data-motion="off"] .signal-line,
+      body[data-motion="off"] .signal-zone,
+      body[data-motion="off"] .signal-marker,
+      body[data-motion="off"] .mechanism-arrow {
+        animation: none !important;
+      }
+
+      body[data-motion="off"] *,
+      body[data-motion="off"] *::before,
+      body[data-motion="off"] *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      @keyframes posterIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.995);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes moduleIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes drawSignal {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes fadeZone {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes markerPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.65;
+        }
+      }
+
+      @keyframes arrowShift {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.55;
+        }
+        50% {
+          transform: translateX(3px);
+          opacity: 1;
+        }
+      }
+
+      @keyframes detailPop {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 1080px) {
         .poster {
           min-height: 0;
-          max-height: none;
         }
 
-        .poster-header {
+        .hero {
           grid-template-columns: 1fr;
         }
 
-        .author-block {
-          justify-content: flex-start;
+        .poster-board {
+          grid-template-columns: 1fr;
         }
 
-        .poster-grid {
-          grid-template-columns: 1fr;
+        .deck-brand span,
+        .deck-link span {
+          display: none;
         }
       }
 
-      @media (max-width: 680px) {
-        .poster-toolbar {
-          top: 10px;
-          right: 10px;
-          left: 10px;
-          justify-content: space-between;
+      @media (max-width: 720px) {
+        .control-deck {
+          top: 8px;
+          width: calc(100% - 16px);
+          overflow-x: auto;
+        }
+
+        .deck-brand {
+          flex: 0 0 auto;
+        }
+
+        .deck-brand div {
+          display: none;
+        }
+
+        .deck-controls {
+          flex: 0 0 auto;
+        }
+
+        .deck-button span,
+        .deck-link span {
+          display: none;
         }
 
         .poster-stage {
-          padding: 76px 10px 20px;
+          padding: 82px 8px 18px;
         }
 
         .poster {
-          padding: 22px 18px;
-          border-top-width: 6px;
+          padding: 22px 16px;
+          border-radius: 6px;
         }
 
-        .poster-kicker {
-          align-items: flex-start;
+        .hero h1 {
+          font-size: clamp(2.8rem, 14vw, 4.3rem);
         }
 
-        .poster h1 {
-          font-size: clamp(2.15rem, 12vw, 3.15rem);
+        .signal-panel {
+          min-height: 225px;
         }
 
-        .takeaway-bar {
+        .signal-chart {
+          height: 155px;
+        }
+
+        .metric-strip {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .metric {
+          padding: 9px;
+        }
+
+        .insight {
           grid-template-columns: 1fr;
         }
 
-        .takeaway-bar strong {
-          justify-self: start;
+        .insight code {
+          white-space: normal;
         }
 
         .design-matrix {
-          grid-template-columns: 66px 1fr 1fr;
+          grid-template-columns: 68px 1fr 1fr;
         }
 
-        .design-facts {
-          grid-template-columns: repeat(2, 1fr);
+        .matrix-label,
+        .condition-cell {
+          min-height: 82px;
+          padding: 7px;
         }
 
-        .model-row {
+        .mechanism {
           grid-template-columns: 1fr;
         }
 
-        .model-arrow {
+        .mechanism-arrow {
           transform: rotate(90deg);
         }
 
-        .procedure {
+        .contribution-list {
           grid-template-columns: 1fr;
-          gap: 10px;
-        }
-
-        .procedure::before {
-          top: 16px;
-          bottom: 16px;
-          left: 16px;
-          width: 2px;
-          height: auto;
-        }
-
-        .procedure-step {
-          display: grid;
-          grid-template-columns: 34px 1fr;
-          gap: 8px;
-          text-align: left;
-        }
-
-        .procedure-step b {
-          grid-row: span 2;
-          margin: 0;
-        }
-
-        .procedure-step span {
-          margin-top: 0;
         }
 
         .poster-footer {
           align-items: flex-start;
           flex-direction: column;
-          gap: 4px;
+          gap: 5px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .poster,
+        .module,
+        .signal-line,
+        .signal-zone,
+        .signal-marker,
+        .mechanism-arrow {
+          animation: none !important;
         }
       }
 
       @media print {
         @page {
-          size: A1 landscape;
+          size: A0 landscape;
           margin: 0;
         }
 
         html,
         body {
-          width: 841mm;
-          height: 594mm;
+          width: 1189mm;
+          height: 841mm;
           background: white;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
         }
 
-        body {
-          font-size: 9.1pt;
-        }
-
-        .poster-toolbar {
+        .control-deck {
           display: none !important;
         }
 
@@ -843,359 +1362,550 @@
         }
 
         .poster {
-          width: 841mm;
-          height: 594mm;
-          max-height: none;
+          width: 1189mm;
+          height: 841mm;
           min-height: 0;
           margin: 0;
-          padding: 12mm;
+          padding: 16mm;
           border: 0;
-          border-top: 4mm solid var(--navy);
           border-radius: 0;
           box-shadow: none;
+          animation: none;
         }
 
-        .poster-header {
-          padding-bottom: 4.5mm;
+        .poster::after {
+          display: none;
         }
 
-        .poster h1 {
-          font-size: 34pt;
+        .hero {
+          padding-bottom: 5mm;
         }
 
-        .poster-subtitle {
-          font-size: 11pt;
+        .hero h1 {
+          font-size: 45pt;
         }
 
-        .takeaway-bar {
-          margin-top: 3.5mm;
-          padding: 3mm;
+        .poster-board {
+          gap: 5mm;
+          margin-top: 4mm;
         }
 
-        .poster-grid {
-          gap: 4mm;
-          margin-top: 3.5mm;
+        .module {
+          padding: 4mm;
+          animation: none;
         }
 
-        .poster-column {
-          gap: 3mm;
+        .module-heading h2 {
+          font-size: 8.5pt;
         }
 
-        .section {
-          padding-bottom: 2.8mm;
-        }
-
-        .section h2 {
-          margin-bottom: 2.2mm;
-          font-size: 8pt;
-        }
-
-        .section p,
-        .bullet-list li,
-        .hypothesis-list li {
+        .module p,
+        .question-panel,
+        .step-detail,
+        .condition-detail {
           font-size: 7pt;
-        }
-
-        .poster-footer {
-          margin-top: 3mm;
-          padding-top: 2mm;
         }
       }
     </style>
   </head>
-  <body>
-    <nav class="poster-toolbar" aria-label="Poster actions">
-      <a href="./index.html">Research plan</a>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
-    </nav>
+
+  <body data-theme="signal" data-motion="on">
+    <header class="control-deck">
+      <a class="deck-brand" href="./index.html" aria-label="Back to the research plan">
+        <span class="deck-logo">HCI</span>
+        <div>
+          <strong>Interruption Lab</strong>
+          <span>Experimental design poster</span>
+        </div>
+      </a>
+
+      <div class="deck-controls">
+        <div class="theme-switcher" role="group" aria-label="Poster theme">
+          <button
+            class="theme-control is-active"
+            type="button"
+            data-theme-value="signal"
+            aria-pressed="true"
+            style="--swatch: #5eead4"
+          >
+            Signal
+          </button>
+          <button
+            class="theme-control"
+            type="button"
+            data-theme-value="blueprint"
+            aria-pressed="false"
+            style="--swatch: #0068e0"
+          >
+            Blueprint
+          </button>
+          <button
+            class="theme-control"
+            type="button"
+            data-theme-value="mono"
+            aria-pressed="false"
+            style="--swatch: #ff4b1f"
+          >
+            Mono
+          </button>
+        </div>
+
+        <button class="deck-button is-active" id="motion-toggle" type="button" aria-pressed="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8 5v14M16 5v14" />
+          </svg>
+          <span>Motion</span>
+        </button>
+
+        <button class="deck-button" id="print-poster" type="button">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <path d="M6 14h12v8H6z" />
+          </svg>
+          <span>Print</span>
+        </button>
+
+        <a class="deck-link" href="./index.html">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7h10v10M7 17 17 7" />
+          </svg>
+          <span>Research plan</span>
+        </a>
+      </div>
+    </header>
 
     <main class="poster-stage">
       <article class="poster" aria-labelledby="poster-title">
-        <header class="poster-header">
-          <div>
-            <p class="poster-kicker">HCI experimental design · October 2026</p>
-            <h1 id="poster-title">When Should AI Interrupt?</h1>
-            <p class="poster-subtitle">
-              Adaptive timing, perceived control, and task resumption in AI-assisted knowledge work
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">HCI experimental design · 2026</p>
+            <h1 id="poster-title">When Should<br /><em>AI Interrupt?</em></h1>
+            <p class="hero-subtitle">
+              Adaptive timing, perceived control, and task resumption in AI-assisted knowledge work.
             </p>
-          </div>
-          <aside class="author-block" aria-label="Poster authorship">
-            <span class="author-mark" aria-hidden="true">AI</span>
-            <div>
-              <strong>KINGer-ai Research Group</strong>
+            <div class="byline">
+              <span><strong>KINGer-ai Research Group</strong></span>
               <span>Human-Computer Interaction</span>
-              <time datetime="2026-10-05">Design proposal · 05 Oct 2026</time>
+              <span>Design proposal · 05 Oct 2026</span>
             </div>
-          </aside>
-        </header>
+          </div>
 
-        <div class="takeaway-bar">
-          <strong>Key takeaway</strong>
-          <p>
-            The best interruption is not simply the most relevant one. Its timing and authorship must remain
-            legible and reversible to the person being interrupted.
-          </p>
-        </div>
+          <div class="hero-visual">
+            <div class="signal-panel" aria-label="Interruption timing signal">
+              <div class="signal-label">
+                <span>Task attention</span>
+                <span>Time</span>
+              </div>
+              <svg class="signal-chart" viewBox="0 0 520 190" role="img" aria-label="Interruption timing signal">
+                <path class="signal-line" d="M20 148 C70 140 92 122 122 106 S166 118 194 92 S234 56 270 87 S322 119 352 74 S412 48 500 34" />
+                <rect class="signal-zone" x="260" y="20" width="60" height="145" rx="7" />
+                <line x1="290" y1="28" x2="290" y2="162" stroke="currentColor" opacity=".28" stroke-dasharray="4 5" />
+                <circle class="signal-marker" cx="290" cy="83" r="6" />
+                <text x="300" y="36" fill="currentColor" opacity=".58" font-size="10">boundary</text>
+              </svg>
+              <div class="signal-note">
+                <span><b>Mid-task</b> Interruption competes with active goals.</span>
+                <span><b>Boundary</b> Notice arrives when working memory is released.</span>
+              </div>
+            </div>
 
-        <div class="poster-grid">
+            <div class="metric-strip" aria-label="Study summary">
+              <div class="metric">
+                <strong>2 × 2</strong>
+                <span>between-subjects</span>
+              </div>
+              <div class="metric">
+                <strong>N=160</strong>
+                <span>40 per condition</span>
+              </div>
+              <div class="metric">
+                <strong>30 min</strong>
+                <span>remote session</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="insight">
+          <b>Core insight</b>
+          <p>Relevance matters, but timing and visible user control determine whether an AI interruption feels helpful or costly.</p>
+          <code>kinger-ai.github.io/poster.html</code>
+        </section>
+
+        <section class="poster-board">
           <div class="poster-column">
-            <section class="section">
-              <h2><span>01</span> Background</h2>
-              <p>
-                Proactive AI is shifting from answer generation to action initiation. Assistants now suggest,
-                remind, summarize, and redirect while people are already engaged in another task.
-              </p>
-              <p>
-                Prior work has modeled relevance and timing, but often treats user control as a separate
-                interface feature rather than part of the interruption itself.
-              </p>
-              <div class="gap-callout">
-                Research gap: we lack a joint test of when an AI interruption arrives and who authorized it.
+            <section class="module" style="--delay: 80ms">
+              <div class="module-heading">
+                <h2><span>01</span> Problem</h2>
+                <span class="module-tag">RQ tabs</span>
+              </div>
+              <div class="problem-line">
+                <b>AI</b>
+                <p>Proactive agents initiate action while people are already committed to another task.</p>
+              </div>
+              <div class="question-tabs" role="tablist" aria-label="Research questions">
+                <button class="tab-button is-active" type="button" role="tab" aria-selected="true" data-question="q1">RQ1</button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" data-question="q2">RQ2</button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" data-question="q3">RQ3</button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" data-question="q4">RQ4</button>
+              </div>
+              <div class="question-panel" id="question-panel" role="tabpanel">
+                Does interruption timing change task resumption?
               </div>
             </section>
 
-            <section class="section">
-              <h2><span>02</span> Research questions</h2>
-              <div class="research-question">
-                <strong>RQ1 · Timing</strong>
-                <p>Does interruption timing affect task resumption latency and perceived cognitive load?</p>
+            <section class="module" style="--delay: 160ms">
+              <div class="module-heading">
+                <h2><span>02</span> Hypotheses</h2>
+                <span class="module-tag">4 tests</span>
               </div>
-              <div class="research-question">
-                <strong>RQ2 · Control</strong>
-                <p>Does user authorization increase perceived control, trust, and message acceptance?</p>
-              </div>
-              <div class="research-question">
-                <strong>RQ3 · Mechanism</strong>
-                <p>Does perceived control mediate the effect of timing on trust and acceptance?</p>
-              </div>
-              <div class="research-question">
-                <strong>RQ4 · Interaction</strong>
-                <p>Do timing and authorization interact to shape resumption and evaluation?</p>
-              </div>
-            </section>
-
-            <section class="section">
-              <h2><span>03</span> Hypotheses</h2>
               <ul class="hypothesis-list">
-                <li>
-                  <strong>H1:</strong> Boundary-timed interruptions produce faster resumption and lower cognitive
-                  load than mid-task interruptions.
-                </li>
-                <li>
-                  <strong>H2:</strong> User-authorized interruptions increase perceived control, trust, and
-                  acceptance.
-                </li>
-                <li>
-                  <strong>H3:</strong> Perceived control mediates the relationship between timing and trust.
-                </li>
-                <li>
-                  <strong>H4:</strong> Boundary timing combined with user authorization yields the most
-                  favorable resumption and trust outcomes.
-                </li>
+                <li><b>H1</b><span><strong>Boundary timing</strong> reduces resumption latency and workload.</span></li>
+                <li><b>H2</b><span><strong>User authorization</strong> raises control, trust, and acceptance.</span></li>
+                <li><b>H3</b><span><strong>Perceived control</strong> mediates timing effects on trust.</span></li>
+                <li><b>H4</b><span><strong>Timing × control</strong> interact to shape the best outcome.</span></li>
               </ul>
+            </section>
+
+            <section class="module" style="--delay: 240ms">
+              <div class="module-heading">
+                <h2><span>03</span> Foundations</h2>
+                <span class="module-tag">HCI lineage</span>
+              </div>
+              <div class="source-line">
+                <span>Horvitz, CHI 1999</span>
+                <span>Bailey &amp; Konstan, 2006</span>
+                <span>Iqbal &amp; Horvitz, CHI 2007</span>
+                <span>Amershi et al., CHI 2019</span>
+              </div>
             </section>
           </div>
 
           <div class="poster-column">
-            <section class="section">
-              <h2><span>04</span> Study design</h2>
-              <p>
-                A 2 × 2 between-subjects online experiment. Participants complete a realistic knowledge-work
-                task while an AI assistant delivers a non-urgent, task-relevant message.
-              </p>
-
-              <div class="design-matrix" aria-label="Two by two experimental design">
-                <div class="matrix-cell matrix-label">Timing</div>
-                <div class="matrix-cell matrix-label">Mid-task</div>
-                <div class="matrix-cell matrix-label">Task boundary</div>
-                <div class="matrix-cell matrix-label">System-initiated</div>
-                <div class="matrix-cell">
-                  <strong>Immediate notice</strong>
-                  <span>Assistant interrupts while the primary task is active.</span>
-                </div>
-                <div class="matrix-cell">
-                  <strong>Contextual notice</strong>
-                  <span>Assistant waits for a detected subtask boundary.</span>
-                </div>
-                <div class="matrix-cell matrix-label">User-authorized</div>
-                <div class="matrix-cell">
-                  <strong>Deferred request</strong>
-                  <span>User opts in before the message becomes active.</span>
-                </div>
-                <div class="matrix-cell is-focus">
-                  <strong>Planned handoff</strong>
-                  <span>User-approved notice arrives at a boundary.</span>
-                </div>
+            <section class="module" style="--delay: 140ms">
+              <div class="module-heading">
+                <h2><span>04</span> 2 × 2 Design</h2>
+                <span class="module-tag">select condition</span>
               </div>
+              <div class="design-matrix" aria-label="Experimental design matrix">
+                <div class="matrix-label">Timing</div>
+                <div class="matrix-label">Mid-task</div>
+                <div class="matrix-label">Boundary</div>
 
-              <div class="design-facts">
-                <div class="fact"><strong>N=160</strong><span>40 per cell</span></div>
-                <div class="fact"><strong>.80</strong><span>target power</span></div>
-                <div class="fact"><strong>.05</strong><span>alpha</span></div>
-                <div class="fact"><strong>30m</strong><span>session</span></div>
+                <div class="matrix-label">System</div>
+                <button class="condition-cell" type="button" data-condition="immediate">
+                  <strong>Immediate</strong>
+                  <span>Active-task notice</span>
+                  <small>Baseline cost</small>
+                </button>
+                <button class="condition-cell" type="button" data-condition="contextual">
+                  <strong>Contextual</strong>
+                  <span>Boundary notice</span>
+                  <small>Timing gain</small>
+                </button>
+
+                <div class="matrix-label">User</div>
+                <button class="condition-cell" type="button" data-condition="deferred">
+                  <strong>Deferred</strong>
+                  <span>User opts in</span>
+                  <small>Agency gain</small>
+                </button>
+                <button class="condition-cell is-active" type="button" data-condition="handoff">
+                  <strong>Handoff</strong>
+                  <span>Approved boundary</span>
+                  <small>Best expected</small>
+                </button>
+              </div>
+              <div class="condition-detail" id="condition-detail">
+                Planned handoff: approved notice at a detected task boundary.
               </div>
             </section>
 
-            <section class="section">
-              <h2><span>05</span> Conceptual mechanism</h2>
-              <figure class="model-figure">
-                <div class="model-row">
-                  <div class="model-node model-node--iv">
-                    <strong>Timing × Control</strong>
-                    <span>Experimental manipulation</span>
-                  </div>
-                  <span class="model-arrow" aria-hidden="true">→</span>
-                  <div class="model-node model-node--mechanism">
-                    <strong>Perceived control</strong>
-                    <span>Mediator</span>
-                  </div>
-                  <span class="model-arrow" aria-hidden="true">→</span>
-                  <div class="model-node model-node--dv">
-                    <strong>Resumption + Trust</strong>
-                    <span>Behavior and evaluation</span>
+            <section class="module" style="--delay: 220ms">
+              <div class="module-heading">
+                <h2><span>05</span> Mechanism</h2>
+                <span class="module-tag">mediation path</span>
+              </div>
+              <div class="mechanism">
+                <div class="mechanism-node">
+                  <div>
+                    <b>Timing × Control</b>
+                    <span>manipulation</span>
                   </div>
                 </div>
-                <figcaption>
-                  Baseline task skill, interruption relevance, and prior AI use are modeled as controls.
-                </figcaption>
-              </figure>
+                <div class="mechanism-arrow" aria-hidden="true">→</div>
+                <div class="mechanism-node">
+                  <div>
+                    <b>Perceived control</b>
+                    <span>mediator</span>
+                  </div>
+                </div>
+                <div class="mechanism-arrow" aria-hidden="true">→</div>
+                <div class="mechanism-node">
+                  <div>
+                    <b>Resumption + Trust</b>
+                    <span>outcomes</span>
+                  </div>
+                </div>
+              </div>
             </section>
 
-            <section class="section">
-              <h2><span>06</span> Procedure</h2>
-              <ol class="procedure">
-                <li class="procedure-step">
-                  <b>01</b><strong>Consent</strong><span>Purpose + data use</span>
-                </li>
-                <li class="procedure-step">
-                  <b>02</b><strong>Baseline</strong><span>Skill + controls</span>
-                </li>
-                <li class="procedure-step">
-                  <b>03</b><strong>Task</strong><span>Triage + writing</span>
-                </li>
-                <li class="procedure-step">
-                  <b>04</b><strong>Interruption</strong><span>Randomized condition</span>
-                </li>
-                <li class="procedure-step">
-                  <b>05</b><strong>Debrief</strong><span>Measures + checks</span>
-                </li>
-              </ol>
+            <section class="module" style="--delay: 300ms">
+              <div class="module-heading">
+                <h2><span>06</span> Session Flow</h2>
+                <span class="module-tag">tap step</span>
+              </div>
+              <div class="procedure-tabs">
+                <button class="step-button is-active" type="button" data-step="0">1</button>
+                <button class="step-button" type="button" data-step="1">2</button>
+                <button class="step-button" type="button" data-step="2">3</button>
+                <button class="step-button" type="button" data-step="3">4</button>
+                <button class="step-button" type="button" data-step="4">5</button>
+              </div>
+              <div class="step-detail" id="step-detail">Consent and baseline skill measures.</div>
             </section>
           </div>
 
           <div class="poster-column">
-            <section class="section">
-              <h2><span>07</span> Measures</h2>
-              <table class="measure-table">
-                <thead>
-                  <tr>
-                    <th>Construct</th>
-                    <th>Operationalization</th>
-                    <th>Timing</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Resumption latency</td>
-                    <td>Time to first task-consistent edit after interruption</td>
-                    <td>Behavioral</td>
-                  </tr>
-                  <tr>
-                    <td>Perceived control</td>
-                    <td>4 items on choice, predictability, and reversibility</td>
-                    <td>Post</td>
-                  </tr>
-                  <tr>
-                    <td>Trust</td>
-                    <td>5 items on competence, benevolence, and reliability</td>
-                    <td>Post</td>
-                  </tr>
-                  <tr>
-                    <td>Cognitive load</td>
-                    <td>NASA-TLX plus single-item mental demand</td>
-                    <td>Post</td>
-                  </tr>
-                  <tr>
-                    <td>Acceptance</td>
-                    <td>Usefulness, appropriateness, and dismissal rating</td>
-                    <td>Immediate</td>
-                  </tr>
-                  <tr>
-                    <td>Manipulation checks</td>
-                    <td>Recognized timing and authorship condition</td>
-                    <td>Post</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <section class="section">
-              <h2><span>08</span> Analysis plan</h2>
-              <table class="analysis-table">
-                <tbody>
-                  <tr>
-                    <td>Core test</td>
-                    <td>2 × 2 ANCOVA with baseline skill and relevance as controls.</td>
-                  </tr>
-                  <tr>
-                    <td>Mechanism</td>
-                    <td>Bootstrap indirect effect for perceived control with 10,000 resamples.</td>
-                  </tr>
-                  <tr>
-                    <td>Robustness</td>
-                    <td>Model latency as a positive continuous outcome; report sensitivity analyses.</td>
-                  </tr>
-                  <tr>
-                    <td>Reporting</td>
-                    <td>Effect sizes, 95% CIs, all conditions, and pre-specified exclusions.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-
-            <section class="section">
-              <h2><span>09</span> Expected contributions</h2>
-              <div class="contribution">
-                <b>T</b>
-                <div>
-                  <strong>Theory</strong>
-                  <span>Unite temporal placement and user agency in a testable interruption model.</span>
-                </div>
+            <section class="module" style="--delay: 200ms">
+              <div class="module-heading">
+                <h2><span>07</span> Interruption Simulator</h2>
+                <span class="module-tag">interactive</span>
               </div>
-              <div class="contribution">
-                <b>D</b>
-                <div>
-                  <strong>Design</strong>
-                  <span>Translate findings into interruption policy patterns for proactive agents.</span>
-                </div>
+              <div class="segment" role="group" aria-label="Simulate interruption timing">
+                <button class="segment-button" type="button" data-sim="mid" aria-pressed="false">Mid-task</button>
+                <button class="segment-button is-active" type="button" data-sim="boundary" aria-pressed="true">Boundary</button>
               </div>
-              <div class="contribution">
-                <b>P</b>
-                <div>
-                  <strong>Practice</strong>
-                  <span>Support assistive timing without displacing the user's judgment or control.</span>
+              <div class="simulator-track">
+                <span class="task-block"></span>
+                <span class="task-block"></span>
+                <span class="task-block"></span>
+                <span class="track-line"></span>
+                <span class="sim-cursor" id="sim-cursor" style="--cursor: 82%"></span>
+              </div>
+              <div class="sim-result">
+                <div class="result-card">
+                  <span>Resumption</span>
+                  <strong id="resumption-label">Faster</strong>
+                  <div class="result-bar"><i id="resumption-bar" style="--bar: 82%"></i></div>
+                </div>
+                <div class="result-card">
+                  <span>Perceived control</span>
+                  <strong id="control-label">Higher</strong>
+                  <div class="result-bar"><i id="control-bar" style="--bar: 76%"></i></div>
                 </div>
               </div>
             </section>
 
-            <section class="section">
-              <h2><span>10</span> Representative foundations</h2>
-              <ul class="reference-list">
-                <li>Horvitz, E. (1999). Principles of mixed-initiative user interfaces. CHI.</li>
-                <li>Bailey, B. P., &amp; Konstan, J. A. (2006). On the need for attention-aware systems.</li>
-                <li>Iqbal, S. T., &amp; Horvitz, E. (2007). Disruption and recovery of computing tasks. CHI.</li>
-                <li>Amershi, S., et al. (2019). Guidelines for human-AI interaction. CHI.</li>
-              </ul>
+            <section class="module" style="--delay: 280ms">
+              <div class="module-heading">
+                <h2><span>08</span> Measures</h2>
+                <span class="module-tag">multi-method</span>
+              </div>
+              <div class="chip-cloud">
+                <span class="chip"><b>Latency</b> first task-consistent edit</span>
+                <span class="chip"><b>Control</b> choice + reversibility</span>
+                <span class="chip"><b>Trust</b> competence + reliability</span>
+                <span class="chip"><b>Workload</b> NASA-TLX</span>
+                <span class="chip"><b>Acceptance</b> usefulness + timing fit</span>
+              </div>
+            </section>
+
+            <section class="module" style="--delay: 360ms">
+              <div class="module-heading">
+                <h2><span>09</span> Expected Signal</h2>
+                <span class="module-tag">directional</span>
+              </div>
+              <div class="result-card">
+                <span>Resumption latency</span>
+                <strong>Boundary below mid-task</strong>
+                <div class="result-bar"><i style="--bar: 68%"></i></div>
+              </div>
+              <div class="result-card" style="margin-top: 8px">
+                <span>Perceived control</span>
+                <strong>User-authorized above system</strong>
+                <div class="result-bar"><i style="--bar: 78%"></i></div>
+              </div>
+            </section>
+
+            <section class="module" style="--delay: 440ms">
+              <div class="module-heading">
+                <h2><span>10</span> Contribution</h2>
+                <span class="module-tag">theory / design / practice</span>
+              </div>
+              <div class="contribution-list">
+                <div class="contribution-card">
+                  <b>Theory</b>
+                  <span>Join timing and agency in one interruption model.</span>
+                </div>
+                <div class="contribution-card">
+                  <b>Design</b>
+                  <span>Turn findings into proactive-agent policies.</span>
+                </div>
+                <div class="contribution-card">
+                  <b>Practice</b>
+                  <span>Keep assistance legible and reversible.</span>
+                </div>
+              </div>
             </section>
           </div>
-        </div>
+        </section>
 
         <footer class="poster-footer">
-          <p>Human-Computer Interaction · Experimental design concept</p>
-          <p class="status-note">Design proposal: no empirical findings are presented.</p>
-          <p>kinger-ai.github.io</p>
+          <p>HCI experimental design concept</p>
+          <p><strong>Design proposal:</strong> no empirical findings are presented.</p>
+          <p>A0-ready landscape · themes and motion supported</p>
         </footer>
       </article>
     </main>
+
+    <script>
+      (() => {
+        const body = document.body;
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        const themeButtons = [...document.querySelectorAll("[data-theme-value]")];
+        const motionToggle = document.querySelector("#motion-toggle");
+        const questionData = {
+          q1: "Does interruption timing change task resumption?",
+          q2: "Does user authorization raise perceived control?",
+          q3: "Does perceived control mediate the timing-trust link?",
+          q4: "Do timing and authorization interact?"
+        };
+        const conditionData = {
+          immediate: "Immediate: active-task notice. Expected cost: slower resumption and lower timing fit.",
+          contextual: "Contextual: boundary notice. Expected gain: lower resumption cost without explicit user choice.",
+          deferred: "Deferred: user opts in mid-task. Expected gain: greater agency, but timing remains costly.",
+          handoff: "Planned handoff: approved notice at a detected task boundary. Expected best joint outcome."
+        };
+        const stepData = [
+          "Consent and baseline skill measures.",
+          "Calibrated document triage task.",
+          "Randomized interruption event.",
+          "Behavioral and self-report measures.",
+          "Manipulation checks and debrief."
+        ];
+        const simulatorData = {
+          mid: {
+            cursor: "38%",
+            resumption: "Slower",
+            control: "Mixed",
+            resumptionBar: "42%",
+            controlBar: "54%"
+          },
+          boundary: {
+            cursor: "82%",
+            resumption: "Faster",
+            control: "Higher",
+            resumptionBar: "82%",
+            controlBar: "76%"
+          }
+        };
+
+        function pulse(element) {
+          element.classList.remove("is-changing");
+          void element.offsetWidth;
+          element.classList.add("is-changing");
+        }
+
+        function setTheme(theme, animate = true) {
+          body.dataset.theme = theme;
+          themeButtons.forEach((button) => {
+            const active = button.dataset.themeValue === theme;
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", String(active));
+          });
+          themeMeta.setAttribute(
+            "content",
+            theme === "blueprint" ? "#e9eef4" : theme === "mono" ? "#dededb" : "#07131f"
+          );
+
+          if (animate && body.dataset.motion !== "off") {
+            document.querySelector(".poster").animate(
+              [{ transform: "translateY(5px)" }, { transform: "translateY(0)" }],
+              { duration: 260, easing: "ease-out" }
+            );
+          }
+
+          localStorage.setItem("hci-poster-theme", theme);
+        }
+
+        function setMotion(enabled, persist = true) {
+          body.dataset.motion = enabled ? "on" : "off";
+          motionToggle.classList.toggle("is-active", enabled);
+          motionToggle.setAttribute("aria-pressed", String(enabled));
+
+          if (persist) {
+            localStorage.setItem("hci-poster-motion", enabled ? "on" : "off");
+          }
+        }
+
+        function bindTabs(selector, dataAttribute, handler) {
+          document.querySelectorAll(selector).forEach((button) => {
+            button.addEventListener("click", () => {
+              const group = button.parentElement;
+              group.querySelectorAll(selector).forEach((item) => {
+                const active = item === button;
+                item.classList.toggle("is-active", active);
+                if (item.hasAttribute("aria-selected")) {
+                  item.setAttribute("aria-selected", String(active));
+                }
+                if (item.hasAttribute("aria-pressed")) {
+                  item.setAttribute("aria-pressed", String(active));
+                }
+              });
+              handler(button.dataset[dataAttribute]);
+            });
+          });
+        }
+
+        themeButtons.forEach((button) => {
+          button.addEventListener("click", () => setTheme(button.dataset.themeValue));
+        });
+
+        motionToggle.addEventListener("click", () => {
+          setMotion(body.dataset.motion === "off");
+        });
+
+        document.querySelector("#print-poster").addEventListener("click", () => window.print());
+
+        bindTabs(".tab-button", "question", (key) => {
+          const panel = document.querySelector("#question-panel");
+          panel.textContent = questionData[key];
+          pulse(panel);
+        });
+
+        document.querySelectorAll(".condition-cell").forEach((button) => {
+          button.addEventListener("click", () => {
+            document.querySelectorAll(".condition-cell").forEach((item) => {
+              item.classList.toggle("is-active", item === button);
+            });
+            const detail = document.querySelector("#condition-detail");
+            detail.textContent = conditionData[button.dataset.condition];
+            pulse(detail);
+          });
+        });
+
+        bindTabs(".step-button", "step", (value) => {
+          const detail = document.querySelector("#step-detail");
+          detail.textContent = stepData[Number(value)];
+          pulse(detail);
+        });
+
+        bindTabs(".segment-button", "sim", (value) => {
+          const selection = simulatorData[value];
+          const cursor = document.querySelector("#sim-cursor");
+          cursor.style.setProperty("--cursor", selection.cursor);
+          document.querySelector("#resumption-label").textContent = selection.resumption;
+          document.querySelector("#control-label").textContent = selection.control;
+          document.querySelector("#resumption-bar").style.setProperty("--bar", selection.resumptionBar);
+          document.querySelector("#control-bar").style.setProperty("--bar", selection.controlBar);
+        });
+
+        const savedTheme = localStorage.getItem("hci-poster-theme");
+        const savedMotion = localStorage.getItem("hci-poster-motion");
+        setTheme(savedTheme || "signal", false);
+        setMotion(savedMotion !== "off", false);
+      })();
+    </script>
   </body>
 </html>
