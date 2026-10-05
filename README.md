@@ -1,12 +1,12 @@
 # ADS401 Group Project
 
-This repository contains the web report, poster source, poster PDF draft, and QR asset for an ADS401
-experiment on whether an AI one-sentence summary improves understanding of XJTLU Museum labels.
+This repository contains the single-page web report, poster summary, poster source, poster PDF draft,
+and QR asset for an ADS401 usability evaluation of the XJTLU Museum AI Dog Tour System.
 
 ## Current Files
 
 - `ADS401_GroupXX_Report.html`: single-page web report following the eight required ADS401 sections.
-- `index.html`: redirect that keeps the GitHub Pages root URL working.
+- `index.html`: the same single-page report, used as the GitHub Pages root page.
 - `report.css` and `report.js`: report styling and reading controls.
 - `poster.html`: A1 portrait poster source with screen themes and print mode.
 - `ADS401_GroupXX_Poster.pdf`: one-page A1 portrait poster draft.
@@ -26,7 +26,7 @@ completed only after ethics approval and data collection.
 
 ## Word Count and Format
 
-The current main report narrative is approximately 2,015 words, within the required 2,000-2,500 word
+The current main report narrative is approximately 2,021 words, within the required 2,000-2,500 word
 guidance. The website remains a single page with anchor navigation.
 
 ## AI Permission
@@ -42,7 +42,7 @@ if AI contributed to structure, analysis planning, or writing.
 python -m http.server 8787
 ```
 
-Then open `http://localhost:8787/ADS401_GroupXX_Report.html` or `http://localhost:8787/poster.html`.
+Then open `http://localhost:8787/`.
 
 ## Final Delivery Checklist
 

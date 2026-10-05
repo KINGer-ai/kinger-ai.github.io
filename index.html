@@ -3,12 +3,567 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=./ADS401_GroupXX_Report.html" />
-    <meta name="robots" content="noindex" />
-    <title>ADS401 Group Project Report</title>
-    <link rel="canonical" href="./ADS401_GroupXX_Report.html" />
+    <meta
+      name="description"
+      content="ADS401 usability evaluation of the XJTLU Museum AI Dog tour system."
+    />
+    <meta name="theme-color" content="#0b1f33" />
+    <title>ADS401_GroupXX_Report | XJTLU Museum AI Dog Usability</title>
+    <link rel="stylesheet" href="./report.css" />
+    <script defer src="./report.js"></script>
   </head>
-  <body>
-    <p><a href="./ADS401_GroupXX_Report.html">Open the ADS401 group project report</a></p>
+  <body data-theme="light">
+    <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <header class="site-header">
+      <a class="brand" href="#overview">
+        <span class="brand-mark">A4</span>
+        <span>
+          <strong>ADS401 Group Project</strong>
+          <small>XJTLU Museum AI Dog usability evaluation</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Report sections">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#background">Background</a>
+        <a href="#design">Design</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#findings">Findings</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-button" id="theme-toggle" type="button">
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true">
+            <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span id="theme-label">Dark mode</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-meta">
+          <span>ADS401 Evaluation Methods and Statistics</span>
+          <span>Group ID: GroupXX</span>
+          <span>Week 5 working draft</span>
+        </div>
+        <h1>Usability Evaluation of the XJTLU Museum AI Dog Tour System</h1>
+        <p class="hero-summary">
+          A simple task-based evaluation of task success, efficiency, usability, and user-reported barriers.
+        </p>
+        <div class="hero-foot">
+          <div class="byline">
+            <strong>Group members: Member 1, Member 2, Member 3</strong><br />
+            Xi'an Jiaotong-Liverpool University · 2026<br />
+            Evaluated system:
+            <a href="https://www.xjtlu.edu.cn/en/museum/tech" target="_blank" rel="noreferrer">AI Dog Museum Tour Project</a>
+          </div>
+          <div class="hero-status">
+            <strong>Current status</strong>
+            The study is ready for ethics review. Participant data have not yet been collected.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <aside class="toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <a href="#overview">1. Project at a glance</a>
+          <a href="#problem">2. Problem and research questions</a>
+          <a href="#background">3. Background and related work</a>
+          <a href="#design">4. System and evaluation design</a>
+          <a href="#analysis">5. Data preparation and analysis</a>
+          <a href="#findings">6. Findings</a>
+          <a href="#discussion">7. Discussion, limitations, recommendations</a>
+          <a href="#transparency">8. Transparency and references</a>
+          <a href="#poster">9. Poster summary</a>
+        </nav>
+        <div class="reading-note">
+          The complete report and poster summary are on this single page. No sub-pages are required.
+        </div>
+      </aside>
+
+      <main class="report">
+        <section class="report-section" id="overview">
+          <div class="section-number">01 · Project at a glance</div>
+          <h2>Project at a glance</h2>
+
+          <div class="status-banner">
+            <strong>DRAFT</strong>
+            <p>
+              Replace GroupXX, member names, and the findings placeholders before submission. No participant
+              data are invented here.
+            </p>
+          </div>
+
+          <div class="glance-grid">
+            <div class="glance-item">
+              <span>System</span>
+              <strong>AI Dog Museum Tour</strong>
+              <p>An interactive AI-supported museum tour developed by XJTLU Museum and the Academy of AI.</p>
+            </div>
+            <div class="glance-item">
+              <span>Context</span>
+              <strong>Museum visitor guidance</strong>
+              <p>Visitors use the system to start a tour, find exhibit information, and move between stops.</p>
+            </div>
+            <div class="glance-item">
+              <span>Participants</span>
+              <strong>12 to 15 visitors</strong>
+              <p>Students or staff complete four short tasks in one 15-minute session.</p>
+            </div>
+            <div class="glance-item">
+              <span>Design</span>
+              <strong>Task-based usability test</strong>
+              <p>Observation, think-aloud comments, SUS, and a short exit questionnaire.</p>
+            </div>
+          </div>
+
+          <p>
+            XJTLU Museum describes the AI Dog Tour Project as a novel and highly interactive museum
+            experience developed with the Academy of Artificial Intelligence and Advanced Technology
+            <a href="#ref1">[1]</a>. The project is a suitable evaluation object because it combines museum
+            communication with an AI-supported interaction. Visitors must understand how to begin, what the
+            system can answer, where to go next, and what to do when the response is unclear.
+          </p>
+
+          <div class="quote">
+            The evaluation asks a practical question: can visitors complete the AI Dog tour tasks without
+            confusion, unnecessary effort, or loss of confidence?
+          </div>
+        </section>
+
+        <section class="report-section" id="problem">
+          <div class="section-number">02 · Problem and motivation</div>
+          <h2>Problem, motivation, and research questions</h2>
+
+          <p>
+            A museum AI system can be technically impressive but difficult to use. Visitors may not know
+            which button starts the tour, whether the AI Dog understands spoken or typed questions, how to
+            return to an exhibit, or what the system can and cannot do. These small interaction problems can
+            stop the visit even when the underlying AI works correctly.
+          </p>
+
+          <p>
+            The AI Dog Tour is also a public-facing system. Visitors arrive with different levels of digital
+            confidence and may use the system only once. The interaction therefore needs to be learnable
+            without a manual. A task-based usability evaluation is a practical way to identify where users
+            hesitate, make errors, or need help.
+          </p>
+
+          <h3>Research questions</h3>
+          <div class="question-list">
+            <div class="question-block">
+              <strong>RQ1 · Task success</strong>
+              <p>Can visitors complete the core AI Dog tour tasks without critical failure?</p>
+            </div>
+            <div class="question-block">
+              <strong>RQ2 · Usability</strong>
+              <p>How usable and efficient is the system according to task performance and SUS?</p>
+            </div>
+            <div class="question-block">
+              <strong>RQ3 · Barriers</strong>
+              <p>What problems, risks, or improvement opportunities do participants report?</p>
+            </div>
+          </div>
+
+          <h3>Hypotheses</h3>
+          <ul>
+            <li><strong>H1:</strong> At least 80% of participants will complete each core task without critical failure.</li>
+            <li><strong>H2:</strong> The median SUS score will meet the accepted usability benchmark.</li>
+            <li><strong>H3:</strong> Participants will rate perceived ease more positively than their confidence in the AI Dog's answers.</li>
+            <li><strong>H4:</strong> The main barriers will concern onboarding, navigation, or unclear system capability.</li>
+          </ul>
+
+          <p>
+            The study can support claims about the evaluated tasks, the tested system version, and the
+            participant group. It cannot establish long-term adoption, learning outcomes, or the technical
+            accuracy of every AI response.
+          </p>
+        </section>
+
+        <section class="report-section" id="background">
+          <div class="section-number">03 · Background and related work</div>
+          <h2>Background and related work</h2>
+
+          <p>
+            Usability is commonly defined through effectiveness, efficiency, and satisfaction
+            <a href="#ref2">[2]</a>. For the AI Dog system, effectiveness means completing the tour tasks,
+            efficiency means avoiding unnecessary steps and delays, and satisfaction includes ease of use
+            and willingness to continue. A task-based test links these dimensions to observable behaviour.
+          </p>
+
+          <p>
+            The System Usability Scale provides a short global measure of perceived usability
+            <a href="#ref3">[3]</a>. It is suitable here because participants can complete it in less than
+            two minutes. Task success and observed assistance will provide behavioural evidence alongside the
+            SUS score.
+          </p>
+
+          <p>
+            Human-AI interaction guidelines emphasise clear capability, efficient invocation, uncertainty
+            cues, and easy correction <a href="#ref4">[4]</a>. These principles suggest that the evaluation
+            should test not only whether visitors can start the tour, but also whether they can judge the
+            answer and recover when the AI response is unclear.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>Research gap:</strong> XJTLU Museum documents the AI Dog as an interactive project,
+              but public evidence does not yet show whether visitors can operate it effectively during a
+              museum tour.
+            </p>
+          </div>
+        </section>
+
+        <section class="report-section" id="design">
+          <div class="section-number">04 · System and evaluation design</div>
+          <h2>System and evaluation design</h2>
+
+          <h3>System and context</h3>
+          <p>
+            The AI Dog Tour Project supports an interactive museum visit. The study evaluates visitor-facing
+            use of the system rather than its internal AI model. The tested interaction includes opening the
+            tour, selecting or locating an exhibit, asking for information, following a route, and recovering
+            from a response that the visitor does not understand.
+          </p>
+
+          <p>
+            The evaluation will use a current public or demonstration version of the system. If access is
+            restricted, the team will request permission from the system owner and prepare a short recorded
+            walkthrough or approved prototype for the session. The materials used by participants will remain
+            the same across sessions so that usability findings are comparable.
+          </p>
+
+          <p>
+            A small task set keeps the session practical. It focuses on the actions every visitor must
+            perform, rather than testing every feature. If a task cannot be completed independently, the
+            moderator stops the attempt and records the point of failure. This prevents frustration while
+            still providing useful evidence about the system.
+          </p>
+
+          <h3>Participants and sampling</h3>
+          <p>
+            The target sample is 12 to 15 XJTLU students or staff aged 18 or above. This meets the module
+            guidance for a usability study and provides enough behavioural evidence to identify repeated
+            interaction problems. Recruitment will use approved campus channels and a short sign-up form.
+          </p>
+
+          <p>
+            Participants do not need previous experience with the AI Dog, but the group will record prior
+            museum and AI-tool use as descriptive context. The study does not compare separate groups or
+            manipulate conditions. Every participant completes the same task sequence so that the results
+            directly describe the usability of one system.
+          </p>
+
+          <h3>Tasks and procedure</h3>
+          <div class="flow">
+            <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, privacy, and withdrawal.</p></div>
+            <div class="design-step"><span>02</span><strong>Warm-up</strong><p>Familiarise with the Museum and system.</p></div>
+            <div class="design-step"><span>03</span><strong>Tasks</strong><p>Four core museum-tour tasks.</p></div>
+            <div class="design-step"><span>04</span><strong>SUS</strong><p>10 quick usability ratings.</p></div>
+            <div class="design-step"><span>05</span><strong>Debrief</strong><p>Barriers and improvement ideas.</p></div>
+          </div>
+
+          <p>
+            The four tasks are: (1) start the AI Dog tour and select an exhibit; (2) ask one exhibit-related
+            question; (3) find and move to the next recommended stop; and (4) recover from an unclear or
+            incorrect response. The moderator will use a standard script, provide no help unless the
+            participant is unable to continue, and record assistance separately from independent success.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Measure</th>
+                  <th>Operational definition</th>
+                  <th>Data source</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Task success</td>
+                  <td>Independent completion of each task without critical failure</td>
+                  <td>Observation sheet</td>
+                  <td>Primary outcome</td>
+                </tr>
+                <tr>
+                  <td>Time on task</td>
+                  <td>Seconds from task instruction to completion or stop rule</td>
+                  <td>Timer and observation</td>
+                  <td>Primary outcome</td>
+                </tr>
+                <tr>
+                  <td>Errors and assistance</td>
+                  <td>Wrong action, repeated attempt, or moderator help</td>
+                  <td>Observation sheet</td>
+                  <td>Primary outcome</td>
+                </tr>
+                <tr>
+                  <td>Usability</td>
+                  <td>10-item SUS score</td>
+                  <td>Questionnaire</td>
+                  <td>Secondary outcome</td>
+                </tr>
+                <tr>
+                  <td>Perceived ease</td>
+                  <td>1-7 rating after the task sequence</td>
+                  <td>Exit questionnaire</td>
+                  <td>Secondary outcome</td>
+                </tr>
+                <tr>
+                  <td>Trust</td>
+                  <td>Confidence in AI Dog answers and navigation advice</td>
+                  <td>Exit questionnaire</td>
+                  <td>Secondary outcome</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ethics and safety</h3>
+          <p>
+            Data collection begins after ethics approval. Participants will receive an information sheet and
+            consent form before the session. The study will not collect passwords, personal museum records,
+            photographs of participants, or sensitive university information. If the AI Dog requires an
+            account, the research team will use a prepared test account rather than asking participants to
+            disclose personal credentials.
+          </p>
+        </section>
+
+        <section class="report-section" id="analysis">
+          <div class="section-number">05 · Data preparation and analysis</div>
+          <h2>Data preparation and analysis</h2>
+
+          <div class="metric-grid">
+            <div class="metric"><strong>Excel</strong><span>Observation and questionnaire data</span></div>
+            <div class="metric"><strong>SPSS</strong><span>Descriptive and SUS analysis</span></div>
+            <div class="metric"><strong>Notes</strong><span>Think-aloud theme summary</span></div>
+            <div class="metric"><strong>GitHub</strong><span>Materials and report</span></div>
+          </div>
+
+          <p>
+            Observation and questionnaire data will be entered into an Excel codebook with one row per
+            participant. Task success will be coded as independent success, success with assistance, or
+            failure. Time on task will be recorded in seconds. Errors and moderator interventions will be
+            counted by task and category.
+          </p>
+
+          <p>
+            SPSS will be used for descriptive statistics. The report will include task success rates,
+            medians or means for time on task, error frequencies, and an overall SUS score. The SUS result
+            will be interpreted against published benchmark guidance <a href="#ref5">[5]</a>. Because the
+            sample is small, the analysis will focus on practical patterns rather than complex inferential
+            models.
+          </p>
+
+          <p>
+            Think-aloud comments and the short debrief will be summarised into a small number of usability
+            themes, such as onboarding, navigation, answer clarity, and error recovery. Each theme will be
+            supported by an anonymised example. The theme summary will be compared with the task data so
+            that recommendations are based on observed problems rather than opinion alone.
+          </p>
+
+          <p>
+            The final analysis will report both positive and negative evidence. A task that works well should
+            be described as a strength, not ignored. A repeated problem should include the number of
+            participants affected and at least one concrete observation. This makes the recommendations
+            clearer for Museum staff and easier to connect to future design changes.
+          </p>
+        </section>
+
+        <section class="report-section" id="findings">
+          <div class="section-number">06 · Findings</div>
+          <h2>Findings</h2>
+
+          <div class="status-banner">
+            <strong>PENDING</strong>
+            <p>
+              No participant data are available yet. Replace the placeholders with real task success rates,
+              timings, error counts, SUS results, and anonymised comments after data collection.
+            </p>
+          </div>
+
+          <div class="finding-grid">
+            <div class="finding-card">
+              <strong>RQ1 · Task success</strong>
+              <p>Report independent success, assisted success, and failures for each of the four tasks.</p>
+            </div>
+            <div class="finding-card">
+              <strong>RQ2 · Usability</strong>
+              <p>Report time on task, error frequency, perceived ease, trust, and the overall SUS score.</p>
+            </div>
+            <div class="finding-card">
+              <strong>RQ3 · Barriers</strong>
+              <p>Present repeated usability themes with task evidence and brief anonymised examples.</p>
+            </div>
+          </div>
+
+          <h3>Required figures</h3>
+          <ul>
+            <li>Task success profile for all four tasks with sample size.</li>
+            <li>Time-on-task chart with clearly labelled units.</li>
+            <li>Error and assistance counts by task category.</li>
+            <li>Usability and trust ratings with a short interpretation.</li>
+          </ul>
+        </section>
+
+        <section class="report-section" id="discussion">
+          <div class="section-number">07 · Discussion and recommendations</div>
+          <h2>Discussion, limitations, and recommendations</h2>
+
+          <p>
+            The evaluation will show whether visitors can complete the AI Dog tour tasks without support and
+            where the interaction creates difficulty. A high task success rate with a low SUS score would
+            suggest that participants can finish the tasks but find the experience inefficient or
+            frustrating. A low trust rating would suggest that participants do not understand the system's
+            limits or reliability.
+          </p>
+
+          <p>
+            The discussion will connect each finding to a practical design action. For example, onboarding
+            failures may require a clearer first screen, navigation errors may require better route feedback,
+            and answer-clarity problems may require visible sources or confidence cues.
+          </p>
+
+          <h3>Limitations</h3>
+          <ul>
+            <li>The sample is small and may not represent all museum visitors.</li>
+            <li>The controlled task setting may differ from a normal exhibition visit.</li>
+            <li>The study evaluates one system version and selected tasks.</li>
+            <li>Moderator presence may influence participant behaviour.</li>
+            <li>No system-log access is assumed; observations are collected by the research team.</li>
+          </ul>
+
+          <h3>Recommendations</h3>
+          <ol>
+            <li>Clarify how to start the tour and what the AI Dog can answer.</li>
+            <li>Improve route feedback when participants move between exhibits.</li>
+            <li>Provide a simple correction or retry path for unclear AI responses.</li>
+            <li>Use short just-in-time instructions rather than a long manual.</li>
+            <li>Run a second usability test after the design changes.</li>
+          </ol>
+        </section>
+
+        <section class="report-section" id="transparency">
+          <div class="section-number">08 · Transparency and references</div>
+          <h2>Transparency and references</h2>
+
+          <div class="transparency-grid">
+            <div class="transparency-card">
+              <strong>Contribution statement</strong>
+              <ul>
+                <li>Member 1: literature, tasks, and quantitative analysis.</li>
+                <li>Member 2: recruitment, observation, and data management.</li>
+                <li>Member 3: qualitative themes, web report, and poster summary.</li>
+              </ul>
+            </div>
+            <div class="transparency-card">
+              <strong>Data and materials</strong>
+              <p>
+                Anonymous task data, SPSS output, the observation sheet, SUS questionnaire, and GitHub
+                repository will be included in the supplementary ZIP. No identifiable participant data will
+                be published.
+              </p>
+            </div>
+            <div class="transparency-card">
+              <strong>AI-use statement</strong>
+              <p>
+                [Complete accurately before submission.] AI was used to support the draft structure and
+                planning. Confirm whether this use is allowed under the module's non-substantive AI policy.
+              </p>
+            </div>
+            <div class="transparency-card">
+              <strong>Acknowledgements</strong>
+              <p>
+                The evaluated system is the XJTLU Museum AI Dog Tour Project, developed by XJTLU Museum and
+                the Academy of Artificial Intelligence and Advanced Technology. No ownership of the original
+                system is claimed.
+              </p>
+            </div>
+          </div>
+
+          <h3>IEEE-style references</h3>
+          <ol class="reference-list">
+            <li id="ref1">
+              Xi'an Jiaotong-Liverpool University, “Technology: AI Dog Museum Tour Project,” XJTLU Museum.
+              https://www.xjtlu.edu.cn/en/museum/tech (accessed 5 October 2026).
+            </li>
+            <li id="ref2">
+              International Organization for Standardization, <em>ISO 9241-11:2018 Ergonomics of human-system
+              interaction - Part 11: Usability: Definitions and concepts</em>. Geneva, Switzerland: ISO, 2018.
+            </li>
+            <li id="ref3">
+              J. Brooke, “SUS: A quick and dirty usability scale,” in <em>Usability Evaluation in Industry</em>,
+              1996, pp. 189–194.
+            </li>
+            <li id="ref4">
+              S. Amershi et al., “Guidelines for human-AI interaction,” in <em>Proc. CHI 2019</em>, 2019,
+              pp. 1–13.
+            </li>
+            <li id="ref5">
+              J. Sauro and J. R. Lewis, <em>Quantifying the User Experience</em>, 2nd ed. Cambridge, MA, USA:
+              Morgan Kaufmann, 2016.
+            </li>
+          </ol>
+        </section>
+
+        <section class="report-section" id="poster">
+          <div class="section-number">09 · Poster summary</div>
+          <h2>Poster summary</h2>
+
+          <div class="status-banner">
+            <strong>ONE PAGE</strong>
+            <p>
+              This section contains the poster information inside the report. The final A1 PDF can be
+              exported or submitted separately without requiring a sub-page.
+            </p>
+          </div>
+
+          <div class="glance-grid">
+            <div class="glance-item">
+              <span>Title</span>
+              <strong>Usability Evaluation of the XJTLU Museum AI Dog Tour System</strong>
+              <p>GroupXX · Member 1 · Member 2 · Member 3</p>
+            </div>
+            <div class="glance-item">
+              <span>Question</span>
+              <strong>Can visitors complete the tour tasks?</strong>
+              <p>Start the tour, ask a question, move to the next stop, and recover from an unclear answer.</p>
+            </div>
+            <div class="glance-item">
+              <span>Method</span>
+              <strong>12-15 task-based sessions</strong>
+              <p>Observation, think aloud, SUS, perceived ease, trust, and error recovery.</p>
+            </div>
+            <div class="glance-item">
+              <span>Result</span>
+              <strong>Pending data</strong>
+              <p>Insert the final task success, time, SUS, and theme results after collection.</p>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p>
+              <strong>Takeaway:</strong> The strongest recommendation will target onboarding, route feedback,
+              answer clarity, or error recovery, depending on the observed task evidence.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <p>ADS401 Evaluation Methods and Statistics · GroupXX working draft</p>
+      <p>Single-page report and poster summary · XJTLU Museum AI Dog</p>
+    </footer>
   </body>
 </html>
