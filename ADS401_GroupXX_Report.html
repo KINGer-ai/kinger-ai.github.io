@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ADS401 group report proposal evaluating XIPU AI Agent for student academic support at XJTLU."
+    />
+    <meta name="theme-color" content="#0b1f33" />
+    <title>ADS401_GroupXX_Report | Evaluating XIPU AI Agent</title>
+    <link rel="stylesheet" href="./report.css" />
+    <script defer src="./report.js"></script>
+  </head>
+  <body data-theme="light">
+    <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
+
+    <header class="site-header">
+      <a class="brand" href="#overview">
+        <span class="brand-mark">A4</span>
+        <span>
+          <strong>ADS401 Group Project</strong>
+          <small>XJTLU AI integration evaluation</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Report sections">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#background">Background</a>
+        <a href="#design">Design</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#findings">Findings</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-button" id="theme-toggle" type="button">
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true">
+            <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+          <span id="theme-label">Dark mode</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-meta">
+          <span>ADS401 Evaluation Methods and Statistics</span>
+          <span>Group ID: GroupXX</span>
+          <span>Week 5 working draft</span>
+        </div>
+        <h1>Evaluating XIPU AI Agent for Student Academic Support at XJTLU</h1>
+        <p class="hero-summary">
+          A mixed-methods HCI evaluation of awareness, usability, trust, and continued-use intention.
+        </p>
+        <div class="hero-foot">
+          <div class="byline">
+            <strong>Group members: Member 1, Member 2, Member 3</strong><br />
+            Xi'an Jiaotong-Liverpool University · 2026<br />
+            System evaluated:
+            <a href="https://aiagent.xjtlu.edu.cn/" target="_blank" rel="noreferrer">XIPU AI Agent</a>
+          </div>
+          <div class="hero-status">
+            <strong>Current status</strong>
+            Project design and materials are complete; participant data have not yet been collected.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <aside class="toc" aria-label="On this page">
+        <p>On this page</p>
+        <nav>
+          <a href="#overview">1. Project at a glance</a>
+          <a href="#problem">2. Problem and research questions</a>
+          <a href="#background">3. Background and related work</a>
+          <a href="#design">4. System and evaluation design</a>
+          <a href="#analysis">5. Data preparation and analysis</a>
+          <a href="#findings">6. Findings</a>
+          <a href="#discussion">7. Discussion, limitations, recommendations</a>
+          <a href="#transparency">8. Transparency and references</a>
+        </nav>
+        <div class="reading-note">
+          Target reading time: approximately 10 minutes. Replace this proposal with the final report after
+          data collection.
+        </div>
+      </aside>
+
+      <main class="report">
+        <section class="report-section" id="overview">
+          <div class="section-number">01 · Project at a glance</div>
+          <h2>Project at a glance</h2>
+
+          <div class="status-banner">
+            <strong>DRAFT</strong>
+            <p>
+              This page follows the ADS401 submission structure. Group identifiers and participant evidence
+              still need to be replaced before the Week 12 deadline.
+            </p>
+          </div>
+
+          <div class="glance-grid">
+            <div class="glance-item">
+              <span>System</span>
+              <strong>XIPU AI Agent</strong>
+              <p>An XJTLU low-code platform for creating, training, and deploying educational AI agents.</p>
+            </div>
+            <div class="glance-item">
+              <span>Context</span>
+              <strong>Student academic support</strong>
+              <p>Course-related questioning, study planning, knowledge-base consultation, and learning guidance.</p>
+            </div>
+            <div class="glance-item">
+              <span>Participants</span>
+              <strong>XJTLU students</strong>
+              <p>Target 100 survey responses and 12 to 15 task-based usability participants.</p>
+            </div>
+            <div class="glance-item">
+              <span>Design</span>
+              <strong>Sequential mixed methods</strong>
+              <p>Survey evidence followed by observed task performance and semi-structured interviews.</p>
+            </div>
+          </div>
+
+          <p>
+            XJTLU presents XIPU AI Agent as part of its “Education + AI” strategy. The platform supports
+            knowledge-base construction, plugin integration, workflow automation, and visual evaluation
+            <a href="#ref1">[1]</a>. However, platform availability does not show whether students can discover
+            the system, choose an appropriate agent, complete academic tasks, or calibrate their trust in its
+            outputs.
+          </p>
+
+          <div class="quote">
+            The evaluation question is not whether XIPU AI Agent is universally “good.” It is when, for whom,
+            and under what conditions the agent supports student academic work.
+          </div>
+
+          <p>
+            This project therefore evaluates one bounded context: student use of XIPU AI Agent for
+            academic-support tasks. The report distinguishes prior evidence, the planned study, observed
+            participant data, interpretation, and limitations. No participant data have been invented for this
+            draft.
+          </p>
+        </section>
+
+        <section class="report-section" id="problem">
+          <div class="section-number">02 · Problem and motivation</div>
+          <h2>Problem, motivation, and research questions</h2>
+
+          <p>
+            Universities are integrating conversational AI into learning services at a pace that often exceeds
+            evidence about actual student use. XIPU AI and XIPU AI Agent expand access to generative AI, but
+            students may encounter several uncertainties: whether the service exists, which agent is suitable
+            for a task, whether answers are reliable, whether use is permitted in a module, and whether the
+            system protects their data.
+          </p>
+
+          <p>
+            These uncertainties matter for HCI because adoption is not produced by technical capability alone.
+            Users must interpret system boundaries, form expectations, recover from errors, and decide how much
+            to trust the output. A system can be available but poorly discovered; technically capable but hard
+            to operate; or useful but distrusted because its limitations are unclear.
+          </p>
+
+          <h3>Research questions</h3>
+          <div class="question-list">
+            <div class="question-block">
+              <strong>RQ1 · Awareness and use</strong>
+              <p>What do XJTLU students know about XIPU AI Agent, and how do they currently use it for academic support?</p>
+            </div>
+            <div class="question-block">
+              <strong>RQ2 · Usability</strong>
+              <p>How effectively, efficiently, and satisfactorily can students complete representative academic-support tasks?</p>
+            </div>
+            <div class="question-block">
+              <strong>RQ3 · Trust and adoption</strong>
+              <p>How are perceived usefulness, ease of use, trust, and continued-use intention associated?</p>
+            </div>
+            <div class="question-block">
+              <strong>RQ4 · Barriers</strong>
+              <p>What barriers, risks, and improvement opportunities emerge from participants' observed and reported experiences?</p>
+            </div>
+          </div>
+
+          <h3>Hypotheses</h3>
+          <ul>
+            <li><strong>H1:</strong> Perceived usefulness and ease of use will be positively associated with continued-use intention.</li>
+            <li><strong>H2:</strong> Trust will mediate the association between perceived usefulness and continued-use intention.</li>
+            <li><strong>H3:</strong> At least 80% of usability participants will complete each core task without critical failure.</li>
+            <li><strong>H4:</strong> Interview themes will identify uncertainty about answer reliability, academic-integrity boundaries, and task fit.</li>
+          </ul>
+
+          <p>
+            The study can support claims about XJTLU students, the selected tasks, and the evaluated version of
+            XIPU AI Agent. It cannot establish institution-wide adoption, long-term learning gains, or the
+            accuracy of every agent response.
+          </p>
+        </section>
+
+        <section class="report-section" id="background">
+          <div class="section-number">03 · Background and related work</div>
+          <h2>Background and related work</h2>
+
+          <p>
+            Technology acceptance research identifies perceived usefulness and ease of use as central
+            predictors of intention to use a system <a href="#ref2">[2]</a>. UTAUT extends this account with
+            social influence and facilitating conditions <a href="#ref3">[3]</a>. Those constructs remain
+            relevant to AI agents because students need to understand what the system does and how to access
+            support when tasks become difficult.
+          </p>
+
+          <p>
+            Trust adds a further condition. Conversational agents can produce fluent answers that vary in
+            accuracy, making trust calibration a design problem rather than only a user attitude. The CHI
+            guidelines for human-AI interaction emphasise making capabilities clear, supporting efficient
+            invocation, explaining uncertainty, and enabling correction <a href="#ref4">[4]</a>. These
+            principles suggest that evaluating an educational agent should combine perceived measures with
+            observed task success and error recovery.
+          </p>
+
+          <p>
+            Usability evaluation contributes behavioural evidence. The System Usability Scale provides a
+            compact global measure <a href="#ref5">[5]</a>, while task success, completion time, and observed
+            errors show whether users can act effectively. A mixed-methods design can then explain why
+            favourable or unfavourable ratings occur.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>Research gap:</strong> XJTLU has an official AI-agent platform with documented
+              capabilities, but public evidence does not yet show how students discover and use it for
+              academic-support tasks, where usability breaks down, or how trust shapes continued use.
+            </p>
+          </div>
+
+          <p>
+            The planned evaluation combines these literatures. Acceptance measures address intention and
+            perceived value; trust measures address confidence and reliance; usability measures address
+            observable performance; qualitative evidence explains contextual barriers. This triangulation is
+            more informative than asking participants only whether they “like” the system.
+          </p>
+        </section>
+
+        <section class="report-section" id="design">
+          <div class="section-number">04 · System and evaluation design</div>
+          <h2>System and evaluation design</h2>
+
+          <h3>System and collaboration context</h3>
+          <p>
+            XIPU AI Agent is described by XJTLU as a platform for building and deploying AI agents across
+            teaching, learning, research, and institutional management. Its reported capabilities include
+            agent creation, knowledge bases, plugin integration, workflow automation, and performance
+            evaluation <a href="#ref1">[1]</a>. This study evaluates the student-facing use of existing agents
+            rather than the platform's administrative authoring tools.
+          </p>
+
+          <h3>Participants and sampling</h3>
+          <p>
+            Participants will be XJTLU students aged 18 or above. Recruitment will use approved university
+            channels, course announcements where permission is granted, and snowball recruitment. The sample
+            will include students with and without prior XIPU AI Agent experience so that awareness and non-use
+            can be examined without assuming adoption.
+          </p>
+
+          <p>
+            The survey target is 100 complete responses. A minimum of approximately 84 participants is needed
+            to detect a moderate correlation of <em>r</em> = .30 with 80% power at α = .05, two-tailed; the
+            additional participants allow for missingness and exclusions. The usability phase will recruit 12
+            to 15 students, meeting the module guidance for a usability study and providing sufficient
+            behavioural evidence for within-session analysis.
+          </p>
+
+          <h3>Study design and procedure</h3>
+          <div class="flow">
+            <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, rights, privacy, and withdrawal.</p></div>
+            <div class="design-step"><span>02</span><strong>Survey</strong><p>Awareness, prior use, usefulness, trust, and intention.</p></div>
+            <div class="design-step"><span>03</span><strong>Tasks</strong><p>Three academic-support scenarios with XIPU AI Agent.</p></div>
+            <div class="design-step"><span>04</span><strong>Measures</strong><p>Task success, time, errors, SUS, and trust.</p></div>
+            <div class="design-step"><span>05</span><strong>Interview</strong><p>Barriers, expectations, trust, and improvement ideas.</p></div>
+          </div>
+
+          <p>
+            The usability session will be piloted with two to three students before formal data collection. A
+            moderator will use a standardised script, allow assistance only according to a predefined rule,
+            and record failures without identifying participants. Task order will be counterbalanced where
+            order effects are plausible.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Construct</th>
+                  <th>Operational definition</th>
+                  <th>Measure</th>
+                  <th>Evidence type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Task effectiveness</td>
+                  <td>Completion of the target academic-support goal</td>
+                  <td>Success or failure, assistance required</td>
+                  <td>Observed</td>
+                </tr>
+                <tr>
+                  <td>Efficiency</td>
+                  <td>Time and interaction effort required per task</td>
+                  <td>Time on task, prompt count, errors</td>
+                  <td>Observed</td>
+                </tr>
+                <tr>
+                  <td>Usability</td>
+                  <td>Global perceived usability</td>
+                  <td>10-item SUS <a href="#ref5">[5]</a></td>
+                  <td>Self-report</td>
+                </tr>
+                <tr>
+                  <td>Usefulness</td>
+                  <td>Perceived value for academic work</td>
+                  <td>Adapted TAM items <a href="#ref2">[2]</a></td>
+                  <td>Self-report</td>
+                </tr>
+                <tr>
+                  <td>Trust</td>
+                  <td>Willingness to rely on the agent and confidence in its boundaries</td>
+                  <td>Trust in automation items</td>
+                  <td>Self-report</td>
+                </tr>
+                <tr>
+                  <td>Continued-use intention</td>
+                  <td>Planned future use for academic support</td>
+                  <td>Three-item intention scale</td>
+                  <td>Self-report</td>
+                </tr>
+                <tr>
+                  <td>Barriers</td>
+                  <td>Reasons for avoidance, failure, or distrust</td>
+                  <td>Semi-structured interview</td>
+                  <td>Qualitative</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Ethics, privacy, and bias mitigation</h3>
+          <p>
+            Formal data collection will begin only after the required ethics process is approved. Consent will
+            explain voluntary participation, withdrawal, data storage, anonymisation, and the limits of
+            confidentiality. No passwords, assessment answers, identifiable records, or sensitive university
+            information will be entered into XIPU AI Agent or included in published materials.
+          </p>
+
+          <p>
+            Recruitment will avoid coercive messaging and will not rely only on students who already favour AI.
+            A recruitment log will record channel and eligibility. Interview extracts will be anonymised with
+            participant codes, and small demographic combinations will be suppressed. The research team will
+            document deviations from the protocol rather than silently replacing them.
+          </p>
+        </section>
+
+        <section class="report-section" id="analysis">
+          <div class="section-number">05 · Data preparation and analysis</div>
+          <h2>Data preparation and analysis</h2>
+
+          <div class="metric-grid">
+            <div class="metric"><strong>Excel</strong><span>Data entry and coding</span></div>
+            <div class="metric"><strong>SPSS</strong><span>Descriptive and inferential tests</span></div>
+            <div class="metric"><strong>NVivo / Excel</strong><span>Qualitative coding</span></div>
+            <div class="metric"><strong>GitHub</strong><span>Web report and materials</span></div>
+          </div>
+
+          <p>
+            Survey and usability data will be exported to Excel for cleaning, harmonisation, and codebook
+            creation, then imported into SPSS for analysis. Each variable will have a defined type, scale,
+            permissible range, and reverse-coding rule. Duplicate and bot-like survey responses will be
+            screened against prespecified criteria rather than removed solely because their values are
+            inconvenient.
+          </p>
+
+          <p>
+            Quantitative analysis will begin with missing-data inspection, distributions, outliers, and
+            internal consistency. Cronbach's alpha and item-total correlations will be reported for
+            multi-item scales. Descriptive statistics will summarise awareness, adoption, task performance,
+            usability, trust, and intention. Pearson correlations will be used when assumptions are met;
+            Spearman's rho or robust alternatives will be reported otherwise.
+          </p>
+
+          <p>
+            Multiple regression will test whether perceived usefulness, ease of use, and trust are associated
+            with continued-use intention after relevant controls. A bootstrap mediation model will examine
+            perceived trust as a pathway between usefulness and intention <a href="#ref6">[6]</a>. Assumptions
+            will be inspected using residual plots, influence diagnostics, and collinearity statistics.
+            Standardised effect sizes, exact p-values, and 95% confidence intervals will be reported.
+          </p>
+
+          <p>
+            Interview recordings will be transcribed de-identified and coded using reflexive thematic
+            analysis. The team will create an initial codebook, meet to resolve coding differences, and
+            organise codes into candidate themes. Negative and conflicting cases will be reported. Findings
+            will be triangulated with task observations and survey patterns rather than treated as a substitute
+            for quantitative evidence.
+          </p>
+        </section>
+
+        <section class="report-section" id="findings">
+          <div class="section-number">06 · Findings</div>
+          <h2>Findings</h2>
+
+          <div class="status-banner">
+            <strong>PENDING</strong>
+            <p>
+              No participant data have been collected for this working draft. The equivalent of approximately
+              500 to 700 words, figures, tables, test statistics, and anonymised quotations must be inserted
+              after data collection.
+            </p>
+          </div>
+
+          <div class="finding-grid">
+            <div class="finding-card">
+              <strong>RQ1 · Awareness</strong>
+              <p>Report the proportion who had heard of the platform, used an agent, or could identify an appropriate use case.</p>
+            </div>
+            <div class="finding-card">
+              <strong>RQ2 · Usability</strong>
+              <p>Report task success, assistance, time, errors, SUS, and the main interaction breakdowns.</p>
+            </div>
+            <div class="finding-card">
+              <strong>RQ3 · Trust and adoption</strong>
+              <p>Report correlations, regression estimates, indirect effects, confidence intervals, and effect sizes.</p>
+            </div>
+            <div class="finding-card">
+              <strong>RQ4 · Barriers</strong>
+              <p>Present themes with frequency context and short anonymised participant quotations.</p>
+            </div>
+          </div>
+
+          <h3>Required figures for final version</h3>
+          <ul>
+            <li>Awareness and prior-use distribution with sample size and percentages.</li>
+            <li>Task success and error profile with uncertainty intervals where appropriate.</li>
+            <li>Correlation matrix or forest plot for usefulness, ease of use, trust, and intention.</li>
+            <li>Thematic map linking observed task barriers to interview accounts.</li>
+          </ul>
+        </section>
+
+        <section class="report-section" id="discussion">
+          <div class="section-number">07 · Discussion and recommendations</div>
+          <h2>Discussion, limitations, and recommendations</h2>
+
+          <p>
+            The expected contribution is an evidence chain linking a specific XJTLU AI-agent context to
+            observable usability, trust, and adoption mechanisms. If students cannot discover the system or
+            identify a suitable agent, then improvements in model quality will not translate into use. If
+            task success is high but trust remains low, the problem may lie in transparency, boundaries, or
+            support rather than raw capability.
+          </p>
+
+          <h3>Planned interpretation</h3>
+          <p>
+            The final discussion will connect each research question to evidence, distinguish statistically
+            supported associations from descriptive patterns, and identify findings that conflict with the
+            hypotheses. It will avoid causal language for the cross-sectional survey. Recommendations will
+            identify the responsible actor, such as XIPU AI staff, module teams, or students, and state the
+            evidence supporting each recommendation.
+          </p>
+
+          <h3>Known limitations</h3>
+          <ul>
+            <li>Convenience and snowball sampling may overrepresent digitally confident students.</li>
+            <li>Self-report responses may be affected by social desirability and limited introspection.</li>
+            <li>Usability sessions create a controlled setting and may show novelty effects.</li>
+            <li>No system logs are assumed; self-reported use will not be described as system evidence.</li>
+            <li>The study evaluates selected tasks and one university, limiting generalisation.</li>
+            <li>Cross-sectional associations cannot establish the direction of causal effects.</li>
+          </ul>
+
+          <h3>Planned recommendation areas</h3>
+          <ol>
+            <li>Improve first-use discovery by explaining which tasks the platform supports and which it does not.</li>
+            <li>Clarify academic-integrity boundaries and data-handling expectations at the point of use.</li>
+            <li>Support trust calibration with source visibility, uncertainty cues, and clear error recovery.</li>
+            <li>Reduce task breakdowns through agent selection guidance, examples, and reusable prompts.</li>
+            <li>Evaluate future iterations with representative tasks and participants, including non-users.</li>
+          </ol>
+        </section>
+
+        <section class="report-section" id="transparency">
+          <div class="section-number">08 · Transparency and references</div>
+          <h2>Transparency and references</h2>
+
+          <div class="transparency-grid">
+            <div class="transparency-card">
+              <strong>Contribution statement</strong>
+              <ul>
+                <li>Member 1: literature, survey design, and analysis.</li>
+                <li>Member 2: usability protocol, recruitment, and data management.</li>
+                <li>Member 3: qualitative analysis, web report, and poster.</li>
+              </ul>
+            </div>
+            <div class="transparency-card">
+              <strong>Data and material availability</strong>
+              <p>
+                Anonymous aggregate data, SPSS output, the GitHub repository, survey instruments, and
+                usability materials will be submitted in the supplementary ZIP. Raw identifiable data will
+                not be published.
+              </p>
+            </div>
+            <div class="transparency-card">
+              <strong>AI-use statement</strong>
+              <p>
+                [To be completed accurately before submission.] This draft uses AI assistance for structural
+                planning and editing. Verify whether the final use falls within the module's non-substantive
+                AI permission before submitting.
+              </p>
+            </div>
+            <div class="transparency-card">
+              <strong>Acknowledgements</strong>
+              <p>
+                XIPU AI and XIPU AI Agent are systems provided by Xi'an Jiaotong-Liverpool University and
+                Learning Mall. No ownership or authorship of the original system is claimed.
+              </p>
+            </div>
+          </div>
+
+          <h3>IEEE-style references</h3>
+          <ol class="reference-list">
+            <li id="ref1">
+              Xi'an Jiaotong-Liverpool University, “XIPU AI,” XJTLU Learning Mall.
+              https://www.xjtlu.edu.cn/en/learning-mall/technology-enhanced-learning/xipu-ai (accessed 5
+              October 2026).
+            </li>
+            <li id="ref2">
+              F. D. Davis, “Perceived usefulness, perceived ease of use, and user acceptance of information
+              technology,” <em>MIS Quarterly</em>, vol. 13, no. 3, pp. 319–340, 1989.
+            </li>
+            <li id="ref3">
+              V. Venkatesh, M. G. Morris, G. B. Davis, and F. D. Davis, “User acceptance of information
+              technology: Toward a unified view,” <em>MIS Quarterly</em>, vol. 27, no. 3, pp. 425–478, 2003.
+            </li>
+            <li id="ref4">
+              S. Amershi et al., “Guidelines for human-AI interaction,” in <em>Proc. CHI 2019</em>, 2019,
+              pp. 1–13.
+            </li>
+            <li id="ref5">
+              J. Brooke, “SUS: A quick and dirty usability scale,” in <em>Usability Evaluation in Industry</em>,
+              1996, pp. 189–194.
+            </li>
+            <li id="ref6">
+              A. F. Hayes, <em>Introduction to Mediation, Moderation, and Conditional Process Analysis</em>,
+              3rd ed. New York, NY, USA: Guilford Press, 2022.
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <p>ADS401 Evaluation Methods and Statistics · GroupXX working draft</p>
+      <p>Final web report file name: ADS401_GroupXX_Report.html</p>
+    </footer>
+  </body>
+</html>

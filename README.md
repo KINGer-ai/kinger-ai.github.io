@@ -1,58 +1,58 @@
-# Group Research Site
+# ADS401 Group Project
 
-这是一个可以直接部署到 GitHub Pages 的小组实验研究设计工作页。站点没有外部依赖，所有内容集中在 `content.js`。
+This repository contains the web report, poster source, poster PDF draft, and QR asset for the ADS401
+Evaluation Methods and Statistics group project.
 
-## 本地预览
+## Current Files
 
-直接打开 `index.html` 即可查看。也可以在此目录运行：
+- `ADS401_GroupXX_Report.html`: single-page web report following the eight required ADS401 sections.
+- `index.html`: redirect that keeps the GitHub Pages root URL working.
+- `report.css` and `report.js`: report styling and reading controls.
+- `poster.html`: A1 portrait poster source with screen themes and print mode.
+- `ADS401_GroupXX_Poster.pdf`: one-page A1 portrait poster draft.
+- `qr-report.png`: QR code pointing to the hosted web report.
+
+## Required Placeholders
+
+Before submission, replace every `GroupXX`, `Member 1`, `Member 2`, and `Member 3` placeholder. Rename
+the report file and poster PDF to use the real group ID:
+
+- `ADS401_GroupID_Report.html`
+- `ADS401_GroupID_Poster.pdf`
+- `ADS401_GroupID_SupplementaryMaterials.zip`
+
+The current report is a planning draft. The findings section contains no participant data and must be
+completed only after ethics approval and data collection.
+
+## Word Count and Format
+
+The current main report narrative is approximately 2,133 words, within the required 2,000-2,500 word
+guidance. The website remains a single page with anchor navigation.
+
+## AI Permission
+
+The ADS401 sheet permits only non-substantive AI use, such as grammar corrections, formatting, or generic
+clarity suggestions. The group must rewrite and verify substantive academic content before submission.
+Complete the AI-use statement accurately in the report. Do not claim the use was limited to proofreading
+if AI contributed to structure, analysis planning, or writing.
+
+## Local Preview
 
 ```powershell
 python -m http.server 8787
 ```
 
-然后访问 `http://localhost:8787`。
+Then open `http://localhost:8787/ADS401_GroupXX_Report.html` or `http://localhost:8787/poster.html`.
 
-## 编辑内容
+## Final Delivery Checklist
 
-有两种方式：
-
-1. 在网页右上角点击编辑按钮，直接修改黄色占位字段；内容会保存在当前浏览器的本地存储中。
-2. 直接编辑 `content.js`，这种方式适合把最终版本提交到 GitHub。
-
-页面中的“保存”按钮只保存浏览器草稿，不会自动写回 `content.js`。正式发布前，请把讨论后的内容同步回 `content.js` 并提交。
-
-## 发布到 GitHub Pages
-
-这个目录已经包含 `.github/workflows/pages.yml`，推荐使用 GitHub Actions 发布。
-
-1. 在 GitHub 新建仓库，例如 `group-research-project`。不要勾选自动添加 README。
-2. 在本目录执行：
-
-```powershell
-git init -b main
-git add .
-git commit -m "Create group research project site"
-git remote add origin https://github.com/YOUR-USERNAME/group-research-project.git
-git push -u origin main
-```
-
-3. 打开仓库的 `Settings > Pages`，将 `Build and deployment > Source` 设为 `GitHub Actions`。
-4. 等待工作流完成，站点地址通常是：
-
-```text
-https://YOUR-USERNAME.github.io/group-research-project/
-```
-
-如果仓库名称是 `YOUR-USERNAME.github.io`，站点地址会是：
-
-```text
-https://YOUR-USERNAME.github.io/
-```
-
-## 发布前检查
-
-- 把 `content.js` 中所有 `【...】` 占位内容替换为小组最终决定。
-- 确认样本量依据、排除标准和主要结果在收集数据前已经锁定。
-- 检查团队成员姓名、指导教师、机构与联系方式是否需要出现。
-- 若研究涉及人类参与者，先确认课程或机构要求的伦理审查流程。
-- 用手机和电脑各检查一次页面，再执行 `Print > Save as PDF` 测试导出效果。
+- Replace group ID, member names, system details, and contribution statement.
+- Obtain ethics approval before recruiting or collecting participant data.
+- Pilot the usability tasks and record changes.
+- Enter real participant evidence and analysis results without fabricating data.
+- Report test statistics, exact p-values, confidence intervals, and effect sizes where relevant.
+- Replace poster finding placeholders with the final figures and principal results.
+- Test the QR code against the submitted report URL.
+- Export the final poster as A1 portrait PDF.
+- Remove raw or identifiable participant data from the website and GitHub repository.
+- Package anonymous data, SPSS output, instruments, and repository details in the supplementary ZIP.
