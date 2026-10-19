@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Interactive participant questionnaire for the XJTLU Museum AI System usability evaluation."
+    />
+    <meta name="theme-color" content="#0b2239" />
+    <title>Participant Questionnaire | XJTLU Museum AI System</title>
+    <style>
+      :root {
+        --ink: #102a43;
+        --navy: #0b2239;
+        --teal: #0f766e;
+        --teal-soft: #e0f4f0;
+        --coral: #d95f45;
+        --amber: #e8b94a;
+        --paper: #fbfcfa;
+        --soft: #eef3f4;
+        --line: #cfdae3;
+        --muted: #60798c;
+        --display: "Bahnschrift", "Aptos Display", "Segoe UI", sans-serif;
+        --body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, rgba(15, 118, 110, 0.04) 1px, transparent 1px) 0 0 / 38px 38px,
+          var(--paper);
+        font-family: var(--body);
+        line-height: 1.5;
+      }
+
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      button {
+        color: inherit;
+      }
+
+      .topbar {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+        min-height: 66px;
+        padding: 10px clamp(16px, 4vw, 52px);
+        background: rgba(251, 252, 250, 0.95);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 39px;
+        height: 39px;
+        place-items: center;
+        color: white;
+        background: var(--navy);
+        border-radius: 6px;
+        font-family: var(--display);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .brand strong,
+      .brand span {
+        display: block;
+      }
+
+      .brand strong {
+        font-size: 0.82rem;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 0.63rem;
+      }
+
+      .save-state {
+        color: var(--muted);
+        font-size: 0.68rem;
+      }
+
+      .progress-track {
+        position: fixed;
+        z-index: 21;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 4px;
+        background: transparent;
+      }
+
+      .progress-bar {
+        width: 20%;
+        height: 100%;
+        background: var(--coral);
+        transition: width 260ms ease;
+      }
+
+      main {
+        width: min(940px, calc(100% - 28px));
+        margin: 0 auto;
+        padding: 42px 0 70px;
+      }
+
+      .intro {
+        max-width: 760px;
+        margin-bottom: 28px;
+      }
+
+      .eyebrow {
+        margin: 0 0 9px;
+        color: var(--teal);
+        font-size: 0.66rem;
+        font-weight: 850;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(2.1rem, 4.8vw, 3.7rem);
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+      }
+
+      .lead {
+        max-width: 700px;
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .notice {
+        margin: 20px 0 0;
+        padding: 12px 14px;
+        color: #6b4d0b;
+        background: #fff3c9;
+        border-left: 4px solid var(--amber);
+        border-radius: 0 5px 5px 0;
+        font-size: 0.76rem;
+      }
+
+      .form-shell {
+        padding: clamp(20px, 4vw, 34px);
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 20px 56px rgba(16, 42, 67, 0.1);
+      }
+
+      .step {
+        display: none;
+      }
+
+      .step.is-active {
+        display: block;
+        animation: stepIn 220ms ease both;
+      }
+
+      @keyframes stepIn {
+        from {
+          opacity: 0;
+          transform: translateY(7px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .step-head {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .step-head h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 1.55rem;
+        letter-spacing: -0.02em;
+      }
+
+      .step-count {
+        color: var(--muted);
+        font-size: 0.7rem;
+        white-space: nowrap;
+      }
+
+      h3 {
+        margin: 24px 0 10px;
+        font-size: 0.88rem;
+      }
+
+      h3:first-of-type {
+        margin-top: 0;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin: 14px 0;
+      }
+
+      .field > span,
+      .group-label {
+        color: var(--muted);
+        font-size: 0.68rem;
+        font-weight: 750;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      textarea,
+      select {
+        width: 100%;
+        min-height: 42px;
+        padding: 9px 11px;
+        color: var(--ink);
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 5px;
+      }
+
+      textarea {
+        min-height: 94px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: 2px solid var(--teal);
+        outline-offset: 1px;
+      }
+
+      .choice-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .choice {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .choice input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .choice span {
+        display: inline-flex;
+        min-height: 38px;
+        padding: 8px 12px;
+        align-items: center;
+        color: var(--muted);
+        background: var(--soft);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+
+      .choice input:checked + span {
+        color: white;
+        background: var(--teal);
+        border-color: var(--teal);
+      }
+
+      .choice input:focus-visible + span {
+        outline: 2px solid var(--coral);
+        outline-offset: 2px;
+      }
+
+      .task-block {
+        margin: 18px 0;
+        padding: 16px;
+        background: var(--soft);
+        border-left: 4px solid var(--coral);
+        border-radius: 0 5px 5px 0;
+      }
+
+      .task-block h3 {
+        margin: 0 0 12px;
+      }
+
+      .rating-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .rating-table th,
+      .rating-table td {
+        padding: 7px 5px;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.64rem;
+      }
+
+      .rating-table th:first-child,
+      .rating-table td:first-child {
+        width: 58%;
+        text-align: left;
+      }
+
+      .rating-table th {
+        color: var(--muted);
+        font-weight: 750;
+      }
+
+      .rating-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .rating-dot {
+        position: relative;
+        display: inline-grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        cursor: pointer;
+      }
+
+      .rating-dot input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .rating-dot span {
+        display: grid;
+        width: 24px;
+        height: 24px;
+        place-items: center;
+        color: var(--muted);
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        font-size: 0.62rem;
+        font-weight: 750;
+      }
+
+      .rating-dot input:checked + span {
+        color: white;
+        background: var(--navy);
+        border-color: var(--navy);
+      }
+
+      .rating-dot input:focus-visible + span {
+        outline: 2px solid var(--coral);
+        outline-offset: 2px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 28px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .action-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .button {
+        min-height: 42px;
+        padding: 9px 15px;
+        color: white;
+        background: var(--navy);
+        border: 1px solid var(--navy);
+        border-radius: 5px;
+        font-size: 0.72rem;
+        font-weight: 750;
+        cursor: pointer;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--teal);
+        border-color: var(--teal);
+      }
+
+      .button.secondary {
+        color: var(--ink);
+        background: white;
+        border-color: var(--line);
+      }
+
+      .button.secondary:hover,
+      .button.secondary:focus-visible {
+        color: var(--teal);
+        border-color: var(--teal);
+      }
+
+      .button.accent {
+        background: var(--coral);
+        border-color: var(--coral);
+      }
+
+      .button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      .error {
+        min-height: 18px;
+        color: #a43f2c;
+        font-size: 0.7rem;
+        font-weight: 700;
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 18px 0;
+      }
+
+      .review-card {
+        padding: 13px;
+        background: var(--soft);
+        border-radius: 5px;
+      }
+
+      .review-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .review-card strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 0.9rem;
+      }
+
+      .success {
+        display: none;
+        margin-top: 18px;
+        padding: 18px;
+        color: #0c4a45;
+        background: var(--teal-soft);
+        border-left: 4px solid var(--teal);
+        border-radius: 0 5px 5px 0;
+      }
+
+      .success.is-visible {
+        display: block;
+      }
+
+      .success strong {
+        display: block;
+        margin-bottom: 7px;
+        font-family: var(--display);
+        font-size: 1.05rem;
+      }
+
+      .success p {
+        margin: 0 0 12px;
+        font-size: 0.76rem;
+      }
+
+      .fine-print {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 0.64rem;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 22px clamp(16px, 4vw, 52px);
+        color: var(--muted);
+        background: var(--soft);
+        border-top: 1px solid var(--line);
+        font-size: 0.65rem;
+      }
+
+      @media (max-width: 640px) {
+        .topbar {
+          gap: 8px;
+        }
+
+        .brand span,
+        .save-state {
+          display: none;
+        }
+
+        .form-shell {
+          padding: 18px 14px;
+        }
+
+        .review-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .action-group {
+          width: 100%;
+        }
+
+        .button {
+          flex: 1;
+        }
+
+        .rating-table th,
+        .rating-table td {
+          padding-right: 1px;
+          padding-left: 1px;
+        }
+
+        .rating-dot {
+          width: 25px;
+          height: 25px;
+        }
+
+        .rating-dot span {
+          width: 21px;
+          height: 21px;
+        }
+
+        .footer {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+
+      @media print {
+        .topbar,
+        .actions,
+        .footer,
+        .progress-track {
+          display: none !important;
+        }
+
+        .step {
+          display: block !important;
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">A4</span>
+        <span>
+          <strong>Participant Questionnaire</strong>
+          <span>XJTLU Museum AI System usability evaluation</span>
+        </span>
+      </div>
+      <span class="save-state" id="save-state">Not saved yet</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">ADS401 · Group H</p>
+        <h1>Museum AI usability questionnaire</h1>
+        <p class="lead">
+          Complete this questionnaire after using the XJTLU Museum AI system. There are no right or wrong
+          answers. Your responses are anonymous.
+        </p>
+        <p class="lead">
+          Cheng Qian 2687280 · Chen Cui 2687288 · Ziqian Wang 2684921 · Simu He 2686299
+        </p>
+        <p class="notice">
+          This is a static questionnaire. It does not send responses to a server. The researcher will use the
+          Download CSV button at the end to save your anonymous responses.
+        </p>
+      </section>
+
+      <form class="form-shell" id="questionnaire-form" novalidate>
+        <section class="step is-active" data-step="1">
+          <div class="step-head">
+            <h2>Participant details</h2>
+            <span class="step-count">Step 1 of 5</span>
+          </div>
+
+          <div class="field">
+            <span>Participant ID</span>
+            <input id="participant-id" name="participant_id" type="text" placeholder="P01" autocomplete="off" />
+          </div>
+          <div class="field">
+            <span>Session date</span>
+            <input id="session-date" name="session_date" type="date" />
+          </div>
+
+          <h3>What is your role at XJTLU?</h3>
+          <div class="choice-row" id="role-group">
+            <label class="choice"><input type="radio" name="role" value="Student" /><span>Student</span></label>
+            <label class="choice"><input type="radio" name="role" value="Staff" /><span>Staff</span></label>
+            <label class="choice"><input type="radio" name="role" value="Other" /><span>Other</span></label>
+          </div>
+
+          <h3>How often do you use AI tools for study or work?</h3>
+          <div class="choice-row" id="ai-frequency-group">
+            <label class="choice"><input type="radio" name="ai_frequency" value="Never" /><span>Never</span></label>
+            <label class="choice"><input type="radio" name="ai_frequency" value="Monthly" /><span>Monthly</span></label>
+            <label class="choice"><input type="radio" name="ai_frequency" value="Weekly" /><span>Weekly</span></label>
+            <label class="choice"><input type="radio" name="ai_frequency" value="Daily" /><span>Daily</span></label>
+          </div>
+
+          <h3>Have you visited XJTLU Museum before?</h3>
+          <div class="choice-row" id="museum-visit-group">
+            <label class="choice"><input type="radio" name="museum_visit" value="No" /><span>No</span></label>
+            <label class="choice"><input type="radio" name="museum_visit" value="Once" /><span>Once</span></label>
+            <label class="choice"><input type="radio" name="museum_visit" value="More than once" /><span>More than once</span></label>
+          </div>
+
+          <h3>Have you used a museum AI guide or chatbot before?</h3>
+          <div class="choice-row" id="guide-experience-group">
+            <label class="choice"><input type="radio" name="guide_experience" value="No" /><span>No</span></label>
+            <label class="choice"><input type="radio" name="guide_experience" value="Briefly" /><span>Yes, briefly</span></label>
+            <label class="choice"><input type="radio" name="guide_experience" value="Regularly" /><span>Yes, regularly</span></label>
+          </div>
+
+          <div class="field">
+            <span>What do you expect an AI museum guide to help you do?</span>
+            <textarea name="expectation" id="expectation"></textarea>
+          </div>
+
+          <div class="actions">
+            <span class="error" id="error-1"></span>
+            <div class="action-group">
+              <button class="button secondary" type="button" data-save>Save draft</button>
+              <button class="button" type="button" data-next>Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="2">
+          <div class="step-head">
+            <h2>Task evaluation</h2>
+            <span class="step-count">Step 2 of 5</span>
+          </div>
+          <p class="lead">Rate each statement from 1 (strongly disagree) to 7 (strongly agree).</p>
+
+          <div id="task-list"></div>
+
+          <div class="actions">
+            <span class="error" id="error-2"></span>
+            <div class="action-group">
+              <button class="button secondary" type="button" data-back>Back</button>
+              <button class="button secondary" type="button" data-save>Save draft</button>
+              <button class="button" type="button" data-next>Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="3">
+          <div class="step-head">
+            <h2>System Usability Scale</h2>
+            <span class="step-count">Step 3 of 5</span>
+          </div>
+          <p class="lead">1 = strongly disagree, 5 = strongly agree.</p>
+          <div id="sus-list"></div>
+
+          <div class="actions">
+            <span class="error" id="error-3"></span>
+            <div class="action-group">
+              <button class="button secondary" type="button" data-back>Back</button>
+              <button class="button secondary" type="button" data-save>Save draft</button>
+              <button class="button" type="button" data-next>Continue</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="4">
+          <div class="step-head">
+            <h2>Trust and final comments</h2>
+            <span class="step-count">Step 4 of 5</span>
+          </div>
+
+          <h3>I felt confident relying on the system's exhibit information and navigation advice.</h3>
+          <div class="rating-table" style="max-width: 480px">
+            <thead><tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Trust rating</td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="1" /><span>1</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="2" /><span>2</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="3" /><span>3</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="4" /><span>4</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="5" /><span>5</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="6" /><span>6</span></label></td>
+                <td><label class="rating-dot"><input type="radio" name="trust" value="7" /><span>7</span></label></td>
+              </tr>
+            </tbody>
+          </div>
+
+          <div class="field">
+            <span>Was there any information you did not trust? What caused the uncertainty?</span>
+            <textarea name="trust_comment" id="trust-comment"></textarea>
+          </div>
+          <div class="field">
+            <span>Where did you hesitate or feel unsure?</span>
+            <textarea name="hesitation" id="hesitation"></textarea>
+          </div>
+          <div class="field">
+            <span>What one change would most improve the Museum AI system?</span>
+            <textarea name="best_change" id="best-change"></textarea>
+          </div>
+          <div class="field">
+            <span>Is there anything else you would like to add?</span>
+            <textarea name="other_comments" id="other-comments"></textarea>
+          </div>
+
+          <div class="actions">
+            <span class="error" id="error-4"></span>
+            <div class="action-group">
+              <button class="button secondary" type="button" data-back>Back</button>
+              <button class="button secondary" type="button" data-save>Save draft</button>
+              <button class="button" type="button" data-next>Review</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="step" data-step="5">
+          <div class="step-head">
+            <h2>Review and export</h2>
+            <span class="step-count">Step 5 of 5</span>
+          </div>
+          <p class="lead">Check your responses. The researcher will download an anonymous CSV file.</p>
+          <div class="review-grid" id="review-grid"></div>
+
+          <div class="success" id="success-panel" role="status">
+            <strong>Questionnaire complete</strong>
+            <p>
+              Responses have been prepared locally. Use the Download CSV button to save the file. No data were
+              sent to a server.
+            </p>
+            <button class="button accent" type="button" id="download-csv">Download CSV</button>
+          </div>
+
+          <div class="actions">
+            <span class="error" id="error-5"></span>
+            <div class="action-group">
+              <button class="button secondary" type="button" data-back>Back</button>
+              <button class="button secondary" type="button" data-save>Save draft</button>
+              <button class="button accent" type="button" id="finish">Finish and prepare CSV</button>
+            </div>
+          </div>
+          <p class="fine-print">
+            Do not include names, student numbers, passwords, or other identifying information. If a response
+            is incomplete, return to the relevant step before exporting.
+          </p>
+        </section>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <span>ADS401 Evaluation Methods and Statistics · Group H</span>
+      <span>XJTLU Museum AI System · Participant Questionnaire v1.0</span>
+    </footer>
+
+    <script>
+      (() => {
+        const tasks = [
+          "Start the guide and select an exhibit",
+          "Ask one exhibit-related question",
+          "Move to the next recommended stop",
+          "Recover from an unclear answer"
+        ];
+        const susItems = [
+          "I think that I would like to use this system frequently.",
+          "I found the system unnecessarily complex.",
+          "I thought the system was easy to use.",
+          "I think that I would need technical support to use this system.",
+          "I found the various functions in this system were well integrated.",
+          "I thought there was too much inconsistency in this system.",
+          "I would imagine that most people would learn to use this system quickly.",
+          "I found the system very cumbersome to use.",
+          "I felt very confident using the system.",
+          "I needed to learn a lot before I could get going."
+        ];
+        const storageKey = "museum-ai-questionnaire-v1";
+        const form = document.querySelector("#questionnaire-form");
+        const steps = [...document.querySelectorAll(".step")];
+        const progressBar = document.querySelector("#progress-bar");
+        const saveState = document.querySelector("#save-state");
+        const reviewGrid = document.querySelector("#review-grid");
+        const successPanel = document.querySelector("#success-panel");
+        const downloadButton = document.querySelector("#download-csv");
+        let currentStep = 1;
+        let preparedCsv = "";
+
+        const ratingRow = (name, label, max = 7) => {
+          const cells = Array.from({ length: max }, (_, index) => {
+            const value = index + 1;
+            return `<td><label class="rating-dot"><input type="radio" name="${name}" value="${value}" /><span>${value}</span></label></td>`;
+          }).join("");
+          return `<tr><td>${label}</td>${cells}</tr>`;
+        };
+
+        function buildDynamicFields() {
+          const taskList = document.querySelector("#task-list");
+          tasks.forEach((task, index) => {
+            const number = index + 1;
+            const block = document.createElement("section");
+            block.className = "task-block";
+            block.innerHTML = `
+              <h3>Task ${number}: ${task}</h3>
+              <table class="rating-table">
+                <thead>
+                  <tr>
+                    <th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${ratingRow(`task${number}_ease`, "This task was easy to complete.")}
+                  ${ratingRow(`task${number}_confidence`, "I felt confident about what to do next.")}
+                </tbody>
+              </table>
+              <div class="field">
+                <span>What made this task easy or difficult?</span>
+                <textarea name="task${number}_comment"></textarea>
+              </div>
+            `;
+            taskList.append(block);
+          });
+
+          const susList = document.querySelector("#sus-list");
+          susItems.forEach((item, index) => {
+            const number = index + 1;
+            susList.insertAdjacentHTML(
+              "beforeend",
+              `<section class="task-block">
+                <h3>${number}. ${item}</h3>
+                <div class="choice-row">
+                  ${[1, 2, 3, 4, 5]
+                    .map(
+                      (value) =>
+                        `<label class="choice"><input type="radio" name="sus${String(number).padStart(2, "0")}" value="${value}" /><span>${value}</span></label>`
+                    )
+                    .join("")}
+                </div>
+              </section>`
+            );
+          });
+        }
+
+        function showStep(stepNumber) {
+          currentStep = stepNumber;
+          steps.forEach((step) => step.classList.toggle("is-active", Number(step.dataset.step) === stepNumber));
+          progressBar.style.width = `${(stepNumber / 5) * 100}%`;
+          if (stepNumber === 5) {
+            renderReview();
+          }
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function getValue(name) {
+          return form.querySelector(`[name="${name}"]:checked`)?.value || "";
+        }
+
+        function validateStep(stepNumber) {
+          const error = document.querySelector(`#error-${stepNumber}`);
+          error.textContent = "";
+
+          if (stepNumber === 1) {
+            if (!document.querySelector("#participant-id").value.trim()) {
+              error.textContent = "Participant ID is required.";
+              return false;
+            }
+            if (!getValue("role") || !getValue("ai_frequency") || !getValue("museum_visit") || !getValue("guide_experience")) {
+              error.textContent = "Please complete the background questions.";
+              return false;
+            }
+          }
+
+          if (stepNumber === 2) {
+            for (let i = 1; i <= 4; i += 1) {
+              if (!getValue(`task${i}_ease`) || !getValue(`task${i}_confidence`)) {
+                error.textContent = `Please rate Task ${i}.`;
+                return false;
+              }
+            }
+          }
+
+          if (stepNumber === 3) {
+            for (let i = 1; i <= 10; i += 1) {
+              if (!getValue(`sus${String(i).padStart(2, "0")}`)) {
+                error.textContent = `Please answer SUS item ${i}.`;
+                return false;
+              }
+            }
+          }
+
+          if (stepNumber === 4 && !getValue("trust")) {
+            error.textContent = "Please provide the trust rating.";
+            return false;
+          }
+
+          return true;
+        }
+
+        function calculateSus() {
+          let total = 0;
+          for (let i = 1; i <= 10; i += 1) {
+            const value = Number(getValue(`sus${String(i).padStart(2, "0")}`));
+            total += i % 2 === 1 ? value - 1 : 5 - value;
+          }
+          return total * 2.5;
+        }
+
+        function collect() {
+          const data = {};
+          new FormData(form).forEach((value, key) => {
+            data[key] = value;
+          });
+          data.sus_score = calculateSus().toFixed(1);
+          data.questionnaire_version = "v1.0";
+          return data;
+        }
+
+        function renderReview() {
+          const data = collect();
+          const easeAverage = [1, 2, 3, 4].reduce((sum, i) => sum + Number(data[`task${i}_ease`] || 0), 0) / 4;
+          const confidenceAverage = [1, 2, 3, 4].reduce((sum, i) => sum + Number(data[`task${i}_confidence`] || 0), 0) / 4;
+          reviewGrid.innerHTML = `
+            <div class="review-card"><span>Participant</span><strong>${escapeHtml(data.participant_id || "Not entered")}</strong></div>
+            <div class="review-card"><span>Role</span><strong>${escapeHtml(data.role || "Not selected")}</strong></div>
+            <div class="review-card"><span>Average ease</span><strong>${easeAverage.toFixed(1)} / 7</strong></div>
+            <div class="review-card"><span>Average confidence</span><strong>${confidenceAverage.toFixed(1)} / 7</strong></div>
+            <div class="review-card"><span>SUS</span><strong>${calculateSus().toFixed(1)}</strong></div>
+            <div class="review-card"><span>Trust</span><strong>${escapeHtml(data.trust || "Not entered")} / 7</strong></div>
+          `;
+        }
+
+        function escapeHtml(value) {
+          return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+        }
+
+        function csvEscape(value) {
+          return `"${String(value ?? "").replaceAll('"', '""')}"`;
+        }
+
+        function buildCsv() {
+          const data = collect();
+          const headers = [
+            "participant_id",
+            "session_date",
+            "role",
+            "ai_frequency",
+            "museum_visit",
+            "guide_experience",
+            "expectation"
+          ];
+          for (let i = 1; i <= 4; i += 1) {
+            headers.push(`task${i}_ease`, `task${i}_confidence`, `task${i}_comment`);
+          }
+          for (let i = 1; i <= 10; i += 1) {
+            headers.push(`sus${String(i).padStart(2, "0")}`);
+          }
+          headers.push("sus_score", "trust", "trust_comment", "hesitation", "best_change", "other_comments", "questionnaire_version");
+          return `${headers.map(csvEscape).join(",")}\n${headers.map((header) => csvEscape(data[header])).join(",")}`;
+        }
+
+        function saveDraft(showMessage = true) {
+          const data = collect();
+          localStorage.setItem(storageKey, JSON.stringify(data));
+          saveState.textContent = `Saved locally · ${new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}`;
+          if (showMessage) {
+            saveState.textContent += " · draft";
+          }
+        }
+
+        function restoreDraft() {
+          const raw = localStorage.getItem(storageKey);
+          if (!raw) return;
+          try {
+            const data = JSON.parse(raw);
+            Object.entries(data).forEach(([name, value]) => {
+              const elements = form.querySelectorAll(`[name="${name}"]`);
+              elements.forEach((element) => {
+                if (element.type === "radio") {
+                  element.checked = element.value === value;
+                } else {
+                  element.value = value;
+                }
+              });
+            });
+            saveState.textContent = "Draft restored";
+          } catch {
+            saveState.textContent = "Could not restore draft";
+          }
+        }
+
+        function downloadCsv() {
+          if (!preparedCsv) preparedCsv = buildCsv();
+          const blob = new Blob([preparedCsv], { type: "text/csv;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          const id = document.querySelector("#participant-id").value.trim() || "participant";
+          link.href = url;
+          link.download = `museum-ai-questionnaire-${id}.csv`;
+          link.click();
+          URL.revokeObjectURL(url);
+          saveState.textContent = "CSV downloaded";
+        }
+
+        function handleNext(button) {
+          if (!validateStep(currentStep)) return;
+          saveDraft(false);
+          if (currentStep < 5) showStep(currentStep + 1);
+        }
+
+        form.addEventListener("click", (event) => {
+          if (event.target.matches("[data-next]")) handleNext(event.target);
+          if (event.target.matches("[data-back]")) {
+            if (currentStep > 1) showStep(currentStep - 1);
+          }
+          if (event.target.matches("[data-save]")) saveDraft();
+        });
+
+        document.querySelector("#finish").addEventListener("click", () => {
+          if (!validateStep(1) || !validateStep(2) || !validateStep(3) || !validateStep(4)) {
+            document.querySelector("#error-5").textContent = "Please complete all required ratings before export.";
+            return;
+          }
+          preparedCsv = buildCsv();
+          localStorage.setItem(`${storageKey}-${document.querySelector("#participant-id").value.trim()}`, preparedCsv);
+          successPanel.classList.add("is-visible");
+          downloadButton.focus();
+          saveState.textContent = "Ready to export";
+        });
+
+        downloadButton.addEventListener("click", downloadCsv);
+
+        buildDynamicFields();
+        restoreDraft();
+        document.querySelector("#session-date").value = new Date().toISOString().slice(0, 10);
+      })();
+    </script>
+  </body>
+</html>
