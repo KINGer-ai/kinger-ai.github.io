@@ -1,21 +1,29 @@
 # ADS401 Group Project
 
-This repository contains the single-page web report, poster summary, poster source, poster PDF draft,
-and QR asset for an ADS401 usability evaluation of the XJTLU Museum AI system.
+This repository contains the single-page web report, interactive questionnaire, poster summary,
+poster source, poster PDF, and presentation materials for the ADS401 Group H usability evaluation of
+the XJTLU Museum AI system.
 
 ## Current Files
 
-- `ADS401_GroupXX_Report.html`: single-page web report following the eight required ADS401 sections.
+- `ADS401_GroupXX_Report.html`: single-page Group H report following the eight required ADS401 sections.
 - `index.html`: the same single-page report, used as the GitHub Pages root page.
 - `report.css` and `report.js`: report styling and reading controls.
 - `poster.html`: A1 portrait poster source with screen themes and print mode.
-- `ADS401_GroupXX_Poster.pdf`: one-page A1 portrait poster draft.
+- `ADS401_GroupXX_Poster.pdf`: one-page A1 portrait poster.
+- `questionnaire.html`: interactive participant questionnaire with CSV export.
 - `qr-report.png`: QR code pointing to the hosted web report.
 
 ## Required Placeholders
 
-Before submission, replace every `GroupXX`, `Member 1`, `Member 2`, and `Member 3` placeholder. Rename
-the report file and poster PDF to use the real group ID:
+Group H members:
+
+- Cheng Qian 2687280
+- Chen Cui 2687288
+- Ziqian Wang 2684921
+- Simu He 2686299
+
+The report and poster file names still use `GroupXX`. Rename them to the required submission names:
 
 - `ADS401_GroupID_Report.html`
 - `ADS401_GroupID_Poster.pdf`
