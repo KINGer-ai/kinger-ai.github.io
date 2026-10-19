@@ -614,6 +614,11 @@
           answers. Your responses are anonymous.
         </p>
         <p class="lead">
+          The study evaluates four Museum AI tasks: starting the guide, asking about an exhibit, navigating
+          to the next stop, and recovering from an unclear answer. The questions examine task difficulty,
+          exhibit information, route guidance, trust, and recovery.
+        </p>
+        <p class="lead">
           Cheng Qian 2687280 · Chen Cui 2687288 · Ziqian Wang 2684921 · Simu He 2686299
         </p>
         <p class="notice">
@@ -720,41 +725,35 @@
 
         <section class="step" data-step="4">
           <div class="step-head">
-            <h2>Trust and final comments</h2>
+            <h2>Museum AI experience</h2>
             <span class="step-count">Step 4 of 5</span>
           </div>
 
-          <h3>I felt confident relying on the system's exhibit information and navigation advice.</h3>
-          <div class="rating-table" style="max-width: 480px">
-            <thead><tr><th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
-            <tbody>
-              <tr>
-                <td>Trust rating</td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="1" /><span>1</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="2" /><span>2</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="3" /><span>3</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="4" /><span>4</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="5" /><span>5</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="6" /><span>6</span></label></td>
-                <td><label class="rating-dot"><input type="radio" name="trust" value="7" /><span>7</span></label></td>
-              </tr>
-            </tbody>
-          </div>
+          <p class="lead">Rate the Museum AI system from 1 (strongly disagree) to 7 (strongly agree).</p>
+          <div id="system-eval"></div>
 
           <div class="field">
-            <span>Was there any information you did not trust? What caused the uncertainty?</span>
+            <span>Which exhibit information from the AI was most useful?</span>
+            <textarea name="useful_content" id="useful-content"></textarea>
+          </div>
+          <div class="field">
+            <span>Where did the Museum AI system make navigation or starting the tour confusing?</span>
+            <textarea name="navigation_barrier" id="navigation-barrier"></textarea>
+          </div>
+          <div class="field">
+            <span>How did you recover when an AI answer was unclear or unsuitable?</span>
+            <textarea name="recovery_strategy" id="recovery-strategy"></textarea>
+          </div>
+          <div class="field">
+            <span>What information did you not trust, and why?</span>
             <textarea name="trust_comment" id="trust-comment"></textarea>
           </div>
           <div class="field">
-            <span>Where did you hesitate or feel unsure?</span>
-            <textarea name="hesitation" id="hesitation"></textarea>
-          </div>
-          <div class="field">
-            <span>What one change would most improve the Museum AI system?</span>
+            <span>What one content or interaction change would most improve the Museum AI experience?</span>
             <textarea name="best_change" id="best-change"></textarea>
           </div>
           <div class="field">
-            <span>Is there anything else you would like to add?</span>
+            <span>Is there anything else you would like to add about the exhibits or the tour?</span>
             <textarea name="other_comments" id="other-comments"></textarea>
           </div>
 
@@ -803,7 +802,7 @@
 
     <footer class="footer">
       <span>ADS401 Evaluation Methods and Statistics · Group H</span>
-      <span>XJTLU Museum AI System · Participant Questionnaire v1.0</span>
+      <span>XJTLU Museum AI System · Participant Questionnaire v2.0</span>
     </footer>
 
     <script>
@@ -826,7 +825,15 @@
           "I felt very confident using the system.",
           "I needed to learn a lot before I could get going."
         ];
-        const storageKey = "museum-ai-questionnaire-v1";
+        const systemEvalItems = [
+          ["start_clarity", "I understood how to start the Museum AI guide."],
+          ["content_relevance", "The AI provided relevant information about the selected exhibit."],
+          ["navigation_clarity", "I knew where to go next during the Museum tour."],
+          ["recovery_confidence", "I could recover when an AI answer was unclear or unsuitable."],
+          ["trust", "I felt confident relying on the exhibit information and navigation advice."],
+          ["cognitive_load", "The Museum AI interaction required too much mental effort."]
+        ];
+        const storageKey = "museum-ai-questionnaire-v2";
         const form = document.querySelector("#questionnaire-form");
         const steps = [...document.querySelectorAll(".step")];
         const progressBar = document.querySelector("#progress-bar");
@@ -853,6 +860,14 @@
             block.className = "task-block";
             block.innerHTML = `
               <h3>Task ${number}: ${task}</h3>
+              <div class="field">
+                <span>How did you complete this task?</span>
+                <div class="choice-row">
+                  <label class="choice"><input type="radio" name="task${number}_complete" value="Independent" /><span>Completed independently</span></label>
+                  <label class="choice"><input type="radio" name="task${number}_complete" value="With help" /><span>Completed with help</span></label>
+                  <label class="choice"><input type="radio" name="task${number}_complete" value="Not completed" /><span>Not completed</span></label>
+                </div>
+              </div>
               <table class="rating-table">
                 <thead>
                   <tr>
@@ -862,10 +877,25 @@
                 <tbody>
                   ${ratingRow(`task${number}_ease`, "This task was easy to complete.")}
                   ${ratingRow(`task${number}_confidence`, "I felt confident about what to do next.")}
+                  ${ratingRow(`task${number}_content`, "The AI provided useful exhibit information or direction for this task.")}
                 </tbody>
               </table>
               <div class="field">
-                <span>What made this task easy or difficult?</span>
+                <span>Main obstacle in this task</span>
+                <select name="task${number}_barrier">
+                  <option value="">Select one</option>
+                  <option value="None">No obstacle</option>
+                  <option value="Starting">Starting the guide</option>
+                  <option value="Exhibit information">Exhibit information</option>
+                  <option value="Navigation">Navigation to the next stop</option>
+                  <option value="Unclear AI answer">Unclear AI answer</option>
+                  <option value="Submitting a question">Submitting a question</option>
+                  <option value="Technical issue">Technical issue</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <span>What helped or hindered you most in this task?</span>
                 <textarea name="task${number}_comment"></textarea>
               </div>
             `;
@@ -890,6 +920,20 @@
               </section>`
             );
           });
+
+          const systemEval = document.querySelector("#system-eval");
+          systemEval.innerHTML = `
+            <table class="rating-table">
+              <thead>
+                <tr>
+                  <th>Statement</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${systemEvalItems.map(([name, label]) => ratingRow(name, label)).join("")}
+              </tbody>
+            </table>
+          `;
         }
 
         function showStep(stepNumber) {
@@ -923,8 +967,13 @@
 
           if (stepNumber === 2) {
             for (let i = 1; i <= 4; i += 1) {
-              if (!getValue(`task${i}_ease`) || !getValue(`task${i}_confidence`)) {
+              if (!getValue(`task${i}_complete`) || !getValue(`task${i}_ease`) || !getValue(`task${i}_confidence`) || !getValue(`task${i}_content`)) {
                 error.textContent = `Please rate Task ${i}.`;
+                return false;
+              }
+              const barrier = form.querySelector(`[name="task${i}_barrier"]`)?.value;
+              if (!barrier) {
+                error.textContent = `Please select the main obstacle for Task ${i}.`;
                 return false;
               }
             }
@@ -939,9 +988,13 @@
             }
           }
 
-          if (stepNumber === 4 && !getValue("trust")) {
-            error.textContent = "Please provide the trust rating.";
-            return false;
+          if (stepNumber === 4) {
+            for (const [name] of systemEvalItems) {
+              if (!getValue(name)) {
+                error.textContent = "Please complete all Museum AI experience ratings.";
+                return false;
+              }
+            }
           }
 
           return true;
@@ -962,7 +1015,7 @@
             data[key] = value;
           });
           data.sus_score = calculateSus().toFixed(1);
-          data.questionnaire_version = "v1.0";
+          data.questionnaire_version = "v2.0";
           return data;
         }
 
@@ -970,11 +1023,15 @@
           const data = collect();
           const easeAverage = [1, 2, 3, 4].reduce((sum, i) => sum + Number(data[`task${i}_ease`] || 0), 0) / 4;
           const confidenceAverage = [1, 2, 3, 4].reduce((sum, i) => sum + Number(data[`task${i}_confidence`] || 0), 0) / 4;
+          const contentAverage = [1, 2, 3, 4].reduce((sum, i) => sum + Number(data[`task${i}_content`] || 0), 0) / 4;
+          const independentCount = [1, 2, 3, 4].filter((i) => data[`task${i}_complete`] === "Independent").length;
           reviewGrid.innerHTML = `
             <div class="review-card"><span>Participant</span><strong>${escapeHtml(data.participant_id || "Not entered")}</strong></div>
             <div class="review-card"><span>Role</span><strong>${escapeHtml(data.role || "Not selected")}</strong></div>
+            <div class="review-card"><span>Independent tasks</span><strong>${independentCount} / 4</strong></div>
             <div class="review-card"><span>Average ease</span><strong>${easeAverage.toFixed(1)} / 7</strong></div>
             <div class="review-card"><span>Average confidence</span><strong>${confidenceAverage.toFixed(1)} / 7</strong></div>
+            <div class="review-card"><span>Content usefulness</span><strong>${contentAverage.toFixed(1)} / 7</strong></div>
             <div class="review-card"><span>SUS</span><strong>${calculateSus().toFixed(1)}</strong></div>
             <div class="review-card"><span>Trust</span><strong>${escapeHtml(data.trust || "Not entered")} / 7</strong></div>
           `;
@@ -1005,12 +1062,29 @@
             "expectation"
           ];
           for (let i = 1; i <= 4; i += 1) {
-            headers.push(`task${i}_ease`, `task${i}_confidence`, `task${i}_comment`);
+            headers.push(
+              `task${i}_complete`,
+              `task${i}_ease`,
+              `task${i}_confidence`,
+              `task${i}_content`,
+              `task${i}_barrier`,
+              `task${i}_comment`
+            );
           }
           for (let i = 1; i <= 10; i += 1) {
             headers.push(`sus${String(i).padStart(2, "0")}`);
           }
-          headers.push("sus_score", "trust", "trust_comment", "hesitation", "best_change", "other_comments", "questionnaire_version");
+          headers.push(
+            "sus_score",
+            ...systemEvalItems.map(([name]) => name),
+            "useful_content",
+            "navigation_barrier",
+            "recovery_strategy",
+            "trust_comment",
+            "best_change",
+            "other_comments",
+            "questionnaire_version"
+          );
           return `${headers.map(csvEscape).join(",")}\n${headers.map((header) => csvEscape(data[header])).join(",")}`;
         }
 
