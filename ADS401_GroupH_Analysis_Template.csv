@@ -1,0 +1,2 @@
+participant_id,session_date,role,prior_use,task1_outcome,task1_time_sec,task1_ease,task1_confidence,task2_outcome,task2_time_sec,task2_ease,task2_confidence,task3_outcome,task3_time_sec,task3_ease,task3_confidence,task4_outcome,task4_time_sec,task4_ease,task4_confidence,sus01,sus02,sus03,sus04,sus05,sus06,sus07,sus08,sus09,sus10,start_clarity,content_relevance,navigation_clarity,recovery_confidence,trust,cognitive_load,barrier,content_feedback,improvement_feedback
+P01,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

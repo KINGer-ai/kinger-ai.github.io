@@ -795,6 +795,7 @@ tbody tr:last-child td {
     flex-direction: column;
     gap: 5px;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

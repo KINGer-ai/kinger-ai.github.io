@@ -1,66 +1,120 @@
-# ADS401 Group Project
+# ADS401 Group H Project
 
-This repository contains the single-page web report, interactive questionnaire, poster summary,
-poster source, poster PDF, and presentation materials for the ADS401 Group H usability evaluation of
-the XJTLU Museum AI system.
+Single-page web report and project materials for:
 
-## Current Files
+**Usability Evaluation of the XJTLU Museum AI System**
 
-- `ADS401_GroupXX_Report.html`: single-page Group H report following the eight required ADS401 sections.
-- `index.html`: the same single-page report, used as the GitHub Pages root page.
-- `report.css` and `report.js`: report styling and reading controls.
-- `poster.html`: A1 portrait poster source with screen themes and print mode.
-- `ADS401_GroupXX_Poster.pdf`: one-page A1 portrait poster.
-- `questionnaire.html`: interactive participant questionnaire with CSV export.
-- `qr-report.png`: QR code pointing to the hosted web report.
+Course theme: **Evaluating AI Integration at XJTLU**
 
-## Required Placeholders
+## Project Focus
 
-Group H members:
+The study evaluates one visitor-facing AI system across four tasks:
+
+1. Start the guide and select an exhibit.
+2. Ask an exhibit question and identify the answer.
+3. Navigate to the next recommended stop.
+4. Recover from an unclear or unsuitable answer.
+
+Target users: XJTLU students and staff aged 18 or above, with mixed digital confidence and museum experience.
+
+Planned sample: 12-15 participants completing one 15-minute session.
+
+## Research Questions and Hypotheses
+
+- RQ1: Can visitors complete the four core Museum AI tasks?
+- RQ2: How usable and efficient is the system according to task performance and SUS?
+- RQ3: Which onboarding, navigation, answer, or recovery barriers recur?
+- H1: At least 80% of participants complete each task independently.
+- H2: SUS reaches or exceeds the benchmark of 68.
+- H3: Task ease and task confidence are positively associated with SUS.
+- H4: The most frequent barriers concern onboarding, navigation, answer clarity, or error recovery.
+
+## Live Survey
+
+- Participant questionnaire: https://v.wjx.cn/vm/QZpCC3h.aspx
+- Researcher dashboard: https://www.wjx.cn/report/393565465.aspx?sat=1
+- Send/manage page: https://www.wjx.cn/newwjx/design/sendqstart.aspx?activityid=393565465
+
+The published questionnaire is bilingual and contains 10 main questions. Its dashboard reports response counts and automatic summaries; export the raw data for the final analysis.
+
+## Presentation 2 Requirements
+
+The project provides:
+
+- Research questions and target users.
+- Experiment plan and methodological rationale.
+- Convenience sampling and planned data types.
+- Four task cards, moderator script, and observation sheet.
+- Ten-question Wenjuanxing survey and SUS items.
+- Information sheet and consent form.
+- Pilot and implementation-reflection prompts.
+
+Required files:
+
+- `ADS401_GroupH_Presentation2Slides.pdf`
+- `ADS401_GroupH_Presentation2SupplementaryMaterials.pdf`
+
+## Presentation 3 Requirements
+
+The project provides:
+
+- Design, procedure, and measures recap.
+- Survey and observation data sources.
+- Participant-ID merge and data-cleaning pipeline.
+- SUS scoring and quality checks.
+- Binomial tests for each task against the 80% criterion.
+- SUS benchmark test against 68, with Wilcoxon if non-normal.
+- Cronbach's alpha for the SUS items.
+- Exploratory Spearman correlations for H3.
+- Thematic coding for H4.
+- A results-reporting frame that does not invent participant findings.
+
+Required files:
+
+- `ADS401_GroupH_Presentation3Slides.pdf`
+- `ADS401_GroupH_Presentation3SupplementaryMaterials.zip`
+
+## Data Status
+
+The live questionnaire is ready, but no completed participant sessions have been reported. The website and Presentation 3 therefore use an explicit pending-results frame. Do not replace it with fabricated numbers. After data collection, export the Wenjuanxing responses, merge them with the observation records by anonymous Participant ID, run the SPSS syntax, and insert the actual results.
+
+## Group H
 
 - Cheng Qian 2687280
 - Chen Cui 2687288
 - Ziqian Wang 2684921
 - Simu He 2686299
 
-The report and poster file names still use `GroupXX`. Rename them to the required submission names:
+## Repository Files
 
-- `ADS401_GroupID_Report.html`
-- `ADS401_GroupID_Poster.pdf`
-- `ADS401_GroupID_SupplementaryMaterials.zip`
-
-The current report is a planning draft. The findings section contains no participant data and must be
-completed only after ethics approval and data collection.
-
-## Word Count and Format
-
-The current main report narrative is approximately 2,021 words, within the required 2,000-2,500 word
-guidance. The website remains a single page with anchor navigation.
+- `index.html`: single-page GitHub Pages report.
+- `ADS401_GroupH_Report.html`: named copy of the same single-page report.
+- `poster.html`: interactive poster source with theme and motion controls.
+- `ADS401_GroupH_Poster.pdf`: final one-page A1 poster.
+- `ADS401_GroupH_Presentation2Slides.pptx` and `.pdf`.
+- `ADS401_GroupH_Presentation3Slides.pptx` and `.pdf`.
+- `ADS401_GroupH_Analysis_Template.csv`: merge-ready blank data template.
+- `ADS401_GroupH_Analysis_Plan.sps`: SPSS syntax.
+- `ADS401_GroupH_Data_Collection_Workbook.xlsx`: observation and merged data-entry workbook.
+- `ADS401_GroupH_Questionnaire_Bilingual.md`: bilingual questionnaire reference.
+- `ADS401_GroupH_Data_Collection_Kit.zip`: combined questionnaire, consent/materials, workbook, and analysis files.
+- `ADS401_GroupH_Project_Audit.md`: alignment and self-check.
+- `ADS401_GroupH_Submission_Checklist.md`: final submission checks.
 
 ## AI Permission
 
-The ADS401 sheet permits only non-substantive AI use, such as grammar corrections, formatting, or generic
-clarity suggestions. The group must rewrite and verify substantive academic content before submission.
-Complete the AI-use statement accurately in the report. Do not claim the use was limited to proofreading
-if AI contributed to structure, analysis planning, or writing.
-
-## Local Preview
-
-```powershell
-python -m http.server 8787
-```
-
-Then open `http://localhost:8787/`.
+The ADS401 coursework sheet permits only non-substantive AI use. The group must verify all academic content and complete the AI-use statement accurately. Do not claim a narrower use than actually occurred.
 
 ## Final Delivery Checklist
 
-- Replace group ID, member names, system details, and contribution statement.
-- Obtain ethics approval before recruiting or collecting participant data.
-- Pilot the usability tasks and record changes.
-- Enter real participant evidence and analysis results without fabricating data.
-- Report test statistics, exact p-values, confidence intervals, and effect sizes where relevant.
-- Replace poster finding placeholders with the final figures and principal results.
-- Test the QR code against the submitted report URL.
-- Export the final poster as A1 portrait PDF.
-- Remove raw or identifiable participant data from the website and GitHub repository.
-- Package anonymous data, SPSS output, instruments, and repository details in the supplementary ZIP.
+- Obtain the required ethics approval before recruitment or data collection.
+- Run the two-person pilot and document changes.
+- Collect the main-session data.
+- Export Wenjuanxing responses and merge observation records.
+- Run the statistical analysis and add real results.
+- Replace poster and report result placeholders with collected findings.
+- Export every slide deck to PDF.
+- Combine Presentation 2 materials into one PDF.
+- Package Presentation 3 materials into one ZIP.
+- Remove identifiable data and private working notes from public files.
+- Verify every GitHub Pages link.

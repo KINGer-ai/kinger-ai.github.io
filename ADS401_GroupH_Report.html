@@ -9,6 +9,7 @@
     />
     <meta name="theme-color" content="#0b1f33" />
     <title>ADS401 Group H Report | XJTLU Museum AI System Usability</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./report.css" />
     <script defer src="./report.js"></script>
   </head>
@@ -49,7 +50,8 @@
         <div class="hero-meta">
           <span>ADS401 Evaluation Methods and Statistics</span>
           <span>Group ID: Group H</span>
-          <span>Week 5 working draft</span>
+          <span>Week 9 working draft</span>
+          <span>Theme: Evaluating AI Integration at XJTLU</span>
         </div>
         <h1>Usability Evaluation of the XJTLU Museum AI System</h1>
         <p class="hero-summary">
@@ -62,10 +64,16 @@
             Xi'an Jiaotong-Liverpool University · 2026<br />
             Evaluated system:
             <a href="https://www.xjtlu.edu.cn/en/museum/tech" target="_blank" rel="noreferrer">XJTLU Museum technology information</a>
+            <br />
+            Participant survey:
+            <a href="https://v.wjx.cn/vm/QZpCC3h.aspx" target="_blank" rel="noreferrer">Wenjuanxing questionnaire</a>
+            ·
+            <a href="https://www.wjx.cn/report/393565465.aspx?sat=1" target="_blank" rel="noreferrer">researcher dashboard</a>
           </div>
           <div class="hero-status">
             <strong>Current status</strong>
-            The study is ready for ethics review. Participant data have not yet been collected.
+            The bilingual questionnaire is live. The pilot and participant sessions still need to be
+            completed before results can be reported.
           </div>
         </div>
       </div>
@@ -85,9 +93,6 @@
           <a href="#transparency">8. Transparency and references</a>
           <a href="#poster">9. Poster summary</a>
         </nav>
-        <div class="reading-note">
-          The complete report and poster summary are on this single page. No sub-pages are required.
-        </div>
       </aside>
 
       <main class="report">
@@ -124,6 +129,34 @@
               <strong>Task-based usability test</strong>
               <p>Observation, think-aloud comments, SUS, and a short exit questionnaire.</p>
             </div>
+          </div>
+
+          <h3>Presentation 2 and 3 coverage</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>What the coursework requires</th>
+                  <th>How this project responds</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Presentation 2</td>
+                  <td>Research questions, users, plan, rationale, methods, sampling, data, participant materials, trial, reflection</td>
+                  <td>Four-task usability protocol, bilingual questionnaire, moderator script, information sheet, consent form, observation sheet, and pilot plan</td>
+                  <td>Materials ready; pilot pending</td>
+                </tr>
+                <tr>
+                  <td>Presentation 3</td>
+                  <td>Completed collection, design and procedure recap, statistical methods, results, and implementation reflection</td>
+                  <td>Wenjuanxing and observation data merge, SUS scoring, binomial test, SUS benchmark test, Spearman correlations, thematic coding, and results template</td>
+                  <td>Analysis ready; data pending</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <p>
@@ -176,10 +209,10 @@
 
           <h3>Hypotheses</h3>
           <ul>
-            <li><strong>H1:</strong> At least 80% of participants will complete each core task without critical failure.</li>
-            <li><strong>H2:</strong> The median SUS score will meet the accepted usability benchmark.</li>
-            <li><strong>H3:</strong> Participants will rate perceived ease more positively than their confidence in the AI system's answers.</li>
-            <li><strong>H4:</strong> The main barriers will concern onboarding, navigation, or unclear system capability.</li>
+            <li><strong>H1:</strong> At least 80% of participants will complete each core task independently, without moderator assistance or critical failure.</li>
+            <li><strong>H2:</strong> The SUS score will reach or exceed the established benchmark of 68.</li>
+            <li><strong>H3:</strong> Higher task ease and task confidence will be positively associated with a higher SUS score.</li>
+            <li><strong>H4:</strong> The most frequent barriers will concern onboarding, navigation, answer clarity, or error recovery.</li>
           </ul>
 
           <p>
@@ -249,11 +282,6 @@
             still providing useful evidence about the system.
           </p>
 
-          <p>
-            The task order remains the same across participants because the goal is to describe one system,
-            not compare training or condition effects.
-          </p>
-
           <h3>Participants and sampling</h3>
           <p>
             The target sample is 12 to 15 XJTLU students or staff aged 18 or above. This meets the module
@@ -321,14 +349,20 @@
                 </tr>
                 <tr>
                   <td>Perceived ease</td>
-                  <td>1-7 rating after the task sequence</td>
-                  <td>Exit questionnaire</td>
+                  <td>1-7 rating for each of the four tasks</td>
+                  <td>Wenjuanxing questionnaire</td>
+                  <td>Secondary outcome</td>
+                </tr>
+                <tr>
+                  <td>Task confidence</td>
+                  <td>1-7 confidence rating for each task</td>
+                  <td>Wenjuanxing questionnaire</td>
                   <td>Secondary outcome</td>
                 </tr>
                 <tr>
                   <td>Trust</td>
                   <td>Confidence in AI answers and navigation advice</td>
-                  <td>Exit questionnaire</td>
+                  <td>Wenjuanxing questionnaire</td>
                   <td>Secondary outcome</td>
                 </tr>
               </tbody>
@@ -357,18 +391,28 @@
           </div>
 
           <p>
-            Observation and questionnaire data will be entered into an Excel codebook with one row per
-            participant. Task success will be coded as independent success, success with assistance, or
-            failure. Time on task will be recorded in seconds. Errors and moderator interventions will be
-            counted by task and category.
+            Two data sources will be merged by anonymous Participant ID. The bilingual Wenjuanxing
+            questionnaire records background, task completion, task ease, task confidence, SUS, system
+            ratings, barriers, and open feedback. The moderator observation sheet records independent
+            success, time on task, errors, and assistance for each of the four tasks.
           </p>
 
           <p>
-            SPSS will be used for descriptive statistics. The report will include task success rates,
-            medians or means for time on task, error frequencies, and an overall SUS score. The SUS result
-            will be interpreted against published benchmark guidance <a href="#ref5">[5]</a>. Because the
-            sample is small, the analysis will focus on practical patterns rather than complex inferential
-            models.
+            SPSS will be used for descriptive and inferential analysis. The report will present task
+            success rates, median time on task, error frequency, SUS, task ease, confidence, and system
+            ratings. For H1, a binomial test will compare the observed independent success proportion with
+            a prespecified 80% criterion for each task separately. Task attempts are not pooled because
+            repeated observations from the same participant are not independent. For H2, SUS will be
+            compared with the established benchmark of 68 <a href="#ref5">[5]</a> using a one-sample test,
+            with a Wilcoxon signed-rank test reported if the distribution is non-normal. Cronbach's alpha
+            will be reported for the ten SUS items, with caution because the sample is small.
+          </p>
+
+          <p>
+            Exploratory Spearman correlations will test H3 and examine whether task ease, confidence, SUS,
+            and trust move together. These tests will be clearly labelled exploratory because the usability
+            sample is small. Statistical significance will be interpreted alongside effect size, confidence
+            intervals where appropriate, and the practical size of the observed difference.
           </p>
 
           <p>
@@ -476,16 +520,17 @@
             <div class="transparency-card">
               <strong>Data and materials</strong>
               <p>
-                Anonymous task data, SPSS output, the observation sheet, SUS questionnaire, and GitHub
-                repository will be included in the supplementary ZIP. No identifiable participant data will
-                be published.
+                The anonymous data template, SPSS syntax, presented questionnaire framework, observation
+                sheet, and GitHub repository are available as supplementary materials. No identifiable
+                participant data will be published.
               </p>
             </div>
             <div class="transparency-card">
               <strong>AI-use statement</strong>
               <p>
                 [Complete accurately before submission.] AI was used to support the draft structure and
-                planning. Confirm whether this use is allowed under the module's non-substantive AI policy.
+                formatting. The group must verify all substantive academic content and confirm that every
+                use complies with the module's non-substantive AI policy.
               </p>
             </div>
             <div class="transparency-card">
@@ -496,6 +541,18 @@
               </p>
             </div>
           </div>
+
+          <h3>Project materials</h3>
+          <ul>
+            <li><a href="https://v.wjx.cn/vm/QZpCC3h.aspx" target="_blank" rel="noreferrer">Live bilingual Wenjuanxing questionnaire</a></li>
+            <li><a href="./ADS401_GroupH_Questionnaire_Bilingual.md">Bilingual questionnaire reference</a> and <a href="./ADS401_GroupH_Data_Collection_Workbook.xlsx">data collection workbook</a></li>
+            <li><a href="./ADS401_GroupH_Data_Collection_Kit.zip">Download the full data collection kit</a></li>
+            <li><a href="./ADS401_GroupH_Presentation2Slides.pdf">Presentation 2 slides</a> and <a href="./ADS401_GroupH_Presentation2SupplementaryMaterials.pdf">combined supplementary materials</a></li>
+            <li><a href="./ADS401_GroupH_Presentation3Slides.pdf">Presentation 3 slides</a> and <a href="./ADS401_GroupH_Presentation3SupplementaryMaterials.zip">supplementary ZIP</a></li>
+            <li><a href="./ADS401_GroupH_Poster.pdf">A1 poster PDF</a> and <a href="./poster.html">interactive poster source</a></li>
+            <li><a href="./ADS401_GroupH_Analysis_Template.csv">Analysis template</a> and <a href="./ADS401_GroupH_Analysis_Plan.sps">SPSS syntax</a></li>
+            <li><a href="./ADS401_GroupH_Submission_Checklist.md">Submission checklist and self-check</a></li>
+          </ul>
 
           <h3>IEEE-style references</h3>
           <ol class="reference-list">
