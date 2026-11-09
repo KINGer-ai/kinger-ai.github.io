@@ -36,7 +36,8 @@
 
 ## Final Checks
 
-- [ ] Confirm the final questionnaire link is https://v.wjx.cn/vm/YGnm4gy.aspx#
+- [ ] Confirm the final questionnaire link is https://v.wjx.cn/vm/wnB4jG2.aspx
+- [ ] Confirm the replacement questionnaire shows 30 responses
 - [ ] Confirm the group-allocation discrepancy is acknowledged
 - [ ] Confirm the AI-use statement accurately lists all AI assistance
 - [ ] Confirm no names, student numbers, or other identifying data are public

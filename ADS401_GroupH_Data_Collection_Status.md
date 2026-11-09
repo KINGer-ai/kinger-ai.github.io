@@ -13,8 +13,8 @@
 
 ## Questionnaire
 
-- Live link: https://v.wjx.cn/vm/YGnm4gy.aspx#
-- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
+- Live link: https://v.wjx.cn/vm/wnB4jG2.aspx
+- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
 - Full question reference: `ADS401_GroupH_Questionnaire_Bilingual.md`
 
 ## Statistical Analysis
@@ -27,10 +27,10 @@
 
 ## Live-Form Version Mismatch
 
-After transcription began, the live Wenjuanxing form added a required Q16 matrix
-about AI-guide smoothness and ease. The final cleaned dataset does not contain
-Q16, so those values are not available and Q16 is excluded from the reported
-analysis. No placeholder or imputed Q16 scores are used.
+The original live form later added a required Q16 matrix that was absent from
+the final dataset. A clean replacement questionnaire now contains Q1-Q15 only,
+matches the collected variables, and has 30 confirmed responses. No placeholder
+or imputed Q16 scores are used.
 
 ## Interpretation Boundary
 

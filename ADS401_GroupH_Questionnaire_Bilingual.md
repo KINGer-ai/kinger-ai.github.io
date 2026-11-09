@@ -2,10 +2,11 @@
 
 ## Live Form
 
-- Participant link: https://v.wjx.cn/vm/YGnm4gy.aspx#
-- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
+- Participant link: https://v.wjx.cn/vm/wnB4jG2.aspx
+- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
 - Format: Chinese-English bilingual
 - Main questions: Q1-Q15
+- Current responses: 30
 
 The survey compares two museum visit conditions: use of the museum's own AI guide
 and a self-guided visit using museum labels only.

@@ -19,5 +19,6 @@
 | Equivalence claim | None |
 | SUS analysis | Removed because the final data contain no SUS |
 | Task-success analysis | Removed because the final data contain no task outcomes |
-| Questionnaire link | https://v.wjx.cn/vm/YGnm4gy.aspx# |
+| Questionnaire link | https://v.wjx.cn/vm/wnB4jG2.aspx |
+| Questionnaire responses | 30 |
 | Public identifying data | None found in the final anonymous files |
