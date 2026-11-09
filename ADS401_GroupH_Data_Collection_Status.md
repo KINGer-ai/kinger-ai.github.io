@@ -13,8 +13,8 @@
 
 ## Questionnaire
 
-- Live link: https://v.wjx.cn/vm/wnB4jG2.aspx
-- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
+- Field experiment link: https://v.wjx.cn/vm/YGnm4gy.aspx#
+- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
 - Full question reference: `ADS401_GroupH_Questionnaire_Bilingual.md`
 
 ## Statistical Analysis
@@ -27,10 +27,9 @@
 
 ## Live-Form Version Mismatch
 
-The original live form later added a required Q16 matrix that was absent from
-the final dataset. A clean replacement questionnaire now contains Q1-Q15 only,
-matches the collected variables, and has 30 confirmed responses. No placeholder
-or imputed Q16 scores are used.
+The field form later added a required Q16 matrix that was absent from the final
+dataset. The statistical analysis uses the final 30-case cleaned CSV, not the
+partial dashboard transcription. No placeholder or imputed Q16 scores are used.
 
 ## Interpretation Boundary
 

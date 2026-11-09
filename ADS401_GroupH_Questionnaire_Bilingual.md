@@ -2,11 +2,11 @@
 
 ## Live Form
 
-- Participant link: https://v.wjx.cn/vm/wnB4jG2.aspx
-- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
+- Original field experiment link: https://v.wjx.cn/vm/YGnm4gy.aspx#
+- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
 - Format: Chinese-English bilingual
 - Main questions: Q1-Q15
-- Current responses: 30
+- Analysis dataset: 30 cleaned cases
 
 The survey compares two museum visit conditions: use of the museum's own AI guide
 and a self-guided visit using museum labels only.
@@ -153,3 +153,9 @@ The final analysis uses two-sided Mann-Whitney U tests for the nine Q7-Q15
 ratings, followed by Holm correction across the nine exploratory comparisons.
 The report does not use SUS or task-success measures because the final dataset
 does not contain them.
+
+## Form Version Note
+
+The linked field form later displayed an additional Q16 matrix that is not part
+of the 30-case cleaned dataset. The analysis file and questionnaire reference in
+this project cover Q1-Q15 only. Q16 is excluded rather than imputed.
