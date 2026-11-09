@@ -5,9 +5,6 @@
   const progressBar = document.querySelector(".progress-bar");
   const sections = [...document.querySelectorAll(".report-section")];
   const navLinks = [...document.querySelectorAll(".toc a")];
-  const copySyntaxButton = document.querySelector("#copy-spss-syntax");
-  const copySyntaxLabel = document.querySelector("#copy-spss-label");
-  const spssSyntax = document.querySelector("#spss-syntax");
 
   function setTheme(theme) {
     body.dataset.theme = theme;
@@ -37,28 +34,6 @@
 
   themeButton.addEventListener("click", () => {
     setTheme(body.dataset.theme === "dark" ? "light" : "dark");
-  });
-
-  copySyntaxButton?.addEventListener("click", async () => {
-    const syntax = spssSyntax?.textContent || "";
-    try {
-      await navigator.clipboard.writeText(syntax);
-      copySyntaxLabel.textContent = "Copied";
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = syntax;
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.append(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
-      copySyntaxLabel.textContent = "Copied";
-    }
-
-    window.setTimeout(() => {
-      copySyntaxLabel.textContent = "Copy code";
-    }, 1600);
   });
 
   window.addEventListener("scroll", () => {
