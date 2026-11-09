@@ -43,10 +43,10 @@ and the group comparison is not interpreted as a causal effect of the AI guide.
 
 ## Live Questionnaire
 
-- Field experiment form: https://v.wjx.cn/vm/YGnm4gy.aspx#
-- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
-- The dashboard is the field instrument and may contain fewer transcribed responses.
-- The 30-case statistical analysis uses `ADS401_GroupH_questionnaire_clean_01.csv`.
+- Final questionnaire: https://v.wjx.cn/vm/wnB4jG2.aspx
+- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
+- Current responses: 30
+- The dashboard and the cleaned analysis file both represent the final 30-case sample.
 
 ## Final Files
 

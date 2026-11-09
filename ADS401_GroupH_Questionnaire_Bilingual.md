@@ -2,11 +2,11 @@
 
 ## Live Form
 
-- Original field experiment link: https://v.wjx.cn/vm/YGnm4gy.aspx#
-- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
+- Participant link: https://v.wjx.cn/vm/wnB4jG2.aspx
+- Researcher dashboard: https://www.wjx.cn/report/397354359.aspx?sat=1
 - Format: Chinese-English bilingual
 - Main questions: Q1-Q15
-- Analysis dataset: 30 cleaned cases
+- Current responses: 30
 
 The survey compares two museum visit conditions: use of the museum's own AI guide
 and a self-guided visit using museum labels only.
@@ -156,6 +156,5 @@ does not contain them.
 
 ## Form Version Note
 
-The linked field form later displayed an additional Q16 matrix that is not part
-of the 30-case cleaned dataset. The analysis file and questionnaire reference in
-this project cover Q1-Q15 only. Q16 is excluded rather than imputed.
+The final questionnaire contains Q1-Q15 only. The earlier Q16 matrix was not part
+of the collected dataset and has been removed rather than imputed.

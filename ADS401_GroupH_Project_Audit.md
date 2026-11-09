@@ -19,7 +19,7 @@
 | Equivalence claim | None |
 | SUS analysis | Removed because the final data contain no SUS |
 | Task-success analysis | Removed because the final data contain no task outcomes |
-| Field experiment form | https://v.wjx.cn/vm/YGnm4gy.aspx# |
+| Final questionnaire | https://v.wjx.cn/vm/wnB4jG2.aspx |
 | Analysis dataset | 30 clean cases from CSV |
-| Dashboard count | Field transcription; not used as the analysis row count |
+| Dashboard count | 30 responses, verified against the cleaned analysis file |
 | Public identifying data | None found in the final anonymous files |
