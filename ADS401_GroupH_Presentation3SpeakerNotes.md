@@ -1,39 +1,67 @@
-# ADS401 Presentation 3 - 3-Minute Speaker Notes
+# ADS401 Presentation 3 Speaker Notes
 
 ## Slide 1 - Title (10 seconds)
 
-Good morning. We are Group H. In Presentation 2 we presented the usability design for the XJTLU Museum AI System. Today we explain how we turn the questionnaire and observation data into statistical evidence.
+Good morning. We are Group H. This presentation reports the final comparison of
+post-visit experience between students who used the museum AI guide and those
+who toured without it.
 
-## Slide 2 - Study recap (25 seconds)
+## Slide 2 - Research question and design (30 seconds)
 
-The study covers four tasks: starting the guide, asking an exhibit question, navigating to the next stop, and recovering from an unclear answer. We recruit 12 to 15 XJTLU students or staff. The final instrument is a 10-question bilingual Wenjuanxing survey, supported by a moderator observation sheet.
+Our question is how nine post-visit experience ratings differ between the two
+groups. The dataset contains 30 students, 15 in each group. Seventeen are
+undergraduates and 13 are postgraduates. The team planned to alternate groups by
+arrival order, but the recorded group sequence is not strictly alternating. We
+therefore do not call the allocation random or interpret the comparison as a
+causal effect.
 
-## Slide 3 - Data sources (25 seconds)
+## Slide 3 - Dataset and preparation (25 seconds)
 
-The survey records role, prior use, task completion, task ease, confidence, SUS, system ratings, barriers, and open feedback. The observation workbook records independent success, time on task, errors, assistance, and anonymised notes. We merge the two sources using the anonymous Participant ID. The Excel workbook automatically calculates task success and SUS.
+The final file contains 30 unique anonymous IDs. All participants confirmed
+consent and a recent visit, and all 270 Q7-Q15 ratings are present and within
+the 1-5 range. There are no duplicate IDs or out-of-range scores. We changed
+category labels into numeric codes but retained every experience rating.
 
-## Slide 4 - Data preparation (30 seconds)
+## Slide 4 - Statistical method (30 seconds)
 
-We export the survey data, merge it with the observation workbook, recode task outcomes, calculate SUS, and check missing values, duplicates, and outliers. For task success, independent completion is one; assisted or failed completion is zero for the primary success rate. The workbook applies the standard alternating-item SUS formula automatically.
+Each Q7-Q15 item is ordinal. We use a two-sided independent-samples
+Mann-Whitney U test with the no-AI group as the reference group. We apply Holm
+correction across all nine exploratory comparisons and calculate rank-biserial
+correlation for direction and magnitude. No verified primary endpoint was
+available before analysis.
 
-## Slide 5 - Planned statistics (35 seconds)
+## Slide 5 - Results overview (25 seconds)
 
-H1 compares independent task success with an eighty percent criterion using a binomial test for each task separately. H2 compares SUS with the benchmark of sixty-eight using a one-sample test, or Wilcoxon if the data are non-normal. We report Cronbach's alpha for the SUS items. H3 uses exploratory Spearman correlations between task ease, confidence, SUS, and trust. Open responses are coded into barrier themes for H4.
+The AI group has higher descriptive means on five items and the no-AI group on
+four. The largest mean difference is Q9, new knowledge, at plus 0.47. Its raw
+p-value is .230 and the Holm-adjusted p-value is 1.000. No item is significant
+before or after correction, and every effect magnitude is below .30.
 
-## Slide 6 - Results (20 seconds)
+## Slide 6 - Full result table (20 seconds)
 
-The Wenjuanxing survey is live, but participant sessions are not complete. This slide is the reporting frame for the final results. We do not invent participant numbers. After collection, we will insert the actual task success rates, SUS, task ratings, and barrier frequencies from the Wenjuanxing dashboard and observation sheet.
+This table contains all nine comparisons. The adjusted p-value remains 1.000
+for every item. The result does not prove that the groups are equivalent. It
+means the current sample does not provide enough evidence to rule out sampling
+variation.
 
-## Slide 7 - Interpretation (15 seconds)
+## Slide 7 - Conclusion and reflection (20 seconds)
 
-The final discussion will connect task success, SUS, task ratings, and qualitative themes to clear recommendations for onboarding, exhibit content, navigation, and recovery. Thank you. We welcome questions about the analysis or measures.
+The cautious answer is that the current data do not show an AI-guide effect on
+the nine post-visit experience ratings. The main limitations are the small
+sample, self-report outcomes, the inconsistent allocation record, and the
+absence of a pre-specified primary outcome. A stronger next study should verify
+allocation, pre-specify one primary outcome, and recruit a larger sample.
 
 ## Likely Q&A
 
-- Why use a binomial test? It directly compares the observed success proportion with our prespecified 80% criterion.
-- Why compare SUS with 68? It is a widely used benchmark for acceptable usability.
-- Why report correlations as exploratory? The sample is small and not designed for causal inference.
-- Why use both survey and observation data? Self-report explains experience; observation records what participants actually did.
-- What if SUS is non-normal? Report Wilcoxon signed-rank instead of the one-sample t-test.
-- How does Wenjuanxing help? It automatically summarises frequencies and charts and exports the data for SPSS.
-- Why test each task separately? Repeated task observations from the same participant are not independent, so pooling all attempts would overstate the evidence.
+- Why not use SUS or task success? The final dataset does not contain those
+  variables, so the analysis cannot compute them.
+- Why Mann-Whitney? Q7-Q15 are ordinal 1-5 ratings and the groups are
+  independent.
+- Why Holm correction? Nine related experience items were explored without a
+  single verified primary endpoint.
+- Does no significant result prove equivalence? No. The sample has limited
+  power to detect modest differences.
+- Was the AI guide randomly assigned? The planned process was alternating by
+  arrival, but the recorded sequence was not strictly alternating. We therefore
+  avoid the term randomized.

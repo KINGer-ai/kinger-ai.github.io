@@ -1,28 +1,36 @@
-# ADS401 Group H Data Collection Status
+# ADS401 Group H Final Data Status
 
-## Instrument
+## Completed Dataset
 
-- Published bilingual Wenjuanxing survey: https://v.wjx.cn/vm/QZpCC3h.aspx
-- Researcher dashboard: https://www.wjx.cn/report/393565465.aspx?sat=1
-- Main questions: 10
-- Moderator and merged data workbook: `ADS401_GroupH_Data_Collection_Workbook.xlsx`
-- Full bilingual question reference: `ADS401_GroupH_Questionnaire_Bilingual.md`
+- Participants: 30
+- AI-guide group: 15
+- No-AI comparison group: 15
+- Student level: 17 undergraduates and 13 postgraduates
+- Final outcome items: Q7-Q15, nine ratings on a 1-5 scale
+- Data completeness: 30 unique IDs; 270 of 270 item ratings present
+- Missing values: none
+- Out-of-range values: none
 
-## Current Project Status
+## Questionnaire
 
-At the time of this project revision, the survey was published but no completed participant sessions had been supplied for analysis. The project therefore does not contain participant findings and does not present simulated or invented results.
+- Live link: https://v.wjx.cn/vm/YGnm4gy.aspx#
+- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
+- Full question reference: `ADS401_GroupH_Questionnaire_Bilingual.md`
 
-## Required Next Steps
+## Statistical Analysis
 
-1. Obtain ethics approval before recruitment.
-2. Run the two-participant pilot and document task wording or timing changes.
-3. Collect 12-15 anonymous main-session records.
-4. Export the Wenjuanxing response workbook.
-5. Merge each survey row with its observation record by anonymous Participant ID.
-6. Check duplicate IDs, missing values, outliers, and distributions.
-7. Run `ADS401_GroupH_Analysis_Plan.sps` in SPSS.
-8. Replace all pending-result placeholders with the resulting values.
+- Two-sided independent-samples Mann-Whitney U test for each Q7-Q15 item
+- Holm correction across the nine exploratory comparisons
+- Rank-biserial correlation for effect direction and magnitude
+- No pre-specified primary endpoint could be verified
+- No item reached raw or Holm-adjusted p < .05
 
-## Result Boundary
+## Interpretation Boundary
 
-Do not describe the planned tests as findings. A result is reportable only after it is calculated from collected data and checked against the raw records.
+The dataset does not contain task success, completion time, SUS, observation
+records, or objective learning outcomes. The report therefore does not reuse
+the previous usability analysis.
+
+The planned allocation was alternating by arrival, but the recorded group
+sequence is not strictly alternating. The final report does not describe the
+study as randomized or interpret the observed differences as causal effects.

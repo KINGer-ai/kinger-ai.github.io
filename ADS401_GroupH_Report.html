@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ADS401 usability evaluation of the XJTLU Museum AI system."
+      content="ADS401 Group H comparison of post-visit experience with and without the XJTLU Museum AI guide."
     />
     <meta name="theme-color" content="#0b1f33" />
-    <title>ADS401 Group H Report | XJTLU Museum AI System Usability</title>
+    <title>ADS401 Group H Report | XJTLU Museum AI Guide Experience</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./report.css" />
     <script defer src="./report.js"></script>
@@ -20,18 +20,18 @@
       <a class="brand" href="#overview">
         <span class="brand-mark">A4</span>
         <span>
-          <strong>ADS401 Group Project</strong>
-          <small>XJTLU Museum AI system usability evaluation</small>
+          <strong>ADS401 Group H</strong>
+          <small>Museum AI guide experience comparison</small>
         </span>
       </a>
 
       <nav class="site-nav" aria-label="Report sections">
         <a href="#overview">Overview</a>
-        <a href="#problem">Problem</a>
-        <a href="#background">Background</a>
+        <a href="#question">Question</a>
         <a href="#design">Design</a>
         <a href="#analysis">Analysis</a>
         <a href="#findings">Findings</a>
+        <a href="#discussion">Discussion</a>
       </nav>
 
       <div class="header-actions">
@@ -50,30 +50,27 @@
         <div class="hero-meta">
           <span>ADS401 Evaluation Methods and Statistics</span>
           <span>Group ID: Group H</span>
-          <span>Week 9 working draft</span>
+          <span>30 complete responses</span>
           <span>Theme: Evaluating AI Integration at XJTLU</span>
         </div>
-        <h1>Usability Evaluation of the XJTLU Museum AI System</h1>
+        <h1>Museum AI Guide and Post-Visit Experience</h1>
         <p class="hero-summary">
-          A simple task-based evaluation of task success, efficiency, usability, and user-reported barriers.
+          A two-group comparison of nine post-visit experience ratings from 30 XJTLU students,
+          with and without the museum's AI guide.
         </p>
         <div class="hero-foot">
           <div class="byline">
             <strong>Group H</strong><br />
             Cheng Qian 2687280 · Chen Cui 2687288 · Ziqian Wang 2684921 · Simu He 2686299<br />
-            Xi'an Jiaotong-Liverpool University · 2026<br />
-            Evaluated system:
-            <a href="https://www.xjtlu.edu.cn/en/museum/tech" target="_blank" rel="noreferrer">XJTLU Museum technology information</a>
-            <br />
-            Participant survey:
-            <a href="https://v.wjx.cn/vm/QZpCC3h.aspx" target="_blank" rel="noreferrer">Wenjuanxing questionnaire</a>
+            Xi'an Jiaotong-Liverpool University · 9 November 2026<br />
+            Survey:
+            <a href="https://v.wjx.cn/vm/YGnm4gy.aspx#" target="_blank" rel="noreferrer">Museum AI Guide Experience Survey</a>
             ·
-            <a href="https://www.wjx.cn/report/393565465.aspx?sat=1" target="_blank" rel="noreferrer">researcher dashboard</a>
+            <a href="https://www.wjx.cn/report/394402777.aspx?sat=1" target="_blank" rel="noreferrer">researcher dashboard</a>
           </div>
           <div class="hero-status">
-            <strong>Current status</strong>
-            The bilingual questionnaire is live. The pilot and participant sessions still need to be
-            completed before results can be reported.
+            <strong>Main result</strong>
+            No item-level difference remained statistically significant before or after Holm correction.
           </div>
         </div>
       </div>
@@ -84,540 +81,374 @@
         <p>On this page</p>
         <nav>
           <a href="#overview">1. Project at a glance</a>
-          <a href="#problem">2. Problem and research questions</a>
-          <a href="#background">3. Background and related work</a>
-          <a href="#design">4. System and evaluation design</a>
-          <a href="#analysis">5. Data preparation and analysis</a>
-          <a href="#findings">6. Findings</a>
-          <a href="#discussion">7. Discussion, limitations, recommendations</a>
-          <a href="#transparency">8. Transparency and references</a>
-          <a href="#poster">9. Poster summary</a>
+          <a href="#question">2. Research question</a>
+          <a href="#design">3. Study design</a>
+          <a href="#analysis">4. Data and statistical method</a>
+          <a href="#findings">5. Findings</a>
+          <a href="#discussion">6. Interpretation and limits</a>
+          <a href="#transparency">7. Transparency and materials</a>
+          <a href="#poster">8. Poster summary</a>
         </nav>
       </aside>
 
       <main class="report">
         <section class="report-section" id="overview">
           <div class="section-number">01 · Project at a glance</div>
-          <h2>Project at a glance</h2>
+          <h2>Completed two-group experience study</h2>
 
           <div class="status-banner">
-            <strong>DRAFT</strong>
+            <strong>COMPLETED</strong>
             <p>
-              Group H research design. Findings remain pending until participant data are collected. No
-              participant data are invented here.
+              The analysis uses 30 anonymous questionnaire records. All 30 participants confirmed
+              consent and a recent visit; all 270 Q7–Q15 ratings are present and within the 1–5 range.
             </p>
           </div>
 
           <div class="glance-grid">
             <div class="glance-item">
-              <span>System</span>
-              <strong>XJTLU Museum AI system</strong>
-              <p>An AI-supported visitor guide for exhibit information and museum navigation.</p>
-            </div>
-            <div class="glance-item">
-              <span>Context</span>
-              <strong>Museum visitor guidance</strong>
-              <p>Visitors use the system to start a tour, find exhibit information, and move between stops.</p>
+              <span>Comparison</span>
+              <strong>AI guide vs no AI guide</strong>
+              <p>Two groups of 15 students completed a post-visit questionnaire.</p>
             </div>
             <div class="glance-item">
               <span>Participants</span>
-              <strong>12 to 15 visitors</strong>
-              <p>Students or staff complete four short tasks in one 15-minute session.</p>
+              <strong>30 XJTLU students</strong>
+              <p>17 undergraduates and 13 postgraduates. No staff members appear in the dataset.</p>
             </div>
             <div class="glance-item">
-              <span>Design</span>
-              <strong>Task-based usability test</strong>
-              <p>Observation, think-aloud comments, SUS, and a short exit questionnaire.</p>
+              <span>Outcomes</span>
+              <strong>Nine 1–5 ratings</strong>
+              <p>Engagement, interest, learning, understanding, reflection, meaning, context, emotion, and theme resonance.</p>
+            </div>
+            <div class="glance-item">
+              <span>Analysis</span>
+              <strong>Mann–Whitney U</strong>
+              <p>Two-sided item comparisons with Holm correction across nine exploratory tests.</p>
             </div>
           </div>
-
-          <h3>Presentation 2 and 3 coverage</h3>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Task</th>
-                  <th>What the coursework requires</th>
-                  <th>How this project responds</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Presentation 2</td>
-                  <td>Research questions, users, plan, rationale, methods, sampling, data, participant materials, trial, reflection</td>
-                  <td>Four-task usability protocol, bilingual questionnaire, moderator script, information sheet, consent form, observation sheet, and pilot plan</td>
-                  <td>Materials ready; pilot pending</td>
-                </tr>
-                <tr>
-                  <td>Presentation 3</td>
-                  <td>Completed collection, design and procedure recap, statistical methods, results, and implementation reflection</td>
-                  <td>Wenjuanxing and observation data merge, SUS scoring, binomial test, SUS benchmark test, Spearman correlations, thematic coding, and results template</td>
-                  <td>Analysis ready; data pending</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p>
-            XJTLU Museum describes its technology programme as using AI and digital tools to create more
-            interactive cultural experiences
-            <a href="#ref1">[1]</a>. The project is a suitable evaluation object because it combines museum
-            communication with an AI-supported interaction. Visitors must understand how to begin, what the
-            system can answer, where to go next, and what to do when the response is unclear.
-          </p>
 
           <div class="quote">
-            The evaluation asks a practical question: can visitors complete the Museum AI tasks without
-            confusion, unnecessary effort, or loss of confidence?
+            The evidence supports a narrow conclusion: in this sample, the nine post-visit ratings
+            did not differ enough to rule out sampling variation. The data do not prove that the two
+            conditions were equivalent.
           </div>
         </section>
 
-        <section class="report-section" id="problem">
-          <div class="section-number">02 · Problem and motivation</div>
-          <h2>Problem, motivation, and research questions</h2>
+        <section class="report-section" id="question">
+          <div class="section-number">02 · Research question</div>
+          <h2>Post-visit experience across the two conditions</h2>
 
-          <p>
-            A museum AI system can be technically impressive but difficult to use. Visitors may not know
-            which button starts the guide, whether the AI understands spoken or typed questions, how to
-            return to an exhibit, or what the system can and cannot do. These small interaction problems can
-            stop the visit even when the underlying AI works correctly.
-          </p>
-
-          <p>
-            The Museum AI system is also public-facing. Visitors arrive with different levels of digital
-            confidence and may use the system only once. The interaction therefore needs to be learnable
-            without a manual. A task-based usability evaluation is a practical way to identify where users
-            hesitate, make errors, or need help.
-          </p>
-
-          <h3>Research questions</h3>
           <div class="question-list">
             <div class="question-block">
-              <strong>RQ1 · Task success</strong>
-              <p>Can visitors complete the core Museum AI tasks without critical failure?</p>
-            </div>
-            <div class="question-block">
-              <strong>RQ2 · Usability</strong>
-              <p>How usable and efficient is the system according to task performance and SUS?</p>
-            </div>
-            <div class="question-block">
-              <strong>RQ3 · Barriers</strong>
-              <p>What problems, risks, or improvement opportunities do participants report?</p>
+              <strong>Research question</strong>
+              <p>
+                How do post-visit experience ratings differ between students who used the museum's AI
+                guide and students who toured without it?
+              </p>
             </div>
           </div>
 
-          <h3>Hypotheses</h3>
-          <ul>
-            <li><strong>H1:</strong> At least 80% of participants will complete each core task independently, without moderator assistance or critical failure.</li>
-            <li><strong>H2:</strong> The SUS score will reach or exceed the established benchmark of 68.</li>
-            <li><strong>H3:</strong> Higher task ease and task confidence will be positively associated with a higher SUS score.</li>
-            <li><strong>H4:</strong> The most frequent barriers will concern onboarding, navigation, answer clarity, or error recovery.</li>
-          </ul>
-
           <p>
-            The study can support claims about the evaluated tasks, the tested system version, and the
-            participant group. It cannot establish long-term adoption, learning outcomes, or the technical
-            accuracy of every AI response.
-          </p>
-        </section>
-
-        <section class="report-section" id="background">
-          <div class="section-number">03 · Background and related work</div>
-          <h2>Background and related work</h2>
-
-          <p>
-            Usability is commonly defined through effectiveness, efficiency, and satisfaction
-            <a href="#ref2">[2]</a>. For the Museum AI system, effectiveness means completing the tour tasks,
-            efficiency means avoiding unnecessary steps and delays, and satisfaction includes ease of use
-            and willingness to continue. A task-based test links these dimensions to observable behaviour.
-          </p>
-
-          <p>
-            The System Usability Scale provides a short global measure of perceived usability
-            <a href="#ref3">[3]</a>. It is suitable here because participants can complete it in less than
-            two minutes. Task success and observed assistance will provide behavioural evidence alongside the
-            SUS score.
-          </p>
-
-          <p>
-            Human-AI interaction guidelines emphasise clear capability, efficient invocation, uncertainty
-            cues, and easy correction <a href="#ref4">[4]</a>. These principles suggest that the evaluation
-            should test not only whether visitors can start the tour, but also whether they can judge the
-            answer and recover when the AI response is unclear.
+            The questionnaire measured nine related dimensions rather than a single global experience
+            score. The supplied analysis contains no verified pre-specified primary endpoint and no
+            validated total-score rule. Each item is therefore treated as an exploratory comparison,
+            and the report does not select a favourable item after inspecting the results.
           </p>
 
           <div class="callout">
             <p>
-              <strong>Research gap:</strong> XJTLU Museum documents its use of interactive technology,
-              but public evidence does not yet show whether visitors can operate its AI system during a
-              museum tour.
+              <strong>Analysis boundary:</strong> the study compares self-reported post-visit ratings.
+              It does not measure task success, completion time, SUS, learning with a knowledge test,
+              or behavioural use of the AI guide.
             </p>
           </div>
         </section>
 
         <section class="report-section" id="design">
-          <div class="section-number">04 · System and evaluation design</div>
-          <h2>System and evaluation design</h2>
+          <div class="section-number">03 · Study design</div>
+          <h2>Two conditions, one post-visit questionnaire</h2>
 
-          <h3>System and context</h3>
-          <p>
-            The XJTLU Museum AI system supports an interactive museum visit. The study evaluates visitor-facing
-            use of the system rather than its internal AI model. The tested interaction includes opening the
-            tour, selecting or locating an exhibit, asking for information, following a route, and recovering
-            from a response that the visitor does not understand.
-          </p>
-
-          <p>
-            The evaluation will use a current public or demonstration version of the system. If access is
-            restricted, the team will request permission from the system owner and prepare a short recorded
-            walkthrough or approved prototype for the session. The materials used by participants will remain
-            the same across sessions so that usability findings are comparable.
-          </p>
-
-          <p>
-            A small task set keeps the session practical. It focuses on the actions every visitor must
-            perform, rather than testing every feature. If a task cannot be completed independently, the
-            moderator stops the attempt and records the point of failure. This prevents frustration while
-            still providing useful evidence about the system.
-          </p>
-
-          <h3>Participants and sampling</h3>
-          <p>
-            The target sample is 12 to 15 XJTLU students or staff aged 18 or above. This meets the module
-            guidance for a usability study and provides enough behavioural evidence to identify repeated
-            interaction problems. Recruitment will use approved campus channels and a short sign-up form.
-          </p>
-
-          <p>
-            Participants do not need previous experience with the Museum AI system, but the group will record prior
-            museum and AI-tool use as descriptive context. The study does not compare separate groups or
-            manipulate conditions. Every participant completes the same task sequence so that the results
-            directly describe the usability of one system.
-          </p>
-
-          <h3>Tasks and procedure</h3>
           <div class="flow">
-            <div class="design-step"><span>01</span><strong>Consent</strong><p>Purpose, privacy, and withdrawal.</p></div>
-            <div class="design-step"><span>02</span><strong>Warm-up</strong><p>Familiarise with the Museum and system.</p></div>
-            <div class="design-step"><span>03</span><strong>Tasks</strong><p>Four core museum-tour tasks.</p></div>
-            <div class="design-step"><span>04</span><strong>SUS</strong><p>10 quick usability ratings.</p></div>
-            <div class="design-step"><span>05</span><strong>Debrief</strong><p>Barriers and improvement ideas.</p></div>
+            <div class="design-step"><span>01</span><strong>Consent</strong><p>Information and voluntary participation.</p></div>
+            <div class="design-step"><span>02</span><strong>Condition</strong><p>AI guide or no AI guide.</p></div>
+            <div class="design-step"><span>03</span><strong>Visit</strong><p>Same exhibition context.</p></div>
+            <div class="design-step"><span>04</span><strong>Survey</strong><p>Anonymous post-visit ratings.</p></div>
+            <div class="design-step"><span>05</span><strong>Analysis</strong><p>Q7–Q15 group comparison.</p></div>
           </div>
 
           <p>
-            The four tasks are: (1) start the AI guide and select an exhibit; (2) ask one exhibit-related
-            question; (3) find and move to the next recommended stop; and (4) recover from an unclear or
-            incorrect response. The moderator will use a standard script, provide no help unless the
-            participant is unable to continue, and record assistance separately from independent success.
+            The dataset contains 15 participants in the AI-guide group and 15 in the no-AI comparison
+            group. Both groups reported visiting the same exhibition. The questionnaire also records
+            student level, previous museum visits, and general AI-tool frequency as descriptive context.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>Allocation caution:</strong> the team planned to alternate groups by arrival order,
+              but the recorded group sequence is not strictly alternating. The report therefore does not
+              call the study randomized and does not interpret the group comparison as a causal effect
+              of the AI guide.
+            </p>
+          </div>
+
+          <h3>Measured experience items</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Construct</th>
+                  <th>Question focus</th>
+                  <th>Scale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Q7</td><td>Engagement</td><td>The visit felt engaging and absorbing</td><td>1–5</td></tr>
+                <tr><td>Q8</td><td>Interest</td><td>The participant stayed interested throughout</td><td>1–5</td></tr>
+                <tr><td>Q9</td><td>New knowledge</td><td>The visit led to learning something new</td><td>1–5</td></tr>
+                <tr><td>Q10</td><td>Understanding</td><td>The visit deepened understanding of the exhibits</td><td>1–5</td></tr>
+                <tr><td>Q11</td><td>Reflection</td><td>The visit prompted thought or further interest</td><td>1–5</td></tr>
+                <tr><td>Q12</td><td>Meaning</td><td>The visit felt personally meaningful</td><td>1–5</td></tr>
+                <tr><td>Q13</td><td>Context</td><td>The participant connected exhibits to their background</td><td>1–5</td></tr>
+                <tr><td>Q14</td><td>Emotional response</td><td>Some exhibits created an emotional response</td><td>1–5</td></tr>
+                <tr><td>Q15</td><td>Theme resonance</td><td>The visit connected the participant to the museum's theme</td><td>1–5</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="report-section" id="analysis">
+          <div class="section-number">04 · Data and statistical method</div>
+          <h2>From questionnaire export to nine exploratory tests</h2>
+
+          <div class="metric-grid">
+            <div class="metric"><strong>30</strong><span>Unique participant IDs</span></div>
+            <div class="metric"><strong>15 + 15</strong><span>AI guide / no AI guide</span></div>
+            <div class="metric"><strong>270 / 270</strong><span>Valid item ratings</span></div>
+            <div class="metric"><strong>9</strong><span>Holm-adjusted comparisons</span></div>
+          </div>
+
+          <p>
+            The clean CSV maps the categorical answers to numeric codes without changing the Q7–Q15
+            scores. Checks found 30 unique IDs, no duplicate records, complete consent and recent-visit
+            confirmation, and no missing or out-of-range experience ratings.
+          </p>
+
+          <p>
+            Because each item is ordinal, the analysis uses a two-sided independent-samples Mann–Whitney
+            U test with the no-AI group as the reference group. Holm correction is applied across the
+            nine related tests. Rank-biserial correlation describes effect direction and magnitude:
+            positive values favour the AI group and negative values favour the no-AI group. Means are
+            descriptive; the tests use ranks.
+          </p>
+
+          <div class="callout">
+            <p>
+              <strong>Why no SUS or task-success test:</strong> the final questionnaire and cleaned dataset
+              do not contain those variables. Reusing the old usability analysis would create results that
+              the data cannot support.
+            </p>
+          </div>
+        </section>
+
+        <section class="report-section" id="findings">
+          <div class="section-number">05 · Findings</div>
+          <h2>No statistically significant item-level differences</h2>
+
+          <div class="finding-grid">
+            <div class="finding-card">
+              <strong>AI group descriptive means higher</strong>
+              <p>Q9, Q11, Q13, Q14, and Q15.</p>
+            </div>
+            <div class="finding-card">
+              <strong>No-AI group descriptive means higher</strong>
+              <p>Q7, Q8, Q10, and Q12.</p>
+            </div>
+            <div class="finding-card">
+              <strong>Strongest mean difference</strong>
+              <p>Q9: +0.47 favouring the AI group, raw p = .230, Holm p = 1.000.</p>
+            </div>
+          </div>
+
+          <figure class="chart-figure">
+            <img
+              src="./ADS401_GroupH_Q7-Q15_Guide_Comparison_01.png"
+              alt="Grouped bar chart comparing mean Q7-Q15 experience ratings for the AI guide and no-AI groups"
+            />
+            <figcaption>
+              SPSS grouped mean chart from the cleaned 30-case dataset. Blue represents the no-AI group
+              and green represents the AI-guide group. Bar height is descriptive; inference uses ranks.
+            </figcaption>
+          </figure>
+
+          <p>
+            No item reached the two-sided .05 threshold before correction, and all nine Holm-adjusted
+            p-values remained 1.000. All rank-biserial effect magnitudes were below .30. The result is
+            absence of evidence for a difference in this sample, not evidence that the conditions are
+            equivalent.
           </p>
 
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>Measure</th>
-                  <th>Operational definition</th>
-                  <th>Data source</th>
-                  <th>Role</th>
+                  <th>Item</th>
+                  <th>No AI mean</th>
+                  <th>AI mean</th>
+                  <th>Difference</th>
+                  <th>U</th>
+                  <th>Raw p</th>
+                  <th>Holm p</th>
+                  <th>r<sub>rb</sub></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Task success</td>
-                  <td>Independent completion of each task without critical failure</td>
-                  <td>Observation sheet</td>
-                  <td>Primary outcome</td>
-                </tr>
-                <tr>
-                  <td>Time on task</td>
-                  <td>Seconds from task instruction to completion or stop rule</td>
-                  <td>Timer and observation</td>
-                  <td>Primary outcome</td>
-                </tr>
-                <tr>
-                  <td>Errors and assistance</td>
-                  <td>Wrong action, repeated attempt, or moderator help</td>
-                  <td>Observation sheet</td>
-                  <td>Primary outcome</td>
-                </tr>
-                <tr>
-                  <td>Usability</td>
-                  <td>10-item SUS score</td>
-                  <td>Questionnaire</td>
-                  <td>Secondary outcome</td>
-                </tr>
-                <tr>
-                  <td>Perceived ease</td>
-                  <td>1-7 rating for each of the four tasks</td>
-                  <td>Wenjuanxing questionnaire</td>
-                  <td>Secondary outcome</td>
-                </tr>
-                <tr>
-                  <td>Task confidence</td>
-                  <td>1-7 confidence rating for each task</td>
-                  <td>Wenjuanxing questionnaire</td>
-                  <td>Secondary outcome</td>
-                </tr>
-                <tr>
-                  <td>Trust</td>
-                  <td>Confidence in AI answers and navigation advice</td>
-                  <td>Wenjuanxing questionnaire</td>
-                  <td>Secondary outcome</td>
-                </tr>
+                <tr><td>Q7 Engagement</td><td>3.80</td><td>3.47</td><td>−0.33</td><td>138.0</td><td>.278</td><td>1.000</td><td>−.227</td></tr>
+                <tr><td>Q8 Interest</td><td>4.00</td><td>3.73</td><td>−0.27</td><td>135.5</td><td>.328</td><td>1.000</td><td>−.204</td></tr>
+                <tr><td>Q9 New knowledge</td><td>3.53</td><td>4.00</td><td>+0.47</td><td>84.5</td><td>.230</td><td>1.000</td><td>+.249</td></tr>
+                <tr><td>Q10 Understanding</td><td>3.73</td><td>3.67</td><td>−0.07</td><td>118.5</td><td>.804</td><td>1.000</td><td>−.053</td></tr>
+                <tr><td>Q11 Reflection</td><td>3.80</td><td>3.93</td><td>+0.13</td><td>105.0</td><td>.757</td><td>1.000</td><td>+.067</td></tr>
+                <tr><td>Q12 Meaning</td><td>3.87</td><td>3.80</td><td>−0.07</td><td>124.0</td><td>.622</td><td>1.000</td><td>−.102</td></tr>
+                <tr><td>Q13 Context link</td><td>3.40</td><td>3.47</td><td>+0.07</td><td>108.5</td><td>.875</td><td>1.000</td><td>+.036</td></tr>
+                <tr><td>Q14 Emotion</td><td>3.07</td><td>3.47</td><td>+0.40</td><td>90.0</td><td>.318</td><td>1.000</td><td>+.200</td></tr>
+                <tr><td>Q15 Theme resonance</td><td>3.40</td><td>3.73</td><td>+0.33</td><td>94.0</td><td>.427</td><td>1.000</td><td>+.164</td></tr>
               </tbody>
             </table>
           </div>
-
-          <h3>Ethics and safety</h3>
-          <p>
-            Data collection begins after ethics approval. Participants will receive an information sheet and
-            consent form before the session. The study will not collect passwords, personal museum records,
-            photographs of participants, or sensitive university information. If the AI system requires an
-            account, the research team will use a prepared test account rather than asking participants to
-            disclose personal credentials.
+          <p class="table-note">
+            n = 15 per group. Difference = AI mean minus no-AI mean. Positive r<sub>rb</sub> favours the AI group.
           </p>
-        </section>
-
-        <section class="report-section" id="analysis">
-          <div class="section-number">05 · Data preparation and analysis</div>
-          <h2>Data preparation and analysis</h2>
-
-          <div class="metric-grid">
-            <div class="metric"><strong>Excel</strong><span>Observation and questionnaire data</span></div>
-            <div class="metric"><strong>SPSS</strong><span>Descriptive and SUS analysis</span></div>
-            <div class="metric"><strong>Notes</strong><span>Think-aloud theme summary</span></div>
-            <div class="metric"><strong>GitHub</strong><span>Materials and report</span></div>
-          </div>
-
-          <p>
-            Two data sources will be merged by anonymous Participant ID. The bilingual Wenjuanxing
-            questionnaire records background, task completion, task ease, task confidence, SUS, system
-            ratings, barriers, and open feedback. The moderator observation sheet records independent
-            success, time on task, errors, and assistance for each of the four tasks.
-          </p>
-
-          <p>
-            SPSS will be used for descriptive and inferential analysis. The report will present task
-            success rates, median time on task, error frequency, SUS, task ease, confidence, and system
-            ratings. For H1, a binomial test will compare the observed independent success proportion with
-            a prespecified 80% criterion for each task separately. Task attempts are not pooled because
-            repeated observations from the same participant are not independent. For H2, SUS will be
-            compared with the established benchmark of 68 <a href="#ref5">[5]</a> using a one-sample test,
-            with a Wilcoxon signed-rank test reported if the distribution is non-normal. Cronbach's alpha
-            will be reported for the ten SUS items, with caution because the sample is small.
-          </p>
-
-          <p>
-            Exploratory Spearman correlations will test H3 and examine whether task ease, confidence, SUS,
-            and trust move together. These tests will be clearly labelled exploratory because the usability
-            sample is small. Statistical significance will be interpreted alongside effect size, confidence
-            intervals where appropriate, and the practical size of the observed difference.
-          </p>
-
-          <p>
-            Think-aloud comments and the short debrief will be summarised into a small number of usability
-            themes, such as onboarding, navigation, answer clarity, and error recovery. Each theme will be
-            supported by an anonymised example. The theme summary will be compared with the task data so
-            that recommendations are based on observed problems rather than opinion alone.
-          </p>
-
-          <p>
-            The final analysis will report both positive and negative evidence. A task that works well should
-            be described as a strength, not ignored. A repeated problem should include the number of
-            participants affected and at least one concrete observation. This makes the recommendations
-            clearer for Museum staff and easier to connect to future design changes.
-          </p>
-        </section>
-
-        <section class="report-section" id="findings">
-          <div class="section-number">06 · Findings</div>
-          <h2>Findings</h2>
-
-          <div class="status-banner">
-            <strong>PENDING</strong>
-            <p>
-              No participant data are available yet. Replace the placeholders with real task success rates,
-              timings, error counts, SUS results, and anonymised comments after data collection.
-            </p>
-          </div>
-
-          <div class="finding-grid">
-            <div class="finding-card">
-              <strong>RQ1 · Task success</strong>
-              <p>Report independent success, assisted success, and failures for each of the four tasks.</p>
-            </div>
-            <div class="finding-card">
-              <strong>RQ2 · Usability</strong>
-              <p>Report time on task, error frequency, perceived ease, trust, and the overall SUS score.</p>
-            </div>
-            <div class="finding-card">
-              <strong>RQ3 · Barriers</strong>
-              <p>Present repeated usability themes with task evidence and brief anonymised examples.</p>
-            </div>
-          </div>
-
-          <h3>Required figures</h3>
-          <ul>
-            <li>Task success profile for all four tasks with sample size.</li>
-            <li>Time-on-task chart with clearly labelled units.</li>
-            <li>Error and assistance counts by task category.</li>
-            <li>Usability and trust ratings with a short interpretation.</li>
-          </ul>
         </section>
 
         <section class="report-section" id="discussion">
-          <div class="section-number">07 · Discussion and recommendations</div>
-          <h2>Discussion, limitations, and recommendations</h2>
+          <div class="section-number">06 · Interpretation and limits</div>
+          <h2>A cautious answer and a stronger next study</h2>
 
           <p>
-            The evaluation will show whether visitors can complete the Museum AI tasks without support and
-            where the interaction creates difficulty. A high task success rate with a low SUS score would
-            suggest that participants can finish the tasks but find the experience inefficient or
-            frustrating. A low trust rating would suggest that participants do not understand the system's
-            limits or reliability.
-          </p>
-
-          <p>
-            The discussion will connect each finding to a practical design action. For example, onboarding
-            failures may require a clearer first screen, navigation errors may require better route feedback,
-            and answer-clarity problems may require visible sources or confidence cues.
+            The current data do not provide sufficient evidence that using the museum AI guide changes
+            any of the nine post-visit experience ratings. The Q9 learning difference is the largest
+            descriptive signal, but it is not statistically reliable after accounting for sampling
+            variation and multiple comparisons.
           </p>
 
           <h3>Limitations</h3>
           <ul>
-            <li>The sample is small and may not represent all museum visitors.</li>
-            <li>The controlled task setting may differ from a normal exhibition visit.</li>
-            <li>The study evaluates one system version and selected tasks.</li>
-            <li>Moderator presence may influence participant behaviour.</li>
-            <li>No system-log access is assumed; observations are collected by the research team.</li>
+            <li>The recorded group sequence does not match strict arrival-order alternation, so causal attribution is unjustified.</li>
+            <li>The sample contains 30 students from one museum context and may not represent other visitors.</li>
+            <li>All outcomes are post-visit self-reports; the study contains no behavioural or knowledge test.</li>
+            <li>Nine exploratory comparisons were available without a verified pre-specified primary endpoint.</li>
+            <li>With 15 participants per group, the analysis has limited power to detect modest differences.</li>
           </ul>
 
-          <h3>Recommendations</h3>
+          <h3>What the next study should change</h3>
           <ol>
-            <li>Clarify how to start the guide and what the AI system can answer.</li>
-            <li>Improve route feedback when participants move between exhibits.</li>
-            <li>Provide a simple correction or retry path for unclear AI responses.</li>
-            <li>Use short just-in-time instructions rather than a long manual.</li>
-            <li>Run a second usability test after the design changes.</li>
+            <li>Verify and document the allocation process before data collection.</li>
+            <li>Pre-specify one primary experience outcome and retain the others as secondary measures.</li>
+            <li>Recruit a larger sample and keep the exhibition route and timing comparable across groups.</li>
+            <li>Add objective outcomes only after confirming a clear research question and ethical approval.</li>
           </ol>
         </section>
 
         <section class="report-section" id="transparency">
-          <div class="section-number">08 · Transparency and references</div>
-          <h2>Transparency and references</h2>
+          <div class="section-number">07 · Transparency and materials</div>
+          <h2>Data provenance and submission materials</h2>
 
           <div class="transparency-grid">
             <div class="transparency-card">
               <strong>Contribution statement</strong>
               <ul>
-                <li>Cheng Qian 2687280: literature, tasks, and quantitative analysis.</li>
-                <li>Chen Cui 2687288: recruitment, observation, and data management.</li>
-                <li>Ziqian Wang 2684921: qualitative themes, web report, and poster summary.</li>
-                <li>Simu He 2686299: system access, pilot coordination, and presentation.</li>
+                <li>Cheng Qian 2687280: data preparation, statistical analysis, and presentation.</li>
+                <li>Chen Cui 2687288: recruitment, consent records, and data management.</li>
+                <li>Ziqian Wang 2684921: questionnaire, web report, and visual summary.</li>
+                <li>Simu He 2686299: museum access, study implementation, and presentation.</li>
               </ul>
             </div>
             <div class="transparency-card">
-              <strong>Data and materials</strong>
+              <strong>Open allocation issue</strong>
               <p>
-                The anonymous data template, SPSS syntax, presented questionnaire framework, observation
-                sheet, and GitHub repository are available as supplementary materials. No identifiable
-                participant data will be published.
+                The final report records the discrepancy between the planned alternating allocation and
+                the observed group sequence. It does not claim randomization or strict alternation.
+              </p>
+            </div>
+            <div class="transparency-card">
+              <strong>Data boundary</strong>
+              <p>
+                The cleaned dataset contains anonymous IDs, consent, recent-visit status, group indicator,
+                student level, prior visits, AI-tool frequency, and Q7–Q15. No names or student numbers
+                appear in the public files.
               </p>
             </div>
             <div class="transparency-card">
               <strong>AI-use statement</strong>
               <p>
-                [Complete accurately before submission.] AI was used to support the draft structure and
-                formatting. The group must verify all substantive academic content and confirm that every
-                use complies with the module's non-substantive AI policy.
-              </p>
-            </div>
-            <div class="transparency-card">
-              <strong>Acknowledgements</strong>
-              <p>
-                The evaluated system is the XJTLU Museum AI-supported visitor system. No ownership of the
-                original system or technology is claimed.
+                The group must complete this statement accurately and verify all substantive academic
+                content under the module's non-substantive AI policy.
               </p>
             </div>
           </div>
 
           <h3>Project materials</h3>
           <ul>
-            <li><a href="https://v.wjx.cn/vm/QZpCC3h.aspx" target="_blank" rel="noreferrer">Live bilingual Wenjuanxing questionnaire</a></li>
-            <li><a href="./ADS401_GroupH_Questionnaire_Bilingual.md">Bilingual questionnaire reference</a> and <a href="./ADS401_GroupH_Data_Collection_Workbook.xlsx">data collection workbook</a></li>
-            <li><a href="./ADS401_GroupH_Data_Collection_Kit.zip">Download the full data collection kit</a></li>
-            <li><a href="./ADS401_GroupH_Presentation2Slides.pdf">Presentation 2 slides</a> and <a href="./ADS401_GroupH_Presentation2SupplementaryMaterials.pdf">combined supplementary materials</a></li>
-            <li><a href="./ADS401_GroupH_Presentation3Slides.pdf">Presentation 3 slides</a> and <a href="./ADS401_GroupH_Presentation3SupplementaryMaterials.zip">supplementary ZIP</a></li>
-            <li><a href="./ADS401_GroupH_Poster.pdf">A1 poster PDF</a> and <a href="./poster.html">interactive poster source</a></li>
-            <li><a href="./ADS401_GroupH_Analysis_Template.csv">Analysis template</a> and <a href="./ADS401_GroupH_Analysis_Plan.sps">SPSS syntax</a></li>
-            <li><a href="./ADS401_GroupH_Submission_Checklist.md">Submission checklist and self-check</a></li>
+            <li><a href="https://v.wjx.cn/vm/YGnm4gy.aspx#" target="_blank" rel="noreferrer">Current bilingual questionnaire</a></li>
+            <li><a href="./ADS401_GroupH_Questionnaire_Bilingual.md">Questionnaire reference: Q1–Q15</a></li>
+            <li><a href="./ADS401_GroupH_Presentation3Slides.pdf">Presentation 3 PDF</a> and <a href="./ADS401_GroupH_Presentation3Slides.pptx">editable PPTX</a></li>
+            <li><a href="./ADS401_GroupH_Presentation3SupplementaryMaterials.zip">Final data and SPSS supplementary ZIP</a></li>
+            <li><a href="./ADS401_GroupH_questionnaire_clean_01.csv">Cleaned anonymous CSV</a></li>
+            <li><a href="./ADS401_GroupH_Q7-Q15_results_01.csv">Full Q7–Q15 result table</a></li>
+            <li><a href="./ADS401_GroupH_questionnaire_analysis_01.sps">SPSS syntax</a> and <a href="./ADS401_GroupH_SPSS_Output_01.spv">SPSS output</a></li>
+            <li><a href="./ADS401_GroupH_Poster.pdf">A1 poster PDF</a> and <a href="./poster.html">interactive poster</a></li>
           </ul>
 
-          <h3>IEEE-style references</h3>
+          <h3>References</h3>
           <ol class="reference-list">
             <li id="ref1">
               Xi'an Jiaotong-Liverpool University, “Technology,” XJTLU Museum.
-              https://www.xjtlu.edu.cn/en/museum/tech (accessed 5 October 2026).
+              https://www.xjtlu.edu.cn/en/museum/tech
             </li>
             <li id="ref2">
-              International Organization for Standardization, <em>ISO 9241-11:2018 Ergonomics of human-system
-              interaction - Part 11: Usability: Definitions and concepts</em>. Geneva, Switzerland: ISO, 2018.
+              H. B. Mann and D. R. Whitney, “On a test of whether one of two random variables is
+              stochastically larger than the other,” <em>Annals of Mathematical Statistics</em>,
+              vol. 18, no. 1, pp. 50–60, 1947.
             </li>
             <li id="ref3">
-              J. Brooke, “SUS: A quick and dirty usability scale,” in <em>Usability Evaluation in Industry</em>,
-              1996, pp. 189–194.
-            </li>
-            <li id="ref4">
-              S. Amershi et al., “Guidelines for human-AI interaction,” in <em>Proc. CHI 2019</em>, 2019,
-              pp. 1–13.
-            </li>
-            <li id="ref5">
-              J. Sauro and J. R. Lewis, <em>Quantifying the User Experience</em>, 2nd ed. Cambridge, MA, USA:
-              Morgan Kaufmann, 2016.
+              S. Holm, “A simple sequentially rejective multiple test procedure,”
+              <em>Scandinavian Journal of Statistics</em>, vol. 6, no. 2, pp. 65–70, 1979.
             </li>
           </ol>
         </section>
 
         <section class="report-section" id="poster">
-          <div class="section-number">09 · Poster summary</div>
+          <div class="section-number">08 · Poster summary</div>
           <h2>Poster summary</h2>
-
-          <div class="status-banner">
-            <strong>ONE PAGE</strong>
-            <p>
-              This section contains the poster information inside the report. The final A1 PDF can be
-              exported or submitted separately without requiring a sub-page.
-            </p>
-          </div>
 
           <div class="glance-grid">
             <div class="glance-item">
-              <span>Title</span>
-              <strong>Usability Evaluation of the XJTLU Museum AI System</strong>
-              <p>Group H · Cheng Qian · Chen Cui · Ziqian Wang · Simu He</p>
+              <span>Question</span>
+              <strong>AI guide vs no AI guide</strong>
+              <p>Do nine post-visit experience ratings differ between groups?</p>
             </div>
             <div class="glance-item">
-              <span>Question</span>
-              <strong>Can visitors complete the tour tasks?</strong>
-              <p>Start the tour, ask a question, move to the next stop, and recover from an unclear answer.</p>
+              <span>Sample</span>
+              <strong>30 students</strong>
+              <p>15 per group; 17 undergraduates and 13 postgraduates.</p>
             </div>
             <div class="glance-item">
               <span>Method</span>
-              <strong>12-15 task-based sessions</strong>
-              <p>Observation, think aloud, SUS, perceived ease, trust, and error recovery.</p>
+              <strong>Mann–Whitney with Holm</strong>
+              <p>Nine exploratory ordinal comparisons with rank-biserial effect sizes.</p>
             </div>
             <div class="glance-item">
               <span>Result</span>
-              <strong>Pending data</strong>
-              <p>Insert the final task success, time, SUS, and theme results after collection.</p>
+              <strong>No significant difference</strong>
+              <p>No raw or adjusted p-value below .05; absence of evidence is not equivalence.</p>
             </div>
           </div>
 
           <div class="callout">
             <p>
-              <strong>Takeaway:</strong> The strongest recommendation will target onboarding, route feedback,
-              answer clarity, or error recovery, depending on the observed task evidence.
+              <strong>Takeaway:</strong> the present sample does not support a claim that the AI guide
+              changed post-visit experience ratings. A stronger next study needs a verified allocation
+              procedure, a pre-specified primary outcome, and more participants.
             </p>
           </div>
         </section>
@@ -625,9 +456,8 @@
     </div>
 
     <footer class="site-footer">
-      <p>ADS401 Evaluation Methods and Statistics · Group H working draft</p>
-      <p>Single-page report and poster summary · XJTLU Museum AI system</p>
+      <p>ADS401 Evaluation Methods and Statistics · Group H · 9 November 2026</p>
+      <p>Two-group post-visit experience comparison · XJTLU Museum AI guide</p>
     </footer>
-
   </body>
 </html>

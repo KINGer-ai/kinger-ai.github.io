@@ -1,140 +1,154 @@
-# ADS401 Group H Bilingual Questionnaire
+# Museum AI Guide Experience Survey
 
-## Published Form
+## Live Form
 
-- Participant link: https://v.wjx.cn/vm/QZpCC3h.aspx
-- Researcher dashboard: https://www.wjx.cn/report/393565465.aspx?sat=1
-- Format: 10 main questions, Chinese-English bilingual
-- Anonymous identifier: P01-P15
+- Participant link: https://v.wjx.cn/vm/YGnm4gy.aspx#
+- Researcher dashboard: https://www.wjx.cn/report/394402777.aspx?sat=1
+- Format: Chinese-English bilingual
+- Main questions: Q1-Q15
 
-Use the same participant ID in the Wenjuanxing response and the observation workbook.
+The survey compares two museum visit conditions: use of the museum's own AI guide
+and a self-guided visit using museum labels only.
 
-## Q1. Role at XJTLU
+## Participant Information
 
-您在西交利物浦大学的身份是什么？
+This study is run by a student research group at Xi'an Jiaotong-Liverpool
+University. It compares post-visit experience between the two tour conditions
+and takes about five minutes. The questionnaire collects no names or student
+numbers. Participation is voluntary and anonymous.
 
-What is your role at XJTLU?
+## Q1. Consent / 知情同意
 
-- Student / 学生
-- Staff / 教职工
-- Other / 其他
+我已阅读并理解以上信息，自愿参与。
 
-## Q2. Prior Use
+I have read and understood the information above and agree to take part.
 
-您此前是否使用过西浦博物馆 AI 系统？
+- 是 / Yes
+- 否 / No
 
-Have you used the XJTLU Museum AI system before?
+## Q2. Recent Visit / 最近参观
 
-- No / 没有
-- Once / 使用过一次
-- More than once / 使用过多次
+你刚刚完成了一次博物馆参观吗？
 
-## Q3. Task Completion
+Did you just complete a museum visit?
 
-请评价您在以下四项任务中的完成情况。
+- 是 / Yes
+- 否 / No
 
-Please indicate how you completed each task.
+## Q3. AI Guide Use / AI 导览使用
 
-| Task | Independent / 独立完成 | Assisted / 需要帮助 | Failed / 未能完成 |
-|---|---|---|---|
-| Start the guide and select an exhibit / 打开导览并选择展品 |  |  |  |
-| Ask an exhibit question and identify the answer / 询问展品问题并找到答案 |  |  |  |
-| Navigate to the next recommended stop / 前往下一个推荐参观点 |  |  |  |
-| Recover from an unclear answer / 处理不清楚的回答 |  |  |  |
+在刚才的参观中，你是否使用了博物馆自带的 AI 导览系统？
 
-## Q4. Task Ease
+During your visit, did you use the museum's own AI guide system?
 
-以下任务对您来说有多容易？1 = 非常困难，7 = 非常容易。
+- 使用了 / Yes
+- 没有使用 / No
 
-How easy was each task? 1 = very difficult, 7 = very easy.
+## Q4. Role / 身份
 
-| Task | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|---|---|---|---|---|---|---|
-| Start / 开始 |  |  |  |  |  |  |  |
-| Ask / 提问 |  |  |  |  |  |  |  |
-| Navigate / 导航 |  |  |  |  |  |  |  |
-| Recover / 恢复 |  |  |  |  |  |  |  |
+你的身份是什么？
 
-## Q5. Task Confidence
+What is your role?
 
-完成以下任务时，您有多大的信心？1 = 完全没有信心，7 = 非常有信心。
+- 本科生 / Undergraduate
+- 研究生 / Postgraduate
+- 教职工 / Staff
+- 校外访客 / External visitor
 
-How confident were you when completing each task? 1 = not at all confident, 7 = very confident.
+## Q5. Prior Museum Visits / 既往参观次数
 
-| Task | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|---|---|---|---|---|---|---|
-| Start / 开始 |  |  |  |  |  |  |  |
-| Ask / 提问 |  |  |  |  |  |  |  |
-| Navigate / 导航 |  |  |  |  |  |  |  |
-| Recover / 恢复 |  |  |  |  |  |  |  |
+这是你第几次参观这个博物馆？
 
-## Q6. Museum AI Experience
+How many times have you visited this museum?
 
-请按 1-7 分评价以下陈述，1 = 非常不同意，7 = 非常同意。
+- 第一次 / First visit
+- 2-3 次 / 2-3 visits
+- 经常来 / Regularly
 
-Rate each statement from 1 to 7. 1 = strongly disagree, 7 = strongly agree.
+## Q6. AI Tool Use / AI 工具使用频率
 
-- It was clear how to start the AI guide. / 我知道如何开始使用 AI 导览。
-- The exhibit information was relevant to my visit. / 展品信息与我的参观相关。
-- Moving to the next stop was clear. / 前往下一个参观点的指示很清楚。
-- I could recover when an answer was unclear. / 当回答不清楚时，我知道如何调整或重试。
-- I trusted the AI information and guidance. / 我信任 AI 提供的信息和指引。
-- Using the system required a lot of mental effort. / 使用这个系统需要很多脑力。
+你平时使用 AI 聊天工具的频率如何？
 
-## Q7. System Usability Scale
+How often do you normally use AI chat tools?
 
-请按 1-5 分评价，1 = 非常不同意，5 = 非常同意。
+- 几乎不用 / Almost never
+- 偶尔 / Occasionally
+- 每周 / Weekly
+- 几乎每天 / Almost daily
 
-Rate from 1 to 5. 1 = strongly disagree, 5 = strongly agree.
+## Q7-Q15. Post-Visit Experience Ratings
 
-1. I think that I would like to use this system frequently. / 我觉得我会愿意经常使用这个系统。
-2. I found the system unnecessarily complex. / 我觉得这个系统不必要地复杂。
-3. I thought the system was easy to use. / 我觉得这个系统容易使用。
-4. I think that I would need technical support to use this system. / 我觉得使用这个系统需要技术支持。
-5. I found the various functions in this system were well integrated. / 我觉得这个系统的各项功能整合得很好。
-6. I thought there was too much inconsistency in this system. / 我觉得这个系统内部存在太多不一致。
-7. I would imagine that most people would learn to use this system quickly. / 我认为大多数人会很快学会使用这个系统。
-8. I found the system very cumbersome to use. / 我觉得使用这个系统很繁琐。
-9. I felt very confident using the system. / 使用这个系统时我感到很有信心。
-10. I needed to learn a lot before I could get going. / 我需要先学会很多东西才能开始使用。
+请按 1-5 分评价以下陈述。1 = 很不同意，5 = 很同意。
 
-## Q8. Main Obstacle
+Rate each statement from 1 to 5. 1 = strongly disagree, 5 = strongly agree.
 
-使用系统时，最主要的障碍是什么？
+### Q7. Engagement / 参观投入
 
-What was the main obstacle when using the system?
+我觉得这次参观很吸引人，我沉浸其中。
 
-- No obstacle / 没有明显障碍
-- Starting the guide / 开始使用导览
-- Exhibit information / 展品信息
-- Navigation to the next stop / 前往下一个参观点
-- Unclear AI answer / AI 回答不清楚
-- Submitting a question / 提交问题
-- Technical issue / 技术问题
-- Other / 其他
+The visit was engaging; I felt absorbed.
 
-## Q9. Exhibit Information Feedback
+### Q8. Interest / 全程兴趣
 
-哪些展品信息对您有用、不清楚或缺失？
+我全程都很有兴致，没有感到无聊。
 
-What exhibit information was useful, unclear, or missing?
+I stayed interested throughout.
 
-Open response / 开放回答
+### Q9. New Knowledge / 学到新知识
 
-## Q10. Improvement
+这次参观让我学到了新的东西。
 
-您认为最重要的内容或交互改进是什么？
+I learned something new.
 
-What is the most important content or interaction improvement?
+### Q10. Understanding / 加深理解
 
-Open response / 开放回答
+参观让我对展项有了更深入的理解。
 
-## Export and Merge
+The visit deepened my understanding of the exhibits.
 
-1. Open the researcher dashboard and confirm the response count.
-2. Export the Wenjuanxing response workbook.
-3. Match each response to the same anonymous participant ID in the observation workbook.
-4. Complete the `Master Data` sheet.
-5. Export or copy the master data for SPSS analysis.
+### Q11. Reflection / 引发思考
 
-Do not publish the raw response workbook or identifiable administrative data.
+参观引发了我思考，或让我想进一步了解。
+
+The visit made me think and want to learn more.
+
+### Q12. Meaning / 参观意义
+
+这次参观对我来说是有意义的。
+
+The visit was meaningful to me.
+
+### Q13. Context / 联系背景
+
+我能把展项和它的背景故事联系起来。
+
+I could connect the exhibits to their context.
+
+### Q14. Emotional Response / 情感触动
+
+我对某些展项产生了情感上的触动。
+
+Some exhibits moved me emotionally.
+
+### Q15. Theme Resonance / 主题共鸣
+
+参观让我对博物馆的主题产生了共鸣。
+
+The visit connected me to the museum's theme.
+
+## Data Mapping
+
+- `consent`: Q1
+- `recent`: Q2
+- `ai`: Q3, recoded as AI guide = 1 and no AI guide = 0
+- `role`: Q4
+- `visits`: Q5
+- `ai_freq`: Q6
+- `engagement` to `resonance`: Q7-Q15
+
+## Analysis
+
+The final analysis uses two-sided Mann-Whitney U tests for the nine Q7-Q15
+ratings, followed by Holm correction across the nine exploratory comparisons.
+The report does not use SUS or task-success measures because the final dataset
+does not contain them.
