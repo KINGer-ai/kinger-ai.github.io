@@ -296,14 +296,6 @@
               and green represents the AI-guide group. Bar height is descriptive; inference uses ranks.
             </figcaption>
           </figure>
-          <p class="table-note">
-            <a href="./ADS401_GroupH_SPSS_Output_01.spv">Open the native SPSS output</a>
-            ·
-            <a href="./ADS401_GroupH_Q7-Q15_results_01.csv">Download the complete result table</a>
-            ·
-            <a href="./ADS401_GroupH_questionnaire_analysis_01.sps">View the SPSS syntax</a>
-          </p>
-
           <p>
             No item reached the two-sided .05 threshold before correction, and all nine Holm-adjusted
             p-values remained 1.000. All rank-biserial effect magnitudes were below .30. The result is
@@ -311,6 +303,7 @@
             equivalent.
           </p>
 
+          <h3 class="spss-output-title">SPSS output reproduced for browser viewing</h3>
           <div class="table-wrap">
             <table>
               <thead>
@@ -341,6 +334,133 @@
           <p class="table-note">
             n = 15 per group. Difference = AI mean minus no-AI mean. Positive r<sub>rb</sub> favours the AI group.
           </p>
+
+          <h3 class="spss-output-title">SPSS syntax used</h3>
+          <p>
+            The complete syntax is reproduced here. It can be copied into another statistical environment
+            or reviewed without installing SPSS. The native <code>.spv</code> file is optional and only
+            contains the original SPSS-generated report.
+          </p>
+
+          <div class="code-panel">
+            <div class="code-toolbar">
+              <span>ADS401_GroupH_questionnaire_analysis_01.sps</span>
+              <button class="copy-code-button" id="copy-spss-syntax" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                  <path d="M5 15V5a2 2 0 0 1 2-2h10"></path>
+                </svg>
+                <span id="copy-spss-label">Copy code</span>
+              </button>
+            </div>
+            <pre tabindex="0"><code id="spss-syntax">* ADS401 Group H - actual 30-response questionnaire analysis.
+* Source: ADS401_GroupH_questionnaire_clean_01.csv.
+SET UNICODE=ON.
+OUTPUT NEW.
+GET DATA
+ /TYPE=TXT
+ /FILE='ADS401_GroupH_questionnaire_clean_01.csv'
+ /ENCODING='UTF8'
+ /DELCASE=LINE
+ /DELIMITERS=","
+ /ARRANGEMENT=DELIMITED
+ /FIRSTCASE=2
+ /VARIABLES=
+  id A3
+  consent F2.0
+  recent F2.0
+  ai F2.0
+  role F2.0
+  visits F2.0
+  ai_freq F2.0
+  engagement F2.0
+  interest F2.0
+  new_knowledge F2.0
+  understanding F2.0
+  reflection F2.0
+  meaningful F2.0
+  context F2.0
+  emotional F2.0
+  resonance F2.0.
+DATASET NAME Questionnaire01.
+VARIABLE LABELS
+  ai 'Used AI museum guide (1=yes, 0=no)'
+  role 'Student level'
+  visits 'Prior museum visits'
+  ai_freq 'General AI tool use frequency'
+  engagement 'Q7: engagement in visit'
+  interest 'Q8: interest throughout visit'
+  new_knowledge 'Q9: learned new knowledge'
+  understanding 'Q10: deepened understanding'
+  reflection 'Q11: prompted reflection'
+  meaningful 'Q12: visit felt meaningful'
+  context 'Q13: linked to background knowledge'
+  emotional 'Q14: emotional response'
+  resonance 'Q15: resonance with theme'.
+VALUE LABELS
+  ai 0 'No AI guide' 1 'AI guide'
+  /role 1 'Undergraduate' 2 'Postgraduate'
+  /visits 1 'First visit' 2 '2-3 visits' 3 'Frequent visitor'
+  /ai_freq 1 'Almost never' 2 'Occasionally' 3 'Weekly' 4 'Almost daily'.
+EXECUTE.
+
+* Check complete records and sample composition.
+FREQUENCIES VARIABLES=consent recent ai role visits ai_freq
+  engagement interest new_knowledge understanding reflection
+  meaningful context emotional resonance.
+CROSSTABS
+  /TABLES=ai BY role visits ai_freq
+  /CELLS=COUNT ROW.
+
+* Descriptive statistics of each 1-5 response by AI-guide group.
+SORT CASES BY ai.
+SPLIT FILE LAYERED BY ai.
+FREQUENCIES VARIABLES=engagement interest new_knowledge understanding
+  reflection meaningful context emotional resonance
+  /STATISTICS=MEAN MEDIAN STDDEV MINIMUM MAXIMUM.
+SPLIT FILE OFF.
+
+* Two-sided independent-samples Mann-Whitney U tests.
+NPAR TESTS
+  /M-W=engagement interest new_knowledge understanding reflection
+  meaningful context emotional resonance BY ai(0 1)
+  /MISSING ANALYSIS.
+
+* Two-dimensional grouped mean bar chart for Q7-Q15.
+DATASET COPY ChartData01.
+DATASET ACTIVATE ChartData01.
+VARSTOCASES
+  /MAKE rating FROM engagement interest new_knowledge understanding
+  reflection meaningful context emotional resonance
+  /INDEX=item
+  /KEEP=id ai
+  /NULL=DROP.
+VARIABLE LABELS
+  ai 'Guide use'
+  rating 'Mean rating (1-5)'
+  item 'Questionnaire item'.
+VALUE LABELS item
+  1 'Q7 Engagement'
+  2 'Q8 Interest'
+  3 'Q9 New knowledge'
+  4 'Q10 Understanding'
+  5 'Q11 Reflection'
+  6 'Q12 Meaningful visit'
+  7 'Q13 Context link'
+  8 'Q14 Emotional response'
+  9 'Q15 Theme resonance'.
+GRAPH /BAR(GROUPED)=MEAN(rating) BY item BY ai.
+OUTPUT SAVE OUTFILE='ADS401_GroupH_SPSS_Output_01.spv'.</code></pre>
+          </div>
+
+          <div class="file-links">
+            <strong>Optional original files:</strong>
+            <a href="./ADS401_GroupH_SPSS_Output_01.spv">Native SPSS output</a>
+            ·
+            <a href="./ADS401_GroupH_Q7-Q15_results_01.csv">Result table CSV</a>
+            ·
+            <a href="./ADS401_GroupH_questionnaire_analysis_01.sps">SPSS syntax file</a>
+          </div>
         </section>
 
         <section class="report-section" id="discussion">
