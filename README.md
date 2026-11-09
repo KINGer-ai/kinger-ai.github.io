@@ -2,11 +2,16 @@
 
 Single-page web report and final statistical materials for:
 
-**Museum AI Guide and Post-Visit Experience**
+**Usability Evaluation of the XJTLU Museum AI System**
 
 Course theme: **Evaluating AI Integration at XJTLU**
 
-## Research Question
+## Embedded Experience Experiment
+
+This 30-student questionnaire is one completed component of the wider XJTLU
+Museum AI system usability project.
+
+### Research Question
 
 How do post-visit experience ratings differ between students who used the
 museum's AI guide and students who toured without it?
@@ -45,6 +50,8 @@ and the group comparison is not interpreted as a causal effect of the AI guide.
 
 - `index.html`: single-page GitHub Pages report
 - `ADS401_GroupH_Report.html`: named copy of the report
+- `ADS401_GroupH_Presentation2Slides.pdf`: earlier broader usability design
+- `ADS401_GroupH_Presentation2SupplementaryMaterials.pdf`: earlier design materials
 - `poster.html`: interactive poster source
 - `ADS401_GroupH_Poster.pdf`: one-page A1 poster
 - `ADS401_GroupH_Presentation3Slides.pdf`: final Presentation 3

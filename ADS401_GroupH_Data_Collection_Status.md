@@ -25,6 +25,13 @@
 - No pre-specified primary endpoint could be verified
 - No item reached raw or Holm-adjusted p < .05
 
+## Live-Form Version Mismatch
+
+After transcription began, the live Wenjuanxing form added a required Q16 matrix
+about AI-guide smoothness and ease. The final cleaned dataset does not contain
+Q16, so those values are not available and Q16 is excluded from the reported
+analysis. No placeholder or imputed Q16 scores are used.
+
 ## Interpretation Boundary
 
 The dataset does not contain task success, completion time, SUS, observation

@@ -3,7 +3,8 @@
 | Check | Final state |
 |---|---|
 | Course theme | Evaluating AI Integration at XJTLU |
-| Study title | Museum AI Guide and Post-Visit Experience |
+| Overall project | Usability Evaluation of the XJTLU Museum AI System |
+| Embedded study | AI-guide vs no-AI post-visit experience comparison |
 | Research question | Do Q7-Q15 post-visit experience ratings differ between groups? |
 | Design | Two-group comparison, AI guide vs no AI guide |
 | Sample | 30 students; 17 undergraduate and 13 postgraduate |
