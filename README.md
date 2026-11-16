@@ -52,6 +52,7 @@ and the group comparison is not interpreted as a causal effect of the AI guide.
 
 - `index.html`: single-page GitHub Pages report
 - `ADS401_GroupH_Report.html`: named copy of the report
+- `ADS401_GroupH_Literature_Review.pdf`: literature brief, evidence map, Q7-Q15 measurement rationale, and IEEE references
 - `ADS401_GroupH_Presentation2Slides.pdf`: earlier broader usability design
 - `ADS401_GroupH_Presentation2SupplementaryMaterials.pdf`: earlier design materials
 - `poster.html`: interactive poster source
