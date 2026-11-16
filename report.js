@@ -1,47 +1,127 @@
 (function () {
+  const root = document.documentElement;
   const body = document.body;
   const themeButton = document.querySelector("#theme-toggle");
   const themeLabel = document.querySelector("#theme-label");
-  const progressBar = document.querySelector(".progress-bar");
-  const sections = [...document.querySelectorAll(".report-section")];
-  const navLinks = [...document.querySelectorAll(".toc a")];
+  const menuButton = document.querySelector("#menu-toggle");
+  const siteNav = document.querySelector("#site-nav");
+  const filterButtons = [...document.querySelectorAll("[data-filter]")];
+  const barRows = [...document.querySelectorAll(".bar-row")];
+  const barChart = document.querySelector("#bar-chart");
+  const sections = [...document.querySelectorAll("main > section[id]")];
+  const navLinks = [...document.querySelectorAll(".site-nav a")];
+
+  function safeRead(key) {
+    try {
+      return window.localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function safeWrite(key, value) {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch {
+      return;
+    }
+  }
 
   function setTheme(theme) {
-    body.dataset.theme = theme;
-    themeLabel.textContent = theme === "dark" ? "Light mode" : "Dark mode";
-    localStorage.setItem("ads401-report-theme", theme);
+    root.dataset.theme = theme;
+    const dark = theme === "dark";
+    themeLabel.textContent = "Switch theme";
+    themeButton.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    themeButton.setAttribute("aria-pressed", String(dark));
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#171814" : "#eeecea");
+    safeWrite("ads401-museum-theme", theme);
   }
 
-  function updateProgress() {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const value = max > 0 ? window.scrollY / max : 0;
-    progressBar.style.width = `${Math.min(100, Math.max(0, value * 100))}%`;
+  function closeMenu() {
+    siteNav.classList.remove("is-open");
+    body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
   }
 
-  function updateActiveSection() {
-    let current = sections[0]?.id;
+  function toggleMenu() {
+    const open = !siteNav.classList.contains("is-open");
+    siteNav.classList.toggle("is-open", open);
+    body.classList.toggle("menu-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+  }
+
+  function setFilter(filter) {
+    filterButtons.forEach((button) => {
+      const active = button.dataset.filter === filter;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+
+    barRows.forEach((row) => {
+      row.hidden = filter !== "all" && row.dataset.direction !== filter;
+    });
+
+    barChart.classList.remove("is-ready");
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => barChart.classList.add("is-ready"));
+    });
+  }
+
+  function setActiveNav() {
+    let activeId = "";
 
     sections.forEach((section) => {
-      if (section.getBoundingClientRect().top <= 150) {
-        current = section.id;
+      if (section.getBoundingClientRect().top <= 160) {
+        activeId = section.id;
       }
     });
 
     navLinks.forEach((link) => {
-      link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
+      const active = link.getAttribute("href") === `#${activeId}`;
+      if (active) {
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
   }
 
+  const savedTheme = safeRead("ads401-museum-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
   themeButton.addEventListener("click", () => {
-    setTheme(body.dataset.theme === "dark" ? "light" : "dark");
+    setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   });
 
-  window.addEventListener("scroll", () => {
-    updateProgress();
-    updateActiveSection();
+  menuButton.addEventListener("click", toggleMenu);
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 
-  setTheme(localStorage.getItem("ads401-report-theme") || "light");
-  updateProgress();
-  updateActiveSection();
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteNav.classList.contains("is-open")) {
+      closeMenu();
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1120) {
+      closeMenu();
+    }
+  });
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => setFilter(button.dataset.filter));
+  });
+
+  window.addEventListener("scroll", setActiveNav, { passive: true });
+
+  window.requestAnimationFrame(() => {
+    body.classList.add("is-loaded");
+    window.setTimeout(() => barChart.classList.add("is-ready"), 120);
+    setActiveNav();
+  });
 })();
