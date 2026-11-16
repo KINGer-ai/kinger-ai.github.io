@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b1f33" />
-    <title>ADS401 Group H Poster | Museum AI Guide Experience</title>
+    <title>ADS401 Group H Poster | AI-Guided Museum Visits</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <style>
       :root {
@@ -281,10 +281,25 @@
         margin-bottom: 0;
       }
 
+      .poster-link a {
+        color: var(--teal);
+        font-weight: 700;
+      }
+
       .module ul,
-      .module ol {
+      .module ol,
+      .mini-refs {
         margin: 0;
         padding-left: 18px;
+      }
+
+      .mini-refs {
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      .mini-refs li + li {
+        margin-top: 5px;
       }
 
       .callout {
@@ -506,30 +521,20 @@
     </style>
   </head>
   <body data-theme="signal">
-    <header class="toolbar">
-      <div class="toolbar-brand"><strong>ADS401</strong> Group H poster</div>
-      <div class="toolbar-actions">
-        <button class="theme-button is-active" type="button" data-theme-value="signal">Signal</button>
-        <button class="theme-button" type="button" data-theme-value="paper">Paper</button>
-        <button class="theme-button" type="button" data-theme-value="mono">Mono</button>
-        <button type="button" id="print-poster">Print A1</button>
-        <a class="tool-link" href="./ADS401_GroupH_Report.html">Web report</a>
-      </div>
-    </header>
-
     <main class="poster-stage">
       <article class="poster">
         <header class="poster-header">
           <div>
-            <p class="kicker">ADS401 HCI evaluation · Group H</p>
-            <h1>Usability Evaluation of the XJTLU Museum AI System</h1>
+            <p class="kicker">ADS401 HCI evaluation · XJTLU Museum · Group H</p>
+            <h1>AI-Guided Museum Visits</h1>
             <p class="subtitle">
-              A broader usability evaluation, including a 30-student post-visit experience experiment.
+              A 30-student comparison of post-visit experience with an AI guide and a labels-only
+              museum visit.
             </p>
             <div class="meta">
               <span>Cheng Qian 2687280 · Chen Cui 2687288</span>
               <span>Ziqian Wang 2684921 · Simu He 2686299</span>
-              <span>Evaluation Methods and Statistics · 9 November 2026</span>
+              <span>Evaluation Methods and Statistics · 17 November 2026</span>
             </div>
           </div>
           <div class="qr-box">
@@ -549,22 +554,36 @@
         <section class="poster-grid">
           <div class="column">
             <section class="module">
-              <h2>01 Project context</h2>
-              <p><strong>Overall topic:</strong> How usable is the museum AI guide, and how does AI-supported guidance shape the museum visit?</p>
-              <p class="question">How do post-visit experience ratings differ between students who used the AI guide and those who did not?</p>
+              <h2>01 Abstract and question</h2>
+              <p><strong>Objective:</strong> Test whether nine post-visit experience ratings differ between an AI-guided and labels-only museum visit.</p>
+              <p class="question">Do post-visit experience ratings differ between students who used the XJTLU Museum AI guide and students who toured without it?</p>
               <div class="callout">
-                This 30-person questionnaire is one embedded experiment, not the entire project.
+                The study is a bounded exploratory comparison, not a causal test of the museum AI system.
               </div>
             </section>
 
             <section class="module">
-              <h2>02 Design</h2>
+              <h2>02 Literature basis</h2>
+              <p>
+                Museum experience combines engagement, learning, meaning, and emotion [1]. AI
+                guides may affect interaction, but evidence is mixed and evaluation remains uneven
+                [2], [3].
+              </p>
+              <p>
+                The closest controlled precedent uses a 30-person, 15-per-condition design [4].
+                This study instead compares AI guidance with labels only.
+              </p>
+              <p class="poster-link">15 references: <a href="./ADS401_GroupH_Literature_Review.pdf">open literature brief</a></p>
+            </section>
+
+            <section class="module">
+              <h2>03 Design</h2>
               <div class="flow">
                 <div class="flow-step"><b>1</b><span>Consent and participant information.</span></div>
                 <div class="flow-step"><b>2</b><span>AI-guide or no-AI museum condition.</span></div>
                 <div class="flow-step"><b>3</b><span>Visit the same exhibition context.</span></div>
                 <div class="flow-step"><b>4</b><span>Complete the anonymous post-visit survey.</span></div>
-                <div class="flow-step"><b>5</b><span>Compare Q7–Q15 ratings between groups.</span></div>
+                <div class="flow-step"><b>5</b><span>Compare Q7-Q15 ratings between groups.</span></div>
               </div>
               <div class="callout">
                 Planned alternation by arrival did not appear as a strictly alternating recorded sequence. The study is not described as randomized.
@@ -572,7 +591,7 @@
             </section>
 
             <section class="module">
-              <h2>03 Measurement</h2>
+              <h2>04 Measurement</h2>
               <div class="measures">
                 <div class="measure"><strong>Engagement</strong><span>Absorption during the visit</span></div>
                 <div class="measure"><strong>Interest</strong><span>Interest maintained throughout</span></div>
@@ -582,13 +601,14 @@
                 <div class="measure"><strong>Meaning</strong><span>Visit felt meaningful</span></div>
                 <div class="measure"><strong>Context</strong><span>Connected exhibits to background</span></div>
                 <div class="measure"><strong>Emotion</strong><span>Emotional response to exhibits</span></div>
+                <div class="measure"><strong>Theme resonance</strong><span>Connection to the museum theme</span></div>
               </div>
             </section>
           </div>
 
           <div class="column">
             <section class="module">
-              <h2>04 Analysis</h2>
+              <h2>05 Analysis</h2>
               <p>Two-sided independent-samples Mann–Whitney U tests for each ordinal item. Holm correction covers all nine comparisons. Rank-biserial correlation reports effect direction and magnitude.</p>
               <div class="result-band">
                 <div><strong>15 / 15</strong><span>No AI / AI participants</span></div>
@@ -598,7 +618,7 @@
             </section>
 
             <section class="module">
-              <h2>05 Results chart</h2>
+              <h2>06 Results chart</h2>
               <img
                 class="chart"
                 src="./ADS401_GroupH_Q7-Q15_Guide_Comparison_01.png"
@@ -608,12 +628,12 @@
             </section>
 
             <section class="module">
-              <h2>06 Key result</h2>
+              <h2>07 Key result</h2>
               <div class="result-band">
                 <div><strong>5</strong><span>Items with higher AI-group means</span></div>
                 <div><strong>4</strong><span>Items with higher no-AI means</span></div>
               </div>
-              <p>Q9 had the largest descriptive difference: +0.47, raw p = .230, Holm p = 1.000, r<sub>rb</sub> = +.249.</p>
+              <p>Q9 had the largest descriptive difference: +0.47, Z = -1.199, raw p = .230, Holm p = 1.000.</p>
               <div class="callout">
                 No item was significant before or after correction. This is absence of evidence for a difference, not proof of equivalence.
               </div>
@@ -622,25 +642,25 @@
 
           <div class="column">
             <section class="module">
-              <h2>07 Full result profile</h2>
+              <h2>08 Result table</h2>
               <table class="table">
-                <thead><tr><th>Item</th><th>Δ AI−No AI</th><th>Raw p</th><th>Holm p</th></tr></thead>
+                <thead><tr><th>Item</th><th>Δ</th><th>Z</th><th>Raw p</th><th>Holm p</th></tr></thead>
                 <tbody>
-                  <tr><td>Q7 Engagement</td><td>−0.33</td><td>.278</td><td>1.000</td></tr>
-                  <tr><td>Q8 Interest</td><td>−0.27</td><td>.328</td><td>1.000</td></tr>
-                  <tr><td>Q9 New knowledge</td><td>+0.47</td><td>.230</td><td>1.000</td></tr>
-                  <tr><td>Q10 Understanding</td><td>−0.07</td><td>.804</td><td>1.000</td></tr>
-                  <tr><td>Q11 Reflection</td><td>+0.13</td><td>.757</td><td>1.000</td></tr>
-                  <tr><td>Q12 Meaning</td><td>−0.07</td><td>.622</td><td>1.000</td></tr>
-                  <tr><td>Q13 Context</td><td>+0.07</td><td>.875</td><td>1.000</td></tr>
-                  <tr><td>Q14 Emotion</td><td>+0.40</td><td>.318</td><td>1.000</td></tr>
-                  <tr><td>Q15 Resonance</td><td>+0.33</td><td>.427</td><td>1.000</td></tr>
+                  <tr><td>Q7 Engagement</td><td>−0.33</td><td>+1.084</td><td>.278</td><td>1.000</td></tr>
+                  <tr><td>Q8 Interest</td><td>−0.27</td><td>+0.978</td><td>.328</td><td>1.000</td></tr>
+                  <tr><td>Q9 New knowledge</td><td>+0.47</td><td>−1.199</td><td>.230</td><td>1.000</td></tr>
+                  <tr><td>Q10 Understanding</td><td>−0.07</td><td>+0.248</td><td>.804</td><td>1.000</td></tr>
+                  <tr><td>Q11 Reflection</td><td>+0.13</td><td>−0.310</td><td>.757</td><td>1.000</td></tr>
+                  <tr><td>Q12 Meaning</td><td>−0.07</td><td>+0.493</td><td>.622</td><td>1.000</td></tr>
+                  <tr><td>Q13 Context</td><td>+0.07</td><td>−0.157</td><td>.875</td><td>1.000</td></tr>
+                  <tr><td>Q14 Emotion</td><td>+0.40</td><td>−0.999</td><td>.318</td><td>1.000</td></tr>
+                  <tr><td>Q15 Resonance</td><td>+0.33</td><td>−0.794</td><td>.427</td><td>1.000</td></tr>
                 </tbody>
               </table>
             </section>
 
             <section class="module">
-              <h2>08 Interpretation</h2>
+              <h2>09 Interpretation</h2>
               <p>The current data do not provide sufficient evidence that AI-guide use changes any of the nine post-visit ratings.</p>
               <ul>
                 <li>All outcomes are self-report.</li>
@@ -651,7 +671,7 @@
             </section>
 
             <section class="module">
-              <h2>09 Next study</h2>
+              <h2>10 Next study</h2>
               <ol>
                 <li>Verify the allocation process.</li>
                 <li>Pre-specify one primary outcome.</li>
@@ -661,34 +681,31 @@
             </section>
 
             <section class="module">
-              <h2>10 Conclusion</h2>
+              <h2>11 Conclusion</h2>
               <p><strong>No significant difference in this sample.</strong> Do not claim equivalence or a causal AI effect. The main methodological lesson is that allocation records, a pre-specified endpoint, and correction for multiple tests must be planned before data collection.</p>
+            </section>
+
+            <section class="module">
+              <h2>12 Selected references</h2>
+              <ol class="mini-refs">
+                <li>Wang &amp; Matviienko (2025), generative AI museum chatbot.</li>
+                <li>Othman, Petrie &amp; Power (2011), museum experience scales.</li>
+                <li>Štekerová (2022), museum chatbot evaluation.</li>
+                <li>Mann &amp; Whitney (1947), rank comparison.</li>
+                <li>Holm (1979), multiple-test correction.</li>
+              </ol>
+              <p class="poster-link">Full list: <a href="./ADS401_GroupH_Literature_Review.pdf">15 references</a></p>
             </section>
           </div>
         </section>
 
         <footer class="footer">
           <span>ADS401 Evaluation Methods and Statistics · Group H</span>
-          <span>Questionnaire: v.wjx.cn/vm/wnB4jG2.aspx</span>
+          <span>Questionnaire: bilingual native form in the web report</span>
           <span>A1 portrait · 59.4 × 84.1 cm</span>
         </footer>
       </article>
     </main>
 
-    <script>
-      (() => {
-        const body = document.body;
-        const themeButtons = [...document.querySelectorAll("[data-theme-value]")];
-
-        themeButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            body.dataset.theme = button.dataset.themeValue;
-            themeButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-          });
-        });
-
-        document.querySelector("#print-poster").addEventListener("click", () => window.print());
-      })();
-    </script>
   </body>
 </html>

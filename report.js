@@ -3,13 +3,11 @@
   const body = document.body;
   const themeButton = document.querySelector("#theme-toggle");
   const themeLabel = document.querySelector("#theme-label");
-  const menuButton = document.querySelector("#menu-toggle");
-  const siteNav = document.querySelector("#site-nav");
   const filterButtons = [...document.querySelectorAll("[data-filter]")];
   const barRows = [...document.querySelectorAll(".bar-row")];
   const barChart = document.querySelector("#bar-chart");
-  const sections = [...document.querySelectorAll("main > section[id]")];
-  const navLinks = [...document.querySelectorAll(".site-nav a")];
+  const questionnaire = document.querySelector("#native-questionnaire");
+  const formStatus = document.querySelector("#form-status");
 
   function safeRead(key) {
     try {
@@ -37,19 +35,6 @@
     safeWrite("ads401-museum-theme", theme);
   }
 
-  function closeMenu() {
-    siteNav.classList.remove("is-open");
-    body.classList.remove("menu-open");
-    menuButton.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleMenu() {
-    const open = !siteNav.classList.contains("is-open");
-    siteNav.classList.toggle("is-open", open);
-    body.classList.toggle("menu-open", open);
-    menuButton.setAttribute("aria-expanded", String(open));
-  }
-
   function setFilter(filter) {
     filterButtons.forEach((button) => {
       const active = button.dataset.filter === filter;
@@ -67,25 +52,6 @@
     });
   }
 
-  function setActiveNav() {
-    let activeId = "";
-
-    sections.forEach((section) => {
-      if (section.getBoundingClientRect().top <= 160) {
-        activeId = section.id;
-      }
-    });
-
-    navLinks.forEach((link) => {
-      const active = link.getAttribute("href") === `#${activeId}`;
-      if (active) {
-        link.setAttribute("aria-current", "location");
-      } else {
-        link.removeAttribute("aria-current");
-      }
-    });
-  }
-
   const savedTheme = safeRead("ads401-museum-theme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   setTheme(savedTheme || (prefersDark ? "dark" : "light"));
@@ -94,34 +60,33 @@
     setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   });
 
-  menuButton.addEventListener("click", toggleMenu);
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && siteNav.classList.contains("is-open")) {
-      closeMenu();
-      menuButton.focus();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1120) {
-      closeMenu();
-    }
-  });
-
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => setFilter(button.dataset.filter));
   });
 
-  window.addEventListener("scroll", setActiveNav, { passive: true });
+  if (questionnaire) {
+    questionnaire.addEventListener("submit", (event) => {
+      event.preventDefault();
+      questionnaire.classList.add("was-validated");
+      questionnaire.querySelectorAll("input").forEach((input) => input.removeAttribute("aria-invalid"));
+
+      if (!questionnaire.checkValidity()) {
+        const invalid = [...questionnaire.querySelectorAll("input")].find((input) => !input.validity.valid);
+        if (invalid) {
+          invalid.setAttribute("aria-invalid", "true");
+          invalid.focus();
+        }
+        formStatus.textContent = "Complete all required items before checking the questionnaire.";
+        return;
+      }
+
+      formStatus.textContent =
+        "Questionnaire complete: all required items are answered. This report copy does not submit data.";
+    });
+  }
 
   window.requestAnimationFrame(() => {
     body.classList.add("is-loaded");
     window.setTimeout(() => barChart.classList.add("is-ready"), 120);
-    setActiveNav();
   });
 })();
