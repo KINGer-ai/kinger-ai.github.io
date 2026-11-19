@@ -1,0 +1,16 @@
+{
+  "name": "Posebook Classic Minion V2",
+  "version": "2.0.0",
+  "format": "VRM 1.0",
+  "preview": "./preview.png",
+  "viewer": "./preview.html",
+  "models": {
+    "runtime": "./minion-classic-v2.vrm",
+    "glb": "./minion-classic-v2.glb"
+  },
+  "source": "../../../character-source/minion-classic-v2/",
+  "humanoidBones": 19,
+  "skins": 1,
+  "materials": 9,
+  "usage": "Fan-made educational prototype. Not for commercial use."
+}
