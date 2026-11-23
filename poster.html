@@ -3,115 +3,65 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b1f33" />
+    <meta name="page-type" content="service" />
+    <meta name="site-kind" content="other" />
+    <meta name="page-kind" content="service" />
+    <meta name="theme-color" content="#f1eee7" />
+    <meta
+      name="description"
+      content="A1 research poster for the ADS401 Group H study comparing AI-guided and labels-only museum visits."
+    />
     <title>ADS401 Group H Poster | AI-Guided Museum Visits</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Libre+Franklin:wght@400..600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --navy: #0b2239;
-        --ink: #102a43;
-        --muted: #5f7485;
-        --paper: #f7f8f4;
-        --surface: #ffffff;
-        --soft: #edf2f3;
-        --teal: #0f766e;
-        --teal-soft: #e0f4f0;
-        --coral: #df654b;
-        --coral-soft: #fbece7;
-        --amber: #e6b949;
-        --amber-soft: #fff3c9;
-        --line: #c8d4dc;
-        --display: Georgia, "Times New Roman", serif;
-        --body: "Segoe UI", Arial, sans-serif;
-      }
-
-      body[data-theme="paper"] {
-        --paper: #fffdf8;
-        --surface: #ffffff;
-        --soft: #f2efe7;
-        --teal: #225f64;
-        --coral: #a94b36;
-        --amber: #a77820;
-        --line: #d8d1c4;
-      }
-
-      body[data-theme="mono"] {
-        --paper: #f4f4f4;
-        --surface: #ffffff;
-        --soft: #e8e8e8;
-        --teal: #333333;
-        --coral: #555555;
-        --amber: #777777;
-        --teal-soft: #ececec;
-        --coral-soft: #eeeeee;
-        --amber-soft: #f0f0f0;
-        --line: #c8c8c8;
+        --paper: #f1eee7;
+        --surface: #e5e1d8;
+        --ink: #252722;
+        --muted: #66645d;
+        --line: rgba(37, 39, 34, 0.2);
+        --line-strong: rgba(37, 39, 34, 0.45);
+        --accent: #586a52;
+        --accent-soft: #dfe5da;
+        --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+        --body: "Libre Franklin", Aptos, "Segoe UI", sans-serif;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html,
+      body {
+        margin: 0;
+      }
+
       body {
         min-width: 320px;
-        margin: 0;
         color: var(--ink);
-        background: #dce3e5;
+        background: #d5d1c8;
         font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
       }
 
-      .toolbar {
-        position: sticky;
-        z-index: 5;
-        top: 12px;
-        display: flex;
-        width: min(1120px, calc(100% - 24px));
-        margin: 12px auto 0;
-        padding: 7px;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.94);
-        box-shadow: 0 14px 32px rgba(16, 42, 67, 0.12);
-        backdrop-filter: blur(12px);
+      a {
+        color: inherit;
+        text-underline-offset: 0.18em;
       }
 
-      .toolbar-brand {
-        padding-left: 8px;
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      .toolbar-actions {
-        display: flex;
-        gap: 6px;
-      }
-
-      button,
-      .tool-link {
-        min-height: 34px;
-        padding: 7px 10px;
-        border: 1px solid var(--line);
-        border-radius: 3px;
-        color: var(--ink);
-        background: var(--surface);
-        font: inherit;
-        font-size: 12px;
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      button.is-active {
-        color: #fff;
-        background: var(--navy);
-        border-color: var(--navy);
+      img {
+        display: block;
+        max-width: 100%;
       }
 
       .poster-stage {
-        width: 100%;
-        padding: 28px 14px;
+        padding: 30px 18px;
       }
 
       .poster {
@@ -120,203 +70,280 @@
         margin: 0 auto;
         padding: 34px;
         overflow: hidden;
-        border-top: 8px solid var(--teal);
         background: var(--paper);
-        box-shadow: 0 30px 70px rgba(16, 42, 67, 0.18);
+        border: 1px solid var(--line);
+        box-shadow: 0 30px 80px rgba(33, 33, 28, 0.16);
       }
 
-      .poster-header {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 150px;
-        gap: 24px;
-        align-items: start;
-        padding-bottom: 24px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .kicker {
-        margin: 0 0 12px;
-        color: var(--teal);
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        max-width: 900px;
-        margin: 0;
-        color: var(--ink);
-        font-family: var(--display);
-        font-size: clamp(42px, 6vw, 76px);
-        line-height: 0.98;
-      }
-
-      .subtitle {
-        max-width: 860px;
-        margin: 14px 0 0;
-        color: var(--muted);
-        font-size: 17px;
-        line-height: 1.45;
-      }
-
-      .meta {
+      .topbar {
         display: flex;
-        margin-top: 16px;
-        flex-wrap: wrap;
-        gap: 8px 18px;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line-strong);
         color: var(--muted);
-        font-size: 12px;
-      }
-
-      .qr-box {
-        padding: 12px;
-        border: 1px solid var(--line);
-        background: var(--surface);
-        text-align: center;
-      }
-
-      .qr-box img {
-        display: block;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 8px;
-      }
-
-      .qr-box strong,
-      .qr-box span {
-        display: block;
-      }
-
-      .qr-box strong {
-        font-size: 11px;
-      }
-
-      .qr-box span {
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 9px;
-      }
-
-      .context {
-        display: grid;
-        margin: 22px 0;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        border: 1px solid var(--line);
-        background: var(--surface);
-      }
-
-      .context-cell {
-        min-height: 96px;
-        padding: 14px;
-        border-right: 1px solid var(--line);
-      }
-
-      .context-cell:last-child {
-        border-right: 0;
-      }
-
-      .context-cell span {
-        display: block;
-        color: var(--muted);
-        font-size: 9px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .context-cell strong {
-        display: block;
-        margin-top: 6px;
-        font-family: var(--display);
-        font-size: 24px;
-      }
-
-      .context-cell p {
-        margin: 4px 0 0;
-        color: var(--muted);
-        font-size: 11px;
+        font-size: 10px;
         line-height: 1.4;
       }
 
-      .poster-grid {
+      .topbar strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .hero {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
+        grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+        gap: 30px;
+        align-items: stretch;
+        padding: 26px 0 24px;
+      }
+
+      .hero-copy {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-family: var(--display);
+        font-size: 68px;
+        font-weight: 400;
+        line-height: 0.98;
+      }
+
+      .dek {
+        max-width: 54ch;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-family: var(--display);
+        font-size: 19px;
+        line-height: 1.45;
+      }
+
+      .research-question {
+        margin-top: 24px;
+        padding: 16px 0 16px 20px;
+        border-left: 3px solid var(--accent);
+      }
+
+      .research-question span {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .research-question p {
+        max-width: 42ch;
+        margin: 0;
+        font-family: var(--display);
+        font-size: 21px;
+        line-height: 1.32;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 118px;
+        gap: 20px;
+        align-items: end;
+        margin-top: auto;
+        padding-top: 26px;
+      }
+
+      .authors {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.55;
+      }
+
+      .authors strong {
+        display: block;
+        margin-bottom: 3px;
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .qr {
+        text-align: center;
+      }
+
+      .qr img {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 6px;
+      }
+
+      .qr span {
+        display: block;
+        color: var(--muted);
+        font-size: 8px;
+        line-height: 1.35;
+      }
+
+      .hero-photo {
+        min-height: 360px;
+        margin: 0;
+        overflow: hidden;
+        background: var(--surface);
+      }
+
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .snapshot {
+        display: grid;
+        grid-template-columns: 0.7fr 0.9fr 1fr 1.15fr;
+        border-top: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--line-strong);
+      }
+
+      .snapshot div {
+        min-height: 92px;
+        padding: 16px 18px;
+        border-right: 1px solid var(--line);
+      }
+
+      .snapshot div:first-child {
+        padding-left: 0;
+      }
+
+      .snapshot div:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .snapshot span {
+        display: block;
+        color: var(--muted);
+        font-size: 9px;
+      }
+
+      .snapshot strong {
+        display: block;
+        margin-top: 5px;
+        font-family: var(--display);
+        font-size: 27px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .snapshot p {
+        margin: 7px 0 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .result-banner {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 24px;
+        align-items: center;
+        margin: 22px 0;
+        padding: 20px 24px;
+        color: var(--paper);
+        background: var(--ink);
+      }
+
+      .result-banner .zero {
+        font-family: var(--display);
+        font-size: 72px;
+        line-height: 0.85;
+      }
+
+      .result-banner h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1.15;
+      }
+
+      .result-banner p {
+        margin: 8px 0 0;
+        color: #d4d3cd;
+        font-size: 11px;
+        line-height: 1.45;
+      }
+
+      .body-grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.18fr 0.9fr;
+        gap: 28px;
+        align-items: start;
       }
 
       .column {
         display: flex;
+        min-width: 0;
         flex-direction: column;
-        gap: 16px;
+        gap: 25px;
       }
 
       .module {
-        padding: 18px;
-        border: 1px solid var(--line);
-        background: var(--surface);
+        padding-top: 14px;
+        border-top: 1px solid var(--line-strong);
       }
 
-      .module h2 {
-        margin: 0 0 12px;
-        color: var(--teal);
-        font-size: 12px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+      .module h3 {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+        margin: 0 0 11px;
+        font-family: var(--display);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .module h3 em {
+        color: var(--accent);
+        font-family: var(--body);
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 600;
       }
 
       .module p,
       .module li {
-        color: var(--ink);
-        font-size: 13px;
-        line-height: 1.52;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.55;
       }
 
       .module p {
-        margin: 0 0 10px;
+        margin: 0 0 9px;
       }
 
-      .module p:last-child,
-      .module ul:last-child {
+      .module p:last-child {
         margin-bottom: 0;
       }
 
-      .poster-link a {
-        color: var(--teal);
-        font-weight: 700;
-      }
-
       .module ul,
-      .module ol,
-      .mini-refs {
+      .module ol {
         margin: 0;
-        padding-left: 18px;
+        padding-left: 16px;
       }
 
-      .mini-refs {
-        font-size: 10.5px;
-        line-height: 1.45;
-      }
-
-      .mini-refs li + li {
+      .module li + li {
         margin-top: 5px;
-      }
-
-      .callout {
-        margin-top: 12px;
-        padding: 12px;
-        border-left: 4px solid var(--coral);
-        background: var(--coral-soft);
-        color: var(--ink);
-        font-size: 12px;
-        line-height: 1.5;
-      }
-
-      .question {
-        margin: 0;
-        font-family: var(--display);
-        font-size: 24px;
-        line-height: 1.22;
       }
 
       .flow {
@@ -324,109 +351,134 @@
         gap: 7px;
       }
 
-      .flow-step {
+      .flow div {
         display: grid;
-        grid-template-columns: 28px 1fr;
-        gap: 9px;
+        grid-template-columns: 22px minmax(0, 1fr);
+        gap: 8px;
         align-items: start;
       }
 
-      .flow-step b {
-        display: grid;
-        width: 25px;
-        height: 25px;
-        place-items: center;
-        border-radius: 50%;
-        color: #fff;
-        background: var(--navy);
-        font-size: 10px;
+      .flow b {
+        color: var(--accent);
+        font-family: var(--display);
+        font-size: 13px;
+        font-weight: 500;
       }
 
-      .flow-step span {
-        padding-top: 3px;
-        font-size: 12px;
+      .flow span {
+        color: var(--ink);
+        font-size: 10px;
+        line-height: 1.45;
       }
 
       .measures {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
+        gap: 6px 12px;
       }
 
-      .measure {
-        min-height: 64px;
-        padding: 9px;
-        background: var(--soft);
+      .measures div {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
       }
 
-      .measure strong,
-      .measure span {
+      .measures strong,
+      .measures span {
         display: block;
       }
 
-      .measure strong {
-        font-size: 11px;
+      .measures strong {
+        font-size: 9px;
+        font-weight: 600;
       }
 
-      .measure span {
+      .measures span {
         margin-top: 3px;
         color: var(--muted);
-        font-size: 10px;
-        line-height: 1.35;
+        font-size: 8px;
+        line-height: 1.4;
       }
 
       .chart {
-        display: block;
         width: 100%;
         height: auto;
-        margin: 4px 0 10px;
-        border: 1px solid var(--line);
+        background: #fff;
       }
 
-      .result-band {
-        display: grid;
-        margin-bottom: 12px;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .result-band div {
-        padding: 10px;
-        background: var(--teal-soft);
-      }
-
-      .result-band strong,
-      .result-band span {
-        display: block;
-      }
-
-      .result-band strong {
-        font-size: 18px;
-      }
-
-      .result-band span {
-        margin-top: 3px;
+      .chart-key {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        margin: 9px 0 0;
         color: var(--muted);
-        font-size: 10px;
+        font-size: 8px;
+      }
+
+      .chart-key span {
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .chart-key i {
+        width: 16px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .chart-key span:last-child i {
+        background: var(--ink);
+      }
+
+      .result-pair {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin: 2px 0 12px;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .result-pair strong {
+        display: block;
+        color: var(--accent);
+        font-family: var(--display);
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .result-pair span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 8px;
+        line-height: 1.4;
       }
 
       .table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 9.5px;
+        font-variant-numeric: tabular-nums;
       }
 
       .table th,
       .table td {
-        padding: 5px 3px;
+        padding: 6px 2px;
         border-bottom: 1px solid var(--line);
         text-align: left;
       }
 
       .table th {
         color: var(--muted);
-        font-size: 8px;
-        text-transform: uppercase;
+        font-size: 7px;
+        font-weight: 500;
+      }
+
+      .table td {
+        color: var(--ink);
+        font-size: 8.5px;
       }
 
       .table td:nth-child(n + 2),
@@ -434,58 +486,208 @@
         text-align: right;
       }
 
-      .footer {
-        display: flex;
+      .callout {
+        margin-top: 12px;
+        padding: 12px 14px;
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .references {
         margin-top: 22px;
         padding-top: 14px;
-        justify-content: space-between;
-        gap: 20px;
-        border-top: 1px solid var(--line);
+        border-top: 1px solid var(--line-strong);
+      }
+
+      .references h3 {
+        margin: 0 0 8px;
+        font-family: var(--display);
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .references ol {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px 26px;
+        margin: 0;
+        padding-left: 16px;
         color: var(--muted);
-        font-size: 10px;
+        font-size: 8px;
+        line-height: 1.45;
+      }
+
+      .poster-footer {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 18px;
+        align-items: end;
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 1px solid var(--line-strong);
+        color: var(--muted);
+        font-size: 8px;
+      }
+
+      .poster-footer strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .poster-footer a {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      @media screen {
+        .poster {
+          min-height: 1800px;
+        }
+
+        .module h3 {
+          font-size: 22px;
+        }
+
+        .module p,
+        .module li {
+          font-size: 13px;
+          line-height: 1.58;
+        }
+
+        .flow span {
+          font-size: 11px;
+        }
+
+        .measures strong {
+          font-size: 10px;
+        }
+
+        .measures span {
+          font-size: 9px;
+        }
+
+        .table th {
+          font-size: 8px;
+        }
+
+        .table td {
+          font-size: 9.5px;
+        }
+
+        .callout {
+          font-size: 11px;
+        }
+
+        .references ol {
+          font-size: 9px;
+        }
+
+        .poster-footer {
+          font-size: 9px;
+        }
       }
 
       @media (max-width: 900px) {
-        .poster-header,
-        .poster-grid {
+        .poster {
+          min-height: 0;
+          padding: 24px;
+        }
+
+        .hero,
+        .body-grid {
           grid-template-columns: 1fr;
         }
 
-        .context {
-          grid-template-columns: repeat(2, 1fr);
+        .hero-photo {
+          min-height: 320px;
         }
 
-        .poster {
-          min-height: 0;
+        .snapshot {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .snapshot div:nth-child(2) {
+          border-right: 0;
+        }
+
+        .snapshot div:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
+        }
+
+        .hero-meta {
+          margin-top: 24px;
         }
       }
 
       @media (max-width: 560px) {
-        .toolbar-brand {
-          display: none;
-        }
-
-        .toolbar {
-          overflow-x: auto;
+        .poster-stage {
+          padding: 0;
         }
 
         .poster {
-          padding: 22px 18px;
+          width: 100%;
+          padding: 20px 16px;
+          border: 0;
+          box-shadow: none;
         }
 
-        .context,
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        h1 {
+          font-size: 45px;
+        }
+
+        .dek {
+          font-size: 17px;
+        }
+
+        .hero-meta,
+        .snapshot,
+        .result-pair,
         .measures,
-        .result-band {
+        .references ol,
+        .poster-footer {
           grid-template-columns: 1fr;
         }
 
-        .context-cell {
+        .snapshot div,
+        .snapshot div:first-child,
+        .snapshot div:last-child {
+          padding: 13px 0;
           border-right: 0;
           border-bottom: 1px solid var(--line);
         }
 
-        .footer {
-          flex-direction: column;
+        .snapshot div:last-child {
+          border-bottom: 0;
+        }
+
+        .result-banner {
+          grid-template-columns: 60px minmax(0, 1fr);
+          gap: 14px;
+          padding: 18px;
+        }
+
+        .result-banner .zero {
+          font-size: 54px;
+        }
+
+        .result-banner h2 {
+          font-size: 21px;
+        }
+
+        .module h3 {
+          font-size: 18px;
         }
       }
 
@@ -499,213 +701,501 @@
           background: #fff;
         }
 
-        .toolbar {
-          display: none;
-        }
-
         .poster-stage {
           padding: 0;
         }
 
         .poster {
           width: 594mm;
-          min-height: 841mm;
-          padding: 13mm;
+          height: 841mm;
+          min-height: 0;
+          padding: 14mm;
+          border: 0;
           box-shadow: none;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .topbar {
+          padding-bottom: 5mm;
+          font-size: 12px;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+          gap: 9mm;
+          padding: 7mm 0 6mm;
+        }
+
+        .kicker {
+          margin-bottom: 5mm;
+          font-size: 13px;
+        }
+
+        h1 {
+          font-size: 74px;
+        }
+
+        .dek {
+          margin-top: 5mm;
+          font-size: 22px;
+        }
+
+        .research-question {
+          margin-top: 6mm;
+          padding: 4mm 0 4mm 5mm;
+        }
+
+        .research-question span {
+          font-size: 11px;
+        }
+
+        .research-question p {
+          font-size: 23px;
+        }
+
+        .hero-photo {
+          min-height: 0;
+        }
+
+        .hero-meta {
+          grid-template-columns: minmax(0, 1fr) 34mm;
+          padding-top: 6mm;
+        }
+
+        .authors {
+          font-size: 11px;
+        }
+
+        .qr img {
+          width: 26mm;
+          height: 26mm;
+        }
+
+        .snapshot div {
+          min-height: 24mm;
+          padding: 4mm;
+        }
+
+        .snapshot strong {
+          font-size: 31px;
+        }
+
+        .snapshot p,
+        .snapshot span {
+          font-size: 10px;
+        }
+
+        .result-banner {
+          margin: 5mm 0;
+          padding: 5mm;
+        }
+
+        .result-banner .zero {
+          font-size: 76px;
+        }
+
+        .result-banner h2 {
+          font-size: 30px;
+        }
+
+        .result-banner p {
+          font-size: 12px;
+        }
+
+        .body-grid {
+          grid-template-columns: 0.92fr 1.18fr 0.9fr;
+          gap: 7mm;
+          flex: 1;
+          align-items: stretch;
+        }
+
+        .column {
+          gap: 6mm;
+          justify-content: space-between;
         }
 
         .module {
-          break-inside: avoid;
+          padding-top: 3.5mm;
+        }
+
+        .module h3 {
+          margin-bottom: 2.5mm;
+          font-size: 23px;
+        }
+
+        .module h3 em {
+          font-size: 10px;
+        }
+
+        .module p,
+        .module li {
+          font-size: 11px;
+        }
+
+        .flow span {
+          font-size: 10px;
+        }
+
+        .measures strong {
+          font-size: 10px;
+        }
+
+        .measures span {
+          font-size: 9px;
+        }
+
+        .table th,
+        .table td {
+          padding: 1.2mm 0.8mm;
+        }
+
+        .table th {
+          font-size: 8px;
+        }
+
+        .table td {
+          font-size: 9px;
+        }
+
+        .callout {
+          margin-top: 3mm;
+          padding: 3mm;
+          font-size: 10px;
+        }
+
+        .references {
+          margin-top: 4mm;
+          padding-top: 3mm;
+        }
+
+        .references h3 {
+          font-size: 19px;
+        }
+
+        .references ol {
+          gap: 1.5mm 6mm;
+          font-size: 8px;
+        }
+
+        .poster-footer {
+          margin-top: 4mm;
+          padding-top: 3mm;
+          font-size: 8px;
+        }
+
+        .poster-footer strong {
+          font-size: 18px;
+        }
+
+        /* A1 readability pass: keep body copy above 10pt when printed. */
+        .topbar {
+          font-size: 14px;
+        }
+
+        .kicker {
+          font-size: 16px;
+        }
+
+        h1 {
+          font-size: 84px;
+        }
+
+        .dek {
+          font-size: 24px;
+        }
+
+        .research-question span {
+          font-size: 14px;
+        }
+
+        .research-question p {
+          font-size: 26px;
+        }
+
+        .authors {
+          font-size: 14px;
+        }
+
+        .qr span {
+          font-size: 11px;
+        }
+
+        .snapshot p,
+        .snapshot span {
+          font-size: 12px;
+        }
+
+        .result-banner p {
+          font-size: 15px;
+        }
+
+        .module h3 em,
+        .chart-key,
+        .result-pair span {
+          font-size: 11px;
+        }
+
+        .module p,
+        .module li {
+          font-size: 16px;
+        }
+
+        .flow span {
+          font-size: 14px;
+        }
+
+        .measures strong {
+          font-size: 13px;
+        }
+
+        .measures span {
+          font-size: 12px;
+        }
+
+        .table th {
+          font-size: 11px;
+        }
+
+        .table td {
+          font-size: 12px;
+        }
+
+        .callout {
+          font-size: 13px;
+        }
+
+        .references ol,
+        .poster-footer {
+          font-size: 11.5px;
         }
       }
     </style>
   </head>
-  <body data-theme="signal">
+  <body>
     <main class="poster-stage">
-      <article class="poster">
-        <header class="poster-header">
-          <div>
-            <p class="kicker">ADS401 HCI evaluation · XJTLU Museum · Group H</p>
-            <h1>AI-Guided Museum Visits</h1>
-            <p class="subtitle">
-              A 30-student comparison of post-visit experience with an AI guide and a labels-only
-              museum visit.
-            </p>
-            <div class="meta">
-              <span>Cheng Qian 2687280 · Chen Cui 2687288</span>
-              <span>Ziqian Wang 2684921 · Simu He 2686299</span>
-              <span>Evaluation Methods and Statistics · 17 November 2026</span>
-            </div>
-          </div>
-          <div class="qr-box">
-            <img src="./qr-report.png" alt="QR code linking to the ADS401 web report" />
-            <strong>Scan for the full report</strong>
-            <span>kinger-ai.github.io</span>
-          </div>
+      <article class="poster" aria-labelledby="poster-title">
+        <header class="topbar">
+          <span><strong>ADS401</strong> Evaluation Methods and Statistics</span>
+          <span>Group H · Xi'an Jiaotong-Liverpool University · 2026</span>
         </header>
 
-        <section class="context">
-          <div class="context-cell"><span>Sample</span><strong>30</strong><p>XJTLU students, 17 undergraduate and 13 postgraduate.</p></div>
-          <div class="context-cell"><span>Groups</span><strong>15 + 15</strong><p>AI-guide and no-AI comparison groups.</p></div>
-          <div class="context-cell"><span>Outcomes</span><strong>9 items</strong><p>Q7–Q15 ratings from 1 to 5.</p></div>
-          <div class="context-cell"><span>Adjusted result</span><strong>0 sig.</strong><p>No Holm-adjusted p-value was below .05.</p></div>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="kicker">XJTLU Museum | Visitor experience study | Group H</p>
+            <h1 id="poster-title">AI-guided museum visits</h1>
+            <p class="dek">
+              A 30-student comparison of post-visit experience with the museum AI guide and a
+              labels-only visit.
+            </p>
+
+            <div class="research-question">
+              <span>Research question</span>
+              <p>
+                Do post-visit experience ratings differ between students who used the XJTLU Museum
+                AI guide and students who toured without it?
+              </p>
+            </div>
+
+            <div class="hero-meta">
+              <p class="authors">
+                <strong>Group H</strong>
+                Cheng Qian 2687280 · Chen Cui 2687288<br />
+                Ziqian Wang 2684921 · Simu He 2686299
+              </p>
+              <div class="qr">
+                <img src="./qr-report.png" alt="QR code for the full ADS401 report" />
+                <span>Full report<br />kinger-ai.github.io</span>
+              </div>
+            </div>
+          </div>
+
+          <figure class="hero-photo">
+            <img
+              src="./assets/museum-ai-guide-hero.webp"
+              width="1200"
+              height="1400"
+              alt="XJTLU Museum AI-supported visitor project"
+            />
+          </figure>
         </section>
 
-        <section class="poster-grid">
+        <section class="snapshot" aria-label="Study at a glance">
+          <div><span>Design</span><strong>2 groups</strong><p>AI guide and labels-only visit</p></div>
+          <div><span>Sample</span><strong>30</strong><p>17 undergraduate and 13 postgraduate</p></div>
+          <div><span>Outcomes</span><strong>9 ratings</strong><p>Q7-Q15, 1-5 ordinal scale</p></div>
+          <div><span>Completion</span><strong>270 / 270</strong><p>Valid item ratings, no missing values</p></div>
+        </section>
+
+        <section class="result-banner" aria-label="Main result">
+          <div class="zero">0</div>
+          <div>
+            <h2>No adjusted comparison reached .05.</h2>
+            <p>
+              The largest descriptive gap was Q9 new knowledge: AI 4.00, no AI 3.53, Z = -1.199,
+              raw p = .230, Holm p = 1.000.
+            </p>
+          </div>
+        </section>
+
+        <section class="body-grid">
           <div class="column">
             <section class="module">
-              <h2>01 Abstract and question</h2>
-              <p><strong>Objective:</strong> Test whether nine post-visit experience ratings differ between an AI-guided and labels-only museum visit.</p>
-              <p class="question">Do post-visit experience ratings differ between students who used the XJTLU Museum AI guide and students who toured without it?</p>
-              <div class="callout">
-                The study is a bounded exploratory comparison, not a causal test of the museum AI system.
-              </div>
+              <h3><em>01</em> Why this study</h3>
+              <p>
+                Museum experience covers engagement, learning, meaning, and emotional connection.
+                AI guides may change these outcomes, but controlled museum evidence remains uneven.
+              </p>
+              <p>
+                The closest precedent compares a generative chatbot with a museum app. This study
+                uses a different baseline: an AI guide versus labels only.
+              </p>
             </section>
 
             <section class="module">
-              <h2>02 Literature basis</h2>
-              <p>
-                Museum experience combines engagement, learning, meaning, and emotion [1]. AI
-                guides may affect interaction, but evidence is mixed and evaluation remains uneven
-                [2], [3].
-              </p>
-              <p>
-                The closest controlled precedent uses a 30-person, 15-per-condition design [4].
-                This study instead compares AI guidance with labels only.
-              </p>
-              <p class="poster-link">15 references: <a href="./ADS401_GroupH_Literature_Review.pdf">open literature brief</a></p>
-            </section>
-
-            <section class="module">
-              <h2>03 Design</h2>
+              <h3><em>02</em> Design</h3>
               <div class="flow">
-                <div class="flow-step"><b>1</b><span>Consent and participant information.</span></div>
-                <div class="flow-step"><b>2</b><span>AI-guide or no-AI museum condition.</span></div>
-                <div class="flow-step"><b>3</b><span>Visit the same exhibition context.</span></div>
-                <div class="flow-step"><b>4</b><span>Complete the anonymous post-visit survey.</span></div>
-                <div class="flow-step"><b>5</b><span>Compare Q7-Q15 ratings between groups.</span></div>
+                <div><b>01</b><span>Information and consent.</span></div>
+                <div><b>02</b><span>AI-guide or labels-only visit.</span></div>
+                <div><b>03</b><span>Same exhibition context.</span></div>
+                <div><b>04</b><span>Nine post-visit ratings.</span></div>
+                <div><b>05</b><span>Rank comparison with correction.</span></div>
               </div>
               <div class="callout">
-                Planned alternation by arrival did not appear as a strictly alternating recorded sequence. The study is not described as randomized.
+                Recorded group order was not strictly alternating. The study is not presented as
+                randomized or causal.
               </div>
             </section>
 
             <section class="module">
-              <h2>04 Measurement</h2>
+              <h3><em>03</em> Measures</h3>
               <div class="measures">
-                <div class="measure"><strong>Engagement</strong><span>Absorption during the visit</span></div>
-                <div class="measure"><strong>Interest</strong><span>Interest maintained throughout</span></div>
-                <div class="measure"><strong>Learning</strong><span>Learned new knowledge</span></div>
-                <div class="measure"><strong>Understanding</strong><span>Deeper exhibit understanding</span></div>
-                <div class="measure"><strong>Reflection</strong><span>Prompted further thought</span></div>
-                <div class="measure"><strong>Meaning</strong><span>Visit felt meaningful</span></div>
-                <div class="measure"><strong>Context</strong><span>Connected exhibits to background</span></div>
-                <div class="measure"><strong>Emotion</strong><span>Emotional response to exhibits</span></div>
-                <div class="measure"><strong>Theme resonance</strong><span>Connection to the museum theme</span></div>
+                <div><strong>Engagement</strong><span>Absorption</span></div>
+                <div><strong>Interest</strong><span>Sustained attention</span></div>
+                <div><strong>New knowledge</strong><span>Learning</span></div>
+                <div><strong>Understanding</strong><span>Exhibit comprehension</span></div>
+                <div><strong>Reflection</strong><span>Further thought</span></div>
+                <div><strong>Meaning</strong><span>Personal relevance</span></div>
+                <div><strong>Context</strong><span>Background connection</span></div>
+                <div><strong>Emotion</strong><span>Affective response</span></div>
+                <div><strong>Theme</strong><span>Museum resonance</span></div>
               </div>
             </section>
           </div>
 
           <div class="column">
             <section class="module">
-              <h2>05 Analysis</h2>
-              <p>Two-sided independent-samples Mann–Whitney U tests for each ordinal item. Holm correction covers all nine comparisons. Rank-biserial correlation reports effect direction and magnitude.</p>
-              <div class="result-band">
-                <div><strong>15 / 15</strong><span>No AI / AI participants</span></div>
-                <div><strong>270 / 270</strong><span>Valid Q7–Q15 ratings</span></div>
-              </div>
-              <p>No missing ratings, duplicate IDs, or out-of-range values were found.</p>
-            </section>
-
-            <section class="module">
-              <h2>06 Results chart</h2>
+              <h3><em>04</em> Group means</h3>
               <img
                 class="chart"
                 src="./ADS401_GroupH_Q7-Q15_Guide_Comparison_01.png"
-                alt="Grouped bar chart of mean Q7-Q15 ratings for AI and no-AI groups"
+                width="1176"
+                height="736"
+                alt="Grouped mean ratings for Q7 to Q15 in the AI-guide and no-AI conditions"
               />
-              <p>Blue: no AI guide. Green: AI guide. Bar height is descriptive; inference uses ranks.</p>
+              <div class="chart-key">
+                <span><i></i>AI guide</span>
+                <span><i></i>No AI guide</span>
+                <span>All comparisons n.s. after Holm correction</span>
+              </div>
             </section>
 
             <section class="module">
-              <h2>07 Key result</h2>
-              <div class="result-band">
+              <h3><em>05</em> What moved</h3>
+              <div class="result-pair">
                 <div><strong>5</strong><span>Items with higher AI-group means</span></div>
                 <div><strong>4</strong><span>Items with higher no-AI means</span></div>
               </div>
-              <p>Q9 had the largest descriptive difference: +0.47, Z = -1.199, raw p = .230, Holm p = 1.000.</p>
+              <p>
+                The direction was mixed. Q9 showed the largest descriptive gain for the AI group,
+                while Q7 and Q8 favoured the no-AI group.
+              </p>
               <div class="callout">
-                No item was significant before or after correction. This is absence of evidence for a difference, not proof of equivalence.
+                The result shows absence of evidence for an item-level effect in this sample. It
+                does not show that the conditions were equivalent.
               </div>
+            </section>
+
+            <section class="module">
+              <h3><em>06</em> Reading</h3>
+              <p>
+                The small sample, brief exposure, self-report outcomes, and lack of a primary
+                endpoint limit the claim. A stronger study should verify allocation and collect
+                task-level evidence alongside the questionnaire.
+              </p>
             </section>
           </div>
 
           <div class="column">
             <section class="module">
-              <h2>08 Result table</h2>
+              <h3><em>07</em> Test results</h3>
               <table class="table">
                 <thead><tr><th>Item</th><th>Δ</th><th>Z</th><th>Raw p</th><th>Holm p</th></tr></thead>
                 <tbody>
-                  <tr><td>Q7 Engagement</td><td>−0.33</td><td>+1.084</td><td>.278</td><td>1.000</td></tr>
-                  <tr><td>Q8 Interest</td><td>−0.27</td><td>+0.978</td><td>.328</td><td>1.000</td></tr>
-                  <tr><td>Q9 New knowledge</td><td>+0.47</td><td>−1.199</td><td>.230</td><td>1.000</td></tr>
-                  <tr><td>Q10 Understanding</td><td>−0.07</td><td>+0.248</td><td>.804</td><td>1.000</td></tr>
-                  <tr><td>Q11 Reflection</td><td>+0.13</td><td>−0.310</td><td>.757</td><td>1.000</td></tr>
-                  <tr><td>Q12 Meaning</td><td>−0.07</td><td>+0.493</td><td>.622</td><td>1.000</td></tr>
-                  <tr><td>Q13 Context</td><td>+0.07</td><td>−0.157</td><td>.875</td><td>1.000</td></tr>
-                  <tr><td>Q14 Emotion</td><td>+0.40</td><td>−0.999</td><td>.318</td><td>1.000</td></tr>
-                  <tr><td>Q15 Resonance</td><td>+0.33</td><td>−0.794</td><td>.427</td><td>1.000</td></tr>
+                  <tr><td>Q7 Engagement</td><td>-0.33</td><td>+1.084</td><td>.278</td><td>1.000</td></tr>
+                  <tr><td>Q8 Interest</td><td>-0.27</td><td>+0.978</td><td>.328</td><td>1.000</td></tr>
+                  <tr><td>Q9 New knowledge</td><td>+0.47</td><td>-1.199</td><td>.230</td><td>1.000</td></tr>
+                  <tr><td>Q10 Understanding</td><td>-0.07</td><td>+0.248</td><td>.804</td><td>1.000</td></tr>
+                  <tr><td>Q11 Reflection</td><td>+0.13</td><td>-0.310</td><td>.757</td><td>1.000</td></tr>
+                  <tr><td>Q12 Meaning</td><td>-0.07</td><td>+0.493</td><td>.622</td><td>1.000</td></tr>
+                  <tr><td>Q13 Context</td><td>+0.07</td><td>-0.157</td><td>.875</td><td>1.000</td></tr>
+                  <tr><td>Q14 Emotion</td><td>+0.40</td><td>-0.999</td><td>.318</td><td>1.000</td></tr>
+                  <tr><td>Q15 Resonance</td><td>+0.33</td><td>-0.794</td><td>.427</td><td>1.000</td></tr>
                 </tbody>
               </table>
             </section>
 
             <section class="module">
-              <h2>09 Interpretation</h2>
-              <p>The current data do not provide sufficient evidence that AI-guide use changes any of the nine post-visit ratings.</p>
-              <ul>
-                <li>All outcomes are self-report.</li>
-                <li>The 30-student sample is small.</li>
-                <li>No verified primary endpoint was available.</li>
-                <li>Allocation records prevent causal interpretation.</li>
-              </ul>
+              <h3><em>08</em> Analysis note</h3>
+              <p>
+                Two-sided Mann-Whitney U tests treat each item as ordinal. Holm correction covers
+                nine comparisons. Signed Z gives rank direction; positive values favour no AI.
+              </p>
             </section>
 
             <section class="module">
-              <h2>10 Next study</h2>
+              <h3><em>09</em> Next study</h3>
               <ol>
-                <li>Verify the allocation process.</li>
+                <li>Verify the allocation procedure.</li>
                 <li>Pre-specify one primary outcome.</li>
                 <li>Recruit a larger sample.</li>
-                <li>Keep the exhibition context comparable.</li>
+                <li>Add task success and recovery evidence.</li>
               </ol>
             </section>
 
             <section class="module">
-              <h2>11 Conclusion</h2>
-              <p><strong>No significant difference in this sample.</strong> Do not claim equivalence or a causal AI effect. The main methodological lesson is that allocation records, a pre-specified endpoint, and correction for multiple tests must be planned before data collection.</p>
-            </section>
-
-            <section class="module">
-              <h2>12 Selected references</h2>
-              <ol class="mini-refs">
-                <li>Wang &amp; Matviienko (2025), generative AI museum chatbot.</li>
-                <li>Othman, Petrie &amp; Power (2011), museum experience scales.</li>
-                <li>Štekerová (2022), museum chatbot evaluation.</li>
-                <li>Mann &amp; Whitney (1947), rank comparison.</li>
-                <li>Holm (1979), multiple-test correction.</li>
-              </ol>
-              <p class="poster-link">Full list: <a href="./ADS401_GroupH_Literature_Review.pdf">15 references</a></p>
+              <h3><em>10</em> Takeaway</h3>
+              <p>
+                The AI guide did not produce a statistically reliable advantage in this sample.
+                The result is a baseline for a better-powered test, not a verdict on the museum
+                system.
+              </p>
             </section>
           </div>
         </section>
 
-        <footer class="footer">
-          <span>ADS401 Evaluation Methods and Statistics · Group H</span>
-          <span>Questionnaire: bilingual native form in the web report</span>
-          <span>A1 portrait · 59.4 × 84.1 cm</span>
+        <section class="references">
+          <h3>Selected references</h3>
+          <ol>
+            <li>Wang &amp; Matviienko. Generative AI museum chatbot. ACM IMX, 2025.</li>
+            <li>Noh &amp; Hong. Reenacted museum chatbots. Applied Sciences, 2021.</li>
+            <li>Tue, Pohl &amp; Merritt. Conversational museum guide. DAACH, 2026.</li>
+            <li>Xia et al. AI-guide language strategies. Behavioral Sciences, 2025.</li>
+            <li>Othman, Petrie &amp; Power. Museum experience scales. INTERACT, 2011.</li>
+            <li>Mann &amp; Whitney. Rank comparison. Annals of Mathematical Statistics, 1947.</li>
+            <li>Holm. Sequential multiple-test procedure. Scandinavian Journal of Statistics, 1979.</li>
+          </ol>
+        </section>
+
+        <footer class="poster-footer">
+          <div>
+            <strong>AI-guided museum visits</strong>
+            ADS401 Evaluation Methods and Statistics · Group H · 2026
+          </div>
+          <div><a href="./index.html">Full research report</a></div>
+          <div>A1 portrait · 594 × 841 mm</div>
         </footer>
       </article>
     </main>
-
   </body>
 </html>
