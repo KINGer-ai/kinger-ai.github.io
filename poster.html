@@ -64,6 +64,10 @@
         padding: 30px 18px;
       }
 
+      .poster-web-view {
+        display: none;
+      }
+
       .poster {
         width: min(1180px, 100%);
         min-height: 1660px;
@@ -893,18 +897,6 @@
         font-weight: 600;
       }
 
-      .ai-use-note {
-        max-width: 120ch;
-        margin: 7px 0 0;
-        color: var(--muted);
-        font-size: 7.5px;
-        line-height: 1.45;
-      }
-
-      .ai-use-note strong {
-        color: var(--ink);
-      }
-
       .poster-footer {
         display: grid;
         grid-template-columns: 1fr auto auto;
@@ -932,6 +924,74 @@
       }
 
       @media screen {
+        .poster-stage {
+          display: none;
+        }
+
+        .poster-web-view {
+          display: block;
+          width: min(1180px, calc(100% - 32px));
+          margin: 0 auto;
+          padding: 24px 0 36px;
+        }
+
+        .poster-web-bar {
+          display: flex;
+          gap: 24px;
+          align-items: flex-end;
+          justify-content: space-between;
+          margin-bottom: 18px;
+          padding-bottom: 14px;
+          border-bottom: 1px solid var(--line-strong);
+        }
+
+        .poster-web-bar span {
+          display: block;
+          margin-bottom: 5px;
+          color: var(--accent);
+          font-size: 11px;
+          font-weight: 600;
+        }
+
+        .poster-web-bar h1 {
+          max-width: none;
+          margin: 0;
+          font-size: 30px;
+          line-height: 1.15;
+        }
+
+        .poster-web-actions {
+          display: flex;
+          gap: 16px;
+          align-items: center;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+
+        .poster-web-actions a {
+          font-weight: 600;
+        }
+
+        .poster-web-page {
+          display: block;
+          overflow: hidden;
+          border: 1px solid var(--line);
+          background: var(--paper);
+          box-shadow: 0 24px 70px rgba(33, 33, 28, 0.16);
+        }
+
+        .poster-web-page img {
+          width: 100%;
+          height: auto;
+        }
+
+        .poster-web-note {
+          margin: 12px 0 0;
+          color: var(--muted);
+          font-size: 11px;
+          text-align: right;
+        }
+
         .poster {
           min-height: 1800px;
         }
@@ -1024,6 +1084,21 @@
       }
 
       @media (max-width: 560px) {
+        .poster-web-view {
+          width: 100%;
+          padding: 12px;
+        }
+
+        .poster-web-bar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .poster-web-actions {
+          gap: 14px;
+        }
+
         .poster-stage {
           padding: 0;
         }
@@ -1101,6 +1176,10 @@
 
         .poster-stage {
           padding: 0;
+        }
+
+        .poster-web-view {
+          display: none !important;
         }
 
         .poster {
@@ -1601,13 +1680,32 @@
           font-size: 10px;
         }
 
-        .ai-use-note {
-          font-size: 9px;
-        }
       }
     </style>
   </head>
   <body>
+    <section class="poster-web-view" aria-labelledby="poster-web-title">
+      <header class="poster-web-bar">
+        <div>
+          <span>ADS401 Group H · XJTLU Museum AI guide evaluation</span>
+          <h1 id="poster-web-title">Evaluating the XJTLU Museum AI Guide</h1>
+        </div>
+        <nav class="poster-web-actions" aria-label="Poster files">
+          <a href="./index.html">Full report</a>
+          <a href="./ADS401_GroupH_Poster.pdf">Open A1 PDF</a>
+        </nav>
+      </header>
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf" aria-label="Open the A1 poster PDF">
+        <img
+          src="./assets/poster-preview.webp"
+          width="1400"
+          height="1983"
+          alt="A1 poster evaluating the XJTLU Museum AI guide"
+        />
+      </a>
+      <p class="poster-web-note">A1 portrait preview. Open the PDF for print resolution.</p>
+    </section>
+
     <main class="poster-stage">
       <article class="poster" aria-labelledby="poster-title">
         <header class="topbar">
@@ -2030,11 +2128,6 @@
           </ol>
           <p class="references-link">
             <a href="./ADS401_GroupH_Literature_Review.pdf">Full 15-source literature list</a>
-          </p>
-          <p class="ai-use-note">
-            <strong>AI-use statement.</strong> OpenAI Codex, GPT-5-based coding agent, accessed 23
-            November 2026. Used for HTML/CSS implementation, poster layout, and language editing.
-            Group H verified all data, statistical results, citations, and conclusions.
           </p>
         </section>
 

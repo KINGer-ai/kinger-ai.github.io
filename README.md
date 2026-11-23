@@ -77,8 +77,6 @@ and the group comparison is not interpreted as a causal effect of the AI guide.
 
 ## AI Use
 
-OpenAI Codex, GPT-5-based coding agent, accessed 23 November 2026. Used for
-HTML/CSS implementation, poster layout, and language editing. Group H verified
-all data, statistical results, citations, and conclusions. The group must
-confirm that this disclosed use remains within the ADS401 AI permission and
-obtain module-leader guidance if its scope changes.
+AI assistance is disclosed once in the References section of the web report.
+Group H must confirm that the disclosed use remains within the ADS401 AI
+permission and obtain module-leader guidance if its scope changes.
