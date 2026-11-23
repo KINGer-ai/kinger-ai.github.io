@@ -410,12 +410,25 @@
       .body-grid {
         display: grid;
         grid-template-columns: 0.92fr 1.18fr 0.9fr;
+        grid-template-rows: minmax(0, 1fr);
         gap: 28px;
-        align-items: start;
+        min-height: 0;
+        align-items: stretch;
       }
 
       .column {
-        display: contents;
+        display: grid;
+        min-width: 0;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .column:nth-child(2) {
+        grid-template-rows: minmax(0, 1.28fr) minmax(0, 1fr) minmax(0, 1fr);
+      }
+
+      .column:nth-child(3) {
+        grid-template-rows: repeat(4, minmax(0, 1fr));
       }
 
       .module {
@@ -426,49 +439,36 @@
         border-top: 2px solid var(--line-strong);
       }
 
-      .intro-module {
-        grid-column: 1;
-        grid-row: 1;
-      }
-
-      .design-module {
-        grid-column: 2;
-        grid-row: 1;
-      }
-
-      .variables-module {
-        grid-column: 3;
-        grid-row: 1;
-      }
-
       .results-module {
-        grid-column: 1;
-        grid-row: 2;
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+        overflow: hidden;
       }
 
-      .table-module {
-        grid-column: 2;
-        grid-row: 2;
+      .results-module .chart {
+        min-height: 0;
+        flex: 1;
+        object-fit: contain;
       }
 
-      .key-module {
-        grid-column: 3;
-        grid-row: 2;
+      .compact-recommendations {
+        margin: 10px 0 0;
+        padding-left: 16px;
       }
 
-      .inference-module {
-        grid-column: 1;
-        grid-row: 3;
+      .compact-recommendations li {
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.45;
       }
 
-      .analysis-module {
-        grid-column: 2;
-        grid-row: 3;
+      .compact-recommendations li + li {
+        margin-top: 7px;
       }
 
-      .discussion-module {
-        grid-column: 3;
-        grid-row: 3;
+      .compact-recommendations strong {
+        color: var(--ink);
       }
 
       .module h3 {
@@ -982,6 +982,14 @@
           grid-template-columns: 1fr;
         }
 
+        .column {
+          grid-template-rows: none;
+        }
+
+        .module {
+          height: auto;
+        }
+
         .hero-photo {
           min-height: 320px;
         }
@@ -1258,13 +1266,26 @@
 
         .body-grid {
           grid-template-columns: 0.92fr 1.18fr 0.9fr;
+          grid-template-rows: minmax(0, 1fr);
           gap: 6mm 7mm;
           flex: 1;
-          align-items: start;
+          min-height: 0;
+          align-items: stretch;
         }
 
         .column {
-          display: contents;
+          display: grid;
+          min-width: 0;
+          grid-template-rows: repeat(3, minmax(0, 1fr));
+          gap: 4mm;
+        }
+
+        .column:nth-child(2) {
+          grid-template-rows: minmax(0, 1.28fr) minmax(0, 1fr) minmax(0, 1fr);
+        }
+
+        .column:nth-child(3) {
+          grid-template-rows: repeat(4, minmax(0, 1fr));
         }
 
         .module {
@@ -1516,6 +1537,11 @@
         .module p,
         .module li {
           font-size: 16px;
+        }
+
+        .compact-recommendations li {
+          font-size: 12px;
+          line-height: 1.45;
         }
 
         .flow span {
@@ -1818,61 +1844,32 @@
               </div>
             </section>
 
-          </div>
-        </section>
+            <section class="module recommendations-module">
+              <h3><em>10</em> Recommendations</h3>
+              <div class="callout">
+                <strong>Decision.</strong> Keep AI as a traceable interpretation layer and build the
+                visit around questions, sources, and recovery.
+              </div>
+              <ol class="compact-recommendations">
+                <li>
+                  <strong>Show the source.</strong> Place the exhibit label or object source beside
+                  every factual answer and end with one follow-up question.
+                </li>
+                <li>
+                  <strong>Build a route.</strong> Suggest three to five stops with close-looking and
+                  object-comparison prompts.
+                </li>
+                <li>
+                  <strong>Connect to context.</strong> Repeat the label, add one broader story, and
+                  ask what the visitor already noticed.
+                </li>
+                <li>
+                  <strong>Design recovery.</strong> Add rephrase, correction, next-exhibit, and
+                  location controls, then log failed questions.
+                </li>
+              </ol>
+            </section>
 
-        <section class="recommendations" aria-labelledby="recommendations-title">
-          <div class="recommendations-head">
-            <span>Recommendations</span>
-            <div>
-              <h3 id="recommendations-title">Specific changes to the museum AI guide</h3>
-              <p class="recommendation-decision">
-                Keep AI as a traceable interpretation layer. Build the visit around questions,
-                sources, and recovery.
-              </p>
-            </div>
-          </div>
-          <div class="recommendation-grid">
-            <article>
-              <span>Evaluation signal: Q9 learning was strongest</span>
-              <h4>Show the source behind each answer</h4>
-              <p>
-                Keep exhibit-specific facts, then show the matching label, object, or collection
-                source beside every answer. Limit replies to two or three sentences and end with one
-                follow-up question. This protects the Q9 learning signal while making generated
-                content easier to trust.
-              </p>
-            </article>
-            <article>
-              <span>Evaluation signal: Q7 and Q8 were lower</span>
-              <h4>Guide visitors through a short route</h4>
-              <p>
-                The AI condition scored below labels-only on engagement (3.47 vs 3.80) and
-                sustained interest (3.73 vs 4.00). Offer a three-to-five-stop route, use “look for”
-                and “compare these two” prompts, and show progress between exhibits. Add one reason
-                to continue after each answer.
-              </p>
-            </article>
-            <article>
-              <span>Evaluation signal: Q10 and Q12 trailed slightly</span>
-              <h4>Connect each answer to object and visitor</h4>
-              <p>
-                Understanding and personal meaning were marginally lower in the AI group. The guide
-                should repeat the relevant exhibit label, connect one factual detail to a broader
-                story, and ask what the visitor already noticed. Keep that bridge short because a
-                long response can pull attention away from the object.
-              </p>
-            </article>
-            <article>
-              <span>Evaluation signal: no task-level evidence yet</span>
-              <h4>Make misunderstanding easy to repair</h4>
-              <p>
-                Add “rephrase”, “that is not what I meant”, “next exhibit”, and “show on map”
-                controls. Log failed questions and each path back to a useful answer. The next study
-                should verify allocation, pre-specify one primary outcome, and pair task success with
-                the questionnaire.
-              </p>
-            </article>
           </div>
         </section>
 
