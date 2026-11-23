@@ -75,7 +75,10 @@ and the group comparison is not interpreted as a causal effect of the AI guide.
 - Ziqian Wang 2684921
 - Simu He 2686299
 
-## AI Permission
+## AI Use
 
-The ADS401 coursework sheet permits only non-substantive AI use. The group must
-verify all substantive academic content and state all AI use accurately.
+OpenAI Codex, GPT-5-based coding agent, accessed 23 November 2026. Used for
+HTML/CSS implementation, poster layout, and language editing. Group H verified
+all data, statistical results, citations, and conclusions. The group must
+confirm that this disclosed use remains within the ADS401 AI permission and
+obtain module-leader guidance if its scope changes.
