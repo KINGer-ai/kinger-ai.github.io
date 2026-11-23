@@ -572,6 +572,18 @@
         line-height: 1.5;
       }
 
+      .assessment-grid ol {
+        margin: 0;
+        padding-left: 14px;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.45;
+      }
+
+      .assessment-grid li + li {
+        margin-top: 4px;
+      }
+
       .references h3 {
         margin: 0 0 8px;
         font-family: var(--display);
@@ -986,6 +998,11 @@
           line-height: 1.5;
         }
 
+        .assessment-grid ol {
+          font-size: 12px;
+          line-height: 1.45;
+        }
+
         .poster-footer {
           margin-top: 4mm;
           padding-top: 3mm;
@@ -1297,13 +1314,14 @@
               </p>
             </article>
             <article>
-              <span>What the museum should do</span>
-              <h4>Keep AI optional and test the interaction</h4>
-              <p>
-                Retain labels as the dependable baseline. Add task-based testing for
-                question-asking, navigation, and recovery, then compare a larger group with a
-                pre-specified primary outcome.
-              </p>
+              <span>Recommendations</span>
+              <h4>Improve before wider rollout</h4>
+              <ol>
+                <li>Keep labels available as the default interpretation layer.</li>
+                <li>Add a visible start prompt and one example question.</li>
+                <li>Provide rephrase and retry paths for unclear answers.</li>
+                <li>Run a larger task-based study with a pre-specified outcome.</li>
+              </ol>
             </article>
           </div>
         </section>

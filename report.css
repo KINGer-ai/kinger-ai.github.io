@@ -1699,12 +1699,14 @@ tbody tr:hover {
   margin: 0 0 14px;
 }
 
-.discussion-grid ul {
+.discussion-grid ul,
+.discussion-grid ol {
   margin: 0;
   padding-left: 18px;
 }
 
-.discussion-grid li + li {
+.discussion-grid ul li + li,
+.discussion-grid ol li + li {
   margin-top: 9px;
 }
 
