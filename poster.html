@@ -600,6 +600,25 @@
         line-height: 1.2;
       }
 
+      .recommendations-head > div > p {
+        max-width: 92ch;
+        margin: 7px 0 0;
+        color: var(--muted);
+        font-size: 9.5px;
+        line-height: 1.5;
+      }
+
+      .recommendation-decision {
+        max-width: 58ch;
+        margin: 8px 0 0;
+        padding-left: 12px;
+        color: var(--ink);
+        border-left: 2px solid var(--accent);
+        font-family: var(--display);
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
       .recommendation-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -650,6 +669,16 @@
         color: var(--muted);
         font-size: 8px;
         line-height: 1.45;
+      }
+
+      .references-link {
+        margin: 8px 0 0;
+        font-size: 8.25px;
+      }
+
+      .references-link a {
+        color: var(--accent);
+        font-weight: 600;
       }
 
       .poster-footer {
@@ -861,6 +890,7 @@
         .hero {
           grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
           gap: 9mm;
+          align-items: center;
           padding: 7mm 0 6mm;
         }
 
@@ -892,7 +922,9 @@
         }
 
         .hero-photo {
+          max-height: 210mm;
           min-height: 0;
+          align-self: center;
         }
 
         .hero-meta {
@@ -1068,6 +1100,16 @@
           font-size: 24px;
         }
 
+        .recommendations-head > div > p {
+          font-size: 12px;
+        }
+
+        .recommendation-decision {
+          margin-top: 2.5mm;
+          padding-left: 4mm;
+          font-size: 16px;
+        }
+
         .recommendation-grid {
           gap: 5mm 7mm;
         }
@@ -1180,6 +1222,10 @@
         .poster-footer {
           font-size: 11.5px;
         }
+
+        .references-link {
+          font-size: 10px;
+        }
       }
     </style>
   </head>
@@ -1254,12 +1300,16 @@
             <section class="module">
               <h3><em>01</em> Why this study</h3>
               <p>
-                Museum experience covers engagement, learning, meaning, and emotional connection.
-                AI guides may change these outcomes, but controlled museum evidence remains uneven.
+                Earlier guide studies locate the difference in interaction, not presence alone.
+                Wang and Matviienko [1] compared a generative chatbot with a museum app. Tue et al.
+                [3] found that conversational access helped content discovery but often made
+                questions harder to frame. Xia et al. [4] tied wording to satisfaction, return use,
+                and recall. Othman et al. [8] separate engagement, learning, meaning, and emotion.
               </p>
               <p>
-                The closest precedent compares a generative chatbot with a museum app. This study
-                uses a different baseline: an AI guide versus labels only.
+                Read together, these studies predict a mixed profile: AI may support interpretation
+                while engagement depends on question design. This study tests that profile against
+                labels only.
               </p>
             </section>
 
@@ -1331,8 +1381,9 @@
               <h3><em>06</em> Reading</h3>
               <p>
                 The small sample, brief exposure, self-report outcomes, and lack of a primary
-                endpoint limit the claim. A stronger study should verify allocation and collect
-                task-level evidence alongside the questionnaire.
+                endpoint limit the claim. Museum chatbot evaluations have often described systems
+                more than visitor experience [11], so a stronger study should verify allocation and
+                collect task-level evidence alongside the questionnaire.
               </p>
             </section>
           </div>
@@ -1359,8 +1410,9 @@
             <section class="module">
               <h3><em>08</em> Analysis note</h3>
               <p>
-                Two-sided Mann-Whitney U tests treat each item as ordinal. Holm correction covers
-                nine comparisons. Signed Z gives rank direction; positive values favour no AI.
+                Mann and Whitney's two-sided rank test [13] treats each item as ordinal. Holm
+                correction [14] covers nine comparisons. Signed Z gives rank direction; positive
+                values favour no AI.
               </p>
             </section>
 
@@ -1377,16 +1429,18 @@
               <span>What deserves credit</span>
               <h4>Useful extra interpretive layer</h4>
               <p>
-                The AI group had higher descriptive means on five outcomes. Q9 new knowledge
-                showed the clearest potential benefit, with a +0.47 mean gap.
+                Five outcomes had higher AI-group means. This does not establish a benefit, but it
+                makes an extra interpretive layer plausible. Q9 new knowledge showed the clearest
+                signal at +0.47, consistent with conversational access and language framing.
               </p>
             </article>
             <article>
               <span>What remains weak</span>
               <h4>No reliable advantage in this sample</h4>
               <p>
-                No adjusted comparison reached .05. The small sample, self-report outcomes, and
-                allocation record prevent a causal claim and leave modest effects uncertain.
+                No adjusted comparison reached .05. Engagement and interest were also descriptively
+                lower, suggesting that the current interaction did not create a compelling visit
+                loop. The small sample and self-report design leave these as hypotheses.
               </p>
             </article>
           </div>
@@ -1395,47 +1449,58 @@
         <section class="recommendations" aria-labelledby="recommendations-title">
           <div class="recommendations-head">
             <span>Recommendations</span>
-            <h3 id="recommendations-title">Specific changes to the museum AI guide</h3>
+            <div>
+              <h3 id="recommendations-title">Specific changes to the museum AI guide</h3>
+              <p class="recommendation-decision">
+                Keep AI as a traceable interpretation layer. Rebuild the visit around questions,
+                sources, and recovery.
+              </p>
+              <p>
+                Earlier studies place question formulation and language at the centre of guide
+                experience. Our means add a local constraint: knowledge interpretation is the
+                clearest promise, while engagement and interest need more work.
+              </p>
+            </div>
           </div>
           <div class="recommendation-grid">
             <article>
               <span>Evaluation signal: Q9 learning was strongest</span>
-              <h4>Keep knowledge support, but make it traceable</h4>
+              <h4>Show the source behind each answer</h4>
               <p>
-                Preserve exhibit-specific facts because Q9 showed the largest descriptive gain
-                (4.00 vs 3.53). Add a visible source or exhibit label to each answer. Keep answers
-                to two or three sentences and end with one follow-up question, so the guide supports
-                learning without becoming a wall of generated text.
+                Keep exhibit-specific facts, then show the matching label, object, or collection
+                source beside every answer. Limit replies to two or three sentences and end with one
+                follow-up question. This protects the Q9 learning signal while making generated
+                content easier to trust.
               </p>
             </article>
             <article>
               <span>Evaluation signal: Q7 and Q8 were lower</span>
-              <h4>Turn Q&amp;A into a guided visit rhythm</h4>
+              <h4>Guide visitors through a short route</h4>
               <p>
                 The AI condition scored below labels-only on engagement (3.47 vs 3.80) and
-                sustained interest (3.73 vs 4.00). The guide should suggest a short route, use
-                “look for” and “compare these two” prompts, and show progress between exhibits.
-                Visitors need a reason to keep interacting, not only a search box.
+                sustained interest (3.73 vs 4.00). Offer a three-to-five-stop route, use “look for”
+                and “compare these two” prompts, and show progress between exhibits. Add one reason
+                to continue after each answer.
               </p>
             </article>
             <article>
               <span>Evaluation signal: Q10 and Q12 trailed slightly</span>
-              <h4>Anchor every answer in the exhibit and visitor context</h4>
+              <h4>Connect each answer to object and visitor</h4>
               <p>
                 Understanding and personal meaning were marginally lower in the AI group. The guide
                 should repeat the relevant exhibit label, connect one factual detail to a broader
-                story, and ask how that story relates to what the visitor already noticed. This
-                directly targets interpretation and meaning rather than adding more content.
+                story, and ask what the visitor already noticed. Keep that bridge short; the aim is a
+                clearer interpretation, not a longer response.
               </p>
             </article>
             <article>
               <span>Evaluation signal: no task-level evidence yet</span>
-              <h4>Design and measure recovery, not just answers</h4>
+              <h4>Make misunderstanding easy to repair</h4>
               <p>
                 Add “rephrase”, “that is not what I meant”, “next exhibit”, and “show on map”
-                controls. Log where questions fail and how visitors recover. A larger study should
-                verify group allocation, pre-specify one primary outcome, and combine task success
-                with the post-visit questionnaire.
+                controls. Log failed questions and each path back to a useful answer. The next study
+                should verify allocation, pre-specify one primary outcome, and pair task success with
+                the questionnaire.
               </p>
             </article>
           </div>
@@ -1444,14 +1509,17 @@
         <section class="references">
           <h3>Selected references</h3>
           <ol>
-            <li>Wang &amp; Matviienko. Generative AI museum chatbot. ACM IMX, 2025.</li>
-            <li>Noh &amp; Hong. Reenacted museum chatbots. Applied Sciences, 2021.</li>
-            <li>Tue, Pohl &amp; Merritt. Conversational museum guide. DAACH, 2026.</li>
-            <li>Xia et al. AI-guide language strategies. Behavioral Sciences, 2025.</li>
-            <li>Othman, Petrie &amp; Power. Museum experience scales. INTERACT, 2011.</li>
-            <li>Mann &amp; Whitney. Rank comparison. Annals of Mathematical Statistics, 1947.</li>
-            <li>Holm. Sequential multiple-test procedure. Scandinavian Journal of Statistics, 1979.</li>
+            <li value="1">Wang &amp; Matviienko. Generative AI museum chatbot. ACM IMX, 2025.</li>
+            <li value="3">Tue, Pohl &amp; Merritt. Conversational museum guide. DAACH, 2026.</li>
+            <li value="4">Xia et al. AI-guide language strategies. Behavioral Sciences, 2025.</li>
+            <li value="8">Othman, Petrie &amp; Power. Museum experience scales. INTERACT, 2011.</li>
+            <li value="11">Štekerová. Museum chatbot evaluation. Czech Journal of Tourism, 2022.</li>
+            <li value="13">Mann &amp; Whitney. Rank comparison. Annals of Mathematical Statistics, 1947.</li>
+            <li value="14">Holm. Sequential multiple-test procedure. Scandinavian Journal of Statistics, 1979.</li>
           </ol>
+          <p class="references-link">
+            <a href="./ADS401_GroupH_Literature_Review.pdf">Full 15-source literature list</a>
+          </p>
         </section>
 
         <footer class="poster-footer">

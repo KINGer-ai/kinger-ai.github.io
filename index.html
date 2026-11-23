@@ -107,8 +107,7 @@
             <article class="paper-abstract">
               <p>
                 <strong>Objective.</strong> The study asks whether a museum AI guide changes how
-                visitors rate a visit. Experience was treated as a set of outcomes rather than a
-                single satisfaction score.
+                visitors rate a visit. Experience was measured as nine separate outcome ratings.
               </p>
               <p>
                 <strong>Method.</strong> Thirty XJTLU students took part. Fifteen used the XJTLU
@@ -161,19 +160,19 @@
             <div class="prose-column">
               <p>
                 The closest precedent is Wang and Matviienko's field experiment, which placed a
-                generative museum chatbot against an existing museum app [1]. Their comparison is
-                informative, but the baseline differs from ours. Noh and Hong show that reenacted
-                characters can also shift engagement and emotional response [2]. Together, these
-                studies suggest that the form of an AI guide matters, not only whether AI is
-                present.
+                generative museum chatbot against an existing museum app [1]. The comparison shows
+                that guide form changes the visit. Noh and Hong reach a related point through
+                reenacted characters, whose persona shaped engagement and emotional response [2].
+                Together, the studies ask what the visitor can do with the guide.
               </p>
               <p>
-                Later work moves from prototype design to exhibition use. Tue et al. found that a
-                conversational guide widened access to multimedia content, although some visitors
-                struggled to formulate useful questions [3]. Xia et al. further linked AI-guide
-                language to satisfaction, continued use, and recall [4]. This evidence motivated a
-                narrower question: does an AI guide differ from a labels-only visit across a set of
-                post-visit ratings?
+                Tue et al. bring that design question into exhibition use: a conversational guide
+                widened access to multimedia content, but some visitors struggled to frame useful
+                questions [3]. Xia et al. connect the difficulty to language, showing that an AI
+                guide's wording shaped satisfaction, continued use, and recall [4]. Read together,
+                these findings suggest that interpretation can improve even when interaction remains
+                fragile. That tension led to the present comparison with a labels-only visit across
+                nine post-visit outcomes.
               </p>
             </div>
 
@@ -270,14 +269,14 @@
               <span>01</span>
               <h3>Guide modality changes experience</h3>
               <p>
-                Zhang, Cao, and Hou compared a location-based serious game with a conventional
-                museum visit and separated experience from motivation, cognitive load, and
-                objective learning [5].
+                Guide format changes the mix of outcomes a visitor reports. Zhang, Cao, and Hou
+                separated experience from motivation, cognitive load, and objective learning in a
+                location-based game [5].
               </p>
               <p>
-                Zhao et al. extended that comparison at the Shanghai Museum, where audio,
+                Zhao et al. found a similar differentiation at the Shanghai Museum, where audio,
                 smart-guide, and AR conditions produced different immersive and motivational
-                profiles [6].
+                profiles [6]. This supports a multi-item outcome set.
               </p>
             </article>
 
@@ -285,9 +284,10 @@
               <span>02</span>
               <h3>Deployment evidence needs boundaries</h3>
               <p>
-                Boiano et al.'s voice-guide case centres on deployment, where design choices meet
-                real visitor behaviour [7]. It is useful as a record of practice, not as evidence
-                of a general effect.
+                Field deployments expose choices that prototypes can hide. Boiano et al.'s
+                voice-guide case shows how those choices meet real visitor behaviour [7]. Its value
+                here is diagnostic: it identifies what to inspect, while leaving the size of any
+                effect for controlled comparison.
               </p>
             </article>
 
@@ -296,11 +296,12 @@
               <h3>Visitor experience has several dimensions</h3>
               <p>
                 Othman, Petrie, and Power developed the Museum Experience Scale around engagement,
-                learning, meaning, and emotional connection [8].
+                learning, meaning, and emotional connection [8]. O'Brien and Toms further separate
+                absorption from sustained interest [9].
               </p>
               <p>
-                O'Brien and Toms add a more detailed account of engagement, in which absorption and
-                sustained interest are related but not interchangeable [9].
+                That distinction matters for our result. A guide can support learning while leaving
+                attention flat or making the visit feel less absorbing.
               </p>
             </article>
 
@@ -309,15 +310,14 @@
               <h3>Context and evidence quality</h3>
               <p>
                 Falk and Dierking place interpretation within personal, social, and physical
-                context [10].
+                context, so the same answer can mean different things to different visitors [10].
               </p>
               <p>
-                Štekerová's review found that museum chatbot projects often describe development
-                without measuring visitor experience [11].
-              </p>
-              <p>
-                Kamińska reaches a similar conclusion across a wider set of generative-AI projects:
-                deployments are increasing, but stronger evaluations remain uncommon [12].
+                The evaluation literature adds a warning. Štekerová found that museum chatbot
+                projects often describe development without measuring visitor experience [11], and
+                Kamińska found the same gap across generative-AI deployments [12]. These reviews
+                make a null result useful: it can identify where design should improve, even when it
+                cannot establish an average effect.
               </p>
             </article>
           </div>
@@ -325,9 +325,9 @@
           <aside class="research-gap">
             <p class="small-label">Research gap</p>
             <p>
-              Earlier studies show that guide design can matter, but few compare an AI guide with
-              a labels-only visit in one exhibition while reporting corrected ordinal tests. This
-              experiment addresses that narrower question.
+              Museum studies show that guide design can change experience, yet corrected comparisons
+              against a labels-only visit remain uncommon. This experiment supplies that local test
+              and uses its null result to locate design priorities; it does not claim equivalence.
             </p>
           </aside>
         </div>
@@ -496,6 +496,28 @@
             </aside>
           </div>
 
+          <section class="signal-summary" aria-labelledby="signal-summary-title">
+            <div class="signal-lead">
+              <p class="small-label">Evaluation signal</p>
+              <h3 id="signal-summary-title">What the means suggest</h3>
+            </div>
+            <div>
+              <span>Strongest descriptive signal</span>
+              <strong>Q9 new knowledge</strong>
+              <p>AI 4.00 vs no AI 3.53. A +0.47 lead worth testing in a larger sample.</p>
+            </div>
+            <div>
+              <span>Engagement gap</span>
+              <strong>Q7 and Q8</strong>
+              <p>AI 3.47 and 3.73 vs labels-only 3.80 and 4.00.</p>
+            </div>
+            <div>
+              <span>Evidence still missing</span>
+              <strong>Task-level behaviour</strong>
+              <p>Questioning, navigation, timing, and recovery were not observed.</p>
+            </div>
+          </section>
+
           <div class="result-table-block">
             <div class="table-title-row">
               <div>
@@ -566,8 +588,8 @@
             <div>
               <h2>Discussion and recommendations</h2>
               <p>
-                The project supports both a positive reading and a critical one. That balance
-                should shape the museum's next decision.
+                The means do not justify a general claim that AI improved the visit. They do identify
+                where the next prototype should concentrate.
               </p>
             </div>
           </header>
@@ -576,39 +598,37 @@
             <article>
               <h3>What deserves credit</h3>
               <p>
-                The AI guide has a credible role as an additional interpretive layer. The AI group
-                had higher descriptive means on five outcomes, and Q9 new knowledge showed the
-                largest gap at +0.47.
+                Five outcomes had higher AI-group means. This does not establish a benefit, but it
+                makes the guide's role as an extra interpretive layer plausible. Q9 new knowledge
+                carried the clearest signal at +0.47.
               </p>
               <p>
-                That signal fits wider work on interaction, personalisation, and language-supported
-                interpretation. It supports further development without treating the guide as
-                proven.
+                The pattern fits earlier findings that conversational access and language framing can
+                shape learning-related responses. Explanation and access carry that promise. A
+                visible AI feature adds little by itself.
               </p>
             </article>
 
             <article>
               <h3>What remains weak</h3>
               <ul>
-                <li>No adjusted comparison reached .05, so this sample does not establish an item-level advantage.</li>
-                <li>The allocation record does not support a randomized or causal interpretation.</li>
-                <li>The 30-student, single-site sample is small and not representative of all visitors.</li>
-                <li>All outcomes are self-report; the study has no task-success, timing, or knowledge test.</li>
-                <li>No primary endpoint was pre-specified, and 15 participants per group limits power.</li>
+                <li>No adjusted comparison reached .05, so no item-level advantage is established.</li>
+                <li>Engagement and interest were descriptively lower, which weakens the case for the current visit loop.</li>
+                <li>The allocation record, single-site sample, and self-report design prevent a causal claim.</li>
+                <li>Task success, timing, question quality, and recovery were not measured.</li>
               </ul>
             </article>
 
             <article>
               <h3>Why improvement matters</h3>
               <p>
-                The AI guide should help visitors notice more, connect ideas, and ask better
-                questions. An answer that is merely available is not enough; the interaction must
-                sustain attention and remain easy to correct.
+                Visitors need an answer they can use: a detail they notice, a link to what they know,
+                and a way back when a question fails.
               </p>
               <p>
-                The museum can improve the system without presenting the current evidence as a
-                proven benefit. The next design cycle should focus on interpretation quality,
-                engagement, and recovery.
+                Our strongest promise and clearest gap appeared on different outcomes: knowledge
+                interpretation rose, while engagement did not. The next design cycle should close
+                that gap before the guide is scaled.
               </p>
             </article>
           </div>
@@ -617,47 +637,57 @@
             <div class="recommendation-head">
               <p class="small-label">Recommendations</p>
               <h3 id="recommendation-title">Specific changes to the museum AI guide</h3>
+              <p class="recommendation-decision">
+                Keep AI as a traceable interpretation layer. Rebuild the visit around questions,
+                sources, and recovery.
+              </p>
               <p>
-                Each recommendation follows a descriptive result from the study. None depends on
-                claiming a statistically significant effect.
+                The earlier studies place question formulation and language at the centre of guide
+                experience. Our means add a local constraint: knowledge interpretation is the
+                clearest promise, while engagement and interest need more work.
+              </p>
+              <p>
+                Each change names its evidence. Treat them as hypotheses for the next prototype and
+                task-based test; none depends on claiming a statistically significant effect.
               </p>
             </div>
             <div class="recommendation-grid">
               <article>
                 <span>Q9 learning | AI 4.00 vs 3.53</span>
-                <h4>Keep knowledge support, but make it traceable</h4>
+                <h4>Show the source behind each answer</h4>
                 <p>
-                  Preserve exhibit-specific factual answers and show the exhibit label or source
-                  beside them. Limit each answer to two or three sentences and end with one
-                  follow-up question, so the guide supports learning without becoming a wall of
-                  generated text.
+                  Keep exhibit-specific facts, then show the matching label, object, or collection
+                  source beside every answer. Limit the reply to two or three sentences and end with
+                  one follow-up question. This protects the learning promise while making generated
+                  content easier to trust.
                 </p>
               </article>
               <article>
                 <span>Q7 engagement | AI 3.47 vs 3.80</span>
-                <h4>Turn Q&amp;A into a guided visit rhythm</h4>
+                <h4>Guide visitors through a short route</h4>
                 <p>
-                  Suggest a short route and prompt visitors to look closely or compare two objects.
-                  Show progress between recommended stops. The visitor needs a reason to continue
-                  interacting, not only a search field.
+                  Offer a three-to-five-stop route, prompt visitors to look closely or compare two
+                  objects, and show progress between stops. Add one reason to continue after each
+                  answer. The guide needs a visit rhythm beyond its search field.
                 </p>
               </article>
               <article>
-                <span>Q8 interest and Q10 understanding trailed</span>
-                <h4>Anchor interpretation in the exhibit and visitor context</h4>
+                <span>Q8 interest, Q10 understanding, Q12 meaning</span>
+                <h4>Connect each answer to object and visitor</h4>
                 <p>
                   Repeat the relevant label, connect one factual detail to a broader story, and ask
-                  how that story relates to what the visitor already noticed. This targets
-                  understanding and meaning without adding more information.
+                  what the visitor already noticed. Keep that bridge short. The aim is a clearer
+                  interpretation, not a longer generated response.
                 </p>
               </article>
               <article>
                 <span>No task-level evidence yet</span>
-                <h4>Design recovery and measure it</h4>
+                <h4>Make misunderstanding easy to repair</h4>
                 <p>
-                  Add rephrase, “not what I meant”, next exhibit, and location controls. Record
-                  failed questions and recovery paths. A larger study should verify allocation,
-                  pre-specify one primary outcome, and combine task success with the questionnaire.
+                  Add rephrase, “not what I meant”, next exhibit, and location controls. Log failed
+                  questions and the path back to a useful answer. The next study should verify
+                  allocation, pre-specify one primary outcome, and pair task success with the
+                  questionnaire.
                 </p>
               </article>
             </div>
