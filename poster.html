@@ -153,6 +153,29 @@
         line-height: 1.32;
       }
 
+      .poster-abstract {
+        max-width: 54ch;
+        margin-top: 22px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line-strong);
+      }
+
+      .poster-abstract span {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .poster-abstract p {
+        margin: 0;
+        color: var(--muted);
+        font-family: var(--display);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
       .hero-meta {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 118px;
@@ -399,6 +422,38 @@
         line-height: 1.4;
       }
 
+      .variables {
+        display: grid;
+        gap: 0;
+        margin: 0;
+      }
+
+      .variables div {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 9px;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .variables div:last-child {
+        border-bottom: 0;
+      }
+
+      .variables dt {
+        color: var(--accent);
+        font-family: var(--display);
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .variables dd {
+        margin: 0;
+        color: var(--muted);
+        font-size: 9px;
+        line-height: 1.45;
+      }
+
       .chart {
         width: 100%;
         height: auto;
@@ -570,6 +625,17 @@
         color: var(--muted);
         font-size: 10px;
         line-height: 1.5;
+      }
+
+      .conclusion-line {
+        margin: 14px 0 0;
+        padding: 10px 14px;
+        color: var(--ink);
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        font-family: var(--display);
+        font-size: 15px;
+        line-height: 1.42;
       }
 
       .recommendations {
@@ -891,7 +957,7 @@
           grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
           gap: 9mm;
           align-items: center;
-          padding: 7mm 0 6mm;
+          padding: 5mm 0 4mm;
         }
 
         .kicker {
@@ -919,6 +985,20 @@
 
         .research-question p {
           font-size: 23px;
+        }
+
+        .poster-abstract {
+          margin-top: 5mm;
+          padding-top: 3mm;
+        }
+
+        .poster-abstract span {
+          font-size: 11px;
+        }
+
+        .poster-abstract p {
+          font-size: 15px;
+          line-height: 1.45;
         }
 
         .hero-photo {
@@ -1014,6 +1094,20 @@
           font-size: 9px;
         }
 
+        .variables div {
+          grid-template-columns: 11mm minmax(0, 1fr);
+          gap: 3mm;
+          padding: 2mm 0;
+        }
+
+        .variables dt {
+          font-size: 13px;
+        }
+
+        .variables dd {
+          font-size: 10px;
+        }
+
         .table th,
         .table td {
           padding: 1.2mm 0.8mm;
@@ -1080,6 +1174,12 @@
         .assessment-grid p {
           font-size: 12px;
           line-height: 1.5;
+        }
+
+        .conclusion-line {
+          margin-top: 3mm;
+          padding: 3mm 4mm;
+          font-size: 15px;
         }
 
         .recommendations {
@@ -1166,6 +1266,10 @@
           font-size: 26px;
         }
 
+        .poster-abstract p {
+          font-size: 16px;
+        }
+
         .authors {
           font-size: 14px;
         }
@@ -1206,6 +1310,14 @@
           font-size: 12px;
         }
 
+        .variables dt {
+          font-size: 15px;
+        }
+
+        .variables dd {
+          font-size: 13px;
+        }
+
         .table th {
           font-size: 11px;
         }
@@ -1216,6 +1328,10 @@
 
         .callout {
           font-size: 13px;
+        }
+
+        .conclusion-line {
+          font-size: 18px;
         }
 
         .references ol,
@@ -1241,16 +1357,21 @@
           <div class="hero-copy">
             <p class="kicker">XJTLU Museum | Visitor experience study | Group H</p>
             <h1 id="poster-title">AI-guided museum visits</h1>
-            <p class="dek">
-              A 30-student comparison of post-visit experience with the museum AI guide and a
-              labels-only visit.
-            </p>
 
-            <div class="research-question">
-              <span>Research question</span>
+            <div class="poster-abstract">
+              <span>Abstract</span>
               <p>
-                Do post-visit experience ratings differ between students who used the XJTLU Museum
-                AI guide and students who toured without it?
+                Thirty students visited the XJTLU Museum with either an AI guide or exhibition labels
+                alone. The study measured nine post-visit outcomes: engagement, interest, new
+                knowledge, understanding, reflection, meaning, context, emotion, and theme resonance.
+                We compared ordinal ratings with Mann-Whitney U tests and applied Holm correction
+                across nine comparisons. No item reached significance after correction. New
+                knowledge showed the clearest descriptive signal, with an AI mean of 4.00 and a
+                labels-only mean of 3.53. Engagement and interest were lower in the AI group. These
+                findings do not establish equivalence or a causal effect. They identify learning
+                support as a plausible strength and engagement as the main design gap. The
+                recommendations target sourced answers, a short visit route, contextual
+                interpretation, and recovery controls.
               </p>
             </div>
 
@@ -1298,23 +1419,24 @@
         <section class="body-grid">
           <div class="column">
             <section class="module">
-              <h3><em>01</em> Why this study</h3>
+              <h3><em>01</em> Introduction &amp; background</h3>
               <p>
-                Earlier guide studies locate the difference in interaction, not presence alone.
-                Wang and Matviienko [1] compared a generative chatbot with a museum app. Tue et al.
-                [3] found that conversational access helped content discovery but often made
-                questions harder to frame. Xia et al. [4] tied wording to satisfaction, return use,
-                and recall. Othman et al. [8] separate engagement, learning, meaning, and emotion.
+                Museum guides vary in modality, and several studies show that their format changes
+                which visitor outcomes improve [5,6]. Wang and Matviienko [1] compared a generative
+                chatbot with a museum app. Tue et al. [3] found that conversational access helped
+                content discovery but often made questions harder to frame. Xia et al. [4] linked
+                guide wording to satisfaction, return use, and recall. Othman et al. [8] separate
+                engagement, learning, meaning, and emotion. Reviews also find that museum chatbot
+                projects often describe systems without measuring visitor experience [11].
               </p>
-              <p>
-                Read together, these studies predict a mixed profile: AI may support interpretation
-                while engagement depends on question design. This study tests that profile against
-                labels only.
-              </p>
+              <div class="callout">
+                <strong>Research question.</strong> Do nine post-visit ratings differ between students
+                who used the XJTLU Museum AI guide and students who toured with labels only?
+              </div>
             </section>
 
             <section class="module">
-              <h3><em>02</em> Design</h3>
+              <h3><em>02</em> Study design</h3>
               <div class="flow">
                 <div><b>01</b><span>Information and consent.</span></div>
                 <div><b>02</b><span>AI-guide or labels-only visit.</span></div>
@@ -1329,24 +1451,19 @@
             </section>
 
             <section class="module">
-              <h3><em>03</em> Measures</h3>
-              <div class="measures">
-                <div><strong>Engagement</strong><span>Absorption</span></div>
-                <div><strong>Interest</strong><span>Sustained attention</span></div>
-                <div><strong>New knowledge</strong><span>Learning</span></div>
-                <div><strong>Understanding</strong><span>Exhibit comprehension</span></div>
-                <div><strong>Reflection</strong><span>Further thought</span></div>
-                <div><strong>Meaning</strong><span>Personal relevance</span></div>
-                <div><strong>Context</strong><span>Background connection</span></div>
-                <div><strong>Emotion</strong><span>Affective response</span></div>
-                <div><strong>Theme</strong><span>Museum resonance</span></div>
-              </div>
+              <h3><em>03</em> Variables</h3>
+              <dl class="variables">
+                <div><dt>IV</dt><dd>Guide condition: AI guide or labels-only visit.</dd></div>
+                <div><dt>DV</dt><dd>Q7-Q15 post-visit ratings, measured on a 1-5 ordinal scale.</dd></div>
+                <div><dt>BG</dt><dd>Role, visit frequency, and AI-tool use were recorded as background data.</dd></div>
+                <div><dt>CV</dt><dd>No control variables entered the analysis; the 15-per-group sample limited adjusted modelling.</dd></div>
+              </dl>
             </section>
           </div>
 
           <div class="column">
             <section class="module">
-              <h3><em>04</em> Group means</h3>
+              <h3><em>04</em> Results: group means</h3>
               <img
                 class="chart"
                 src="./ADS401_GroupH_Q7-Q15_Guide_Comparison_01.png"
@@ -1362,7 +1479,7 @@
             </section>
 
             <section class="module">
-              <h3><em>05</em> What moved</h3>
+              <h3><em>05</em> Key signal</h3>
               <div class="result-pair">
                 <div><strong>5</strong><span>Items with higher AI-group means</span></div>
                 <div><strong>4</strong><span>Items with higher no-AI means</span></div>
@@ -1378,7 +1495,7 @@
             </section>
 
             <section class="module">
-              <h3><em>06</em> Reading</h3>
+              <h3><em>06</em> Inference</h3>
               <p>
                 The small sample, brief exposure, self-report outcomes, and lack of a primary
                 endpoint limit the claim. Museum chatbot evaluations have often described systems
@@ -1421,29 +1538,31 @@
 
         <section class="assessment" aria-label="Evaluation summary">
           <div class="assessment-head">
-            <span>Evaluation summary</span>
-            <h3>What this study says to the museum</h3>
+            <span>Discussion &amp; conclusion</span>
+            <h3>What the evidence supports</h3>
           </div>
           <div class="assessment-grid">
             <article>
-              <span>What deserves credit</span>
+              <span>Strengths</span>
               <h4>Useful extra interpretive layer</h4>
               <p>
-                Five outcomes had higher AI-group means. This does not establish a benefit, but it
-                makes an extra interpretive layer plausible. Q9 new knowledge showed the clearest
-                signal at +0.47, consistent with conversational access and language framing.
+                Five outcomes had higher AI means. Q9 new knowledge showed the clearest gap at +0.47,
+                so sourced interpretation is worth testing.
               </p>
             </article>
             <article>
-              <span>What remains weak</span>
+              <span>Limits</span>
               <h4>No reliable advantage in this sample</h4>
               <p>
-                No adjusted comparison reached .05. Engagement and interest were also descriptively
-                lower, suggesting that the current interaction did not create a compelling visit
-                loop. The small sample and self-report design leave these as hypotheses.
+                No adjusted test reached .05. Engagement and interest were lower in the AI group. The
+                small self-report sample limits causal claims.
               </p>
             </article>
           </div>
+          <p class="conclusion-line">
+            Conclusion: the data support testing a sourced, route-based guide; they do not show
+            item-level effectiveness.
+          </p>
         </section>
 
         <section class="recommendations" aria-labelledby="recommendations-title">
@@ -1452,13 +1571,8 @@
             <div>
               <h3 id="recommendations-title">Specific changes to the museum AI guide</h3>
               <p class="recommendation-decision">
-                Keep AI as a traceable interpretation layer. Rebuild the visit around questions,
+                Keep AI as a traceable interpretation layer. Build the visit around questions,
                 sources, and recovery.
-              </p>
-              <p>
-                Earlier studies place question formulation and language at the centre of guide
-                experience. Our means add a local constraint: knowledge interpretation is the
-                clearest promise, while engagement and interest need more work.
               </p>
             </div>
           </div>
@@ -1489,8 +1603,8 @@
               <p>
                 Understanding and personal meaning were marginally lower in the AI group. The guide
                 should repeat the relevant exhibit label, connect one factual detail to a broader
-                story, and ask what the visitor already noticed. Keep that bridge short; the aim is a
-                clearer interpretation, not a longer response.
+                story, and ask what the visitor already noticed. Keep that bridge short because a
+                long response can pull attention away from the object.
               </p>
             </article>
             <article>
