@@ -1710,6 +1710,64 @@ tbody tr:hover {
   margin-top: 9px;
 }
 
+.recommendation-panel {
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.recommendation-head {
+  max-width: 760px;
+  margin-bottom: 26px;
+}
+
+.recommendation-head h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.recommendation-head > p:last-child {
+  max-width: 62ch;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 40px;
+}
+
+.recommendation-grid article {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.recommendation-grid span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.recommendation-grid h4 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.recommendation-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .reference-list {
   margin: 0;
   padding-left: 24px;
@@ -2649,7 +2707,8 @@ main {
   }
 
   .literature-grid,
-  .discussion-grid {
+  .discussion-grid,
+  .recommendation-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2756,6 +2815,10 @@ main {
 
   .research-gap {
     padding: 22px 18px;
+  }
+
+  .recommendation-head h3 {
+    font-size: 1.7rem;
   }
 
   .method-profile {

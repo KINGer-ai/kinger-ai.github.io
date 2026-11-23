@@ -532,7 +532,7 @@
 
       .assessment-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
       }
 
@@ -572,16 +572,66 @@
         line-height: 1.5;
       }
 
-      .assessment-grid ol {
-        margin: 0;
-        padding-left: 14px;
-        color: var(--muted);
-        font-size: 10px;
-        line-height: 1.45;
+      .recommendations {
+        margin-top: 22px;
+        padding: 18px 0;
+        border-top: 1px solid var(--line-strong);
       }
 
-      .assessment-grid li + li {
-        margin-top: 4px;
+      .recommendations-head {
+        display: grid;
+        grid-template-columns: 210px minmax(0, 1fr);
+        gap: 24px;
+        align-items: baseline;
+        margin-bottom: 14px;
+      }
+
+      .recommendations-head span {
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .recommendations-head h3 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .recommendation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 28px;
+      }
+
+      .recommendation-grid article {
+        padding-top: 11px;
+        border-top: 1px solid var(--line);
+      }
+
+      .recommendation-grid span {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 600;
+      }
+
+      .recommendation-grid h4 {
+        margin: 0 0 6px;
+        font-family: var(--display);
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.25;
+      }
+
+      .recommendation-grid p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.48;
       }
 
       .references h3 {
@@ -685,7 +735,9 @@
         .hero,
         .body-grid,
         .assessment-head,
-        .assessment-grid {
+        .assessment-grid,
+        .recommendations-head,
+        .recommendation-grid {
           grid-template-columns: 1fr;
         }
 
@@ -998,9 +1050,43 @@
           line-height: 1.5;
         }
 
-        .assessment-grid ol {
+        .recommendations {
+          margin-top: 4mm;
+          padding: 4mm 0;
+        }
+
+        .recommendations-head {
+          grid-template-columns: 48mm minmax(0, 1fr);
+          margin-bottom: 3mm;
+        }
+
+        .recommendations-head span {
+          font-size: 11px;
+        }
+
+        .recommendations-head h3 {
+          font-size: 24px;
+        }
+
+        .recommendation-grid {
+          gap: 5mm 7mm;
+        }
+
+        .recommendation-grid article {
+          padding-top: 3mm;
+        }
+
+        .recommendation-grid span {
+          font-size: 11px;
+        }
+
+        .recommendation-grid h4 {
+          font-size: 18px;
+        }
+
+        .recommendation-grid p {
           font-size: 12px;
-          line-height: 1.45;
+          line-height: 1.48;
         }
 
         .poster-footer {
@@ -1278,16 +1364,6 @@
               </p>
             </section>
 
-            <section class="module">
-              <h3><em>09</em> Next study</h3>
-              <ol>
-                <li>Verify the allocation procedure.</li>
-                <li>Pre-specify one primary outcome.</li>
-                <li>Recruit a larger sample.</li>
-                <li>Add task success and recovery evidence.</li>
-              </ol>
-            </section>
-
           </div>
         </section>
 
@@ -1313,15 +1389,54 @@
                 allocation record prevent a causal claim and leave modest effects uncertain.
               </p>
             </article>
+          </div>
+        </section>
+
+        <section class="recommendations" aria-labelledby="recommendations-title">
+          <div class="recommendations-head">
+            <span>Recommendations</span>
+            <h3 id="recommendations-title">Specific changes to the museum AI guide</h3>
+          </div>
+          <div class="recommendation-grid">
             <article>
-              <span>Recommendations</span>
-              <h4>Improve before wider rollout</h4>
-              <ol>
-                <li>Keep labels available as the default interpretation layer.</li>
-                <li>Add a visible start prompt and one example question.</li>
-                <li>Provide rephrase and retry paths for unclear answers.</li>
-                <li>Run a larger task-based study with a pre-specified outcome.</li>
-              </ol>
+              <span>Evaluation signal: Q9 learning was strongest</span>
+              <h4>Keep knowledge support, but make it traceable</h4>
+              <p>
+                Preserve exhibit-specific facts because Q9 showed the largest descriptive gain
+                (4.00 vs 3.53). Add a visible source or exhibit label to each answer. Keep answers
+                to two or three sentences and end with one follow-up question, so the guide supports
+                learning without becoming a wall of generated text.
+              </p>
+            </article>
+            <article>
+              <span>Evaluation signal: Q7 and Q8 were lower</span>
+              <h4>Turn Q&amp;A into a guided visit rhythm</h4>
+              <p>
+                The AI condition scored below labels-only on engagement (3.47 vs 3.80) and
+                sustained interest (3.73 vs 4.00). The guide should suggest a short route, use
+                “look for” and “compare these two” prompts, and show progress between exhibits.
+                Visitors need a reason to keep interacting, not only a search box.
+              </p>
+            </article>
+            <article>
+              <span>Evaluation signal: Q10 and Q12 trailed slightly</span>
+              <h4>Anchor every answer in the exhibit and visitor context</h4>
+              <p>
+                Understanding and personal meaning were marginally lower in the AI group. The guide
+                should repeat the relevant exhibit label, connect one factual detail to a broader
+                story, and ask how that story relates to what the visitor already noticed. This
+                directly targets interpretation and meaning rather than adding more content.
+              </p>
+            </article>
+            <article>
+              <span>Evaluation signal: no task-level evidence yet</span>
+              <h4>Design and measure recovery, not just answers</h4>
+              <p>
+                Add “rephrase”, “that is not what I meant”, “next exhibit”, and “show on map”
+                controls. Log where questions fail and how visitors recover. A larger study should
+                verify group allocation, pre-specify one primary outcome, and combine task success
+                with the post-visit questionnaire.
+              </p>
             </article>
           </div>
         </section>
