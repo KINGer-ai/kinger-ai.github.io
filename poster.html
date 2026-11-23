@@ -501,6 +501,77 @@
         border-top: 1px solid var(--line-strong);
       }
 
+      .assessment {
+        margin-top: 24px;
+        padding: 20px 0 18px;
+        border-top: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--line-strong);
+      }
+
+      .assessment-head {
+        display: grid;
+        grid-template-columns: 210px minmax(0, 1fr);
+        gap: 24px;
+        align-items: baseline;
+        margin-bottom: 16px;
+      }
+
+      .assessment-head span {
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .assessment-head h3 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .assessment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .assessment-grid article {
+        padding-left: 16px;
+        border-left: 2px solid var(--line-strong);
+      }
+
+      .assessment-grid article:nth-child(1) {
+        border-left-color: var(--accent);
+      }
+
+      .assessment-grid article:nth-child(3) {
+        border-left-color: var(--ink);
+      }
+
+      .assessment-grid span {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 600;
+      }
+
+      .assessment-grid h4 {
+        margin: 0 0 7px;
+        font-family: var(--display);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.25;
+      }
+
+      .assessment-grid p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
       .references h3 {
         margin: 0 0 8px;
         font-family: var(--display);
@@ -600,7 +671,9 @@
         }
 
         .hero,
-        .body-grid {
+        .body-grid,
+        .assessment-head,
+        .assessment-grid {
           grid-template-columns: 1fr;
         }
 
@@ -876,6 +949,41 @@
         .references ol {
           gap: 1.5mm 6mm;
           font-size: 8px;
+        }
+
+        .assessment {
+          margin-top: 4mm;
+          padding: 4mm 0;
+        }
+
+        .assessment-head {
+          grid-template-columns: 48mm minmax(0, 1fr);
+          margin-bottom: 3mm;
+        }
+
+        .assessment-head span {
+          font-size: 11px;
+        }
+
+        .assessment-head h3 {
+          font-size: 24px;
+        }
+
+        .assessment-grid {
+          gap: 6mm;
+        }
+
+        .assessment-grid span {
+          font-size: 11px;
+        }
+
+        .assessment-grid h4 {
+          font-size: 18px;
+        }
+
+        .assessment-grid p {
+          font-size: 12px;
+          line-height: 1.5;
         }
 
         .poster-footer {
@@ -1163,14 +1271,40 @@
               </ol>
             </section>
 
-            <section class="module">
-              <h3><em>10</em> Takeaway</h3>
+          </div>
+        </section>
+
+        <section class="assessment" aria-label="Evaluation summary">
+          <div class="assessment-head">
+            <span>Evaluation summary</span>
+            <h3>What this study says to the museum</h3>
+          </div>
+          <div class="assessment-grid">
+            <article>
+              <span>What deserves credit</span>
+              <h4>Useful extra interpretive layer</h4>
               <p>
-                The AI guide did not produce a statistically reliable advantage in this sample.
-                The result is a baseline for a better-powered test, not a verdict on the museum
-                system.
+                The AI group had higher descriptive means on five outcomes. Q9 new knowledge
+                showed the clearest potential benefit, with a +0.47 mean gap.
               </p>
-            </section>
+            </article>
+            <article>
+              <span>What remains weak</span>
+              <h4>No reliable advantage in this sample</h4>
+              <p>
+                No adjusted comparison reached .05. The small sample, self-report outcomes, and
+                allocation record prevent a causal claim and leave modest effects uncertain.
+              </p>
+            </article>
+            <article>
+              <span>What the museum should do</span>
+              <h4>Keep AI optional and test the interaction</h4>
+              <p>
+                Retain labels as the dependable baseline. Add task-based testing for
+                question-asking, navigation, and recovery, then compare a larger group with a
+                pre-specified primary outcome.
+              </p>
+            </article>
           </div>
         </section>
 
