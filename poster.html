@@ -1911,11 +1911,11 @@
         }
 
         .composition-table {
-          font-size: 17px;
+          font-size: var(--poster-copy);
         }
 
         .composition-table caption {
-          font-size: 17px;
+          font-size: var(--poster-copy);
         }
 
         .composition-table thead th,
@@ -1974,9 +1974,216 @@
         }
 
       }
+
+      .poster-editor-toolbar {
+        display: none;
+      }
+
+      body.poster-editor-enabled,
+      body.poster-export {
+        background: #d5d1c8;
+      }
+
+      body.poster-editor-enabled .poster-web-view,
+      body.poster-export .poster-web-view {
+        display: none !important;
+      }
+
+      body.poster-editor-enabled .poster-stage,
+      body.poster-export .poster-stage {
+        display: block;
+      }
+
+      body.poster-editor-enabled {
+        padding-top: 118px;
+      }
+
+      body.poster-editor-enabled .poster-editor-toolbar {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        min-height: 102px;
+        padding: 14px max(18px, calc((100vw - 1180px) / 2));
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        color: var(--ink);
+        background: rgba(241, 238, 231, 0.97);
+        border-bottom: 1px solid var(--line-strong);
+        box-shadow: 0 10px 30px rgba(33, 33, 28, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .poster-editor-heading {
+        display: grid;
+        gap: 4px;
+      }
+
+      .poster-editor-heading strong {
+        font-family: var(--display);
+        font-size: 21px;
+        font-weight: 600;
+      }
+
+      .poster-editor-heading span {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .poster-editor-controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .poster-editor-controls button,
+      .poster-editor-controls a {
+        min-height: 44px;
+        padding: 9px 12px;
+        color: var(--ink);
+        background: transparent;
+        border: 1px solid var(--line-strong);
+        border-radius: 2px;
+        font: 600 11px/1 var(--body);
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .poster-editor-controls button:hover,
+      .poster-editor-controls a:hover {
+        color: var(--paper);
+        background: var(--ink);
+      }
+
+      .poster-editor-controls button:focus-visible,
+      .poster-editor-controls a:focus-visible,
+      .poster-editor-size input:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .poster-editor-controls button:active,
+      .poster-editor-controls a:active {
+        transform: translateY(1px);
+      }
+
+      .poster-editor-size {
+        display: flex;
+        min-height: 44px;
+        padding: 0 10px;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      .poster-editor-size input {
+        width: 84px;
+        accent-color: var(--accent);
+      }
+
+      .poster-editor-size output {
+        min-width: 32px;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .poster-editor-status {
+        min-width: 110px;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.35;
+        text-align: right;
+      }
+
+      .poster-editor-enabled [contenteditable="true"] {
+        border-radius: 2px;
+        cursor: text;
+        transition:
+          background-color 140ms ease,
+          box-shadow 140ms ease;
+      }
+
+      .poster-editor-enabled [contenteditable="true"]:hover {
+        background: rgba(88, 106, 82, 0.08);
+        box-shadow: 0 0 0 2px rgba(88, 106, 82, 0.08);
+      }
+
+      .poster-editor-enabled [contenteditable="true"]:focus {
+        background: #fffdf8;
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 980px) {
+        body.poster-editor-enabled {
+          padding-top: 0;
+        }
+
+        body.poster-editor-enabled .poster-editor-toolbar {
+          position: static;
+          padding-block: 12px;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .poster-editor-controls {
+          justify-content: flex-start;
+        }
+
+        .poster-editor-status {
+          min-width: 0;
+          text-align: left;
+        }
+      }
+
+      @media print {
+        body.poster-editor-enabled {
+          padding-top: 0;
+        }
+
+        .poster-editor-toolbar {
+          display: none !important;
+        }
+
+        .poster-editor-enabled [contenteditable="true"] {
+          background: transparent !important;
+          box-shadow: none !important;
+          outline: 0 !important;
+        }
+      }
     </style>
   </head>
   <body>
+    <aside class="poster-editor-toolbar" id="poster-editor-toolbar" aria-label="Poster editor controls" hidden>
+      <div class="poster-editor-heading">
+        <strong>Poster editor</strong>
+        <span>Click any text to revise it. Draft stays in this browser.</span>
+      </div>
+      <div class="poster-editor-controls">
+        <label class="poster-editor-size">
+          Print body size
+          <input id="poster-copy-size" type="range" min="16" max="28" step="1" value="22" />
+          <output id="poster-copy-size-value" for="poster-copy-size">22 px</output>
+        </label>
+        <button type="button" id="poster-save">Save draft</button>
+        <button type="button" id="poster-restore">Reload saved</button>
+        <button type="button" id="poster-reset">Start over</button>
+        <button type="button" id="poster-download">Download HTML</button>
+        <button type="button" id="poster-print">Print / Save A1 PDF</button>
+        <a href="./poster.html">Preview</a>
+        <span class="poster-editor-status" id="poster-editor-status" role="status" aria-live="polite"></span>
+      </div>
+    </aside>
+
     <section class="poster-web-view" aria-labelledby="poster-web-title">
       <header class="poster-web-bar">
         <div>
@@ -1985,12 +2192,13 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=sync6">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=sync7">Open A1 PDF</a>
+          <a href="./poster.html?edit=1">Edit poster</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync6" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync7" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=sync6"
+          src="./assets/poster-preview.webp?v=sync7"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -2306,5 +2514,173 @@
         </footer>
       </article>
     </main>
+    <script data-poster-editor>
+      (() => {
+        const editMode = new URLSearchParams(window.location.search).get("edit") === "1";
+        if (!editMode) return;
+
+        const storageKey = "ads401-poster-editor-v1";
+        const poster = document.querySelector(".poster");
+        const toolbar = document.querySelector("#poster-editor-toolbar");
+        const sizeInput = document.querySelector("#poster-copy-size");
+        const sizeOutput = document.querySelector("#poster-copy-size-value");
+        const status = document.querySelector("#poster-editor-status");
+        const editableSelector = [
+          "h1",
+          "h2",
+          "h3",
+          "p",
+          "li",
+          "dt",
+          "dd",
+          "th",
+          "td",
+          "caption",
+          "figcaption",
+          ".topbar > span",
+          ".hero-group > span",
+          ".hero-group small",
+          ".hero-qr strong",
+          ".hero-qr span",
+          ".snapshot span",
+          ".snapshot strong",
+          ".result-banner .zero",
+          ".study-step strong",
+          ".study-step span",
+          ".poster-footer > div"
+        ].join(",");
+        let saveTimer;
+
+        document.body.classList.add("poster-editor-enabled");
+        toolbar.hidden = false;
+        document.title = "Poster editor | Group H";
+
+        const editableElements = Array.from(poster.querySelectorAll(editableSelector));
+        editableElements.forEach((element, index) => {
+          element.dataset.editKey = `poster-edit-${String(index).padStart(3, "0")}`;
+          element.setAttribute("contenteditable", "true");
+          element.setAttribute("spellcheck", "false");
+        });
+
+        const setStatus = (message) => {
+          status.textContent = message;
+        };
+
+        const setCopySize = (value, announce = false) => {
+          const nextValue = Math.min(28, Math.max(16, Number(value) || 22));
+          poster.style.setProperty("--poster-copy", `${nextValue}px`);
+          sizeInput.value = String(nextValue);
+          sizeOutput.textContent = `${nextValue} px`;
+          if (announce) setStatus(`Body size: ${nextValue} px`);
+        };
+
+        const readDraft = () => {
+          try {
+            return JSON.parse(localStorage.getItem(storageKey) || "null");
+          } catch {
+            return null;
+          }
+        };
+
+        const saveDraft = (announce = true) => {
+          const fields = {};
+          poster.querySelectorAll("[data-edit-key]").forEach((element) => {
+            fields[element.dataset.editKey] = element.innerHTML;
+          });
+          localStorage.setItem(
+            storageKey,
+            JSON.stringify({
+              version: 1,
+              fields,
+              copySize: Number(sizeInput.value)
+            })
+          );
+          if (announce) {
+            const time = new Intl.DateTimeFormat(undefined, {
+              hour: "2-digit",
+              minute: "2-digit"
+            }).format(new Date());
+            setStatus(`Saved ${time}`);
+          }
+        };
+
+        const scheduleSave = () => {
+          window.clearTimeout(saveTimer);
+          setStatus("Saving...");
+          saveTimer = window.setTimeout(() => saveDraft(), 350);
+        };
+
+        const draft = readDraft();
+        if (draft?.fields) {
+          poster.querySelectorAll("[data-edit-key]").forEach((element) => {
+            const savedValue = draft.fields[element.dataset.editKey];
+            if (typeof savedValue === "string") element.innerHTML = savedValue;
+          });
+          setCopySize(draft.copySize);
+          setStatus("Saved draft restored");
+        } else {
+          const initialSize = getComputedStyle(poster).getPropertyValue("--poster-copy");
+          setCopySize(Number.parseInt(initialSize, 10) || 22);
+          setStatus("No saved changes");
+        }
+
+        poster.addEventListener("input", (event) => {
+          if (event.target.closest("[contenteditable='true']")) scheduleSave();
+        });
+
+        poster.addEventListener("paste", (event) => {
+          if (!event.target.closest("[contenteditable='true']")) return;
+          event.preventDefault();
+          const text = event.clipboardData?.getData("text/plain") || "";
+          document.execCommand("insertText", false, text);
+        });
+
+        sizeInput.addEventListener("input", () => {
+          setCopySize(sizeInput.value, true);
+          scheduleSave();
+        });
+
+        document.querySelector("#poster-save").addEventListener("click", () => saveDraft());
+
+        document.querySelector("#poster-restore").addEventListener("click", () => {
+          window.location.reload();
+        });
+
+        document.querySelector("#poster-reset").addEventListener("click", () => {
+          const confirmed = window.confirm("Remove every saved poster edit in this browser?");
+          if (!confirmed) return;
+          localStorage.removeItem(storageKey);
+          window.location.reload();
+        });
+
+        document.querySelector("#poster-download").addEventListener("click", () => {
+          saveDraft(false);
+          const clone = document.documentElement.cloneNode(true);
+          clone.querySelector("body")?.classList.remove("poster-editor-enabled");
+          clone.querySelector("body")?.classList.add("poster-export");
+          clone.querySelectorAll("[contenteditable]").forEach((element) => {
+            element.removeAttribute("contenteditable");
+            element.removeAttribute("spellcheck");
+            element.removeAttribute("data-edit-key");
+          });
+          const html = `<!doctype html>\n${clone.outerHTML}`;
+          const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = "poster-edited.html";
+          document.body.append(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+          setStatus("HTML downloaded");
+        });
+
+        document.querySelector("#poster-print").addEventListener("click", () => {
+          saveDraft(false);
+          window.print();
+        });
+      })();
+    </script>
   </body>
 </html>
