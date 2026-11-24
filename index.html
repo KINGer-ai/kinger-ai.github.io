@@ -654,59 +654,56 @@
               <p class="small-label">Recommendations</p>
               <h3 id="recommendation-title">Specific changes to the museum AI guide</h3>
               <p class="recommendation-decision">
-                Make the AI a museum-grounded interpretation service: retrieve approved content,
-                explain one object at a time, support a short route, and expose a recovery path.
+                Use approved museum content, explain one object at a time, support a short visitor
+                route, and provide recovery controls.
               </p>
               <p>
-                The order matters. Source grounding controls trust. Object-based explanation targets
-                learning and meaning. Route cues target engagement. Recovery prevents one failed
-                answer from ending the visit.
+                Apply the four changes as one visitor flow. Grounded records make each answer
+                traceable. Object-level explanation keeps the answer specific. Route cues turn each
+                answer into a next step. Recovery controls keep the visitor moving after an unclear
+                response.
               </p>
               <p>
-                The first prototype should test source accuracy, source visibility, task success,
-                recovery rate, time to a useful answer, and the Q9 and Q7 post-visit items.
+                Test the prototype with source accuracy, source visibility, task success, recovery
+                rate, time to a useful answer, and the nine post-visit ratings.
               </p>
             </div>
             <div class="recommendation-grid">
               <article>
-                <span>Q9 learning | AI 4.00 vs 3.53</span>
+                <span>01 Source layer</span>
                 <h4>Ground answers in approved museum records</h4>
                 <p>
-                  Before generating, the AI should retrieve the current exhibit label, object record,
-                  or curatorial note. It should display the source name and last-updated date beside
-                  the answer. If no approved record exists, the AI should state that the fact is not
-                  verified and point to the nearest relevant exhibit. The system should not fill the
-                  gap with an unsourced generated claim.
+                  Retrieve the current exhibit label, object record, or curatorial note before
+                  generating an answer. Display the source name and last-updated date beside the
+                  response. When approved content is unavailable, label the point unverified and
+                  direct the visitor to the nearest relevant exhibit.
                 </p>
               </article>
               <article>
-                <span>Q8 interest, Q10 understanding, Q12 meaning</span>
+                <span>02 Interpretation layer</span>
                 <h4>Keep every explanation tied to one exhibit object</h4>
                 <p>
-                  Start with the exhibit name, add one factual detail, connect it to one broader
-                  story, and ask one question about what the visitor noticed. The initial answer
-                  should stay within two or three sentences. Put optional detail behind a separate
-                  action so the response remains tied to the object rather than becoming a lecture.
+                  Open with the exhibit name, add one factual detail, connect it to one broader
+                  theme, and close with one question about what the visitor noticed. Keep the first
+                  answer to two or three sentences. Place further detail behind a separate action.
                 </p>
               </article>
               <article>
-                <span>Q7 engagement | AI 3.47 vs 3.80</span>
+                <span>03 Visit flow</span>
                 <h4>Use each answer to support the next visit step</h4>
                 <p>
-                  After responding, suggest one next object or one comparison and show the visitor's
-                  position within a three-to-five-stop route. Visitors should choose when to continue;
-                  the AI should not advance the route automatically. This turns isolated answers into
-                  a visible visit rhythm.
+                  Recommend one next object or one comparison after each answer. Show the visitor's
+                  position within a three-to-five-stop route. Let the visitor choose when to
+                  continue; do not advance the route automatically.
                 </p>
               </article>
               <article>
-                <span>No task-level evidence yet</span>
+                <span>04 Recovery layer</span>
                 <h4>Build recovery into the conversation and record it</h4>
                 <p>
-                  Add rephrase, “not what I meant”, next-exhibit, and map controls. After a failed
-                  answer, the AI should ask which part was wrong and keep the last valid object in
-                  context. Log the query intent, failed response, recovery action, and outcome so the
-                  team can separate retrieval failures from generation failures.
+                  Provide rephrase, “not what I meant”, next-exhibit, and map controls. After an
+                  unclear answer, ask which part was wrong and keep the last valid object in context.
+                  Log the query intent, failed response, recovery action, and outcome.
                 </p>
               </article>
             </div>
