@@ -1357,6 +1357,7 @@
         }
 
         .poster {
+          --poster-copy: 22px;
           width: 594mm;
           height: 841mm;
           min-height: 0;
@@ -1598,7 +1599,7 @@
         }
 
         .intro-module p {
-          line-height: 1.54;
+          line-height: 1.52;
         }
 
         .module h3 {
@@ -1868,12 +1869,12 @@
 
         .module p,
         .module li {
-          font-size: 24px;
+          font-size: var(--poster-copy);
         }
 
         .compact-recommendations li {
-          font-size: 17px;
-          line-height: 1.45;
+          font-size: var(--poster-copy);
+          line-height: 1.38;
         }
 
         .flow span {
@@ -1896,12 +1897,12 @@
         }
 
         .study-step strong {
-          font-size: 19px;
+          font-size: var(--poster-copy);
         }
 
         .study-step span {
           margin-top: 2mm;
-          font-size: 15px;
+          font-size: var(--poster-copy);
         }
 
         .study-step:not(:last-child)::after {
@@ -1910,7 +1911,7 @@
         }
 
         .composition-table {
-          font-size: 13px;
+          font-size: 17px;
         }
 
         .composition-table caption {
@@ -1940,15 +1941,15 @@
         }
 
         .variables dd {
-          font-size: 18px;
+          font-size: var(--poster-copy);
         }
 
         .table th {
-          font-size: 16px;
+          font-size: var(--poster-copy);
         }
 
         .table td {
-          font-size: 17px;
+          font-size: var(--poster-copy);
         }
 
         .callout {
@@ -1961,7 +1962,7 @@
 
         .references ol,
         .poster-footer {
-          font-size: 17px;
+          font-size: 18px;
         }
 
         .poster-footer strong {
@@ -1984,12 +1985,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=sync5">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=sync6">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync5" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync6" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=sync5"
+          src="./assets/poster-preview.webp?v=sync6"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -2095,6 +2096,9 @@
               <p>
                 The mixed pattern points to interaction, not AI presence alone.
               </p>
+              <p>
+                The review separates guide delivery from measurement quality.
+              </p>
             </section>
 
             <section class="module design-module">
@@ -2117,6 +2121,9 @@
                 </div>
               </div>
               <p>
+                The five checkpoints applied to both visit conditions.
+              </p>
+              <p>
                 Participants were 17 undergraduates and 13 postgraduates. The team did not manipulate
                 route, device, or time on task, and these variables were not logged.
               </p>
@@ -2138,12 +2145,11 @@
                 <div><dt>CV</dt><dd>No control variables entered the analysis; the 15-per-group sample limited adjusted modelling.</dd></div>
               </dl>
               <p>
-                All items used the same agreement scale. Role, prior visits, and AI familiarity
-                describe the sample but were not tested as covariates.
-              </p>
-              <p>
                 <strong>Scale anchor.</strong> 1 = strongly disagree and 5 = strongly agree. All 270
                 item ratings were valid.
+              </p>
+              <p>
+                The group comparison remains unadjusted.
               </p>
             </section>
           </div>
@@ -2248,24 +2254,21 @@
               <h3><em>07</em> Recommendations</h3>
               <ol class="compact-recommendations">
                 <li>
-                  <strong>Ground answers in museum records.</strong> Before answering, the AI should
-                  retrieve the current exhibit label, object record, or collection note. Display that
-                  source beside the answer. If no museum record is available, state the limit and
-                  offer the nearest relevant exhibit.
+                  <strong>Ground answers in approved museum records.</strong> Search the exhibit label,
+                  object record, and curatorial note. Show source and update date. Mark missing facts
+                  as unverified.
                 </li>
                 <li>
-                  <strong>Keep each answer tied to one object.</strong> Open with the exhibit name,
-                  add one factual detail and one interpretive link, then ask what the visitor noticed.
-                  Limit the answer to two or three sentences.
+                  <strong>Keep every explanation tied to one exhibit object.</strong> Name the object,
+                  add one fact and one interpretation, then ask what the visitor noticed.
                 </li>
                 <li>
-                  <strong>Use the answer to set the next visit step.</strong> After responding, suggest
-                  one next object or comparison and show the visitor's position on a short route.
+                  <strong>Use each answer to support the next visit step.</strong> Suggest one exhibit
+                  or comparison and show route position.
                 </li>
                 <li>
-                  <strong>Make misunderstood questions recoverable.</strong> Add rephrase, “not what I
-                  meant”, next-exhibit, and map controls. Log failed questions and the path back to a
-                  useful answer.
+                  <strong>Build recovery into the conversation and record it.</strong> Add rephrase,
+                  correction, next-exhibit, and map controls. Log failed queries and recovery paths.
                 </li>
               </ol>
               <p>
