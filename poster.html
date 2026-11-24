@@ -515,6 +515,66 @@
         object-fit: contain;
       }
 
+      .results-chart-stack {
+        display: grid;
+        min-height: 0;
+        flex: 1;
+        grid-template-rows: minmax(0, 1fr) auto;
+        gap: 10px;
+      }
+
+      .results-chart-stack .chart {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+      }
+
+      .composition-table {
+        width: 100%;
+        border-collapse: collapse;
+        color: var(--ink);
+        font-size: 12px;
+      }
+
+      .composition-table caption {
+        padding-bottom: 6px;
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: 15px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .composition-table th,
+      .composition-table td {
+        padding: 4px 3px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .composition-table thead th {
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 500;
+      }
+
+      .composition-table thead th:not(:first-child),
+      .composition-table td:not(:first-child) {
+        text-align: center;
+      }
+
+      .composition-table .section-row th {
+        padding-top: 7px;
+        color: var(--accent);
+        font-size: 10px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .composition-table .section-row + tr th,
+      .composition-table .section-row + tr td {
+        border-top: 0;
+      }
+
       .compact-recommendations {
         margin: 10px 0 0;
         padding-left: 16px;
@@ -607,6 +667,53 @@
         color: var(--ink);
         font-size: 10px;
         line-height: 1.45;
+      }
+
+      .study-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 9px;
+        margin: 8px 0 14px;
+      }
+
+      .study-step {
+        position: relative;
+        min-width: 0;
+        padding: 10px 8px;
+        background: #f1eee7;
+        border: 1px solid var(--line-strong);
+      }
+
+      .study-step:not(:last-child)::after {
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        z-index: 1;
+        color: var(--accent);
+        content: "→";
+        font-size: 14px;
+        font-weight: 600;
+        transform: translateY(-50%);
+      }
+
+      .study-step strong,
+      .study-step span {
+        display: block;
+      }
+
+      .study-step strong {
+        color: var(--ink);
+        font-family: var(--display);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .study-step span {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.35;
       }
 
       .measures {
@@ -1486,6 +1593,14 @@
           border-top-width: 2px;
         }
 
+        .intro-module {
+          padding-bottom: 2mm;
+        }
+
+        .intro-module p {
+          line-height: 1.54;
+        }
+
         .module h3 {
           margin-bottom: 2.5mm;
           font-size: 23px;
@@ -1661,11 +1776,11 @@
 
         /* A1 readability pass: keep body copy above 10pt when printed. */
         .topbar {
-          font-size: 21px;
+          font-size: 22px;
         }
 
         .kicker {
-          font-size: 23px;
+          font-size: 24px;
         }
 
         h1 {
@@ -1685,15 +1800,15 @@
         }
 
         .poster-abstract p {
-          font-size: 24px;
+          font-size: 26px;
         }
 
         .hero-question p {
-          font-size: 36px;
+          font-size: 38px;
         }
 
         .hero-group p {
-          font-size: 28px;
+          font-size: 30px;
         }
 
         .poster-abstract span,
@@ -1726,19 +1841,19 @@
 
         .snapshot p,
         .snapshot span {
-          font-size: 17px;
+          font-size: 18px;
         }
 
         .snapshot strong {
-          font-size: 40px;
+          font-size: 42px;
         }
 
         .result-banner h2 {
-          font-size: 38px;
+          font-size: 40px;
         }
 
         .result-banner p {
-          font-size: 22px;
+          font-size: 24px;
         }
 
         .module h3 em,
@@ -1748,27 +1863,68 @@
         }
 
         .module h3 {
-          font-size: 31px;
+          font-size: 33px;
         }
 
         .module p,
         .module li {
-          font-size: 22px;
+          font-size: 24px;
         }
 
         .compact-recommendations li {
-          font-size: 16px;
+          font-size: 17px;
           line-height: 1.45;
         }
 
         .flow span {
-          font-size: 20px;
+          font-size: 22px;
         }
 
         .flow b {
           width: 5mm;
           height: 5mm;
           font-size: 16px;
+        }
+
+        .study-flow {
+          gap: 2mm;
+          margin: 2mm 0 3mm;
+        }
+
+        .study-step {
+          padding: 4mm 2.5mm;
+        }
+
+        .study-step strong {
+          font-size: 19px;
+        }
+
+        .study-step span {
+          margin-top: 2mm;
+          font-size: 15px;
+        }
+
+        .study-step:not(:last-child)::after {
+          right: -5px;
+          font-size: 16px;
+        }
+
+        .composition-table {
+          font-size: 13px;
+        }
+
+        .composition-table caption {
+          font-size: 17px;
+        }
+
+        .composition-table thead th,
+        .composition-table .section-row th {
+          font-size: 11px;
+        }
+
+        .composition-table th,
+        .composition-table td {
+          padding: 1.2mm 0.8mm;
         }
 
         .measures strong {
@@ -1780,19 +1936,19 @@
         }
 
         .variables dt {
-          font-size: 19px;
+          font-size: 20px;
         }
 
         .variables dd {
-          font-size: 17px;
+          font-size: 18px;
         }
 
         .table th {
-          font-size: 15px;
+          font-size: 16px;
         }
 
         .table td {
-          font-size: 16px;
+          font-size: 17px;
         }
 
         .callout {
@@ -1805,11 +1961,11 @@
 
         .references ol,
         .poster-footer {
-          font-size: 16px;
+          font-size: 17px;
         }
 
         .poster-footer strong {
-          font-size: 26px;
+          font-size: 28px;
         }
 
         .references-link {
@@ -1828,12 +1984,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=sync3">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=sync5">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync3" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync5" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=sync3"
+          src="./assets/poster-preview.webp?v=sync5"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -1928,40 +2084,48 @@
             <section class="module intro-module">
               <h3><em>01</em> Introduction &amp; background</h3>
               <p>
-                Museum-guide research shows that format and interaction shape which visitor outcomes
+                Museum-guide studies show that format and interaction shape which visitor outcomes
                 improve. Wang and Matviienko [1] compared a generative chatbot with a museum app. Tue
                 et al. [3] found that conversational access helped content discovery but often made
                 questions harder to frame. Xia et al. [4] linked guide wording to satisfaction, return
                 use, and recall. Othman et al. [8] separate engagement, learning, meaning, and emotion.
-                Reviews also find that museum chatbot projects often describe systems without
+                Reviews also find that museum chatbot projects describe systems without
                 measuring visitor experience [11].
               </p>
               <p>
-                These findings predict a mixed profile: AI may add interpretive reach while question
-                design determines whether visitors stay engaged.
+                The mixed pattern points to interaction, not AI presence alone.
               </p>
             </section>
 
             <section class="module design-module">
               <h3><em>02</em> Study design</h3>
-              <div class="flow">
-                <div><b>→</b><span>Information and consent.</span></div>
-                <div><b>→</b><span>AI-guide or labels-only visit.</span></div>
-                <div><b>→</b><span>Same exhibition context.</span></div>
-                <div><b>→</b><span>Nine post-visit ratings.</span></div>
-                <div><b>→</b><span>Rank comparison with correction.</span></div>
+              <div class="study-flow" role="list" aria-label="Study procedure">
+                <div class="study-step" role="listitem">
+                  <strong>Consent</strong><span>Information + agreement</span>
+                </div>
+                <div class="study-step" role="listitem">
+                  <strong>Visit</strong><span>AI or labels only</span>
+                </div>
+                <div class="study-step" role="listitem">
+                  <strong>Exhibit</strong><span>Same context</span>
+                </div>
+                <div class="study-step" role="listitem">
+                  <strong>Ratings</strong><span>Nine items, 1-5</span>
+                </div>
+                <div class="study-step" role="listitem">
+                  <strong>Analysis</strong><span>Rank + Holm</span>
+                </div>
               </div>
               <p>
                 Participants were 17 undergraduates and 13 postgraduates. The team did not manipulate
                 route, device, or time on task, and these variables were not logged.
               </p>
               <p>
-                The comparison can describe the delivered visit experience. It cannot isolate which
-                feature of the AI guide produced a difference.
+                Each participant entered one condition and rated one visit. The analysis therefore
+                describes the delivered visit.
               </p>
               <p>
-                Each participant entered one condition and rated one visit. The design is
-                between-subjects; it does not compare the same visitor under both conditions.
+                The design did not include a within-person comparison.
               </p>
             </section>
 
@@ -1974,9 +2138,8 @@
                 <div><dt>CV</dt><dd>No control variables entered the analysis; the 15-per-group sample limited adjusted modelling.</dd></div>
               </dl>
               <p>
-                All items used the same agreement scale. Higher scores mean stronger agreement, not
-                better task performance. Role, prior visits, and AI familiarity describe the sample
-                but were not tested as covariates.
+                All items used the same agreement scale. Role, prior visits, and AI familiarity
+                describe the sample but were not tested as covariates.
               </p>
               <p>
                 <strong>Scale anchor.</strong> 1 = strongly disagree and 5 = strongly agree. All 270
@@ -1988,13 +2151,35 @@
           <div class="column">
             <section class="module results-module">
               <h3><em>04</em> Results &amp; inference</h3>
-              <img
-                class="chart"
-                src="./assets/museum-ai-survey-chart.webp"
-                width="1210"
-                height="1127"
-                alt="Survey bar chart with angled response labels"
-              />
+              <div class="results-chart-stack">
+                <img
+                  class="chart"
+                  src="./assets/museum-ai-survey-chart.webp"
+                  width="1210"
+                  height="1127"
+                  alt="Survey bar chart with angled response labels"
+                />
+                <table class="composition-table">
+                  <caption>Group composition: counts</caption>
+                  <thead>
+                    <tr><th scope="col">Background</th><th scope="col">AI</th><th scope="col">No AI</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="section-row"><th colspan="3">Role</th></tr>
+                    <tr><td>Undergraduate</td><td>7</td><td>10</td></tr>
+                    <tr><td>Postgraduate</td><td>8</td><td>5</td></tr>
+                    <tr class="section-row"><th colspan="3">Prior visits</th></tr>
+                    <tr><td>First visit</td><td>8</td><td>6</td></tr>
+                    <tr><td>2-3 visits</td><td>6</td><td>5</td></tr>
+                    <tr><td>Regular visitor</td><td>1</td><td>4</td></tr>
+                    <tr class="section-row"><th colspan="3">AI-tool use</th></tr>
+                    <tr><td>Almost never</td><td>2</td><td>1</td></tr>
+                    <tr><td>Occasionally</td><td>4</td><td>10</td></tr>
+                    <tr><td>Weekly</td><td>4</td><td>2</td></tr>
+                    <tr><td>Almost daily</td><td>5</td><td>2</td></tr>
+                  </tbody>
+                </table>
+              </div>
               <p>
                 Two-sided Mann-Whitney U tests with Holm correction across nine ratings. Positive Z
                 favours no AI; negative Z favours AI.
@@ -2037,12 +2222,6 @@
                 Raw p-values range from .230 to .875. Every adjusted value is 1.000, so no item
                 crosses alpha = .05.
               </p>
-              <p>
-                <strong>Direction.</strong> Positive Z favours no AI; negative Z favours AI.
-              </p>
-              <p>
-                Holm correction controls family-wise error across all nine comparisons.
-              </p>
             </section>
 
             <section class="module discussion-module">
@@ -2062,9 +2241,6 @@
               <p>
                 Separate learning gains from novelty, measure engagement across the visit, and test
                 whether visitors can return to a useful answer after a failed question.
-              </p>
-              <p>
-                A larger study should pair these ratings with task success and objective learning.
               </p>
             </section>
 
