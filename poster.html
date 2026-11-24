@@ -487,7 +487,7 @@
       }
 
       .column:nth-child(2) {
-        grid-template-rows: minmax(0, 1.45fr) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr);
       }
 
       .column:nth-child(3) {
@@ -1472,7 +1472,7 @@
         }
 
         .column:nth-child(2) {
-          grid-template-rows: minmax(0, 1.45fr) minmax(0, 1fr);
+          grid-template-rows: minmax(0, 1fr);
         }
 
         .column:nth-child(3) {
@@ -1828,12 +1828,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=final3">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=sync3">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=final3" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync3" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=final3"
+          src="./assets/poster-preview.webp?v=sync3"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -1987,7 +1987,7 @@
 
           <div class="column">
             <section class="module results-module">
-              <h3><em>04</em> Results: group means</h3>
+              <h3><em>04</em> Results &amp; inference</h3>
               <img
                 class="chart"
                 src="./assets/museum-ai-survey-chart.webp"
@@ -1999,44 +1999,22 @@
                 Two-sided Mann-Whitney U tests with Holm correction across nine ratings. Positive Z
                 favours no AI; negative Z favours AI.
               </p>
-            </section>
-
-            <section class="module inference-module">
-              <h3><em>05</em> Inference</h3>
               <p>
-                Five items had higher AI means and four had higher no-AI means. Q9 new knowledge
-                showed the largest descriptive gain (+0.47); Q7 engagement and Q8 interest favoured
-                no AI.
+                AI means were higher on five items. Q9 new knowledge showed the largest descriptive
+                gain (+0.47), while engagement and interest favoured no AI. No raw or adjusted
+                p-value fell below .05.
               </p>
               <p>
-                No raw or adjusted p-value fell below .05. The result does not show equivalence, and
-                15 participants per group limits power.
-              </p>
-              <p>
-                Q9 is the clearest hypothesis for replication. This analysis cannot isolate which
-                guide feature produced that direction.
-              </p>
-              <p>
-                Q14 emotional response (+0.40) and Q15 theme resonance (+0.33) also trended toward AI.
-                Q10 understanding and Q12 personal meaning were nearly equal.
-              </p>
-              <p>
-                With 15 participants per group, small or uneven effects remain uncertain. The result
-                does not show equivalence.
-              </p>
-              <p>
-                The next study should verify allocation, pre-specify one outcome, and add task-level
+                Q9 is the clearest hypothesis for replication. The sample does not establish
+                equivalence or causality; the next study needs verified allocation and task-level
                 evidence.
-              </p>
-              <p>
-                Museum chatbot evaluations often describe systems more than visitor experience [11].
               </p>
             </section>
           </div>
 
           <div class="column">
             <section class="module table-module">
-              <h3><em>06</em> Test results</h3>
+              <h3><em>05</em> Test results</h3>
               <table class="table">
                 <thead><tr><th>Item</th><th>Δ</th><th>Z</th><th>Raw p</th><th>Holm p</th></tr></thead>
                 <tbody>
@@ -2068,7 +2046,7 @@
             </section>
 
             <section class="module discussion-module">
-              <h3><em>07</em> Discussion &amp; conclusion</h3>
+              <h3><em>06</em> Discussion &amp; conclusion</h3>
               <p>
                 <strong>Strengths.</strong> Five outcomes had higher AI means. Q9 new knowledge
                 showed the clearest gap at +0.47, so sourced interpretation is worth testing.
@@ -2091,35 +2069,32 @@
             </section>
 
             <section class="module recommendations-module">
-              <h3><em>08</em> Recommendations</h3>
+              <h3><em>07</em> Recommendations</h3>
               <ol class="compact-recommendations">
                 <li>
-                  <strong>Show the source.</strong> Place the exhibit label or object source beside
-                  every factual answer and end with one follow-up question.
+                  <strong>Ground answers in museum records.</strong> Before answering, the AI should
+                  retrieve the current exhibit label, object record, or collection note. Display that
+                  source beside the answer. If no museum record is available, state the limit and
+                  offer the nearest relevant exhibit.
                 </li>
                 <li>
-                  <strong>Build a route.</strong> Suggest three to five stops with close-looking and
-                  object-comparison prompts.
+                  <strong>Keep each answer tied to one object.</strong> Open with the exhibit name,
+                  add one factual detail and one interpretive link, then ask what the visitor noticed.
+                  Limit the answer to two or three sentences.
                 </li>
                 <li>
-                  <strong>Connect to context.</strong> Repeat the label, add one broader story, and
-                  ask what the visitor already noticed.
+                  <strong>Use the answer to set the next visit step.</strong> After responding, suggest
+                  one next object or comparison and show the visitor's position on a short route.
                 </li>
                 <li>
-                  <strong>Design recovery.</strong> Add rephrase, correction, next-exhibit, and
-                  location controls, then log failed questions.
+                  <strong>Make misunderstood questions recoverable.</strong> Add rephrase, “not what I
+                  meant”, next-exhibit, and map controls. Log failed questions and the path back to a
+                  useful answer.
                 </li>
               </ol>
               <p>
-                Evaluate the next prototype with task success, time to a sourced answer, recovery
-                after a failed question, and the Q9 and Q7 post-visit items.
-              </p>
-              <p>
-                Start with source traceability and recovery. These address trust and failure handling
-                before more content is added.
-              </p>
-              <p>
-                Record failed questions and recovery paths in the next prototype.
+                The sequence separates trust, interpretation, engagement, and recovery so each AI
+                behaviour can be tested independently.
               </p>
             </section>
 
