@@ -591,10 +591,16 @@
       }
 
       .flow b {
+        display: grid;
+        width: 22px;
+        height: 22px;
+        place-items: center;
         color: var(--accent);
-        font-family: var(--display);
-        font-size: 13px;
-        font-weight: 500;
+        border: 1px solid var(--accent);
+        font-family: var(--body);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
       }
 
       .flow span {
@@ -1655,11 +1661,11 @@
 
         /* A1 readability pass: keep body copy above 10pt when printed. */
         .topbar {
-          font-size: 20px;
+          font-size: 21px;
         }
 
         .kicker {
-          font-size: 22px;
+          font-size: 23px;
         }
 
         h1 {
@@ -1679,15 +1685,15 @@
         }
 
         .poster-abstract p {
-          font-size: 22px;
+          font-size: 24px;
         }
 
         .hero-question p {
-          font-size: 34px;
+          font-size: 36px;
         }
 
         .hero-group p {
-          font-size: 26px;
+          font-size: 28px;
         }
 
         .poster-abstract span,
@@ -1720,19 +1726,19 @@
 
         .snapshot p,
         .snapshot span {
-          font-size: 16px;
+          font-size: 17px;
         }
 
         .snapshot strong {
-          font-size: 38px;
+          font-size: 40px;
         }
 
         .result-banner h2 {
-          font-size: 36px;
+          font-size: 38px;
         }
 
         .result-banner p {
-          font-size: 20px;
+          font-size: 22px;
         }
 
         .module h3 em,
@@ -1742,21 +1748,27 @@
         }
 
         .module h3 {
-          font-size: 29px;
+          font-size: 31px;
         }
 
         .module p,
         .module li {
-          font-size: 20px;
+          font-size: 22px;
         }
 
         .compact-recommendations li {
-          font-size: 15px;
+          font-size: 16px;
           line-height: 1.45;
         }
 
         .flow span {
-          font-size: 18px;
+          font-size: 20px;
+        }
+
+        .flow b {
+          width: 5mm;
+          height: 5mm;
+          font-size: 16px;
         }
 
         .measures strong {
@@ -1768,19 +1780,19 @@
         }
 
         .variables dt {
-          font-size: 18px;
+          font-size: 19px;
         }
 
         .variables dd {
-          font-size: 16px;
+          font-size: 17px;
         }
 
         .table th {
-          font-size: 14px;
+          font-size: 15px;
         }
 
         .table td {
-          font-size: 15px;
+          font-size: 16px;
         }
 
         .callout {
@@ -1793,11 +1805,11 @@
 
         .references ol,
         .poster-footer {
-          font-size: 15px;
+          font-size: 16px;
         }
 
         .poster-footer strong {
-          font-size: 24px;
+          font-size: 26px;
         }
 
         .references-link {
@@ -1816,12 +1828,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=layout2">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=final3">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=layout2" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=final3" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=layout2"
+          src="./assets/poster-preview.webp?v=final3"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -1926,24 +1938,18 @@
               </p>
               <p>
                 These findings predict a mixed profile: AI may add interpretive reach while question
-                design determines whether visitors stay engaged. This study tests that profile against
-                labels only.
-              </p>
-              <p>
-                The labels-only condition retains the museum's normal interpretive support. It
-                provides a practical baseline for examining AI dialogue while the exhibition and the
-                rating items stay constant across groups.
+                design determines whether visitors stay engaged.
               </p>
             </section>
 
             <section class="module design-module">
               <h3><em>02</em> Study design</h3>
               <div class="flow">
-                <div><b>01</b><span>Information and consent.</span></div>
-                <div><b>02</b><span>AI-guide or labels-only visit.</span></div>
-                <div><b>03</b><span>Same exhibition context.</span></div>
-                <div><b>04</b><span>Nine post-visit ratings.</span></div>
-                <div><b>05</b><span>Rank comparison with correction.</span></div>
+                <div><b>→</b><span>Information and consent.</span></div>
+                <div><b>→</b><span>AI-guide or labels-only visit.</span></div>
+                <div><b>→</b><span>Same exhibition context.</span></div>
+                <div><b>→</b><span>Nine post-visit ratings.</span></div>
+                <div><b>→</b><span>Rank comparison with correction.</span></div>
               </div>
               <p>
                 Participants were 17 undergraduates and 13 postgraduates. The team did not manipulate
@@ -1963,23 +1969,18 @@
               <h3><em>03</em> Variables</h3>
               <dl class="variables">
                 <div><dt>IV</dt><dd>Guide condition: AI guide or labels-only visit.</dd></div>
-                <div><dt>DV</dt><dd>Q7-Q15 post-visit ratings, measured on a 1-5 ordinal scale.</dd></div>
+                <div><dt>DV</dt><dd>Engagement, interest, new knowledge, understanding, reflection, personal meaning, context connection, emotional response, and theme resonance. Each item uses a 1-5 ordinal scale.</dd></div>
                 <div><dt>BG</dt><dd>Role, visit frequency, and AI-tool use were recorded as background data.</dd></div>
                 <div><dt>CV</dt><dd>No control variables entered the analysis; the 15-per-group sample limited adjusted modelling.</dd></div>
               </dl>
               <p>
-                Each outcome remained ordinal. Group means describe the observed ratings; the
-                Mann-Whitney tests carry the inference.
-              </p>
-              <p>
-                The nine-item measure separates engagement, interest, knowledge, understanding,
-                reflection, meaning, context, emotion, and theme resonance. It is not the full Museum
-                Experience Scale.
-              </p>
-              <p>
                 All items used the same agreement scale. Higher scores mean stronger agreement, not
                 better task performance. Role, prior visits, and AI familiarity describe the sample
                 but were not tested as covariates.
+              </p>
+              <p>
+                <strong>Scale anchor.</strong> 1 = strongly disagree and 5 = strongly agree. All 270
+                item ratings were valid.
               </p>
             </section>
           </div>
@@ -1990,7 +1991,7 @@
               <img
                 class="chart"
                 src="./assets/museum-ai-survey-chart.webp"
-                width="1399"
+                width="1210"
                 height="1127"
                 alt="Survey bar chart with angled response labels"
               />
@@ -2015,6 +2016,21 @@
                 Q9 is the clearest hypothesis for replication. This analysis cannot isolate which
                 guide feature produced that direction.
               </p>
+              <p>
+                Q14 emotional response (+0.40) and Q15 theme resonance (+0.33) also trended toward AI.
+                Q10 understanding and Q12 personal meaning were nearly equal.
+              </p>
+              <p>
+                With 15 participants per group, small or uneven effects remain uncertain. The result
+                does not show equivalence.
+              </p>
+              <p>
+                The next study should verify allocation, pre-specify one outcome, and add task-level
+                evidence.
+              </p>
+              <p>
+                Museum chatbot evaluations often describe systems more than visitor experience [11].
+              </p>
             </section>
           </div>
 
@@ -2024,15 +2040,15 @@
               <table class="table">
                 <thead><tr><th>Item</th><th>Δ</th><th>Z</th><th>Raw p</th><th>Holm p</th></tr></thead>
                 <tbody>
-                  <tr><td>Q7 Engagement</td><td>-0.33</td><td>+1.084</td><td>.278</td><td>1.000</td></tr>
-                  <tr><td>Q8 Interest</td><td>-0.27</td><td>+0.978</td><td>.328</td><td>1.000</td></tr>
-                  <tr><td>Q9 New knowledge</td><td>+0.47</td><td>-1.199</td><td>.230</td><td>1.000</td></tr>
-                  <tr><td>Q10 Understanding</td><td>-0.07</td><td>+0.248</td><td>.804</td><td>1.000</td></tr>
-                  <tr><td>Q11 Reflection</td><td>+0.13</td><td>-0.310</td><td>.757</td><td>1.000</td></tr>
-                  <tr><td>Q12 Meaning</td><td>-0.07</td><td>+0.493</td><td>.622</td><td>1.000</td></tr>
-                  <tr><td>Q13 Context</td><td>+0.07</td><td>-0.157</td><td>.875</td><td>1.000</td></tr>
-                  <tr><td>Q14 Emotion</td><td>+0.40</td><td>-0.999</td><td>.318</td><td>1.000</td></tr>
-                  <tr><td>Q15 Resonance</td><td>+0.33</td><td>-0.794</td><td>.427</td><td>1.000</td></tr>
+                  <tr><td>Engagement</td><td>-0.33</td><td>+1.084</td><td>.278</td><td>1.000</td></tr>
+                  <tr><td>Interest</td><td>-0.27</td><td>+0.978</td><td>.328</td><td>1.000</td></tr>
+                  <tr><td>New knowledge</td><td>+0.47</td><td>-1.199</td><td>.230</td><td>1.000</td></tr>
+                  <tr><td>Understanding</td><td>-0.07</td><td>+0.248</td><td>.804</td><td>1.000</td></tr>
+                  <tr><td>Reflection</td><td>+0.13</td><td>-0.310</td><td>.757</td><td>1.000</td></tr>
+                  <tr><td>Personal meaning</td><td>-0.07</td><td>+0.493</td><td>.622</td><td>1.000</td></tr>
+                  <tr><td>Context connection</td><td>+0.07</td><td>-0.157</td><td>.875</td><td>1.000</td></tr>
+                  <tr><td>Emotional response</td><td>+0.40</td><td>-0.999</td><td>.318</td><td>1.000</td></tr>
+                  <tr><td>Theme resonance</td><td>+0.33</td><td>-0.794</td><td>.427</td><td>1.000</td></tr>
                 </tbody>
               </table>
               <p>
@@ -2042,6 +2058,12 @@
               <p>
                 Raw p-values range from .230 to .875. Every adjusted value is 1.000, so no item
                 crosses alpha = .05.
+              </p>
+              <p>
+                <strong>Direction.</strong> Positive Z favours no AI; negative Z favours AI.
+              </p>
+              <p>
+                Holm correction controls family-wise error across all nine comparisons.
               </p>
             </section>
 
@@ -2062,6 +2084,9 @@
               <p>
                 Separate learning gains from novelty, measure engagement across the visit, and test
                 whether visitors can return to a useful answer after a failed question.
+              </p>
+              <p>
+                A larger study should pair these ratings with task success and objective learning.
               </p>
             </section>
 
@@ -2088,6 +2113,13 @@
               <p>
                 Evaluate the next prototype with task success, time to a sourced answer, recovery
                 after a failed question, and the Q9 and Q7 post-visit items.
+              </p>
+              <p>
+                Start with source traceability and recovery. These address trust and failure handling
+                before more content is added.
+              </p>
+              <p>
+                Record failed questions and recovery paths in the next prototype.
               </p>
             </section>
 
