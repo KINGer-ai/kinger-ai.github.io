@@ -487,11 +487,11 @@
       }
 
       .column:nth-child(2) {
-        grid-template-rows: minmax(0, 1.28fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1.45fr) minmax(0, 1fr);
       }
 
       .column:nth-child(3) {
-        grid-template-rows: repeat(4, minmax(0, 1fr));
+        grid-template-rows: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr);
       }
 
       .module {
@@ -666,7 +666,9 @@
       .chart {
         width: 100%;
         height: auto;
-        background: #fff;
+        background: #f7f4ed;
+        object-fit: contain;
+        object-position: center center;
       }
 
       .chart-key {
@@ -1464,11 +1466,11 @@
         }
 
         .column:nth-child(2) {
-          grid-template-rows: minmax(0, 1.28fr) minmax(0, 1fr) minmax(0, 1fr);
+          grid-template-rows: minmax(0, 1.45fr) minmax(0, 1fr);
         }
 
         .column:nth-child(3) {
-          grid-template-rows: repeat(4, minmax(0, 1fr));
+          grid-template-rows: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 1fr);
         }
 
         .module {
@@ -1653,11 +1655,11 @@
 
         /* A1 readability pass: keep body copy above 10pt when printed. */
         .topbar {
-          font-size: 18px;
+          font-size: 20px;
         }
 
         .kicker {
-          font-size: 20px;
+          font-size: 22px;
         }
 
         h1 {
@@ -1677,25 +1679,25 @@
         }
 
         .poster-abstract p {
-          font-size: 20px;
+          font-size: 22px;
         }
 
         .hero-question p {
-          font-size: 30px;
+          font-size: 34px;
         }
 
         .hero-group p {
-          font-size: 24px;
+          font-size: 26px;
         }
 
         .poster-abstract span,
         .hero-question span,
         .hero-group span {
-          font-size: 14px;
+          font-size: 15px;
         }
 
         .hero-group small {
-          font-size: 13px;
+          font-size: 14px;
         }
 
         .hero-panel-facts dt,
@@ -1705,7 +1707,7 @@
         }
 
         .hero-qr span {
-          font-size: 13px;
+          font-size: 14px;
         }
 
         .authors {
@@ -1718,43 +1720,43 @@
 
         .snapshot p,
         .snapshot span {
-          font-size: 14px;
+          font-size: 16px;
         }
 
         .snapshot strong {
-          font-size: 35px;
+          font-size: 38px;
         }
 
         .result-banner h2 {
-          font-size: 34px;
+          font-size: 36px;
         }
 
         .result-banner p {
-          font-size: 18px;
+          font-size: 20px;
         }
 
         .module h3 em,
         .chart-key,
         .result-pair span {
-          font-size: 13px;
+          font-size: 14px;
         }
 
         .module h3 {
-          font-size: 27px;
+          font-size: 29px;
         }
 
         .module p,
         .module li {
-          font-size: 18px;
+          font-size: 20px;
         }
 
         .compact-recommendations li {
-          font-size: 14px;
+          font-size: 15px;
           line-height: 1.45;
         }
 
         .flow span {
-          font-size: 16px;
+          font-size: 18px;
         }
 
         .measures strong {
@@ -1766,19 +1768,19 @@
         }
 
         .variables dt {
-          font-size: 17px;
+          font-size: 18px;
         }
 
         .variables dd {
-          font-size: 15px;
+          font-size: 16px;
         }
 
         .table th {
-          font-size: 13px;
+          font-size: 14px;
         }
 
         .table td {
-          font-size: 14px;
+          font-size: 15px;
         }
 
         .callout {
@@ -1791,11 +1793,11 @@
 
         .references ol,
         .poster-footer {
-          font-size: 14px;
+          font-size: 15px;
         }
 
         .poster-footer strong {
-          font-size: 22px;
+          font-size: 24px;
         }
 
         .references-link {
@@ -1814,12 +1816,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=chartbg">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=layout2">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=chartbg" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=layout2" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=chartbg"
+          src="./assets/poster-preview.webp?v=layout2"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -1928,10 +1930,6 @@
                 labels only.
               </p>
               <p>
-                The nine ratings cover both experience and interpretive depth, so a single
-                satisfaction score cannot hide opposing results.
-              </p>
-              <p>
                 The labels-only condition retains the museum's normal interpretive support. It
                 provides a practical baseline for examining AI dialogue while the exhibition and the
                 rating items stay constant across groups.
@@ -1983,10 +1981,6 @@
                 better task performance. Role, prior visits, and AI familiarity describe the sample
                 but were not tested as covariates.
               </p>
-              <p>
-                The dependent variables are separate items, not a composite score. The study makes no
-                internal-consistency claim and tests each item separately.
-              </p>
             </section>
           </div>
 
@@ -1996,79 +1990,37 @@
               <img
                 class="chart"
                 src="./assets/museum-ai-survey-chart.webp"
-                width="1374"
-                height="1108"
+                width="1399"
+                height="1127"
                 alt="Survey bar chart with angled response labels"
               />
               <p>
-                Survey response chart. Rank tests and corrected p-values appear in the next column.
-              </p>
-            </section>
-
-            <section class="module key-module">
-              <h3><em>05</em> Key signal</h3>
-              <div class="result-pair">
-                <div><strong>5</strong><span>Items with higher AI-group means</span></div>
-                <div><strong>4</strong><span>Items with higher no-AI means</span></div>
-              </div>
-              <p>
-                The direction was mixed. Q9 showed the largest descriptive gain for the AI group,
-                while Q7 and Q8 favoured the no-AI group.
-              </p>
-              <p>
-                Positive Z values favour the no-AI group; negative values favour the AI group.
-              </p>
-              <p>
-                Q14 emotion (+0.40) and Q15 theme resonance (+0.33) also favoured AI, while Q10
-                understanding and Q12 meaning were nearly equal. None survived correction.
-              </p>
-              <p>
-                The profile is uneven: learning and affective interpretation trend higher, and
-                engagement and interest trend lower. With 15 participants per group, small gaps can
-                reflect sampling noise.
-              </p>
-              <p>
-                Q9 differs by 0.47 on a five-point scale, about half a scale point. It remains an
-                unadjusted descriptive difference with Holm p = 1.000.
+                Two-sided Mann-Whitney U tests with Holm correction across nine ratings. Positive Z
+                favours no AI; negative Z favours AI.
               </p>
             </section>
 
             <section class="module inference-module">
-              <h3><em>06</em> Inference</h3>
+              <h3><em>05</em> Inference</h3>
               <p>
-                The small sample, brief exposure, self-report outcomes, and lack of a primary
-                endpoint limit the claim. Museum chatbot evaluations have often described systems
-                more than visitor experience [11], so a stronger study should verify allocation and
-                collect task-level evidence alongside the questionnaire.
+                Five items had higher AI means and four had higher no-AI means. Q9 new knowledge
+                showed the largest descriptive gain (+0.47); Q7 engagement and Q8 interest favoured
+                no AI.
               </p>
               <p>
-                These boundaries make the recommendation a design hypothesis for the next test.
+                No raw or adjusted p-value fell below .05. The result does not show equivalence, and
+                15 participants per group limits power.
               </p>
               <p>
-                A non-significant result can occur when an effect is small, the sample is limited, or
-                both. These data cannot distinguish those explanations.
-              </p>
-              <p>
-                Future work should report effect sizes with intervals, verify allocation, add a
-                manipulation check, and pair the questionnaire with an objective learning task.
-              </p>
-              <p>
-                This analysis cannot identify which conversational feature produced the Q9 direction
-                or the Q7 and Q8 gap. A future study should manipulate answer style, route prompts,
-                and recovery controls separately.
-              </p>
-              <p>
-                Fifteen participants per group limits power to detect small or uneven effects. The
-                null result therefore does not show that AI and labels produce the same experience.
-                Q9 remains the strongest candidate for replication because it has the largest mean
-                gap and the smallest raw p-value.
+                Q9 is the clearest hypothesis for replication. This analysis cannot isolate which
+                guide feature produced that direction.
               </p>
             </section>
           </div>
 
           <div class="column">
             <section class="module table-module">
-              <h3><em>07</em> Test results</h3>
+              <h3><em>06</em> Test results</h3>
               <table class="table">
                 <thead><tr><th>Item</th><th>Δ</th><th>Z</th><th>Raw p</th><th>Holm p</th></tr></thead>
                 <tbody>
@@ -2093,30 +2045,8 @@
               </p>
             </section>
 
-            <section class="module analysis-module">
-              <h3><em>08</em> Analysis note</h3>
-              <p>
-                Mann and Whitney's two-sided rank test [13] treats each item as ordinal. Holm
-                correction [14] covers nine comparisons. Signed Z gives rank direction; positive
-                values favour no AI. Tie and continuity corrections keep the test aligned with the
-                observed rating data.
-              </p>
-              <p>
-                Signed Z ranges from -1.199 to +1.084. The team checked consent, visit status, group
-                coding, score ranges, and 270 of 270 valid ratings before analysis.
-              </p>
-              <p>
-                All adjusted p-values equal 1.000 because the smallest raw p-value, .230, remains
-                above the Holm threshold. This result is not a rounding artifact.
-              </p>
-              <p>
-                The analysis kept all nine outcomes; no item was dropped after inspection of the
-                p-values.
-              </p>
-            </section>
-
             <section class="module discussion-module">
-              <h3><em>09</em> Discussion &amp; conclusion</h3>
+              <h3><em>07</em> Discussion &amp; conclusion</h3>
               <p>
                 <strong>Strengths.</strong> Five outcomes had higher AI means. Q9 new knowledge
                 showed the clearest gap at +0.47, so sourced interpretation is worth testing.
@@ -2136,7 +2066,7 @@
             </section>
 
             <section class="module recommendations-module">
-              <h3><em>10</em> Recommendations</h3>
+              <h3><em>08</em> Recommendations</h3>
               <ol class="compact-recommendations">
                 <li>
                   <strong>Show the source.</strong> Place the exhibit label or object source beside
