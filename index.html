@@ -8,7 +8,7 @@
     <meta name="page-kind" content="service" />
     <meta
       name="description"
-      content="A complete ADS401 research report on AI-guided museum visits, with literature, methods, SPSS evidence, discussion, references, poster, and bilingual questionnaire."
+      content="A 30-student ADS401 evaluation of the XJTLU Museum AI guide, with literature, methods, corrected results, design recommendations, poster, and bilingual questionnaire."
     />
     <meta name="theme-color" content="#eeecea" />
     <meta property="og:title" content="Evaluating the XJTLU Museum AI Guide" />
@@ -45,6 +45,13 @@
               <span class="brand-mark" aria-hidden="true">H</span>
               <span class="brand-text"><strong>Museum AI Study</strong></span>
             </a>
+            <nav class="report-nav" aria-label="Report sections">
+              <a href="#abstract">Abstract</a>
+              <a href="#methods">Method</a>
+              <a href="#results">Results</a>
+              <a href="#discussion">Discussion</a>
+              <a href="#poster">Poster</a>
+            </nav>
             <button class="theme-button" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4" />
@@ -56,19 +63,20 @@
 
           <div class="hero-grid">
             <div class="hero-copy hero-text">
-              <p class="eyebrow">ADS401 HCI evaluation | XJTLU Museum | Group H</p>
+              <p class="eyebrow">Research report | ADS401 HCI evaluation | Group H</p>
               <h1>Evaluating the XJTLU Museum AI guide</h1>
               <p class="hero-lead">
-                A 30-student comparison of post-visit experience with an AI guide and a labels-only
-                museum visit.
+                A two-group study of how the AI guide shaped students' learning, attention, and
+                interpretation during one museum visit.
               </p>
               <div class="hero-actions">
                 <a class="button" href="#abstract">Read abstract</a>
                 <a class="text-link" href="#poster">View poster</a>
               </div>
               <p class="hero-result-line">
-                Thirty students formed two equal groups and rated nine post-visit outcomes. No item
-                reached significance after Holm correction.
+                Thirty students rated nine post-visit outcomes. New knowledge showed the strongest
+                descriptive difference, while engagement and interest were lower in the AI group.
+                No comparison remained significant after Holm correction.
               </p>
             </div>
 
@@ -93,12 +101,11 @@
       <section class="section section--flow" id="abstract">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">01</p>
             <div>
               <h2>Abstract</h2>
               <p>
-                This report compares post-visit experience after an AI-guided museum visit with a
-                labels-only visit.
+                A concise account of the question, two-group design, corrected result, and the
+                boundary this sample can support.
               </p>
             </div>
           </header>
@@ -106,26 +113,29 @@
           <div class="abstract-layout">
             <article class="paper-abstract">
               <p>
-                <strong>Objective.</strong> The study asks whether a museum AI guide changes how
-                visitors rate a visit. Experience was measured as nine separate outcome ratings.
+                Museum AI guides can offer flexible interpretation, but visitors judge a museum
+                visit through more than factual delivery. Attention, understanding, personal
+                meaning, emotional response, and connection to the exhibition all shape the
+                experience. This report asks whether those post-visit ratings differed between
+                students who used the XJTLU Museum AI guide and students who toured the same museum
+                with exhibition labels only.
               </p>
               <p>
-                <strong>Method.</strong> Thirty XJTLU students took part. Fifteen used the XJTLU
-                Museum AI guide and fifteen followed the same exhibition with labels only.
-                Participants rated nine outcomes from 1 to 5. The groups were compared with
-                Mann-Whitney U tests and Holm correction.
+                Thirty students took part, with 15 participants in each condition. Each participant
+                rated nine outcomes on a five-point ordinal scale after one visit. Two-sided
+                Mann-Whitney U tests compared the groups, and Holm correction controlled the family
+                of nine exploratory comparisons. All 270 item ratings were valid.
               </p>
               <p>
-                <strong>Results.</strong> No comparison survived correction. The largest
-                descriptive gap appeared for Q9 new knowledge: 4.00 in the AI group and 3.53 in the
-                no-AI group, with raw p = .230 and Holm p = 1.000. Signed Z values ranged from
-                -1.199 to +1.084.
-              </p>
-              <p>
-                <strong>Conclusion.</strong> This sample did not show a reliable item-level
-                difference. It does not show that the two visits were equivalent, nor that the AI
-                guide caused no effect. A larger study with a verified allocation procedure and a
-                pre-specified primary outcome is needed.
+                No raw or corrected comparison reached .05. Q9 new knowledge showed the largest
+                descriptive difference: 4.00 in the AI group and 3.53 in the labels-only group
+                (difference = +0.47, raw p = .230, Holm p = 1.000). The AI group also rated
+                emotional response and theme resonance higher, but rated engagement and interest
+                lower. These differences are uncertain directions for further study. They do not
+                confirm an effect. The sample does not establish equivalence, and the allocation
+                record does not support a causal claim. The report therefore treats source grounding,
+                object-level interpretation, route support, and recovery as design hypotheses to
+                test with task-level evidence.
               </p>
             </article>
 
@@ -135,7 +145,8 @@
                 <div><dt>Sample</dt><dd>30 students; 15 AI and 15 no AI</dd></div>
                 <div><dt>Outcomes</dt><dd>Nine ordinal 1-5 ratings</dd></div>
                 <div><dt>Analysis</dt><dd>Mann-Whitney U with Holm correction</dd></div>
-                <div><dt>Evidence status</dt><dd>Null item-level result</dd></div>
+                <div><dt>Evidence status</dt><dd>No item-level effect established</dd></div>
+                <div><dt>Design signal</dt><dd>Learning support is the strongest lead; engagement is the main gap</dd></div>
               </dl>
               <a class="text-link" href="./ADS401_GroupH_Literature_Review.pdf">Open literature brief</a>
             </aside>
@@ -146,12 +157,11 @@
       <section class="section section--flow" id="introduction">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">02</p>
             <div>
               <h2>Introduction</h2>
               <p>
-                The project began with a simple problem: museum AI guides are being introduced
-                faster than their effects on visitors are being tested.
+                Museums are adopting conversational guides faster than they can establish what
+                those guides add to a visit.
               </p>
             </div>
           </header>
@@ -159,20 +169,32 @@
           <div class="intro-grid">
             <div class="prose-column">
               <p>
-                The closest precedent is Wang and Matviienko's field experiment, which placed a
-                generative museum chatbot against an existing museum app [1]. The comparison shows
-                that guide form changes the visit. Noh and Hong reach a related point through
-                reenacted characters, whose persona shaped engagement and emotional response [2].
-                Together, the studies ask what the visitor can do with the guide.
+                A museum guide is not a neutral delivery channel. Its voice, interaction pattern,
+                and relationship to the exhibition decide what a visitor notices and how easily
+                that visitor can connect an object to a wider story. Wang and Matviienko compared a
+                generative AI chatbot with an existing museum app and found that guide form changed
+                the visit [1]. Noh and Hong showed a related effect through reenacted characters:
+                the guide's persona shaped engagement and emotional response as well as content
+                access [2]. Both studies shift attention from whether AI is present to what the
+                interaction allows a visitor to do.
               </p>
               <p>
-                Tue et al. bring that design question into exhibition use: a conversational guide
-                widened access to multimedia content, but some visitors struggled to frame useful
-                questions [3]. Xia et al. connect the difficulty to language, showing that an AI
-                guide's wording shaped satisfaction, continued use, and recall [4]. Read together,
-                these findings suggest that interpretation can improve even when interaction remains
-                fragile. That tension led to the present comparison with a labels-only visit across
-                nine post-visit outcomes.
+                Conversational access creates a second problem. Visitors need to know what to ask
+                before the system can answer well. Tue, Pohl, and Merritt found that a conversational
+                museum guide widened access to multimedia interpretation, but some visitors
+                struggled to frame effective questions [3]. Xia et al. linked the quality of an AI
+                guide's language to satisfaction, continued use, and recall [4]. The practical
+                challenge is therefore twofold: the guide must provide useful interpretation, and
+                the visitor must be able to steer the conversation without knowing the system in
+                advance.
+              </p>
+              <p>
+                Those findings led to a comparison against the ordinary interpretive baseline
+                already present in a museum, the exhibition label. The study measures post-visit
+                experience as a set of related outcomes. This choice follows evidence that
+                engagement, learning, meaning, and emotion do not always move together [8], and
+                that engagement includes both absorption and sustained interest [9]. A guide may
+                improve one part of the visit while weakening another.
               </p>
             </div>
 
@@ -183,8 +205,10 @@
                 AI guide and students who toured without it?
               </h3>
               <p>
-                The nine outcomes are engagement, interest, new knowledge, understanding,
-                reflection, meaning, context, emotion, and theme resonance.
+                The questionnaire separates engagement, interest, new knowledge, understanding,
+                reflection, personal meaning, context connection, emotional response, and theme
+                resonance. This structure lets the analysis describe where the visit differed
+                without collapsing the result into a single usability score.
               </p>
             </aside>
           </div>
@@ -194,12 +218,11 @@
       <section class="section section--flow" id="overview">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">03</p>
             <div>
               <h2>Project overview</h2>
               <p>
-                This questionnaire is the completed experimental part of a wider evaluation of the
-                museum AI system.
+                The report concentrates on the completed post-visit comparison and limits its
+                claims to the evidence this dataset can carry.
               </p>
             </div>
           </header>
@@ -213,17 +236,21 @@
                 loading="lazy"
                 alt="XJTLU Museum AI Dog tour project display"
               />
-              <figcaption>
-                The museum context includes digital and AI-supported visitor projects.
-              </figcaption>
             </figure>
 
             <div class="overview-copy">
               <p>
-                The wider project concerns the usability and visitor experience of the XJTLU
-                Museum AI system. This public report focuses on the completed 30-student
-                questionnaire component, because those data are complete and independently
-                verifiable.
+                The wider evaluation concerns the usability and visitor experience of the XJTLU
+                Museum AI system. This report focuses on the completed questionnaire component
+                because those data are complete, traceable, and suited to a transparent group
+                comparison. It does not treat the survey as a full usability test.
+              </p>
+              <p>
+                Each participant contributed one post-visit observation. The report does not combine
+                conditions within the same person, infer task success, or use the nine ratings as a
+                substitute for observation. That boundary matters: a self-report comparison can
+                show how students remembered the visit, but it cannot explain every moment that
+                produced that judgement.
               </p>
               <table class="profile-table">
                 <tbody>
@@ -232,7 +259,8 @@
                   <tr><th scope="row">Conditions</th><td>15 AI guide; 15 no AI guide</td></tr>
                   <tr><th scope="row">Data completeness</th><td>270 of 270 Q7-Q15 ratings valid</td></tr>
                   <tr><th scope="row">Allocation boundary</th><td>Recorded sequence was not strictly alternating; not described as randomized</td></tr>
-                  <tr><th scope="row">Project contribution</th><td>A transparent, corrected group comparison in one museum context</td></tr>
+                  <tr><th scope="row">Analytic unit</th><td>One visit and one post-visit response per participant</td></tr>
+                  <tr><th scope="row">Project contribution</th><td>A corrected, item-level comparison that identifies what the next prototype should test</td></tr>
                 </tbody>
               </table>
             </div>
@@ -246,7 +274,6 @@
               loading="lazy"
               alt="XJTLU Museum AI-supported visitor experience"
             />
-            <figcaption>AI-supported interpretation is evaluated in relation to a real visit.</figcaption>
           </figure>
         </div>
       </section>
@@ -254,70 +281,72 @@
       <section class="section section--flow section--surface" id="background">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">04</p>
             <div>
               <h2>Background and related work</h2>
               <p>
-                The review draws on 15 sources. It starts with comparisons between guide formats,
-                then narrows to measurement and evaluation quality.
+                Fifteen sources establish three ideas behind the study: guide form changes
+                experience, experience has several dimensions, and evaluation claims must match
+                the evidence collected.
               </p>
             </div>
           </header>
 
           <div class="literature-grid">
             <article class="literature-card">
-              <span>01</span>
-              <h3>Guide modality changes experience</h3>
+              <h3>Guide form changes what visitors notice</h3>
               <p>
-                Guide format changes the mix of outcomes a visitor reports. Zhang, Cao, and Hou
-                separated experience from motivation, cognitive load, and objective learning in a
-                location-based game [5].
+                Museum technology does not produce one uniform outcome called engagement. Zhang,
+                Cao, and Hou compared a location-based museum game with a conventional visit and
+                measured visitor experience separately from motivation, cognitive load, and
+                objective learning [5]. The separation is important because a format can make a
+                visit more active without making it easier or more educational.
               </p>
               <p>
                 Zhao et al. found a similar differentiation at the Shanghai Museum, where audio,
                 smart-guide, and AR conditions produced different immersive and motivational
-                profiles [6]. This supports a multi-item outcome set.
+                profiles [6]. Their result supports a multi-item outcome set: a guide can improve
+                one dimension while leaving another flat, and an average across all dimensions
+                would hide that pattern.
               </p>
             </article>
 
             <article class="literature-card">
-              <span>02</span>
-              <h3>Deployment evidence needs boundaries</h3>
+              <h3>Field evidence reveals design trade-offs</h3>
               <p>
-                Field deployments expose choices that prototypes can hide. Boiano et al.'s
-                voice-guide case shows how those choices meet real visitor behaviour [7]. Its value
-                here is diagnostic: it identifies what to inspect, while leaving the size of any
-                effect for controlled comparison.
+                Field deployments expose choices that polished prototypes can hide. Boiano et al.'s
+                voice-guide case shows how voice, pacing, and conversational framing meet real
+                visitor behaviour [7]. That work has diagnostic value here: it identifies what to
+                inspect during a visit. It does not estimate the size of the effect in this museum.
               </p>
             </article>
 
             <article class="literature-card">
-              <span>03</span>
-              <h3>Visitor experience has several dimensions</h3>
+              <h3>Experience needs more than one measure</h3>
               <p>
                 Othman, Petrie, and Power developed the Museum Experience Scale around engagement,
                 learning, meaning, and emotional connection [8]. O'Brien and Toms further separate
-                absorption from sustained interest [9].
+                absorption from sustained interest [9]. Together, these measures explain why a
+                visitor can learn from a guide while finding the visit less absorbing, or remain
+                interested while remembering very little content.
               </p>
               <p>
-                That distinction matters for our result. A guide can support learning while leaving
-                attention flat or making the visit feel less absorbing.
+                Falk and Dierking add context to that distinction. Visitors interpret an answer
+                through personal interests, social expectations, and the physical exhibition [10].
+                The same sentence can therefore support meaning for one student and distract
+                another. The present study cannot identify those situated processes, but it can show
+                whether the outcome ratings moved in different directions.
               </p>
             </article>
 
             <article class="literature-card">
-              <span>04</span>
-              <h3>Context and evidence quality</h3>
+              <h3>Evaluation quality remains the bottleneck</h3>
               <p>
-                Falk and Dierking place interpretation within personal, social, and physical
-                context, so the same answer can mean different things to different visitors [10].
-              </p>
-              <p>
-                The evaluation literature adds a warning. Štekerová found that museum chatbot
-                projects often describe development without measuring visitor experience [11], and
-                Kamińska found the same gap across generative-AI deployments [12]. These reviews
-                make a null result useful: it can identify where design should improve, even when it
-                cannot establish an average effect.
+                Štekerová found that museum chatbot projects often describe development without
+                measuring visitor experience [11]. Kamińska found a similar gap across generative AI
+                deployments, where system descriptions are more common than evidence about visitor
+                outcomes [12]. Those reviews make a null item-level result useful. The result cannot
+                validate the guide, but it can stop the team from presenting a promising prototype
+                as an established improvement.
               </p>
             </article>
           </div>
@@ -325,9 +354,12 @@
           <aside class="research-gap">
             <p class="small-label">Research gap</p>
             <p>
-              Museum studies show that guide design can change experience, yet corrected comparisons
-              against a labels-only visit remain uncommon. This experiment supplies that local test
-              and uses its null result to locate design priorities; it does not claim equivalence.
+              Museum studies show that guide design can change experience, yet item-level
+              comparisons against a labels-only visit remain uncommon. This study adds a corrected
+              local comparison and uses its descriptive pattern to locate design priorities. It
+              answers a narrower question than a full usability programme: whether students who
+              used this guide rated selected post-visit outcomes differently from students who did
+              not.
             </p>
           </aside>
         </div>
@@ -336,12 +368,11 @@
       <section class="section section--flow" id="methods">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">05</p>
             <div>
               <h2>Methods</h2>
               <p>
-                The study used a two-group visit comparison, a short custom questionnaire, and a
-                rank-based analysis.
+                A between-participant visit comparison, one short questionnaire, and an
+                exploratory rank-based analysis.
               </p>
             </div>
           </header>
@@ -350,11 +381,15 @@
             <div>
               <h3>Procedure</h3>
               <ol class="study-steps method-steps">
-                <li><span>01</span><div><strong>Information and consent</strong><p>Participants received the study information and agreed to take part.</p></div></li>
-                <li><span>02</span><div><strong>Visit condition</strong><p>The AI-guided condition used the museum AI guide; the comparison condition used labels only.</p></div></li>
-                <li><span>03</span><div><strong>Post-visit survey</strong><p>Participants completed the same nine post-visit experience ratings.</p></div></li>
-                <li><span>04</span><div><strong>Clean and analyse</strong><p>The team checked consent, visit status, group coding, completeness, and score ranges.</p></div></li>
+                <li><div><strong>Information and consent</strong><p>Participants read the study information and agreed to take part before joining a condition.</p></div></li>
+                <li><div><strong>Visit condition</strong><p>One group used the XJTLU Museum AI guide. The comparison group toured the same exhibition using labels only.</p></div></li>
+                <li><div><strong>Post-visit survey</strong><p>Every participant completed the same nine experience ratings on a five-point disagree-agree scale.</p></div></li>
+                <li><div><strong>Check and analyse</strong><p>The team checked consent, recent-visit status, group coding, item ranges, and missing values before analysis.</p></div></li>
               </ol>
+              <p class="method-caption">
+                The data describe one visit per participant. The report does not treat repeated
+                ratings from the same person as independent observations.
+              </p>
             </div>
 
             <aside class="method-profile">
@@ -370,7 +405,8 @@
               <p>
                 The planned arrival-order alternation was not strictly reflected in the recorded
                 sequence. The analysis therefore avoids the terms random assignment and causal
-                effect.
+                effect. With 15 participants per group, the comparison is exploratory. The sample
+                cannot support a precise effect size.
               </p>
             </aside>
           </div>
@@ -380,7 +416,8 @@
               <h3>Study variables</h3>
               <p>
                 The analysis compares one two-level condition with nine ordinal outcome measures.
-                Background items describe the sample; none entered the test.
+                Background items describe the sample; none entered the test. The outcome items are
+                analysed separately because they represent different parts of the visit.
               </p>
             </div>
             <dl class="variable-grid">
@@ -396,7 +433,9 @@
               <h3>Measured post-visit outcomes</h3>
               <p>
                 The nine items are a custom short measure informed by established experience
-                dimensions. They are not the full Museum Experience Scale.
+                dimensions. They are not the full Museum Experience Scale and should not be read as
+                a validated diagnostic instrument. Their value here is descriptive and comparative:
+                the same wording was used in both conditions.
               </p>
             </div>
             <div class="table-wrap measure-table-wrap">
@@ -423,15 +462,19 @@
             <article>
               <h3>Mann-Whitney U test</h3>
               <p>
-                Mann and Whitney's rank test fits the ordinal items and independent groups [13].
-                Means remain descriptive.
+                Mann and Whitney's rank test fits ordinal items and two independent groups [13].
+                The test asks whether one condition's ratings tend to rank higher than the other.
+                Group means appear in the results because they are familiar, but they do not carry
+                the inference by themselves.
               </p>
             </article>
             <article>
               <h3>Holm correction</h3>
               <p>
                 Holm's procedure controls the family-wise error rate across the nine comparisons
-                [14]. The corrected threshold is evaluated in rank order.
+                [14]. The smallest raw p-value is tested first, then each remaining value against a
+                progressively stricter threshold. Corrected values of 1.000 therefore mean that no
+                item remained distinguishable after the family of tests was considered.
               </p>
             </article>
             <article>
@@ -439,7 +482,8 @@
               <p>
                 Signed Z values describe rank direction. Positive values favour the no-AI group;
                 negative values favour the AI group. Kerby's rank-biserial formula guides
-                interpretation of that direction [15].
+                interpretation of that direction [15]. Direction helps locate a design hypothesis,
+                but it is not evidence that the condition caused the difference.
               </p>
             </article>
           </div>
@@ -449,12 +493,12 @@
       <section class="section section--flow evidence-section" id="results">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">06</p>
             <div>
               <h2>Results</h2>
               <p>
-                Means moved in both directions, and no item remained statistically distinguishable
-                after correction.
+                The group means moved in both directions. No item remained statistically
+                distinguishable after correction. The result leaves a descriptive pattern and does
+                not confirm an effect.
               </p>
             </div>
           </header>
@@ -498,41 +542,58 @@
 
             <aside class="key-reading" aria-labelledby="key-reading-title">
               <p class="small-label">Read the result</p>
-              <h3 id="key-reading-title">Absence of evidence is not equivalence</h3>
+              <h3 id="key-reading-title">A null result with a usable descriptive pattern</h3>
               <p>
-                No item has a raw or adjusted p-value below .05. The sample does not support a
-                claim that the AI guide changed the ratings, but it cannot prove that the two
-                conditions were equivalent.
+                Raw p-values ranged from .230 to .875, and every Holm-adjusted value was 1.000.
+                The sample therefore does not support a claim that the guide changed any item. It
+                also cannot establish equivalence: a small or uneven effect could remain hidden in
+                15 participants per group.
               </p>
               <div class="strongest-difference">
                 <span>Largest descriptive gap</span>
                 <strong>Q9 New knowledge</strong>
-                <p>AI 4.00 vs no AI 3.53. A +0.47 gap with Holm p = 1.000.</p>
+                <p>
+                  AI 4.00 vs no AI 3.53. The +0.47 difference has a negative Z of -1.199 and a
+                  corrected p-value of 1.000.
+                </p>
               </div>
             </aside>
           </div>
 
           <section class="signal-summary" aria-labelledby="signal-summary-title">
             <div class="signal-lead">
-              <p class="small-label">Evaluation signal</p>
-              <h3 id="signal-summary-title">What the means suggest</h3>
+              <h3 id="signal-summary-title">How to read the pattern</h3>
             </div>
             <div>
-              <span>Strongest descriptive signal</span>
+              <span>Learning lead</span>
               <strong>Q9 new knowledge</strong>
-              <p>AI 4.00 vs no AI 3.53. A +0.47 lead worth testing in a larger sample.</p>
+              <p>
+                AI 4.00 vs labels-only 3.53. This is the clearest hypothesis for a larger,
+                better-powered study. It does not demonstrate a benefit.
+              </p>
             </div>
             <div>
-              <span>Engagement gap</span>
+              <span>Attention gap</span>
               <strong>Q7 and Q8</strong>
-              <p>AI 3.47 and 3.73 vs labels-only 3.80 and 4.00.</p>
+              <p>
+                AI ratings were 3.47 for engagement and 3.73 for interest, below the labels-only
+                ratings of 3.80 and 4.00.
+              </p>
             </div>
             <div>
-              <span>Evidence still missing</span>
-              <strong>Task-level behaviour</strong>
-              <p>Questioning, navigation, timing, and recovery were not observed.</p>
+              <span>Next evidence needed</span>
+              <strong>Observed visitor actions</strong>
+              <p>
+                Question framing, navigation, time to a useful answer, and recovery behaviour were
+                not observed in this questionnaire component.
+              </p>
             </div>
           </section>
+          <p class="signal-footnote">
+            Five items had higher AI-group means and four had higher labels-only means. With nine
+            exploratory tests and a small sample, the safest interpretation is uncertainty. The
+            direction of each difference identifies what the next prototype should test.
+          </p>
 
           <div class="result-table-block">
             <div class="table-title-row">
@@ -571,8 +632,9 @@
             <div class="measure-heading">
               <h3>SPSS and cleaned-data evidence</h3>
               <p>
-                The figures document the analysis trail from condition counts to corrected tests.
-                Select any figure for a larger view.
+                These figures document the path from condition counts to grouped descriptives,
+                rank summaries, and the final test statistics. Select any figure to inspect it at
+                full size.
               </p>
             </div>
             <div class="spss-grid">
@@ -600,51 +662,70 @@
       <section class="section section--flow" id="discussion">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">07</p>
             <div>
               <h2>Discussion and recommendations</h2>
               <p>
-                The means do not justify a general claim that AI improved the visit. They do identify
-                where the next prototype should concentrate.
+                The comparison cannot justify a general claim that AI improved the visit. It can
+                still show where interpretation helped, where the visit experience weakened, and
+                what the next evaluation must measure.
               </p>
             </div>
           </header>
 
           <div class="discussion-grid">
             <article>
-              <h3>What deserves credit</h3>
+              <h3>What the comparison can support</h3>
               <p>
-                Five outcomes had higher AI-group means. This does not establish a benefit, but it
-                makes the guide's role as an extra interpretive layer plausible. Q9 new knowledge
-                carried the clearest signal at +0.47.
+                Five outcomes had higher AI-group means. Q9 new knowledge produced the largest
+                difference at +0.47, followed by emotional response at +0.40 and theme resonance at
+                +0.33. These values describe this sample. They do not establish that the guide
+                produced the differences, especially because the allocation record is not clean
+                enough to support random assignment.
               </p>
               <p>
-                The pattern fits earlier findings that conversational access and language framing can
-                shape learning-related responses. Explanation and access carry that promise. A
-                visible AI feature adds little by itself.
+                The pattern is compatible with earlier work in which conversational access and
+                language framing shaped learning-related responses [1], [3], [4]. It is also
+                compatible with the multi-dimensional view of museum experience [8], [9]. The guide
+                may provide an extra interpretive layer, but the present data cannot separate that
+                layer from novelty, prior interest, or differences between participants.
               </p>
             </article>
 
             <article>
-              <h3>What remains weak</h3>
+              <h3>Why learning and engagement may diverge</h3>
+              <p>
+                Engagement and interest were lower in the AI group by 0.33 and 0.27 mean points.
+                The difference is statistically uncertain, but its direction is consistent with a
+                plausible design trade-off: an additional question-answer layer can supply facts
+                while interrupting the visual and spatial rhythm of a visit.
+              </p>
               <ul>
-                <li>No adjusted comparison reached .05, so no item-level advantage is established.</li>
-                <li>Engagement and interest were descriptively lower, which weakens the case for the current visit loop.</li>
-                <li>The allocation record, single-site sample, and self-report design prevent a causal claim.</li>
-                <li>Task success, timing, question quality, and recovery were not measured.</li>
+                <li>The guide may ask visitors to formulate a query before they know what the exhibition offers.</li>
+                <li>A long answer can compete with looking at the object and reduce visual attention.</li>
+                <li>A failed question can end the interaction when no recovery route is visible.</li>
               </ul>
+              <p>
+                Falk and Dierking's account of personal, social, and physical context explains why
+                these costs vary between visitors [10]. The right design response is not to add more
+                content. It is to make each answer shorter, more closely tied to the object, and
+                easier to continue.
+              </p>
             </article>
 
             <article>
-              <h3>Why improvement matters</h3>
+              <h3>What the next evaluation should measure</h3>
               <p>
-                Visitors need an answer they can use: a detail they notice, a link to what they know,
-                and a way back when a question fails.
+                The next study should record what the visitor does before, during, and after the
+                guide response. Useful measures include task completion, time to a useful answer,
+                whether the source is visible, whether the visitor can continue without moderator
+                help, and whether a failed question can be repaired.
               </p>
               <p>
-                Our strongest promise and clearest gap appeared on different outcomes: knowledge
-                interpretation rose, while engagement did not. The next design cycle should close
-                that gap before the guide is scaled.
+                A larger sample should also pre-specify one primary outcome and report the other
+                items as secondary. The current nine exploratory tests locate signals. They cannot
+                confirm an item-level effect. Reviews of museum chatbot evaluation reach the same
+                conclusion: system description must be paired with evidence about visitor
+                experience [11], [12].
               </p>
             </article>
           </div>
@@ -661,52 +742,64 @@
                 Apply the four changes as one visitor flow. Grounded records make each answer
                 traceable. Object-level explanation keeps the answer specific. Route cues turn each
                 answer into a next step. Recovery controls keep the visitor moving after an unclear
-                response.
+                response. Each feature should be useful on its own and should also improve the
+                transition to the next part of the visit.
               </p>
               <p>
                 Test the prototype with source accuracy, source visibility, task success, recovery
-                rate, time to a useful answer, and the nine post-visit ratings.
+                rate, time to a useful answer, and the nine post-visit ratings. Record which
+                recommendation produced each change. This keeps the evidence attributable to a
+                specific interface decision.
               </p>
             </div>
             <div class="recommendation-grid">
               <article>
-                <span>01 Source layer</span>
                 <h4>Ground answers in approved museum records</h4>
                 <p>
                   Retrieve the current exhibit label, object record, or curatorial note before
                   generating an answer. Display the source name and last-updated date beside the
                   response. When approved content is unavailable, label the point unverified and
-                  direct the visitor to the nearest relevant exhibit.
+                  direct the visitor to the nearest relevant exhibit. Keep the retrieval order
+                  visible so visitors can tell whether a claim came from the museum, from general
+                  model knowledge, or from no verified record.
                 </p>
               </article>
               <article>
-                <span>02 Interpretation layer</span>
                 <h4>Keep every explanation tied to one exhibit object</h4>
                 <p>
                   Open with the exhibit name, add one factual detail, connect it to one broader
                   theme, and close with one question about what the visitor noticed. Keep the first
                   answer to two or three sentences. Place further detail behind a separate action.
+                  This structure gives the visitor a visible object, a reason to look, and a way to
+                  answer without turning the interaction into a lecture.
                 </p>
               </article>
               <article>
-                <span>03 Visit flow</span>
                 <h4>Use each answer to support the next visit step</h4>
                 <p>
                   Recommend one next object or one comparison after each answer. Show the visitor's
                   position within a three-to-five-stop route. Let the visitor choose when to
-                  continue; do not advance the route automatically.
+                  continue; do not advance the route automatically. The next suggestion should
+                  explain the relation to the current object. Keep the visitor oriented before
+                  directing attention to another exhibit.
                 </p>
               </article>
               <article>
-                <span>04 Recovery layer</span>
                 <h4>Build recovery into the conversation and record it</h4>
                 <p>
                   Provide rephrase, “not what I meant”, next-exhibit, and map controls. After an
                   unclear answer, ask which part was wrong and keep the last valid object in context.
-                  Log the query intent, failed response, recovery action, and outcome.
+                  Log the query intent, failed response, recovery action, and outcome. Recovery
+                  belongs to the visitor experience. Treat it as a measured part of the interaction.
                 </p>
               </article>
             </div>
+            <p class="recommendation-test">
+              <strong>Prototype test:</strong> ask participants to find one sourced answer, continue
+              to a related exhibit, and recover from an ambiguous question introduced for the test. Compare
+              completion and time against the labels-only baseline before repeating the nine
+              post-visit ratings.
+            </p>
           </section>
         </div>
       </section>
@@ -714,11 +807,11 @@
       <section class="section section--flow section--surface" id="references">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">08</p>
             <div>
               <h2>References</h2>
               <p>
-                Fifteen research sources, followed by the required statement of AI assistance.
+                The fifteen sources cited in the report, followed by the required statement of AI
+                assistance.
               </p>
             </div>
           </header>
@@ -752,12 +845,11 @@
       <section class="section section--flow poster-section" id="poster">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">09</p>
             <div>
               <h2>Research poster</h2>
               <p>
-                The A1 poster condenses the question, design, evidence, limitations, and next
-                study into a presentation format.
+                A print-ready summary for presentation. It preserves the same data, claim
+                boundaries, and recommendations as the report.
               </p>
             </div>
           </header>
@@ -770,9 +862,9 @@
               <p class="small-label">A1 portrait format</p>
               <h3>One page for the group presentation</h3>
               <p>
-                The poster uses the same data, RQ, and claim boundaries as the report. It includes
-                the study context, analysis, result profile, interpretation, and selected
-                references.
+                The poster condenses the research question, study design, result profile,
+                interpretation, and selected references into an A1 layout. Its text can be revised
+                in the browser before printing or replacing the static file.
               </p>
               <div class="poster-actions">
                 <a class="button" href="./poster.html">Open poster</a>
@@ -787,12 +879,11 @@
       <section class="section section--flow questionnaire-section" id="questionnaire">
         <div class="wrap">
           <header class="paper-heading">
-            <p class="section-index">10</p>
             <div>
               <h2>Post-visit questionnaire</h2>
               <p>
-                The instrument is presented in the report style. It is a visual reference copy of
-                the bilingual post-visit form used in the study.
+                The bilingual instrument records visit background, guide condition, and the nine
+                post-visit ratings. This page is a reference copy and does not submit responses.
               </p>
             </div>
           </header>
