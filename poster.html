@@ -685,28 +685,42 @@
         padding: 10px 8px;
         background: #f1eee7;
         border: 1px solid var(--line-strong);
-        overflow-wrap: anywhere;
       }
 
-      .study-step strong,
-      .study-step span {
+      .study-step:first-child {
+        flex-grow: 1.15;
+      }
+
+      .study-step > strong,
+      .study-step > span {
         display: block;
       }
 
-      .study-step strong {
+      .study-step > strong {
         color: var(--ink);
         font-family: var(--display);
         font-size: 14px;
         font-weight: 600;
         line-height: 1.2;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
       }
 
-      .study-step span {
+      .study-step > span {
         margin-top: 5px;
         color: var(--muted);
         font-size: 10px;
         line-height: 1.35;
-        overflow-wrap: anywhere;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      .step-join {
+        display: inline !important;
+        margin-top: 0 !important;
+        white-space: nowrap;
       }
 
       .flow-arrow {
@@ -1899,14 +1913,14 @@
           padding: 3.5mm 2mm;
         }
 
-        .study-step strong {
+        .study-step > strong {
           font-size: 18px;
           line-height: 1.22;
         }
 
-        .study-step span {
+        .study-step > span {
           margin-top: 2mm;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.3;
         }
 
@@ -2222,12 +2236,12 @@
         </div>
         <nav class="poster-web-actions" aria-label="Poster files">
           <a href="./index.html">Full report</a>
-          <a href="./ADS401_GroupH_Poster.pdf?v=sync13">Open A1 PDF</a>
+          <a href="./ADS401_GroupH_Poster.pdf?v=sync14">Open A1 PDF</a>
         </nav>
       </header>
-      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync13" aria-label="Open the A1 poster PDF">
+      <a class="poster-web-page" href="./ADS401_GroupH_Poster.pdf?v=sync14" aria-label="Open the A1 poster PDF">
         <img
-          src="./assets/poster-preview.webp?v=sync13"
+          src="./assets/poster-preview.webp?v=sync14"
           width="1400"
           height="1983"
           alt="A1 poster evaluating the XJTLU Museum AI guide"
@@ -2342,7 +2356,7 @@
               <h3><em>02</em> Study design</h3>
               <div class="study-flow" role="list" aria-label="Study procedure">
                 <div class="study-step" role="listitem">
-                  <strong>Consent</strong><span>Information + agreement</span>
+                  <strong>Consent</strong><span>Information <span class="step-join">+ agreement</span></span>
                 </div>
                 <span class="flow-arrow" aria-hidden="true">→</span>
                 <div class="study-step" role="listitem">
@@ -2358,7 +2372,7 @@
                 </div>
                 <span class="flow-arrow" aria-hidden="true">→</span>
                 <div class="study-step" role="listitem">
-                  <strong>Analysis</strong><span>Rank + Holm</span>
+                  <strong>Analysis</strong><span>Rank <span class="step-join">+ Holm</span></span>
                 </div>
               </div>
               <p>
@@ -2577,8 +2591,8 @@
           ".snapshot span",
           ".snapshot strong",
           ".result-banner .zero",
-          ".study-step strong",
-          ".study-step span",
+          ".study-step > strong",
+          ".study-step > span",
           ".poster-footer > div"
         ].join(",");
         let saveTimer;
